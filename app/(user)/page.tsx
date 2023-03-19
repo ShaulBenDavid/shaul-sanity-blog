@@ -21,7 +21,6 @@ export default async function Home() {
     );
   }
   const posts = await client.fetch(query);
-  console.log("posts =", posts[0].body[0].children[0].text);
   return (
     <main>
       <BlogList posts={posts} />
