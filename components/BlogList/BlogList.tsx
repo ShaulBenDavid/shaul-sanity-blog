@@ -1,6 +1,6 @@
 import Image from "next/image";
 import forUrl from "@/lib/urlFor";
-import category from "@/schemas/category";
+import ClientSideRoute from "../ClientSideRoute/ClientSideRoute";
 
 type Props = {
   posts: Post[];
@@ -9,29 +9,40 @@ type Props = {
 export default function BlogList({ posts }: Props) {
   return (
     <div>
-      {posts.map((post) => (
-        <div key={post._id} style={{ backgroundColor: "lightblue" }}>
-          <h2>{post.title}</h2>
-          <h3>{post._createdAt}</h3>
-          <p>{post.author.name}</p>
-          <div style={{ width: "80px", height: "80px", position: "relative" }}>
-            <Image
-              src={forUrl(post.mainImage).url()}
-              alt={post.author.name}
-              fill
-            />
-          </div>
-          <div>
-            {post.categories.map((category) => (
-              <span key={category._id}>{category.title}</span>
-            ))}
-          </div>
+      {posts.map(
+        ({
+          _id,
+          title,
+          _createdAt,
+          author,
+          mainImage,
+          categories,
+          body,
+          slug,
+        }) => (
+          <ClientSideRoute key={_id} route={`/post/${slug.current}`}>
+            <div style={{ backgroundColor: "lightblue" }}>
+              <h2>{title}</h2>
+              <h3>{_createdAt}</h3>
+              <p>{author.name}</p>
+              <div
+                style={{ width: "80px", height: "80px", position: "relative" }}
+              >
+                <Image src={forUrl(mainImage).url()} alt={author.name} fill />
+              </div>
+              <div>
+                {categories.map((category) => (
+                  <span key={category._id}>{category.title}</span>
+                ))}
+              </div>
 
-          <div>
-            <p>{post.body[0].children[0].text}</p>
-          </div>
-        </div>
-      ))}
+              <div>
+                <p>{body[0].children[0].text}</p>
+              </div>
+            </div>
+          </ClientSideRoute>
+        )
+      )}
     </div>
   );
 }
