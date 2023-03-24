@@ -12,6 +12,8 @@ const query = groq`
   } | order(_createdAt desc)
 `;
 
+export const revalidate = 86400; //revalidate build every day
+
 export default async function Home() {
   if (previewData()) {
     return (

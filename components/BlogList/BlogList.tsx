@@ -17,7 +17,7 @@ export default function BlogList({ posts }: Props) {
           author,
           mainImage,
           categories,
-          body,
+          description,
           slug,
         }) => (
           <ClientSideRoute key={_id} route={`/post/${slug.current}`}>
@@ -37,7 +37,7 @@ export default function BlogList({ posts }: Props) {
               </div>
 
               <div>
-                <p>{body[0].children[0].text}</p>
+                <p>{description}</p>
               </div>
             </div>
           </ClientSideRoute>
