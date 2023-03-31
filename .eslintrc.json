@@ -23,6 +23,7 @@
     "react/react-in-jsx-scope": "error",
     "react/jsx-props-no-spreading": "error",
     "react/forbid-prop-types": "error",
+    "no-console": "warn",
     // defaultProps rule to be deprecated on function components
     // https://github.com/reactjs/rfcs/pull/107
     "react/require-default-props": [
