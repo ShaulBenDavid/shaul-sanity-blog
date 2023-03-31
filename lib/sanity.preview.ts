@@ -1,5 +1,5 @@
-import { definePreview } from "next-sanity/preview";
-import { projectId, dataset } from "./sanity.client";
+import { definePreview } from 'next-sanity/preview';
+import { projectId, dataset } from './sanity.client';
 
 function onPublicAccessOnly() {
   throw new Error(`Unable to load preview as you're not logged in`);
@@ -7,8 +7,9 @@ function onPublicAccessOnly() {
 if (!dataset || !projectId) {
   throw new Error(`Missing dataset or projectId`);
 }
-export const usePreview = definePreview({
+const usePreview = definePreview({
   projectId,
   dataset,
   onPublicAccessOnly,
 });
+export default usePreview;

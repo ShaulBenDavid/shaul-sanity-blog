@@ -1,9 +1,11 @@
-import { previewData } from 'next/headers';
+import React from 'react';
 import groq from 'groq';
+import { previewData } from 'next/headers';
 import { client } from '@/lib/sanity.client';
+import BlogList from '@/components/BlogList/BlogList';
 import PreviewSuspense from '@/components/PreviewSuspense/PreviewSuspense';
 import PreviewBlogList from '@/components/PreviewBlogList/PreviewBlogList';
-import BlogList from '@/components/BlogList/BlogList';
+
 const query = groq`
   *[_type=='post'] {
     ...,
@@ -12,7 +14,7 @@ const query = groq`
   } | order(_createdAt desc)
 `;
 
-export const revalidate = 86400; //revalidate build every day
+export const revalidate = 86400; // revalidate build every day
 
 export default async function Home() {
   if (previewData()) {
