@@ -9,7 +9,8 @@
     "plugin:@next/next/recommended",
     "airbnb",
     "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "@typescript-eslint/parser"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -26,7 +27,6 @@
     "react/jsx-props-no-spreading": "off",
     "react/forbid-prop-types": "error",
     "no-underscore-dangle": 0,
-    "no-undef": "off",
     "no-console": "warn",
     "import/no-unresolved": 0,
     "react/prop-types": "off",
