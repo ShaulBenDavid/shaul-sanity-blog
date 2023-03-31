@@ -1,6 +1,7 @@
-import Image from "next/image";
-import forUrl from "@/lib/urlFor";
-import ClientSideRoute from "../ClientSideRoute/ClientSideRoute";
+import React from 'react';
+import Image from 'next/image';
+import forUrl from '@/lib/urlFor';
+import ClientSideRoute from '../ClientSideRoute/ClientSideRoute';
 
 type Props = {
   posts: Post[];
@@ -21,12 +22,12 @@ export default function BlogList({ posts }: Props) {
           slug,
         }) => (
           <ClientSideRoute key={_id} route={`/post/${slug.current}`}>
-            <div style={{ backgroundColor: "lightblue" }}>
+            <div style={{ backgroundColor: 'lightblue' }}>
               <h2>{title}</h2>
               <h3>{_createdAt}</h3>
               <p>{author.name}</p>
               <div
-                style={{ width: "80px", height: "80px", position: "relative" }}
+                style={{ width: '80px', height: '80px', position: 'relative' }}
               >
                 <Image src={forUrl(mainImage).url()} alt={author.name} fill />
               </div>

@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
-import { usePreview } from "@/lib/sanity.preview";
-import BlogList from "../BlogList/BlogList";
+import React from 'react';
+import usePreview from '@/lib/sanity.preview';
+import BlogList from '../BlogList/BlogList';
 
 type Props = {
   query: any;

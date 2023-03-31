@@ -1,19 +1,15 @@
-import React from "react";
-import forUrl from "@/lib/urlFor";
-import Image from "next/image";
-import type { PortableTextReactComponents } from "@portabletext/react";
-
-type Props = {};
+import React from 'react';
+import Image from 'next/image';
+import type { PortableTextReactComponents } from '@portabletext/react';
+import forUrl from '@/lib/urlFor';
 
 const RichTextComponents: Partial<PortableTextReactComponents> = {
   types: {
-    image: ({ value }) => {
-      return (
-        <div style={{ width: "80px", height: "80px", position: "relative" }}>
-          <Image src={forUrl(value.imageUrl).url()} alt="" />
-        </div>
-      );
-    },
+    image: ({ value }) => (
+      <div style={{ width: '80px', height: '80px', position: 'relative' }}>
+        <Image src={forUrl(value.imageUrl).url()} alt="" />
+      </div>
+    ),
   },
   list: {
     bullet: ({ children }) => <ul>{children}</ul>,

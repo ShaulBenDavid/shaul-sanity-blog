@@ -1,10 +1,10 @@
-import { client } from "@/lib/sanity.client";
-import forUrl from "@/lib/urlFor";
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
-import { groq } from "next-sanity";
-import React from "react";
-import RichTextComponents from "@/components/RichTextComponents/RichTextComponents";
+import React from 'react';
+import { groq } from 'next-sanity';
+import Image from 'next/image';
+import { PortableText } from '@portabletext/react';
+import { client } from '@/lib/sanity.client';
+import forUrl from '@/lib/urlFor';
+import RichTextComponents from '@/components/RichTextComponents/RichTextComponents';
 
 type Props = {
   params: {
@@ -12,7 +12,7 @@ type Props = {
   };
 };
 
-export const revalidate = 86400; //revalidate build every day
+export const revalidate = 86400; // revalidate build every day
 
 export async function generateStaticParams() {
   const query = groq`
@@ -42,7 +42,7 @@ const Post = async ({ params: { slug } }: Props) => {
     <article>
       <section>
         <div>
-          <div style={{ width: "80px", height: "80px", position: "relative" }}>
+          <div style={{ width: '80px', height: '80px', position: 'relative' }}>
             <Image
               src={forUrl(post.mainImage).url()}
               alt={post.author.name}
@@ -58,10 +58,10 @@ const Post = async ({ params: { slug } }: Props) => {
         <div>
           <h1>{post.title}</h1>
           <p>
-            {new Date(post._createdAt).toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
+            {new Date(post._createdAt).toLocaleDateString('en-US', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
             })}
           </p>
         </div>
