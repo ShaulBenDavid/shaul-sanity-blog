@@ -29,6 +29,7 @@
     "no-undef": "off",
     "no-console": "warn",
     "import/no-unresolved": 0,
+    "react/prop-types": "off",
     "import/extensions": 0,
     "react/destructuring-assignment": 0,
     "import/no-extraneous-dependencies": [
