@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "cross-env NODE_OPTIONS=--openssl-legacy-provider build-storybook",
     "eslint": "eslint \"**/*.+(js|jsx|ts|tsx)\"",
     "eslint:fix": "eslint --fix \"**/*.+(js|jsx|ts|tsx)\"",
     "prettier": "prettier --check \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
@@ -63,6 +63,7 @@
     "husky": "7.0.0",
     "lint-staged": "11.1.2",
     "prettier": "2.8.7",
+    "react-docgen-typescript-plugin": "^1.0.5",
     "typescript": "5.0.3"
   },
   "lint-staged": {
