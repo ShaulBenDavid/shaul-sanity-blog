@@ -1,9 +1,8 @@
-import { DefaultDocumentNodeResolver } from "sanity/desk";
-import Iframe from "sanity-plugin-iframe-pane";
-import { SanityDocument } from "sanity";
+import { DefaultDocumentNodeResolver } from 'sanity/desk';
+import Iframe from 'sanity-plugin-iframe-pane';
 
 // Import this into the deskTool() plugin
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (
+const defaultDocumentNode: DefaultDocumentNodeResolver = (
   S,
   { schemaType }
 ) => {
@@ -16,16 +15,17 @@ export const defaultDocumentNode: DefaultDocumentNodeResolver = (
           .component(Iframe)
           .options({
             url: `${
-              process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000"
+              process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'
             }/api/preview`,
-            defaultSize: "desktop",
+            defaultSize: 'desktop',
             reload: {
               button: true,
             },
           })
-          .title("Preview"),
+          .title('Preview'),
       ]);
     default:
       return S.document().views([S.view.form()]);
   }
 };
+export default defaultDocumentNode;

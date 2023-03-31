@@ -6,7 +6,7 @@ import forUrl from '@/lib/urlFor';
 const RichTextComponents: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }) => (
-      <div style={{ width: '80px', height: '80px', position: 'relative' }}>
+      <div style={{ width: '90px', height: '90px', position: 'relative' }}>
         <Image src={forUrl(value.imageUrl).url()} alt="" />
       </div>
     ),
