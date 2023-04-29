@@ -26,7 +26,7 @@ export default async function Home() {
   }
   const posts = await client.fetch(query);
   return (
-    <main>
+    <main className="font-inter">
       <BlogList posts={posts} />
     </main>
   );
