@@ -1,7 +1,7 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
-import Header from '@/components/Header/Header';
-import '@/styles/global.css';
+import Header from '@/src/components/Header/Header';
+import '@/src/styles/global.css';
 
 const inter = Inter({
   variable: '--font-inter',
