@@ -1,5 +1,12 @@
 import React from 'react';
-import Header from '@/components/Header/Header';
+import { Inter } from 'next/font/google';
+import Header from '@/src/components/Header/Header';
+import '@/src/styles/global.css';
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['cyrillic'],
+});
 
 export const metadata = {
   title: 'ShaulDev - Blog',
@@ -13,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.variable}>
         <Header />
         {children}
       </body>

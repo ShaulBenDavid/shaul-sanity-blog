@@ -26,10 +26,10 @@
     "react/jsx-props-no-spreading": "off",
     "react/forbid-prop-types": "error",
     "no-underscore-dangle": 0,
-    "no-undef": "off",
     "no-console": "warn",
     "import/no-unresolved": 0,
     "react/prop-types": "off",
+    "no-undef": "off",
     "import/extensions": 0,
     "react/destructuring-assignment": 0,
     "import/no-extraneous-dependencies": [

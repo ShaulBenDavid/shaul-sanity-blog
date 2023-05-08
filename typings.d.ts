@@ -24,26 +24,26 @@ interface Author extends Base {
 }
 
 interface Image {
-  _type: "image";
+  _type: 'image';
   asset: Reference;
 }
 
 interface Slug {
-  _type: "slug";
+  _type: 'slug';
   current: string;
 }
 
 interface Block {
   _key: string;
-  _type: "block";
+  _type: 'block';
   children: Span[];
   markDefs: any[];
-  style: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 interface Span {
   _key: string;
-  _type: "block";
+  _type: 'block';
   marks: string[];
   text: string;
 }
@@ -54,11 +54,11 @@ interface Category extends Base {
 }
 
 interface MainImage {
-  _type: "image";
+  _type: 'image';
   asset: Reference;
 }
 
 interface Title {
-  _type: "string";
+  _type: 'string';
   current: string;
 }
