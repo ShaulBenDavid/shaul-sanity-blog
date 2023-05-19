@@ -25,10 +25,14 @@ module.exports = {
       red: '#FF224A',
       green: '#0FE83F',
       orange: '#EC5D0D',
+      white: '#ffffff',
     },
     extend: {
       fontFamily: {
         inter: ['var(--font-inter)'],
+      },
+      boxShadow: {
+        dw: '2px 2px 4px rgba(45, 3, 59, 0.62)',
       },
     },
   },
