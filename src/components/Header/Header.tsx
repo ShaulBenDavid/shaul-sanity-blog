@@ -5,8 +5,8 @@ import Navbar from './Navbar';
 import Routes from './Navbar/Navbar.types';
 
 const Header = () => (
-  <header className="flex w-screen backdrop-blur-md h-14 justify-center fixed">
-    <nav className="flex flex-row items-center justify-between w-[1227px] mx-8">
+  <header className="flex w-full backdrop-blur-md h-14 justify-center fixed px-8 z-10">
+    <nav className="flex flex-row items-center justify-between w-[1227px]">
       <Link href={Routes.ROOT}>
         <Logo />
       </Link>

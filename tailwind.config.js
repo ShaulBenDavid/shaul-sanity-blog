@@ -31,8 +31,17 @@ module.exports = {
       fontFamily: {
         inter: ['var(--font-inter)'],
       },
+      fontSize: {
+        'h1-dynamic': 'clamp(2rem, 5vw, 5rem)',
+      },
       boxShadow: {
         dw: '2px 2px 4px rgba(45, 3, 59, 0.62)',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
       },
     },
   },
