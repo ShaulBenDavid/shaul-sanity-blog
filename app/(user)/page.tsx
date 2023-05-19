@@ -17,7 +17,7 @@ export default async function Home() {
   const posts = await client.fetch(query);
 
   return (
-    <main className="font-inter">
+    <main className="font-inter py-14">
       <BlogList posts={posts} />
     </main>
   );
