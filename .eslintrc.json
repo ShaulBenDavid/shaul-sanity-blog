@@ -9,7 +9,8 @@
     "plugin:@next/next/recommended",
     "airbnb",
     "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,7 +20,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "error",
@@ -36,7 +37,11 @@
       "off",
       { "devDependencies": ["**/*.ts", "**/*.tsx"] }
     ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "warn",
     // defaultProps rule to be deprecated on function components
     // https://github.com/reactjs/rfcs/pull/107
     "react/require-default-props": [
