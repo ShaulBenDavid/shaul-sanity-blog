@@ -1,5 +1,6 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
+import defaultMetadata from '@/src/metadata';
 import Header from '@/src/components/Header';
 import '@/src/styles/global.css';
 
@@ -8,11 +9,7 @@ const inter = Inter({
   subsets: ['cyrillic'],
 });
 
-export const metadata = {
-  title: 'Dev Wizard - A Place For Developers',
-  description:
-    'Get Inspired Every Day! With a great tech stacks, news, tools, accessories and more... Discover the top people in the industry',
-};
+export const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
