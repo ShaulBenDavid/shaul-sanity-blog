@@ -5,7 +5,7 @@ import NavigationLinks from './Navbar.config';
 const Navbar = () => (
   <ul className="list-none flex flex-row gap-5 items-center">
     {NavigationLinks.map(({ title, href, variant }) => (
-      <li key={href} className={variant}>
+      <li key={href} className={`cursor-pointer ${variant}`}>
         <Link href={href}>{title}</Link>
       </li>
     ))}
