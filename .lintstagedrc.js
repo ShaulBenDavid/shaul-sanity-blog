@@ -6,6 +6,7 @@ module.exports = {
   '**/*.(ts|tsx|js)': (filenames) => [
     `npm run eslint ${filenames.join(' ')}`,
     `npm run prettier --write ${filenames.join(' ')}`,
+    'npm run test',
   ],
 
   // Prettify only Markdown and JSON files
