@@ -1,4 +1,4 @@
-import Routes from './Navbar.types';
+import Routes from './NavigationTabs.types';
 
 const NavLinkAnimation =
   'before:absolute before:top-7 before:w-0 before:h-1 before:bg-primary before:-translate-x-2/4 before:left-2/4 before:hover:w-3 before:transition-all';

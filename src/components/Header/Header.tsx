@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Logo from '@/src/assets/Icons/Logo';
-import Routes from './Navbar/Navbar.types';
-import Navbar from './Navbar';
+import Routes from './NavigationTabs/NavigationTabs.types';
+import NavigationTabs from './NavigationTabs';
 
 const Header = (): JSX.Element => (
-  <header className="flex w-full backdrop-blur-2xl h-14 justify-center fixed px-8 z-10 bg-white bg-opacity-[0.5]">
-    <nav className="flex flex-row items-center justify-between w-[1227px]">
+  <header className="fixed z-10 flex h-14 w-full justify-center bg-white bg-opacity-[0.5] px-8 backdrop-blur-xl">
+    <nav className="flex w-[1227px] flex-row items-center justify-between">
       <Link href={Routes.ROOT}>
         <Logo />
       </Link>
-      <Navbar />
+      <NavigationTabs />
     </nav>
   </header>
 );

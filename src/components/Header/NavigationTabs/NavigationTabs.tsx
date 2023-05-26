@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
-import NavigationLinks from './Navbar.config';
+import NavigationLinks from './NavigationTabs.config';
 
-const Navbar = () => (
-  <ul className="list-none flex flex-row gap-5 items-center">
+const NavigationTabs = () => (
+  <ul className="flex list-none flex-row items-center gap-5">
     {NavigationLinks.map(({ title, href, variant }) => (
       <li key={href} className={`cursor-pointer ${variant}`}>
         <Link href={href}>{title}</Link>
@@ -12,4 +12,4 @@ const Navbar = () => (
   </ul>
 );
 
-export default Navbar;
+export default NavigationTabs;
