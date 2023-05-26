@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Logo from '@/src/assets/Icons/Logo';
-import Routes from './NavigationTabs/NavigationTabs.types';
+import Routes from '@/src/routes/routes.types';
 import NavigationTabs from './NavigationTabs';
 
 const Header = (): JSX.Element => (

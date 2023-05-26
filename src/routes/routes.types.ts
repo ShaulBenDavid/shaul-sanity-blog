@@ -5,5 +5,4 @@ enum Routes {
   NEWS = 'news',
   SIGN_IN = 'sign-in',
 }
-
 export default Routes;
