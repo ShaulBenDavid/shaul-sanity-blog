@@ -3,18 +3,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import NavigationLinks, { NavTabsVariants } from './NavigationTabs.config';
+import NavTabsVariants from './NavigationTabs.config';
+import NavigationLinks, { NavigationVariants } from '../Header.config';
 
 const NavigationTabs = () => {
   const activeSegment = useSelectedLayoutSegment();
 
   return (
-    <ul className="flex list-none flex-row items-center gap-5">
+    <ul className="flex list-none flex-row items-center gap-5 max-tb:hidden">
       {NavigationLinks.map(({ title, href, variant }) => (
         <li
           key={href}
-          className={`cursor-pointer ${variant} ${
-            variant === NavTabsVariants.LINK &&
+          className={`cursor-pointer capitalize ${NavTabsVariants[variant]} ${
+            variant === NavigationVariants.LINK &&
             activeSegment === href &&
             'before:w-full before:hover:w-full'
           }`}
