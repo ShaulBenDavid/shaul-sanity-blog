@@ -9,7 +9,7 @@ const defaultMetadata: Metadata = {
     'Get Inspired Every Day! With a great tech stacks, news, tools, accessories and more... Discover the top people in the industry',
   applicationName: 'Dev Wizard',
   authors: { name: 'Shaul Ben David' },
-  themeColor: '#C147E9',
+  themeColor: '#810CA8',
   creator: 'Dev Wizard Team',
   keywords: [
     'Next.js',

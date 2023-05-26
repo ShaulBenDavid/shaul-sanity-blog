@@ -25,9 +25,9 @@ const SideNavigation = ({ onClick }: SideNavigationProps) => {
               <Link
                 href={href}
                 onClick={onClick}
-                className={`text-gray-900 group flex w-full items-center rounded-lg p-2 pl-11 capitalize transition duration-75 hover:bg-gray hover:bg-opacity-20 focus:bg-gray focus:bg-opacity-20   ${
+                className={`text-gray-900 group flex w-full items-center rounded-lg p-2 pl-11 capitalize transition duration-75  focus:bg-gray focus:bg-opacity-20   ${
                   activeSegment === href &&
-                  'bg-light-purple bg-opacity-50 hover:bg-light-purple hover:bg-opacity-50 focus:bg-light-purple focus:bg-opacity-50'
+                  'bg-light-purple bg-opacity-50 focus:bg-light-purple focus:bg-opacity-50'
                 }`}
               >
                 {title}

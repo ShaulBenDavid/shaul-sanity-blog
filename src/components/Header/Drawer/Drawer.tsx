@@ -11,10 +11,10 @@ interface DrawerProps {
 
 const Drawer = ({ closeDrawer, showDrawer }: DrawerProps) => {
   useEffect((): any => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = showDrawer ? 'hidden' : 'unset';
     // eslint-disable-next-line no-return-assign
     return () => (document.body.style.overflow = 'unset');
-  }, []);
+  }, [showDrawer]);
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
     if (e.key === 'Escape' || e.key === 'ArrowDown') {
