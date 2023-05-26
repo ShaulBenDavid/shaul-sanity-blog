@@ -13,11 +13,14 @@ module.exports = {
       },
     },
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-webpack5',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
   },
   typescript: {
     reactDocgen: 'react-docgen-typescript-plugin',
+  },
+  docs: {
+    autodocs: true,
   },
 };

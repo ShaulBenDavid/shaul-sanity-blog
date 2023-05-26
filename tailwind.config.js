@@ -27,6 +27,7 @@ module.exports = {
       orange: '#EC5D0D',
       white: '#ffffff',
       black: '#222222',
+      gray: '#808080',
     },
     extend: {
       fontFamily: {
@@ -42,6 +43,10 @@ module.exports = {
         fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
+        },
+        enterIn: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { translate: 'translateX(100%)' },
         },
       },
     },

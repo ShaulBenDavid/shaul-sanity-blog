@@ -29,6 +29,7 @@ const Drawer = ({ closeDrawer, showDrawer }: DrawerProps) => {
       }`}
       role="presentation"
       onKeyDown={handleKeyPress}
+      id="navigation-drawer"
     >
       <Backdrop onClick={closeDrawer} />
       <SideNavigation onClick={closeDrawer} />
