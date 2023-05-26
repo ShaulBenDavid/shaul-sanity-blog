@@ -18,9 +18,9 @@ export default async function Home() {
   const posts = await client.fetch(query);
 
   return (
-    <main className="font-inter pt-14 w-[1227px] mx-auto">
+    <>
       <Intro />
       <BlogList posts={posts} />
-    </main>
+    </>
   );
 }

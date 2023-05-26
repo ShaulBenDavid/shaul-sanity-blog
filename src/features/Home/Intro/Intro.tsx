@@ -3,7 +3,7 @@ import Image from 'next/image';
 import JamesClearImg from '../images/IntroTextJC.png';
 
 const Intro = () => (
-  <section className="flex items-center flex-col mt-48 text-center text-wizard-black relative">
+  <section className="relative mt-48 flex flex-col items-center text-center text-wizard-black">
     <div
       className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
       aria-hidden="true"
@@ -16,29 +16,32 @@ const Intro = () => (
         }}
       />
     </div>
-    <h1 className="text-h1-dynamic font-bold text-[#3D0B4E] animate-[fadeIn_1s_ease-in_forwards]">
+    <h1 className="animate-[fadeIn_1s_ease-in_forwards] text-h1-dynamic font-bold text-[#3D0B4E]">
       Get{' '}
       <span
-        className="bg-clip-text bg-gradient-to-r from-[#ad52cb] via-light-primary to-primary text-transparent"
+        className="text-transparent bg-gradient-to-r from-[#ad52cb] via-light-primary to-primary bg-clip-text"
         style={{ color: 'transparent' }}
       >
         Inspired
       </span>{' '}
       Every Day!
     </h1>
-    <p className="leading-8 text-2xl">
-      <span className="opacity-0 animate-[fadeIn_1s_ease-in_0.5s_forwards]">
+    <p className="text-2xl leading-8">
+      <span className="animate-[fadeIn_1s_ease-in_0.5s_forwards] opacity-0">
         With a great tech stacks, news, tools, accessories and more...
       </span>
       <br />
-      <span className="opacity-0 animate-[fadeIn_1s_ease-in_0.7s_forwards]">
+      <span className="animate-[fadeIn_1s_ease-in_0.7s_forwards] opacity-0">
         Discover the top people in the industry
       </span>
     </p>
     <Image
       src={JamesClearImg}
-      alt="intro"
-      className="opacity-0 animate-[fadeIn_1s_ease-in_1s_forwards]"
+      alt="If you get one percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done."
+      width="0"
+      height="0"
+      sizes="100vw"
+      className="h-auto w-full animate-[fadeIn_1s_ease-in_1s_forwards]  opacity-0"
     />
   </section>
 );
