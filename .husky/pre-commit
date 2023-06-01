@@ -3,3 +3,4 @@
 
 # Add the following
 npx lint-staged
+npm run test

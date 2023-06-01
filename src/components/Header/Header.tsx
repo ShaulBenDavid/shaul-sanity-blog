@@ -6,7 +6,7 @@ import Logo from '@/src/assets/Icons/Logo';
 import Routes from '@/src/routes/routes.types';
 import NavigationTabs from './NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
-import Drawer from './Drawer';
+import SideNavigation from './SideNavigation';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
@@ -30,7 +30,7 @@ const Header = (): JSX.Element => {
           <BurgerButton onClick={openDrawer} />
         </nav>
       </header>
-      <Drawer closeDrawer={closeDrawer} showDrawer={showDrawer} />
+      <SideNavigation onClick={closeDrawer} isOpen={showDrawer} />
     </>
   );
 };
