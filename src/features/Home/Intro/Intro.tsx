@@ -37,7 +37,7 @@ const Intro = () => (
     </p>
     <Image
       src={JamesClearImg}
-      alt="If you get one percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done."
+      alt="If you get one percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done. 'James Clear'"
       width="0"
       height="0"
       sizes="100vw"

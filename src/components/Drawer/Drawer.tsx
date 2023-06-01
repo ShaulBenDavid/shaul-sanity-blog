@@ -24,7 +24,7 @@ const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
 
   return (
     <div
-      data-testId="drawer"
+      data-testid="drawer"
       className={`fixed inset-0 z-50 h-[100dvh] w-screen ${
         isOpen ? 'flex' : 'hidden'
       }`}
