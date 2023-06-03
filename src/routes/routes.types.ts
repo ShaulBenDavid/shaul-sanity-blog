@@ -7,6 +7,7 @@ enum Routes {
 }
 
 export enum RoutesTitles {
+  ROOT = 'home',
   OUR_STORY = 'our story',
   CONTACT_US = 'contact us',
   NEWS = 'news',
