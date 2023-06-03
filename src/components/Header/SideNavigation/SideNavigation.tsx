@@ -12,11 +12,11 @@ interface SideNavigationProps {
 }
 
 const SideNavigation = ({ onClick, isOpen }: SideNavigationProps) => {
-  const activeSegment = useSelectedLayoutSegment();
+  const activeSegment = useSelectedLayoutSegment() ?? '/';
 
   return (
     <Drawer onClose={onClick} isOpen={isOpen}>
-      <ul>
+      <ul className="flex flex-col gap-2">
         {NavigationLinks.map(({ title, href }) => (
           <li key={href}>
             <Link

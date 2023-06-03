@@ -13,6 +13,11 @@ export type NavigationLinksType = {
 
 const NavigationLinks: NavigationLinksType = [
   {
+    href: Routes.ROOT,
+    title: RoutesTitles.ROOT,
+    variant: NavigationVariants.LINK,
+  },
+  {
     href: Routes.OUR_STORY,
     title: RoutesTitles.OUR_STORY,
     variant: NavigationVariants.LINK,

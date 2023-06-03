@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import JamesClearImg from '../images/IntroTextJC.png';
+import JamesClearImgM from '../images/IntroTextJCM.png';
+import JamesClearImgS from '../images/IntroTextJCS.png';
 
 const Intro = () => (
-  <section className="relative mt-48 flex flex-col items-center text-center text-wizard-black">
+  <section className="relative mt-48 flex flex-col items-center text-center text-wizard-black max-tb:mt-32">
     <div
       className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
       aria-hidden="true"
@@ -35,14 +37,17 @@ const Intro = () => (
         Discover the top people in the industry
       </span>
     </p>
-    <Image
-      src={JamesClearImg}
-      alt="If you get one percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done. 'James Clear'"
-      width="0"
-      height="0"
-      sizes="100vw"
-      className="h-auto w-full animate-[fadeIn_1s_ease-in_1s_forwards]  opacity-0"
-    />
+    <picture className="h-auto w-full animate-[fadeIn_1s_ease-in_1s_forwards] opacity-0">
+      <source srcSet={JamesClearImgS.src} media="(max-width:768px)" />
+      <source srcSet={JamesClearImgM.src} media="(max-width:1024px)" />
+      <Image
+        src={JamesClearImg}
+        alt="If you get one percent better each day for one year, you’ll end up thirty-seven times better by the time you’re done. 'James Clear'"
+        width="0"
+        height="0"
+        sizes="100vw"
+      />
+    </picture>
   </section>
 );
 
