@@ -11,7 +11,7 @@ const NavigationTabs = () => {
   const activeSegment = useSelectedLayoutSegment() ?? '/';
 
   return (
-    <ul className="flex list-none flex-row items-center gap-5 max-tb:hidden">
+    <ul className="ml-auto flex list-none flex-row items-center gap-5 max-tb:hidden">
       {NavigationLinks.map(({ title, href, variant }) =>
         href === Routes.ROOT ? null : (
           <li

@@ -22,12 +22,12 @@ const Header = (): JSX.Element => {
   return (
     <>
       <header className="fixed z-10 flex h-14 w-full justify-center bg-white bg-opacity-[0.5] p-2 backdrop-blur-xl tb:px-8">
-        <nav className="flex w-[1227px] flex-row items-center justify-between tb:w-full">
+        <nav className="flex w-[1227px] flex-row items-center tb:w-full">
+          <BurgerButton onClick={openDrawer} />
           <Link href={Routes.ROOT} aria-label="Dev Wizard Home">
             <Logo />
           </Link>
           <NavigationTabs />
-          <BurgerButton onClick={openDrawer} />
         </nav>
       </header>
       <SideNavigation onClick={closeDrawer} isOpen={showDrawer} />
