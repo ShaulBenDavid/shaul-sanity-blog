@@ -28,7 +28,7 @@ const Intro = () => (
       </span>{' '}
       Every Day!
     </h1>
-    <p className="text-2xl leading-8">
+    <p className="text-2xl leading-8 max-sm:text-lg max-sm:leading-6">
       <span className="animate-[fadeIn_1s_ease-in_0.5s_forwards] opacity-0">
         With a great tech stacks, news, tools, accessories and more...
       </span>
@@ -37,7 +37,7 @@ const Intro = () => (
         Discover the top people in the industry
       </span>
     </p>
-    <picture className="h-auto w-full animate-[fadeIn_1s_ease-in_1s_forwards] opacity-0">
+    <picture className="h-auto w-full animate-[fadeIn_1s_ease-in_1s_forwards] opacity-0 drop-shadow-lg">
       <source srcSet={JamesClearImgS.src} media="(max-width:768px)" />
       <source srcSet={JamesClearImgM.src} media="(max-width:1024px)" />
       <Image

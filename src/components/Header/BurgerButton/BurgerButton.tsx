@@ -11,7 +11,7 @@ const BurgerButton = ({ onClick }: BurgerButton) => (
     id="open-nav"
     aria-label="menu"
     aria-controls="navigation-drawer"
-    className="p-2 tb:hidden "
+    className="mr-2 scale-x-[-1] p-2 tb:hidden"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
