@@ -22,7 +22,7 @@ export default function BlogList({ posts }: Props) {
           slug,
         }) => (
           <ClientSideRoute key={_id} route={`/post/${slug.current}`}>
-            <div style={{ backgroundColor: 'lightblue' }}>
+            <div style={{ backgroundColor: 'lightblue' }} className="w-full">
               <h2>{title}</h2>
               <h3>{_createdAt}</h3>
               <p>{author.name}</p>
