@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Logo from '@/src/assets/Icons/Logo';
+import Logo from '@/src/components/Icons';
 import Routes from '@/src/routes/routes.types';
-import NavigationTabs from './NavigationTabs';
+import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
-import SideNavigation from './SideNavigation';
+import SideNavigation from '../SideNavigation';
+import NavigationLinks from './Header.config';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
@@ -27,10 +28,14 @@ const Header = (): JSX.Element => {
           <Link href={Routes.ROOT} aria-label="Dev Wizard Home">
             <Logo />
           </Link>
-          <NavigationTabs />
+          <NavigationTabs navLinks={NavigationLinks} />
         </nav>
       </header>
-      <SideNavigation onClick={closeDrawer} isOpen={showDrawer} />
+      <SideNavigation
+        onClick={closeDrawer}
+        isOpen={showDrawer}
+        navLinks={NavigationLinks}
+      />
     </>
   );
 };
