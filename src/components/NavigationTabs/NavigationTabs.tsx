@@ -4,15 +4,22 @@ import React from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import NavTabsVariants from './NavigationTabs.config';
-import NavigationLinks, { NavigationVariants } from '../Header.config';
+import {
+  NavigationLinksType,
+  NavigationVariants,
+} from '../Header/Header.config';
 import Routes from '@/src/routes/routes.types';
 
-const NavigationTabs = () => {
+interface NavigationTabsProps {
+  navLinks: NavigationLinksType;
+}
+
+const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
   const activeSegment = useSelectedLayoutSegment() ?? '/';
 
   return (
     <ul className="ml-auto flex list-none flex-row items-center gap-5 max-tb:hidden">
-      {NavigationLinks.map(({ title, href, variant }) =>
+      {navLinks.map(({ title, href, variant }) =>
         href === Routes.ROOT ? null : (
           <li
             key={href}

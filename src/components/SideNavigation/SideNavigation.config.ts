@@ -1,4 +1,4 @@
-import { NavigationVariants } from '../Header.config';
+import { NavigationVariants } from '../Header/Header.config';
 
 const SideNavTabsVariants = {
   [NavigationVariants.BUTTON]:

@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import SideNavigation from './SideNavigation';
+import NavigationLinks from '../Header/Header.config';
 
 const styles: CSSProperties = {
   transform: 'scale(1)',
@@ -20,5 +21,7 @@ export default meta;
 type Story = StoryObj<typeof SideNavigation>;
 
 export const Primary: Story = {
-  render: () => <SideNavigation onClick={() => ({})} isOpen />,
+  render: () => (
+    <SideNavigation onClick={() => ({})} isOpen navLinks={NavigationLinks} />
+  ),
 };
