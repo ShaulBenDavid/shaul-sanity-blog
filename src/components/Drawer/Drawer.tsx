@@ -36,7 +36,7 @@ const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
       <Backdrop onClick={onClose} />
       <ReactFocusLock>
         <nav
-          className="absolute z-50 h-[100dvh] w-80 animate-[enterIn_0.2s_ease-in_forwards] bg-white shadow-2xl ease-in"
+          className="absolute z-50 h-[100dvh] w-64 animate-[enterIn_0.2s_ease-in_forwards] bg-white shadow-2xl ease-in"
           tabIndex={-1}
         >
           {children}
