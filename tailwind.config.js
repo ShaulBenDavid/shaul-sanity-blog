@@ -34,7 +34,8 @@ module.exports = {
         inter: ['var(--font-inter)'],
       },
       fontSize: {
-        'h1-dynamic': 'clamp(2rem, 5vw, 5rem)',
+        'h1-dynamic': 'clamp(2rem, 5vw, 4rem)',
+        'p-dynamic': 'clamp(1.125rem, 2vw, 1.5rem)',
       },
       boxShadow: {
         dw: '2px 2px 4px rgba(45, 3, 59, 0.62)',

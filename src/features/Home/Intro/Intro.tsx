@@ -5,7 +5,7 @@ import JamesClearImgM from '../images/IntroTextJCM.png';
 import JamesClearImgS from '../images/IntroTextJCS.png';
 
 const Intro = () => (
-  <section className="relative mt-48 flex flex-col items-center text-center text-wizard-black max-tb:mt-32">
+  <section className="relative mt-40 flex flex-col items-center text-center text-wizard-black max-tb:mt-32">
     <div
       className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
       aria-hidden="true"
@@ -28,7 +28,7 @@ const Intro = () => (
       </span>{' '}
       Every Day!
     </h1>
-    <p className="text-2xl leading-8 max-sm:text-lg max-sm:leading-6">
+    <p className="text-p-dynamic leading-8 max-sm:leading-6">
       <span className="animate-[fadeIn_1s_ease-in_0.5s_forwards] opacity-0">
         With a great tech stacks, news, tools, accessories and more...
       </span>
