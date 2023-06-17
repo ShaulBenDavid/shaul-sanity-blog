@@ -21,7 +21,7 @@ const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
 
   return (
     <Drawer onClose={onClick} isOpen={isOpen}>
-      <ul className="flex flex-col gap-2 p-3">
+      <ul className="flex flex-col p-2 [&>*:last-child]:mt-2">
         {navLinks.map(({ title, href, variant, icon }) => (
           <li key={href}>
             <Link

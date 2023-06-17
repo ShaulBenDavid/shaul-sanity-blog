@@ -8,7 +8,6 @@ import {
   NavigationLinksType,
   NavigationVariants,
 } from '../Header/Header.config';
-import Routes from '@/src/routes/routes.types';
 
 interface NavigationTabsProps {
   navLinks: NavigationLinksType;
@@ -19,8 +18,8 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
 
   return (
     <ul className="ml-auto flex list-none flex-row items-center gap-5 max-tb:hidden">
-      {navLinks.map(({ title, href, variant }) =>
-        href === Routes.ROOT ? null : (
+      {navLinks.map(({ title, href, variant, isSideNavOnly }) =>
+        isSideNavOnly ? null : (
           <li
             key={href}
             className={`cursor-pointer capitalize ${NavTabsVariants[variant]} ${
