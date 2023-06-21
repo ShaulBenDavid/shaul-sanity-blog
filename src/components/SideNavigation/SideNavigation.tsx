@@ -23,11 +23,14 @@ const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
     <Drawer onClose={onClick} isOpen={isOpen}>
       <ul className="flex flex-col p-2 [&>*:last-child]:mt-2">
         {navLinks.map(({ title, href, variant, icon }) => (
-          <li key={href}>
+          <li
+            key={href}
+            className={` animate-[enterInSideTabs_0.6s_ease-in_forwards] opacity-0 `}
+          >
             <Link
               href={href}
               onClick={onClick}
-              className={` flex flex-row content-center gap-1 ${
+              className={`flex flex-row content-center gap-1  ${
                 SideNavTabsVariants[variant]
               } ${
                 activeSegment === href &&

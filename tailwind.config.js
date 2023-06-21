@@ -49,6 +49,10 @@ module.exports = {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { translate: 'translateX(100%)' },
         },
+        enterInSideTabs: {
+          '0%': { transform: 'translateY(15px)', opacity: 0 },
+          '100%': { translate: 'translateY(0)', opacity: 1 },
+        },
       },
     },
   },
