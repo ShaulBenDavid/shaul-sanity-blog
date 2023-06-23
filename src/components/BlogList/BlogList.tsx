@@ -7,7 +7,7 @@ type Props = {
   posts: Post[];
 };
 
-const BlogList = ({ posts }: Props) => (
+const BlogList = ({ posts }: Props): JSX.Element => (
   <div>
     {posts.map(
       ({

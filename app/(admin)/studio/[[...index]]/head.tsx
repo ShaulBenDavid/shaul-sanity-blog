@@ -4,7 +4,7 @@ import { NextStudioHead } from 'next-sanity/studio/head';
 // Re-export `NextStudioHead` as default if you're happy with the default behavior
 export { NextStudioHead } from 'next-sanity/studio/head';
 
-const CustomStudioHead = () => (
+const CustomStudioHead = (): JSX.Element => (
   <>
     <NextStudioHead favicons={false} />
     <link
