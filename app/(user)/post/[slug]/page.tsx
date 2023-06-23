@@ -1,4 +1,5 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import { groq } from 'next-sanity';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
@@ -37,6 +38,10 @@ const Post = async ({ params: { slug } }: Props) => {
     } 
     `;
   const post: Post = await client.fetch(query, { slug });
+
+  if (!post) {
+    notFound();
+  }
 
   return (
     <article>
