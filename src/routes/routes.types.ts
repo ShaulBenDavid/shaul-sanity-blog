@@ -4,6 +4,8 @@ enum Routes {
   CONTACT_US = 'contact-us',
   NEWS = 'news',
   SIGN_IN = 'sign-in',
+  PRIVACY_POLICY = 'privacy-policy',
+  TERMS_CONDITIONS = 'terms-conditions',
 }
 
 export enum RoutesTitles {
@@ -12,6 +14,8 @@ export enum RoutesTitles {
   CONTACT_US = 'contact us',
   NEWS = 'news',
   SIGN_IN = 'sign in',
+  PRIVACY_POLICY = 'privacy policy',
+  TERMS_CONDITIONS = 'terms & conditions',
 }
 
 export default Routes;

@@ -1,5 +1,12 @@
 import React from 'react';
-import { FcHome, FcAbout, FcContacts, FcNews } from 'react-icons/fc';
+import {
+  FcHome,
+  FcAbout,
+  FcContacts,
+  FcNews,
+  FcRules,
+  FcPrivacy,
+} from 'react-icons/fc';
 import Routes, { RoutesTitles } from '@/src/routes/routes.types';
 
 export enum NavigationVariants {
@@ -43,6 +50,20 @@ const NavigationLinks: NavigationLinksType = [
     variant: NavigationVariants.LINK,
     icon: <FcContacts size={24} aria-hidden />,
     isSideNavOnly: false,
+  },
+  {
+    href: Routes.TERMS_CONDITIONS,
+    title: RoutesTitles.TERMS_CONDITIONS,
+    variant: NavigationVariants.LINK,
+    icon: <FcRules size={24} aria-hidden />,
+    isSideNavOnly: true,
+  },
+  {
+    href: Routes.PRIVACY_POLICY,
+    title: RoutesTitles.PRIVACY_POLICY,
+    variant: NavigationVariants.LINK,
+    icon: <FcPrivacy size={24} aria-hidden />,
+    isSideNavOnly: true,
   },
   {
     href: Routes.SIGN_IN,

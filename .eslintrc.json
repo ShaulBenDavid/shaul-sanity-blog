@@ -37,11 +37,12 @@
       "off",
       { "devDependencies": ["**/*.ts", "**/*.tsx"] }
     ],
+
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "warn",
+    "@typescript-eslint/no-shadow": "error",
     // defaultProps rule to be deprecated on function components
     // https://github.com/reactjs/rfcs/pull/107
     "react/require-default-props": [
