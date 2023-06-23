@@ -1,5 +1,5 @@
 import resolveConfig from 'tailwindcss/resolveConfig';
-import myConfig from '@/tailwind.config.js';
+import myConfig from '../../tailwind.config.js';
 
 type Theme = {
   theme: {

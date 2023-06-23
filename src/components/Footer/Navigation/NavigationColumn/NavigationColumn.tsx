@@ -27,7 +27,7 @@ const NavigationColumn = ({
     >
       {links.map(({ title, link }) =>
         isOutSourceLinks ? (
-          <li className="mb-4">
+          <li className="mb-4" key={title}>
             <a
               href={link}
               className="capitalize hover:underline"
@@ -39,7 +39,7 @@ const NavigationColumn = ({
             </a>
           </li>
         ) : (
-          <li className="mb-4">
+          <li className="mb-4" key={title}>
             <Link
               href={link}
               className="capitalize hover:underline"
