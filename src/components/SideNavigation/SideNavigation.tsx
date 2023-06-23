@@ -21,7 +21,12 @@ const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
 
   return (
     <Drawer onClose={onClick} isOpen={isOpen}>
-      <ul className="flex flex-col p-2 [&>*:last-child]:mt-2">
+      <ul
+        className="flex flex-col p-2 [&>*:last-child]:mt-2"
+        role="navigation"
+        aria-label="Main"
+        id="main-nav"
+      >
         {navLinks.map(({ title, href, variant, icon }) => (
           <li
             key={href}

@@ -6,43 +6,51 @@ import {
 } from 'react-icons/ai';
 import theme from '@/src/styles/tailwind.theme';
 
+export enum SocialEnum {
+  GITHUB = 'github',
+  INSTAGRAM = 'instagram',
+  TWITTER = 'twitter',
+}
+
+export const socialIconsConfig: Record<SocialEnum, JSX.Element> = {
+  [SocialEnum.GITHUB]: (
+    <AiFillGithub aria-hidden fill={theme.secondary} width={24} height={24} />
+  ),
+  [SocialEnum.INSTAGRAM]: (
+    <AiFillInstagram
+      aria-hidden
+      fill={theme.secondary}
+      width={24}
+      height={24}
+    />
+  ),
+  [SocialEnum.TWITTER]: (
+    <AiOutlineTwitter
+      aria-hidden
+      fill={theme.secondary}
+      width={24}
+      height={24}
+    />
+  ),
+};
+
 export type SocialLinkConfigType = {
-  title: string;
+  title: SocialEnum;
   link: string;
-  icon: JSX.Element;
 };
 
 const socialLinksConfig: SocialLinkConfigType[] = [
   {
-    title: 'Github',
+    title: SocialEnum.GITHUB,
     link: 'https://github.com/ShaulBenDavid',
-    icon: (
-      <AiFillGithub aria-hidden fill={theme.secondary} width={24} height={24} />
-    ),
   },
   {
-    title: 'Instagram',
+    title: SocialEnum.INSTAGRAM,
     link: 'https://www.instagram.com/myproductivedesks/',
-    icon: (
-      <AiFillInstagram
-        aria-hidden
-        fill={theme.secondary}
-        width={24}
-        height={24}
-      />
-    ),
   },
   {
-    title: 'Twitter',
+    title: SocialEnum.TWITTER,
     link: 'https://twitter.com/shaul_bd',
-    icon: (
-      <AiOutlineTwitter
-        aria-hidden
-        fill={theme.secondary}
-        width={24}
-        height={24}
-      />
-    ),
   },
 ];
 

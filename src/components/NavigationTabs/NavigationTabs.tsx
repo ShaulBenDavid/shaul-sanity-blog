@@ -17,7 +17,12 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
   const activeSegment = useSelectedLayoutSegment() ?? '/';
 
   return (
-    <ul className="ml-auto flex list-none flex-row items-center gap-5 max-tb:hidden">
+    <ul
+      className="ml-auto flex list-none flex-row items-center gap-5 max-tb:hidden"
+      role="navigation"
+      aria-label="Main"
+      id="main-nav"
+    >
       {navLinks.map(({ title, href, variant, isSideNavOnly }) =>
         isSideNavOnly ? null : (
           <li
