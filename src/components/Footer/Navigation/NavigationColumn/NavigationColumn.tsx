@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
 
+export type NavigationColumnLinksType = {
+  title: string;
+  link: string;
+}[];
 interface NavigationColumnProps {
   name: string;
-  links: {
-    title: string;
-    link: string;
-  }[];
+  links: NavigationColumnLinksType;
   isOutSourceLinks?: boolean;
 }
 
@@ -16,17 +17,17 @@ const NavigationColumn = ({
   isOutSourceLinks = false,
 }: NavigationColumnProps) => (
   <div>
-    <h2 className="text-gray-900 text-m mb-6 font-semibold uppercase text-secondary">
+    <h2 className="text-gray-900 text-m mb-6 font-semibold uppercase text-secondary max-md:text-sm">
       {name}
     </h2>
     <ul
-      className="text-gray-600 font-medium text-wizard-black"
+      className="text-gray-600 font-medium text-wizard-black max-md:text-sm"
       role="navigation"
       aria-label={name}
     >
       {links.map(({ title, link }) =>
         isOutSourceLinks ? (
-          <li className="mb-4">
+          <li className="mb-4" key={title}>
             <a
               href={link}
               className="capitalize hover:underline"
@@ -38,7 +39,7 @@ const NavigationColumn = ({
             </a>
           </li>
         ) : (
-          <li className="mb-4">
+          <li className="mb-4" key={title}>
             <Link
               href={link}
               className="capitalize hover:underline"

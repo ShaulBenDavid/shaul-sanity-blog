@@ -12,20 +12,20 @@ const inter = Inter({
 
 export const metadata = defaultMetadata;
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className={` w-full ${inter.variable} flex flex-col font-inter`}>
-        <Header />
-        <main className="mx-auto w-[1227px] pt-14 max-lg:w-[1000px] max-md:w-full max-md:px-2">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
-  );
-}
+}): JSX.Element => (
+  <html lang="en">
+    <body className={` w-full ${inter.variable} flex flex-col font-inter`}>
+      <Header />
+      <main className="mx-auto w-[1227px] pt-14 max-lg:w-[1000px] max-md:w-full max-md:px-2">
+        {children}
+      </main>
+      <Footer />
+    </body>
+  </html>
+);
+
+export default RootLayout;
