@@ -9,7 +9,7 @@ const Footer = () => (
   <footer className="mt-auto w-full bg-white">
     <div className="mx-auto w-[1227px] py-6 max-lg:w-[1000px] max-md:w-full max-md:px-2 lg:py-8">
       <Navigation />
-      <hr className="border-gray-200 my-6 sm:mx-auto lg:my-8" aria-hidden />
+      <hr className="my-6 border-wizard-grey sm:mx-auto lg:my-8" aria-hidden />
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-wizard-grey sm:text-center">
           © 2023{' '}
