@@ -33,7 +33,13 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
               'before:w-full before:hover:w-full'
             }`}
           >
-            <Link href={href}>{title}</Link>
+            <Link
+              href={href}
+              aria-label={title}
+              aria-current={activeSegment === href ? 'page' : undefined}
+            >
+              {title}
+            </Link>
           </li>
         )
       )}

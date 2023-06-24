@@ -15,7 +15,7 @@ const Footer = () => (
           © 2023{' '}
           <Link
             href={Routes.ROOT}
-            aria-label="Dev Wizard Home"
+            aria-label="Home"
             className="hover:underline"
           >
             Dwizard.io™
