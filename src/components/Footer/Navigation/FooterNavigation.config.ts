@@ -1,4 +1,5 @@
 import Routes, { RoutesTitles } from '@/src/routes/routes.types';
+import socialLinksConfig from '@/src/constants/outSource';
 import { NavigationColumnLinksType } from './NavigationColumn/NavigationColumn';
 
 const legalNavigationConfig: NavigationColumnLinksType = [
@@ -12,4 +13,17 @@ const legalNavigationConfig: NavigationColumnLinksType = [
   },
 ];
 
-export default legalNavigationConfig;
+const footerNavigationConfig = [
+  {
+    name: 'follow us',
+    links: socialLinksConfig,
+    isOutSourceLinks: true,
+  },
+  {
+    name: 'follow us',
+    links: legalNavigationConfig,
+    isOutSourceLinks: false,
+  },
+];
+
+export default footerNavigationConfig;

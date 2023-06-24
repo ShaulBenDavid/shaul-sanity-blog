@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Routes from '@/src/routes/routes.types';
-import socialLinksConfig from '@/src/constants/outSource';
-import Logo from '../../Icons';
 import NavigationColumn from './NavigationColumn';
-import legalNavigationConfig from './FooterNavigation.config';
+import footerNavigationConfig from './FooterNavigation.config';
+import Logo from '../../Icons';
 
 const FooterNavigation = (): JSX.Element => (
   <nav
@@ -23,12 +22,13 @@ const FooterNavigation = (): JSX.Element => (
       </Link>
     </div>
     <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-6">
-      <NavigationColumn
-        name="Follow us"
-        links={socialLinksConfig}
-        isOutSourceLinks
-      />
-      <NavigationColumn name="legal" links={legalNavigationConfig} />
+      {footerNavigationConfig.map(({ name, links, isOutSourceLinks }) => (
+        <NavigationColumn
+          name={name}
+          links={links}
+          isOutSourceLinks={isOutSourceLinks}
+        />
+      ))}
     </div>
   </nav>
 );
