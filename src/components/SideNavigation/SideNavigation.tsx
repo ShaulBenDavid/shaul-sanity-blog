@@ -30,11 +30,13 @@ const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
         {navLinks.map(({ title, href, variant, icon }) => (
           <li
             key={href}
-            className={` animate-[enterInSideTabs_0.6s_ease-in_forwards] opacity-0 `}
+            className={`animate-[enterInSideTabs_0.6s_ease-in_forwards] opacity-0 `}
           >
             <Link
               href={href}
               onClick={onClick}
+              aria-label={title}
+              aria-current={activeSegment === href ? 'page' : undefined}
               className={`flex flex-row content-center gap-1  ${
                 SideNavTabsVariants[variant]
               } ${
