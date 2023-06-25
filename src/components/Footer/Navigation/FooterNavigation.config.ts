@@ -20,7 +20,7 @@ const footerNavigationConfig = [
     isOutSourceLinks: true,
   },
   {
-    name: 'follow us',
+    name: 'terms',
     links: legalNavigationConfig,
     isOutSourceLinks: false,
   },
