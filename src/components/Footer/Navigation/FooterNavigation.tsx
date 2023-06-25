@@ -24,7 +24,7 @@ const FooterNavigation = (): JSX.Element => (
     <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-6">
       {footerNavigationConfig.map(({ name, links, isOutSourceLinks }) => (
         <NavigationColumn
-          key={name}
+          key={name + 1}
           name={name}
           links={links}
           isOutSourceLinks={isOutSourceLinks}
