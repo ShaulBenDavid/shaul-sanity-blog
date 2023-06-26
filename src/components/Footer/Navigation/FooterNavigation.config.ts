@@ -1,4 +1,4 @@
-import Routes, { RoutesTitles } from '@/src/routes/routes.types';
+import Routes, { RoutesTitles } from '@/src/routes';
 import socialLinksConfig from '@/src/constants/outSource';
 import { NavigationColumnLinksType } from './NavigationColumn/NavigationColumn';
 

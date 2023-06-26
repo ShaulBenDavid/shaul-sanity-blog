@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Routes from '@/src/routes/routes.types';
+import Routes from '@/src/routes';
 import NavigationColumn from './NavigationColumn';
 import footerNavigationConfig from './FooterNavigation.config';
 import Logo from '../../Icons';
