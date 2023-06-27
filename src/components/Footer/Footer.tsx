@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Routes from '@/src/routes';
-import socialLinksConfig from '@/src/constants/outSource';
+import { Routes } from '@/src/routes';
+import { socialLinksConfig } from '@/src/constants/socials';
 import SocialIconsLinks from './SocialIconsLinks';
 import Navigation from './Navigation';
 

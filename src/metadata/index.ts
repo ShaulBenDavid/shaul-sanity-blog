@@ -1,3 +1,1 @@
-import defaultMetadata from './default';
-
-export default defaultMetadata;
+export { defaultMetadata } from './default';

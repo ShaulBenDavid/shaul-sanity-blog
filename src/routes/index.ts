@@ -1,5 +1,1 @@
-import Routes, { RoutesTitles } from './routes.types';
-
-export { RoutesTitles };
-
-export default Routes;
+export { Routes, RoutesTitles } from './routes.types';

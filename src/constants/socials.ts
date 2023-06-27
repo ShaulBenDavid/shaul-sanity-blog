@@ -9,7 +9,7 @@ export type SocialLinkConfigType = {
   link: string;
 };
 
-const socialLinksConfig: SocialLinkConfigType[] = [
+export const socialLinksConfig: SocialLinkConfigType[] = [
   {
     title: SocialEnum.GITHUB,
     link: 'https://github.com/ShaulBenDavid',
@@ -23,5 +23,3 @@ const socialLinksConfig: SocialLinkConfigType[] = [
     link: 'https://twitter.com/shaul_bd',
   },
 ];
-
-export default socialLinksConfig;

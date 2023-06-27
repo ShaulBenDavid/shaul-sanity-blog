@@ -7,7 +7,7 @@ import {
   FcRules,
   FcPrivacy,
 } from 'react-icons/fc';
-import Routes, { RoutesTitles } from '@/src/routes';
+import { Routes, RoutesTitles } from '@/src/routes';
 
 export enum NavigationVariants {
   BUTTON = 'button',

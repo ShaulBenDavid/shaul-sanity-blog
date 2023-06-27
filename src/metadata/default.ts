@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const defaultMetadata: Metadata = {
+export const defaultMetadata: Metadata = {
   title: {
     default: 'Dev Wizard - A Place For Developers',
     template: '%s | Dev Wizard',
@@ -49,5 +49,3 @@ const defaultMetadata: Metadata = {
     ],
   },
 };
-
-export default defaultMetadata;
