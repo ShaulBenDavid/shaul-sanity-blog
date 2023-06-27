@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Logo from '@/src/components/Icons';
-import Routes from '@/src/routes/routes.types';
+import { Logo } from '@/src/components/Icons';
+import { Routes } from '@/src/routes';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
 import SideNavigation from '../SideNavigation';

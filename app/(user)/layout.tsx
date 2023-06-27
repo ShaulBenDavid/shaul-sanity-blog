@@ -1,6 +1,6 @@
 import React from 'react';
 import { Inter } from 'next/font/google';
-import defaultMetadata from '@/src/metadata';
+import { defaultMetadata } from '@/src/metadata';
 import Header from '@/src/components/Header';
 import '@/src/styles/global.css';
 import Footer from '@/src/components/Footer';

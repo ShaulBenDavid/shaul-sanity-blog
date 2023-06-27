@@ -5,7 +5,7 @@ import {
   AiOutlineTwitter,
 } from 'react-icons/ai';
 import theme from '@/src/styles/tailwind.theme';
-import { SocialEnum } from '@/src/constants/outSource';
+import { SocialEnum } from '@/src/constants/socials';
 
 const socialIconsConfig: Record<SocialEnum, JSX.Element> = {
   [SocialEnum.GITHUB]: (
