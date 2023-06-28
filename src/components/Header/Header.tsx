@@ -7,7 +7,7 @@ import { Routes } from '@/src/routes';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
 import SideNavigation from '../SideNavigation';
-import NavigationLinks from './Header.config';
+import { navigationLinksConfig } from './Header.config';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
@@ -28,13 +28,13 @@ const Header = (): JSX.Element => {
           <Link href={Routes.ROOT} aria-label="Dev Wizard Home">
             <Logo />
           </Link>
-          <NavigationTabs navLinks={NavigationLinks} />
+          <NavigationTabs navLinks={navigationLinksConfig} />
         </nav>
       </header>
       <SideNavigation
         onClick={closeDrawer}
         isOpen={showDrawer}
-        navLinks={NavigationLinks}
+        navLinks={navigationLinksConfig}
       />
     </>
   );

@@ -1,11 +1,11 @@
 import React, { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import SideNavigation from './SideNavigation';
-import NavigationLinks from '../Header/Header.config';
+import { navigationLinksConfig } from '../Header/Header.config';
 
 const styles: CSSProperties = {
   transform: 'scale(1)',
-  height: '100vh',
+  height: '30vh',
   position: 'relative',
 };
 
@@ -21,7 +21,26 @@ export default meta;
 type Story = StoryObj<typeof SideNavigation>;
 
 export const Primary: Story = {
-  render: () => (
-    <SideNavigation onClick={() => ({})} isOpen navLinks={NavigationLinks} />
-  ),
+  args: {
+    onClick: () => ({}),
+    isOpen: true,
+    navLinks: navigationLinksConfig,
+  },
+  argTypes: {
+    onClick: {
+      control: 'ControlType',
+      description:
+        'Toggle the side navigation when user click "esc" or click on the overlay',
+      defaultValue: () => ({}),
+    },
+    navLinks: {
+      control: 'object',
+      description: 'Array of object the represent links',
+    },
+    isOpen: {
+      control: 'boolean',
+      description: 'Control the state of the drawer open or close',
+      default: true,
+    },
+  },
 };

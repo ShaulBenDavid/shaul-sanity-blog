@@ -1,6 +1,6 @@
 import React from 'react';
 import { SocialLinkConfigType } from '@/src/constants/socials';
-import socialIconsConfig from './SocialIconsLinks.config';
+import { socialIconsConfig } from './SocialIconsLinks.config';
 
 interface SocialIconsLinksProps {
   links: SocialLinkConfigType[];

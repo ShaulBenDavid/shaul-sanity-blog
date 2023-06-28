@@ -14,7 +14,7 @@ export enum NavigationVariants {
   LINK = 'LINK',
 }
 
-export type NavigationLinksType = {
+export type NavigationLinksConfigType = {
   href: Routes;
   title: RoutesTitles;
   variant: NavigationVariants;
@@ -22,7 +22,7 @@ export type NavigationLinksType = {
   isSideNavOnly: boolean;
 }[];
 
-const NavigationLinks: NavigationLinksType = [
+export const navigationLinksConfig: NavigationLinksConfigType = [
   {
     href: Routes.ROOT,
     title: RoutesTitles.ROOT,
@@ -72,5 +72,3 @@ const NavigationLinks: NavigationLinksType = [
     isSideNavOnly: false,
   },
 ];
-
-export default NavigationLinks;
