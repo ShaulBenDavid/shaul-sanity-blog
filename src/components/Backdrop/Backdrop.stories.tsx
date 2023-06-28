@@ -19,5 +19,15 @@ export default meta;
 type Story = StoryObj<typeof Backdrop>;
 
 export const Primary: Story = {
-  render: () => <Backdrop onClick={() => ({})} />,
+  args: {
+    onClick: () => ({}),
+  },
+  argTypes: {
+    onClick: {
+      control: 'ControlType',
+      description:
+        'Close the side navigation when user click "esc" or click on the overlay',
+      defaultValue: () => ({}),
+    },
+  },
 };
