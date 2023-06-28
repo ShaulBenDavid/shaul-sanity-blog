@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import {
-  NavigationLinksType,
+  NavigationLinksConfigType,
   NavigationVariants,
 } from '../Header/Header.config';
 import Drawer from '../Drawer';
@@ -13,7 +13,7 @@ import SideNavTabsVariants from './SideNavigation.config';
 interface SideNavigationProps {
   isOpen: boolean;
   onClick: () => void;
-  navLinks: NavigationLinksType;
+  navLinks: NavigationLinksConfigType;
 }
 
 const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {

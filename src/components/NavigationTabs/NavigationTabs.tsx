@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import NavTabsVariants from './NavigationTabs.config';
 import {
-  NavigationLinksType,
+  NavigationLinksConfigType,
   NavigationVariants,
 } from '../Header/Header.config';
 
 interface NavigationTabsProps {
-  navLinks: NavigationLinksType;
+  navLinks: NavigationLinksConfigType;
 }
 
 const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
