@@ -7,7 +7,7 @@ import {
 import theme from '@/src/styles/tailwind.theme';
 import { SocialEnum } from '@/src/constants/socials';
 
-const socialIconsConfig: Record<SocialEnum, JSX.Element> = {
+export const socialIconsConfig: Record<SocialEnum, JSX.Element> = {
   [SocialEnum.GITHUB]: (
     <AiFillGithub aria-hidden fill={theme.secondary} width={24} height={24} />
   ),
@@ -28,5 +28,3 @@ const socialIconsConfig: Record<SocialEnum, JSX.Element> = {
     />
   ),
 };
-
-export default socialIconsConfig;
