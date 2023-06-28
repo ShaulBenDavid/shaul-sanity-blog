@@ -4,7 +4,7 @@ import Drawer from './Drawer';
 
 const styles: CSSProperties = {
   transform: 'scale(1)',
-  height: '100vh',
+  height: '40vh',
   position: 'relative',
 };
 
@@ -20,5 +20,21 @@ export default meta;
 type Story = StoryObj<typeof Drawer>;
 
 export const Primary: Story = {
-  render: () => <Drawer isOpen onClose={() => ({})} />,
+  args: {
+    onClose: () => ({}),
+    isOpen: true,
+  },
+  argTypes: {
+    onClose: {
+      control: 'ControlType',
+      description:
+        'Close the side navigation when user click "esc" or click on the overlay',
+      defaultValue: () => ({}),
+    },
+    isOpen: {
+      control: 'boolean',
+      description: 'Control the state of the drawer open or close',
+      default: true,
+    },
+  },
 };
