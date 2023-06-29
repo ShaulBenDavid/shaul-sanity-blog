@@ -21,7 +21,9 @@ const Button = ({
     type={type}
     onClick={onClick}
     disabled={disabled || isLoading}
-    className={`h-10 w-full rounded-md text-base capitalize ${buttonVariantsConfig[variant]}`}
+    className={`h-10 w-full rounded-md text-base capitalize ${
+      buttonVariantsConfig[variant]
+    } ${isLoading && 'cursor-wait'}`}
     style={{ width }}
   >
     {children}
