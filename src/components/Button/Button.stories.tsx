@@ -47,6 +47,13 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryLoading: Story = {
+  args: {
+    variant: ButtonVariants.PRIMARY,
+    isLoading: true,
+  },
+};
+
 export const Secondary: Story = {
   args: {
     variant: ButtonVariants.SECONDARY,
