@@ -16,19 +16,16 @@ const Button = ({
   type = 'submit',
   onClick,
   disabled,
-}: ButtonProps): JSX.Element => {
-  console.log('variants =', variant);
-  return (
-    <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled || isLoading}
-      className={`h-10 w-full rounded-md text-base capitalize ${buttonVariantsConfig[variant]}`}
-      style={{ width }}
-    >
-      {children}
-    </button>
-  );
-};
+}: ButtonProps): JSX.Element => (
+  <button
+    type={type}
+    onClick={onClick}
+    disabled={disabled || isLoading}
+    className={`h-10 w-full rounded-md text-base capitalize ${buttonVariantsConfig[variant]}`}
+    style={{ width }}
+  >
+    {children}
+  </button>
+);
 
 export default Button;
