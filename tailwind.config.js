@@ -40,6 +40,7 @@ module.exports = {
       },
       boxShadow: {
         dw: '2px 2px 4px rgba(45, 3, 59, 0.62)',
+        button: '2px 2px 4px 0px rgba(45, 3, 59, 0.62)',
       },
       keyframes: {
         fadeIn: {

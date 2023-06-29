@@ -18,7 +18,7 @@ export const parameters = {
   },
   decorators: [
     (Story) => (
-      <div className="flex justify-center self-center">
+      <div className="m-h-full flex justify-center self-center">
         <Story />
       </div>
     ),
