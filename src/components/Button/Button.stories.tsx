@@ -6,16 +6,8 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Button>;
-
-export const Primary: Story = {
   args: {
     onClick: () => ({}),
-    variant: ButtonVariants.PRIMARY,
     children: 'button',
     disabled: false,
     isLoading: false,
@@ -34,7 +26,7 @@ export const Primary: Story = {
     variant: {
       control: 'select',
       options: ButtonVariants,
-      description: 'Control the state of the Button open or close',
+      description: 'Control the Button style',
       default: ButtonVariants.PRIMARY,
     },
     isLoading: {
@@ -42,5 +34,34 @@ export const Primary: Story = {
       description:
         'Control the state of the Button if loads or not if he loads the button will be disableds',
     },
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const Primary: Story = {
+  args: {
+    variant: ButtonVariants.PRIMARY,
+  },
+};
+
+export const PrimaryLoading: Story = {
+  args: {
+    variant: ButtonVariants.PRIMARY,
+    isLoading: true,
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: ButtonVariants.SECONDARY,
+  },
+};
+
+export const Link: Story = {
+  args: {
+    variant: ButtonVariants.LINK,
   },
 };
