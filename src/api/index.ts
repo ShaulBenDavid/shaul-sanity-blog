@@ -1,2 +1,2 @@
-export { QueryProvider } from './query.provider';
-export { apiMethod } from './http.service';
+export { apiMethodInstance } from './http.service';
+export { AxiosInterceptor } from './axiosinterceptor';
