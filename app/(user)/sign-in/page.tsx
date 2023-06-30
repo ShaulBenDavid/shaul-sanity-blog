@@ -1,5 +1,10 @@
 import React from 'react';
+import Input from '@/src/components/Input';
 
-const OurStory = () => <div>sign-in</div>;
+const OurStory = () => (
+  <div>
+    <Input idFor="email" label="email" placeholder="example@gmail.com" />
+  </div>
+);
 
 export default OurStory;
