@@ -24,7 +24,7 @@ const Button = ({
     disabled={disabled || isLoading}
     className={`flex h-10 w-full items-center justify-center rounded-md text-base capitalize ${
       buttonVariantsConfig[variant]
-    } ${isLoading && 'cursor-wait'}`}
+    } ${isLoading && 'cursor-wait'} disabled:opacity-60`}
     style={{ width }}
   >
     {isLoading ? (

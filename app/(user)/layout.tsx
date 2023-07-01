@@ -19,7 +19,9 @@ const RootLayout = ({
   children: React.ReactNode;
 }): JSX.Element => (
   <html lang="en">
-    <body className={` w-full ${inter.variable} flex flex-col font-inter`}>
+    <body
+      className={` w-full ${inter.variable} flex flex-col font-inter text-wizard-black`}
+    >
       <AppProviders>
         <>
           <Header />
