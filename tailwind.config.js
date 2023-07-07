@@ -31,6 +31,9 @@ module.exports = {
       gray: '#808080',
     },
     extend: {
+      height: {
+        dvh: '100dvh',
+      },
       fontFamily: {
         inter: ['var(--font-inter)'],
       },
