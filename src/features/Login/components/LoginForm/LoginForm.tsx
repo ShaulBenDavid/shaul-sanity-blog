@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { AuthContext } from '@/src/context/auth';
 import { useLogin } from '@/src/api/auth/hooks';
 import Input from '@/src/components/Input';
 import Button, { ButtonVariants } from '@/src/components/Button';
@@ -11,6 +12,7 @@ import { LoginPayloadType, LoginResponseType } from '@/src/api/auth';
 import { LoginSchema } from './LoginForm.utils';
 
 const LoginForm = (): JSX.Element => {
+  const { setAuth } = useContext(AuthContext);
   const methods = useForm<LoginPayloadType>({
     resolver: zodResolver(LoginSchema),
     mode: 'onChange',
@@ -22,7 +24,7 @@ const LoginForm = (): JSX.Element => {
   } = methods;
 
   const handleSuccess = (res: LoginResponseType): void => {
-    console.log('res =', res);
+    setAuth(res);
   };
 
   const { isLoginLoading, handleLogin } = useLogin({ handleSuccess });

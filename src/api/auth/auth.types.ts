@@ -13,6 +13,8 @@ export type LoginResponseType = {
   accessToken: string;
 };
 
+export type Auth = LoginResponseType | null | undefined;
+
 export type LoginPayloadType = {
   email: string;
   password: string;
