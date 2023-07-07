@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -15,13 +16,11 @@ const Input = ({
   type,
   value,
   placeholder,
+  className,
   onChange,
 }: InputProps): JSX.Element => (
   <div className="relative flex flex-col gap-1">
-    <label
-      htmlFor={idFor}
-      className="text-sm font-medium capitalize text-secondary"
-    >
+    <label htmlFor={idFor} className="font-medium capitalize text-secondary">
       {label}
     </label>
     <input
@@ -30,10 +29,13 @@ const Input = ({
       placeholder={placeholder}
       onChange={onChange}
       value={value}
-      className={`bg-transparent h-10 rounded-md border-[1px] border-secondary px-2 text-secondary placeholder:text-wizard-grey ${
-        !!error &&
-        'border-red focus:border-2 focus:border-red focus:outline-none'
-      }`}
+      className={twMerge(
+        `bg-transparent h-10 rounded-md border-[1px] border-secondary px-2 text-secondary placeholder:text-wizard-grey ${
+          !!error &&
+          'border-red focus:border-2 focus:border-red focus:outline-none'
+        }`,
+        className
+      )}
       style={{ width }}
     />
     {!!error && (

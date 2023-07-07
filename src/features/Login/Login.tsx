@@ -1,6 +1,7 @@
 import React from 'react';
 import SocialLogin from './components/SocialLogin';
 import Divider from '@/src/components/Divider';
+import LoginForm from './components/LoginForm';
 
 const Login = () => {
   return (
@@ -13,6 +14,7 @@ const Login = () => {
       </div>
       <SocialLogin />
       <Divider title="or" />
+      <LoginForm />
     </div>
   );
 };
