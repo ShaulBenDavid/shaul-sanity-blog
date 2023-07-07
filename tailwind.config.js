@@ -41,6 +41,7 @@ module.exports = {
       boxShadow: {
         dw: '2px 2px 4px rgba(45, 3, 59, 0.62)',
         button: '2px 2px 4px 0px rgba(45, 3, 59, 0.62)',
+        container: ' 0px 4px 22px 3px rgba(29, 3, 37, 0.25)',
       },
       keyframes: {
         fadeIn: {

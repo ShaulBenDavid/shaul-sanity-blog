@@ -1,10 +1,10 @@
 import React from 'react';
-import Input from '@/src/components/Input';
+import Login from '@/src/features/Login';
 
-const OurStory = () => (
+const LoginPage = () => (
   <div>
-    <Input idFor="email" label="email" placeholder="example@gmail.com" />
+    <Login />
   </div>
 );
 
-export default OurStory;
+export default LoginPage;
