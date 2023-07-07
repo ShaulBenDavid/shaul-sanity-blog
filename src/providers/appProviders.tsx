@@ -3,6 +3,7 @@
 import React from 'react';
 import { QueryProvider } from './query.provider';
 import { AxiosInterceptor } from '../api';
+import { AuthContextProvider } from '../context/auth';
 
 export const AppProviders = ({
   children,
@@ -10,6 +11,8 @@ export const AppProviders = ({
   children: JSX.Element;
 }): JSX.Element => (
   <QueryProvider>
-    <AxiosInterceptor>{children}</AxiosInterceptor>
+    <AuthContextProvider>
+      <AxiosInterceptor>{children}</AxiosInterceptor>
+    </AuthContextProvider>
   </QueryProvider>
 );
