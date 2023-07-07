@@ -5,7 +5,6 @@ import { FaFacebook, FaTwitter } from 'react-icons/fa';
 export type SocialsLoginButtonsConfig = {
   children: JSX.Element;
   borderColor: string;
-  label: string;
 }[];
 
 export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
@@ -16,7 +15,6 @@ export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
       </>
     ),
     borderColor: '#1DA1F2',
-    label: 'twitter',
   },
   {
     children: (
@@ -25,7 +23,6 @@ export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
       </>
     ),
     borderColor: '#FC479E',
-    label: 'twitter',
   },
   {
     children: (
@@ -34,6 +31,5 @@ export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
       </>
     ),
     borderColor: '#1877F2',
-    label: 'twitter',
   },
 ];
