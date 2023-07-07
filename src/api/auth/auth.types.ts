@@ -13,7 +13,7 @@ export type LoginResponseType = {
   accessToken: string;
 };
 
-export type LoginParamsType = {
+export type LoginPayloadType = {
   email: string;
   password: string;
 };

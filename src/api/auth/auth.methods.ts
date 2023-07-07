@@ -1,9 +1,11 @@
 import { ApiEndpoints } from '../api-endpoints.config';
+import { Methods } from '../api.config';
 import { apiMethodInstance } from '../http.service';
-import { LoginParamsType, LoginResponseType } from './auth.types';
+import { LoginPayloadType, LoginResponseType } from './auth.types';
 
-export const login = (params: LoginParamsType): Promise<LoginResponseType> =>
+export const login = (payload: LoginPayloadType): Promise<LoginResponseType> =>
   apiMethodInstance<LoginResponseType>({
     url: ApiEndpoints.LOGIN,
-    params,
+    method: Methods.POST,
+    data: payload,
   });

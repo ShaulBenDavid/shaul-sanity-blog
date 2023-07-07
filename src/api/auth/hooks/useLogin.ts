@@ -3,7 +3,7 @@
 import { useCallback } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '../auth.methods';
-import { LoginParamsType, LoginResponseType } from '../auth.types';
+import { LoginPayloadType, LoginResponseType } from '../auth.types';
 
 const POST_LOGIN_KEY = 'postLogin';
 
@@ -14,15 +14,15 @@ interface UseLoginProps {
 export const useLogin = ({ handleSuccess }: UseLoginProps) => {
   const { mutate, isError, isLoading } = useMutation(
     [POST_LOGIN_KEY],
-    (params: LoginParamsType) => login(params),
+    (payload: LoginPayloadType) => login(payload),
     {
       onSuccess: (res) => handleSuccess(res),
     }
   );
 
   const handleLogin = useCallback(
-    (params: LoginParamsType) => {
-      mutate(params);
+    (payload: LoginPayloadType): void => {
+      mutate(payload);
     },
     [mutate]
   );

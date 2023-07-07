@@ -7,11 +7,11 @@ import { useLogin } from '@/src/api/auth/hooks';
 import Input from '@/src/components/Input';
 import Button, { ButtonVariants } from '@/src/components/Button';
 import { loginFormConfig } from './LoginForm.config';
-import { LoginParamsType, LoginResponseType } from '@/src/api/auth';
+import { LoginPayloadType, LoginResponseType } from '@/src/api/auth';
 import { LoginSchema } from './LoginForm.utils';
 
 const LoginForm = (): JSX.Element => {
-  const methods = useForm<LoginParamsType>({
+  const methods = useForm<LoginPayloadType>({
     resolver: zodResolver(LoginSchema),
     mode: 'onChange',
     delayError: 1000,
@@ -21,21 +21,27 @@ const LoginForm = (): JSX.Element => {
     formState: { isValid },
   } = methods;
 
-  const handleSuccess = (res: LoginResponseType) => {
+  const handleSuccess = (res: LoginResponseType): void => {
     console.log('res =', res);
   };
 
-  const { isLoginLoading } = useLogin({ handleSuccess });
+  const { isLoginLoading, handleLogin } = useLogin({ handleSuccess });
 
-  const onSubmit = handleSubmit((value) => {
-    console.log('value =', value);
+  const onSubmit = handleSubmit((value): void => {
+    handleLogin(value);
   });
 
   return (
     <FormProvider {...methods}>
       <form className="flex flex-col" onSubmit={onSubmit}>
-        {loginFormConfig.map(({ label, idFor }) => (
-          <Input label={label} idFor={idFor} className="mb-4" key={idFor} />
+        {loginFormConfig.map(({ label, idFor, type }) => (
+          <Input
+            key={idFor}
+            label={label}
+            idFor={idFor}
+            type={type}
+            className="mb-4"
+          />
         ))}
         <Button
           variant={ButtonVariants.PRIMARY}
