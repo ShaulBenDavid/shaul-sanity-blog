@@ -30,11 +30,6 @@ const meta: Meta<typeof Input> = {
       description:
         'Write an example or explanation of what the user should enter.',
     },
-    error: {
-      control: 'string',
-      description:
-        'When you use validation on the input, If you enter an error. The design will change to danger, and the error will shows.',
-    },
     value: {
       control: 'string',
       description: 'The input value.',
@@ -60,31 +55,11 @@ export const Email: Story = {
   },
 };
 
-export const EmailWithError: Story = {
-  args: {
-    label: 'email',
-    idFor: 'email',
-    type: 'email',
-    value: 'testgmail.com',
-    error: 'wrong password',
-  },
-};
 export const Password: Story = {
   args: {
     label: 'password',
     idFor: 'password',
     type: 'password',
     placeholder: 'enter your password',
-  },
-};
-
-export const PasswordWithError: Story = {
-  args: {
-    label: 'password',
-    idFor: 'password',
-    type: 'password',
-    placeholder: 'enter your password',
-    value: 'qqwdqwdq',
-    error: 'wrong password',
   },
 };

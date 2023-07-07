@@ -1,7 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
+const baseURL = process.env.NEXT_PUBLIC_DEV_WIZARD_URL;
+
 const config: AxiosRequestConfig = {
-  url: process.env.NEXT_PUBLIC_DEV_WIZARD_URL,
+  baseURL,
   headers: { 'Content-Type': 'application/json' },
   withCredentials: true,
 };
