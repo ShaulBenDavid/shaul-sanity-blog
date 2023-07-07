@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 import { ButtonVariants } from './Button.types';
 import { buttonVariantsConfig } from './Button.config';
 import Spinner, { SpinnerSize, SpinnerVariants } from '../Spinner';
@@ -15,6 +16,7 @@ const Button = ({
   isLoading = false,
   children,
   type = 'submit',
+  className,
   onClick,
   disabled,
 }: ButtonProps): JSX.Element => (
@@ -22,9 +24,12 @@ const Button = ({
     type={type}
     onClick={onClick}
     disabled={disabled || isLoading}
-    className={`flex h-10 w-full items-center justify-center rounded-md text-base capitalize ${
-      buttonVariantsConfig[variant]
-    } ${isLoading && 'cursor-wait'} disabled:opacity-60`}
+    className={twMerge(
+      `flex h-10 w-full items-center justify-center rounded-md text-base capitalize ${
+        buttonVariantsConfig[variant]
+      } ${isLoading && 'cursor-wait'} disabled:opacity-60`,
+      className
+    )}
     style={{ width }}
   >
     {isLoading ? (

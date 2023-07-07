@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SocialButton from './SocialButton';
-import { socialsLoginButtonsConfig } from '../../Login.config';
+import { socialsLoginButtonsConfig } from '../../../Login.config';
 
 const meta: Meta<typeof SocialButton> = {
   title: 'Login/SocialButton',

@@ -1,10 +1,10 @@
 import React from 'react';
-import Input from '@/src/components/Input';
+import Login from '@/src/features/Login';
 
-const OurStory = () => (
-  <div>
-    <Input idFor="email" label="email" placeholder="example@gmail.com" />
-  </div>
+const LoginPage = () => (
+  <section className="flex h-full w-full items-center justify-center">
+    <Login />
+  </section>
 );
 
-export default OurStory;
+export default LoginPage;

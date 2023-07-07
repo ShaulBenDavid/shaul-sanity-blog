@@ -1,14 +1,14 @@
-import { Routes, RoutesTitles } from '@/src/routes';
+import { Routes, routesTitlesConfig } from '@/src/routes';
 import { socialLinksConfig } from '@/src/constants/socials';
 import { NavigationColumnLinksType } from './NavigationColumn/NavigationColumn';
 
 const legalNavigationConfig: NavigationColumnLinksType = [
   {
-    title: RoutesTitles.PRIVACY_POLICY,
+    title: routesTitlesConfig[Routes.PRIVACY_POLICY],
     link: Routes.PRIVACY_POLICY,
   },
   {
-    title: RoutesTitles.TERMS_CONDITIONS,
+    title: routesTitlesConfig[Routes.TERMS_CONDITIONS],
     link: Routes.TERMS_CONDITIONS,
   },
 ];
