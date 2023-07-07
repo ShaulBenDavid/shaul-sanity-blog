@@ -6,7 +6,7 @@ import Button, { ButtonVariants } from '@/src/components/Button';
 const LoginForm = (): JSX.Element => (
   <form className="flex flex-col">
     {loginFormConfig.map(({ label, idFor }) => (
-      <Input label={label} idFor={idFor} className="mb-4" />
+      <Input label={label} idFor={idFor} className="mb-4" key={idFor} />
     ))}
     <Button variant={ButtonVariants.PRIMARY} type="submit" className="mt-2">
       continue

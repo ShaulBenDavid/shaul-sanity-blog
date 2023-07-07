@@ -1,1 +1,2 @@
-export { Routes, RoutesTitles } from './routes.types';
+export { Routes } from './routes.types';
+export { routesTitlesConfig } from './routes.config';
