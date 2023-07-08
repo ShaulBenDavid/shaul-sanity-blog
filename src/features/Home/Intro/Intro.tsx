@@ -21,7 +21,7 @@ const Intro = () => (
     <h1 className="animate-[fadeIn_1s_ease-in_forwards] text-h1-dynamic font-bold text-[#3D0B4E]">
       Get{' '}
       <span
-        className="text-transparent bg-gradient-to-r from-[#ad52cb] via-light-primary to-primary bg-clip-text"
+        className="bg-gradient-to-r from-[#ad52cb] via-light-primary to-primary bg-clip-text text-transparent"
         style={{ color: 'transparent' }}
       >
         Inspired

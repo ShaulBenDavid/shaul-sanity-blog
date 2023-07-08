@@ -10,8 +10,6 @@ type Theme = {
       secondary: string;
       'wizard-black': string;
       'wizard-white': string;
-      red: string;
-      green: string;
       orange: string;
       white: string;
       black: string;
