@@ -35,9 +35,9 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         className={twMerge(
-          `bg-transparent h-10 rounded-md border-[1px] border-secondary px-2 text-secondary placeholder:text-wizard-grey ${
+          `h-10 rounded-md border-[1px] border-secondary bg-transparent px-2 text-secondary placeholder:text-wizard-grey ${
             !!errors[idFor]?.message &&
-            'border-red focus:border-2 focus:border-red focus:outline-none'
+            'border-red-500 focus:border-2 focus:border-red-500 focus:outline-none'
           }`,
           className
         )}
@@ -45,7 +45,7 @@ const Input = ({
         {...register(label)}
       />
       {!!errors[idFor]?.message && (
-        <p className="absolute top-[67px] text-sm font-medium text-red first-letter:capitalize">
+        <p className="absolute top-[68px] text-sm font-medium leading-4 text-red-500 first-letter:capitalize">
           {errors[idFor]?.message as string}
         </p>
       )}

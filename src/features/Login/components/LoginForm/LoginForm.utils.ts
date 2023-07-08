@@ -3,15 +3,14 @@ import { z } from 'zod';
 export const LoginSchema = z.object({
   email: z
     .string({
-      required_error: 'Email is required',
+      required_error: 'Email is required.',
     })
     .trim()
-    .email('Not a valid email'),
+    .email('Not a valid email.'),
   password: z
     .string({
-      required_error: 'Password is required',
+      required_error: 'Password is required.',
     })
     .trim()
-    .min(1, 'Password need to have at list 1 characters')
-    .max(16, 'Password cannot contain more than 16 characters'),
+    .min(1, 'Password need to have at list 1 character.'),
 });

@@ -1,3 +1,5 @@
+import React from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 import type { Meta, StoryObj } from '@storybook/react';
 import Input from './Input';
 
@@ -5,6 +7,16 @@ const meta: Meta<typeof Input> = {
   title: 'Components/Input',
   component: Input,
   tags: ['autodocs'],
+  decorators: [
+    (storyFn) => {
+      const formMethods = useForm();
+      return (
+        <FormProvider {...formMethods}>
+          <div className="h-full w-full">{storyFn()}</div>
+        </FormProvider>
+      );
+    },
+  ],
   args: { width: '400px' },
   argTypes: {
     width: {
