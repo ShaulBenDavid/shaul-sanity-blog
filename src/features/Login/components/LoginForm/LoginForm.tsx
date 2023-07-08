@@ -9,6 +9,7 @@ import Input from '@/src/components/Input';
 import Button, { ButtonVariants } from '@/src/components/Button';
 import { loginFormConfig } from './LoginForm.config';
 import { LoginPayloadType, LoginResponseType } from '@/src/api/auth';
+import Alert, { AlertVariants } from '@/src/components/Alert';
 import { LoginSchema } from './LoginForm.utils';
 
 const LoginForm = (): JSX.Element => {
@@ -27,7 +28,9 @@ const LoginForm = (): JSX.Element => {
     setAuth(res);
   };
 
-  const { isLoginLoading, handleLogin } = useLogin({ handleSuccess });
+  const { isLoginLoading, handleLogin, isLoginError, loginError } = useLogin({
+    handleSuccess,
+  });
 
   const onSubmit = handleSubmit((value): void => {
     handleLogin(value);
@@ -36,6 +39,12 @@ const LoginForm = (): JSX.Element => {
   return (
     <FormProvider {...methods}>
       <form className="flex flex-col" onSubmit={onSubmit}>
+        {isLoginError && (
+          <Alert
+            variant={AlertVariants.DANGER}
+            content={loginError?.response?.data.message}
+          />
+        )}
         {loginFormConfig.map(({ label, idFor, type }) => (
           <Input
             key={idFor}

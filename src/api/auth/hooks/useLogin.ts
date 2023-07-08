@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback } from 'react';
+import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '../auth.methods';
 import { LoginPayloadType, LoginResponseType } from '../auth.types';
@@ -12,7 +13,7 @@ interface UseLoginProps {
 }
 
 export const useLogin = ({ handleSuccess }: UseLoginProps) => {
-  const { mutate, isError, isLoading } = useMutation(
+  const { mutate, isError, isLoading, error } = useMutation(
     [POST_LOGIN_KEY],
     (payload: LoginPayloadType) => login(payload),
     {
@@ -31,5 +32,6 @@ export const useLogin = ({ handleSuccess }: UseLoginProps) => {
     handleLogin,
     isLoginLoading: isLoading,
     isLoginError: isError,
+    loginError: axios.isAxiosError(error) ? error : undefined,
   };
 };

@@ -6,7 +6,7 @@ import { alertVariantsStyleConfig } from './Alert.config';
 interface AlertProps {
   variant: AlertVariants;
   content: string;
-  width: string;
+  width?: string;
 }
 
 const Alert = ({ variant, content, width }: AlertProps): JSX.Element => (
