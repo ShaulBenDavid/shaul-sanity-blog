@@ -48,7 +48,7 @@ const LoginForm = (): JSX.Element => {
         <Button
           variant={ButtonVariants.PRIMARY}
           type="submit"
-          className="mt-2"
+          className="mt-2 max-mb:mt-4"
           isLoading={isLoginLoading}
           disabled={!isValid}
         >

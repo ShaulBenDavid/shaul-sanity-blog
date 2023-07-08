@@ -45,7 +45,7 @@ const Input = ({
         {...register(label)}
       />
       {!!errors[idFor]?.message && (
-        <p className="absolute top-[67px] text-sm font-medium text-red first-letter:capitalize">
+        <p className="absolute top-[68px] text-sm font-medium leading-4 text-red first-letter:capitalize">
           {errors[idFor]?.message as string}
         </p>
       )}
