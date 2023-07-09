@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { ButtonVariants } from './Button.types';
-import { buttonVariantsConfig } from './Button.config';
+import { buttonVariantsStyleConfig } from './Button.config';
 import Spinner, { SpinnerSize, SpinnerVariants } from '../Spinner';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -26,7 +26,7 @@ const Button = ({
     disabled={disabled || isLoading}
     className={twMerge(
       `flex h-10 w-full items-center justify-center rounded-md text-base capitalize ${
-        buttonVariantsConfig[variant]
+        buttonVariantsStyleConfig[variant]
       } ${isLoading && 'cursor-wait'} disabled:opacity-60`,
       className
     )}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { socialsLoginButtonsConfig } from '../../Login.config';
+import { socialsLoginButtonsConfig } from './SocialLogin.config';
 import SocialButton from './SocialButton';
 
 const SocialLogin = (): JSX.Element => (
