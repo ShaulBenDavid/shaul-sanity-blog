@@ -1,6 +1,6 @@
 import { ButtonVariants } from './Button.types';
 
-export const buttonVariantsConfig: Record<ButtonVariants, string> = {
+export const buttonVariantsStyleConfig: Record<ButtonVariants, string> = {
   [ButtonVariants.PRIMARY]:
     'bg-primary shadow-button text-white hover:enabled:bg-[#6C078E]',
   [ButtonVariants.SECONDARY]:
