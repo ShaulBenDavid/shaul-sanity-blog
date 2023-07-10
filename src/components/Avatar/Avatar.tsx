@@ -1,19 +1,38 @@
 import React from 'react';
+import Image from 'next/image';
 import { stringToAvatar, stringToColor } from '@/src/utils';
+import { avatarSizesConfig } from './Avatar.config';
+import { AvatarSizes } from './Avatar.types';
 
 type AvatarProps =
   | {
-      children: React.ReactNode;
+      url: string;
       name?: never;
+      size: AvatarSizes;
     }
   | {
-      children?: never;
+      url?: never;
       name: string;
+      size: AvatarSizes;
     };
 
-const Avatar = ({ children, name }: AvatarProps): JSX.Element => (
-  <div style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}>
-    {children || stringToAvatar(name as string)}
+const Avatar = ({ url, name, size }: AvatarProps): JSX.Element => (
+  <div
+    className={`flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`}
+    style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}
+  >
+    {name ? (
+      stringToAvatar(name)
+    ) : (
+      <Image
+        src={url as string}
+        alt={`Avatar - ${url}`}
+        className={avatarSizesConfig[size]}
+        width={40}
+        height={40}
+        sizes="10vh"
+      />
+    )}
   </div>
 );
 
