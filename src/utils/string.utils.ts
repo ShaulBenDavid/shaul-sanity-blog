@@ -19,5 +19,6 @@ export const stringToColor = (string: string): string => {
 };
 
 export const stringToAvatar = (name: string): string => {
-  return `${name.split(' ')[0][0]}${name.split(' ')[1][0]}`;
+  const matches = name.match(/\b(\w)/g);
+  return matches?.join('').slice(0, 2) ?? '';
 };
