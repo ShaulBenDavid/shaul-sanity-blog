@@ -11,6 +11,7 @@ import { Auth } from '@/src/api/auth';
 
 type AuthContextObj = {
   auth: Auth | null | undefined;
+  isAuth: boolean;
   setAuth: Dispatch<SetStateAction<Auth>>;
 };
 
@@ -26,6 +27,7 @@ export const AuthContextProvider = ({
   const value = useMemo(
     (): AuthContextObj => ({
       auth,
+      isAuth: !!auth?.accessToken,
       setAuth,
     }),
     [auth]
