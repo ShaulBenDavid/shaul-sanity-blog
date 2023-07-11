@@ -1,19 +1,15 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import NavTabsVariants from './NavigationTabs.config';
-import {
-  NavigationLinksConfigType,
-  NavigationVariants,
-} from '../Header/Header.config';
+import { NavigationLinksConfigType } from '../Header/Header.config';
+import NavTab from './NavTab';
 
 interface NavigationTabsProps {
   navLinks: NavigationLinksConfigType;
 }
 
-const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
+const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {
   const activeSegment = useSelectedLayoutSegment() ?? '/';
 
   return (
@@ -25,22 +21,13 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps) => {
     >
       {navLinks.map(({ title, href, variant, isSideNavOnly }) =>
         isSideNavOnly ? null : (
-          <li
+          <NavTab
             key={href}
-            className={`cursor-pointer capitalize ${NavTabsVariants[variant]} ${
-              variant === NavigationVariants.LINK &&
-              activeSegment === href &&
-              'before:w-full before:hover:w-full'
-            }`}
-          >
-            <Link
-              href={href}
-              aria-label={title}
-              aria-current={activeSegment === href ? 'page' : undefined}
-            >
-              {title}
-            </Link>
-          </li>
+            href={href}
+            variant={variant}
+            title={title}
+            isActive={activeSegment === href}
+          />
         )
       )}
     </ul>

@@ -14,6 +14,7 @@ const Alert = ({ variant, content, width }: AlertProps): JSX.Element => (
     className={`mb-4 flex w-full flex-row items-center gap-2 rounded-lg p-4 text-sm ${alertVariantsStyleConfig[variant]}`}
     role="alert"
     style={{ width }}
+    data-testid="alert-component-test-id"
   >
     <BsFillInfoCircleFill
       className="inline flex-shrink-0"
