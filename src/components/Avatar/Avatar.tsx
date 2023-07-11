@@ -20,6 +20,7 @@ const Avatar = ({ url, name, size }: AvatarProps): JSX.Element => (
   <div
     className={`flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`}
     style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}
+    data-testid="avatar-component-test-id"
   >
     {name ? (
       stringToAvatar(name)
