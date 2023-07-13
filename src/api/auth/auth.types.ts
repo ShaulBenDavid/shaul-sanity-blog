@@ -1,14 +1,10 @@
-export enum UserRoles {
-  ADMIN = 'admin',
-  USER = 'user',
-  WRITE = 'write',
-}
+import { Roles } from '@/src/roles';
 
 export type LoginResponseType = {
   firstName: string;
   lastName: string;
   email: string;
-  role: UserRoles;
+  role: Roles;
   username: string;
   accessToken: string;
 };
