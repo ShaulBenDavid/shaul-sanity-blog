@@ -8,15 +8,19 @@ type AvatarProps =
   | {
       url: string;
       name?: never;
-      size: AvatarSizes;
+      size?: AvatarSizes;
     }
   | {
       url?: never;
       name: string;
-      size: AvatarSizes;
+      size?: AvatarSizes;
     };
 
-const Avatar = ({ url, name, size }: AvatarProps): JSX.Element => (
+const Avatar = ({
+  url,
+  name,
+  size = AvatarSizes.LARGE,
+}: AvatarProps): JSX.Element => (
   <div
     className={`flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`}
     style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}
