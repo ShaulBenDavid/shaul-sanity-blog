@@ -9,7 +9,7 @@ import SideNavTab from './SideNavTab';
 interface SideNavigationProps {
   isOpen: boolean;
   onClick: () => void;
-  navLinks: NavigationLinksConfigType;
+  navLinks: NavigationLinksConfigType[];
 }
 
 const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {

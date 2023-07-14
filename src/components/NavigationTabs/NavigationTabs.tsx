@@ -6,7 +6,7 @@ import { NavigationLinksConfigType } from '../Header/Header.config';
 import NavTab from './NavTab';
 
 interface NavigationTabsProps {
-  navLinks: NavigationLinksConfigType;
+  navLinks: NavigationLinksConfigType[];
 }
 
 const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {

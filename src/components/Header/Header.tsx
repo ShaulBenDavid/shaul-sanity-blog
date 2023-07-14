@@ -8,12 +8,12 @@ import { useGetUserRoutes } from '@/src/roles/hooks';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
 import SideNavigation from '../SideNavigation';
-import { navigationLinksConfig } from './Header.config';
+import { getUserNavigationLinks } from './Header.utils';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
-
-  useGetUserRoutes();
+  const userRoutes = useGetUserRoutes();
+  const navigationLinks = getUserNavigationLinks(userRoutes);
 
   const closeDrawer = () => {
     setShowDrawer(false);
@@ -31,13 +31,13 @@ const Header = (): JSX.Element => {
           <Link href={Routes.ROOT} aria-label="Dev Wizard Home">
             <Logo />
           </Link>
-          <NavigationTabs navLinks={navigationLinksConfig} />
+          <NavigationTabs navLinks={navigationLinks} />
         </nav>
       </header>
       <SideNavigation
         onClick={closeDrawer}
         isOpen={showDrawer}
-        navLinks={navigationLinksConfig}
+        navLinks={navigationLinks}
       />
     </>
   );
