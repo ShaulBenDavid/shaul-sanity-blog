@@ -1,16 +1,23 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/src/components/Icons';
 import { Routes } from '@/src/routes';
+import { useGetUserRoutes } from '@/src/roles/hooks';
+import { AuthContext } from '@/src/context/auth';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
 import SideNavigation from '../SideNavigation';
-import { navigationLinksConfig } from './Header.config';
+import { getUserNavigationLinks } from './Header.utils';
+import Avatar from '../Avatar';
+import PermissionGate, { Roles } from '@/src/roles';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
+  const { auth } = useContext(AuthContext);
+  const userRoutes = useGetUserRoutes();
+  const navigationLinks = getUserNavigationLinks(userRoutes);
 
   const closeDrawer = () => {
     setShowDrawer(false);
@@ -28,13 +35,20 @@ const Header = (): JSX.Element => {
           <Link href={Routes.ROOT} aria-label="Dev Wizard Home">
             <Logo />
           </Link>
-          <NavigationTabs navLinks={navigationLinksConfig} />
+          <NavigationTabs navLinks={navigationLinks} />
         </nav>
+        <PermissionGate allowedRoles={[Roles.USER, Roles.ADMIN, Roles.WRITE]}>
+          {auth?.firstName ? (
+            <button className="ml-5">
+              <Avatar name={`${auth.firstName} ${auth.lastName}`} />
+            </button>
+          ) : null}
+        </PermissionGate>
       </header>
       <SideNavigation
         onClick={closeDrawer}
         isOpen={showDrawer}
-        navLinks={navigationLinksConfig}
+        navLinks={navigationLinks}
       />
     </>
   );

@@ -20,9 +20,9 @@ export type NavigationLinksConfigType = {
   variant: NavigationVariants;
   icon?: JSX.Element;
   isSideNavOnly: boolean;
-}[];
+};
 
-export const navigationLinksConfig: NavigationLinksConfigType = [
+export const navigationLinksConfig: NavigationLinksConfigType[] = [
   {
     href: Routes.ROOT,
     title: routesTitlesConfig[Routes.ROOT],
