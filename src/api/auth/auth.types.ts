@@ -4,7 +4,7 @@ export type LoginResponseType = {
   firstName: string;
   lastName: string;
   email: string;
-  role: Roles;
+  role: Roles[];
   username: string;
   accessToken: string;
 };

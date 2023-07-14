@@ -9,3 +9,21 @@ export const routesTitlesConfig = {
   [Routes.PRIVACY_POLICY]: 'privacy policy',
   [Routes.TERMS_CONDITIONS]: 'terms & conditions',
 };
+
+export const publicRoutes = [
+  Routes.CONTACT_US,
+  Routes.NEWS,
+  Routes.OUR_STORY,
+  Routes.PRIVACY_POLICY,
+  Routes.ROOT,
+  Routes.TERMS_CONDITIONS,
+];
+
+export const visitorRoutes = [
+  ...publicRoutes,
+  Routes.REGISTER,
+  Routes.SIGN_IN,
+  Routes.RESET_PASSWORD,
+];
+
+export const userRoutes = [...publicRoutes];

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/src/components/Icons';
 import { Routes } from '@/src/routes';
+import { useGetUserRoutes } from '@/src/roles/hooks';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
 import SideNavigation from '../SideNavigation';
@@ -11,6 +12,8 @@ import { navigationLinksConfig } from './Header.config';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
+
+  useGetUserRoutes();
 
   const closeDrawer = () => {
     setShowDrawer(false);
