@@ -4,17 +4,20 @@ import React, {
   Dispatch,
   SetStateAction,
   createContext,
+  useCallback,
   useMemo,
   useState,
 } from 'react';
 import { Auth } from '@/src/api/auth';
 import { Roles } from '@/src/roles';
+import { appQueryClient } from '@/src/api/reactQuery';
 
 type AuthContextObj = {
   auth: Auth | null | undefined;
   isAuth: boolean;
   roles: Roles[];
   setAuth: Dispatch<SetStateAction<Auth>>;
+  handleLogout: () => void;
 };
 
 export const AuthContext = createContext({} as AuthContextObj);
@@ -26,12 +29,18 @@ export const AuthContextProvider = ({
 }): JSX.Element => {
   const [auth, setAuth] = useState<Auth | null | undefined>();
 
+  const handleLogout = useCallback((): void => {
+    setAuth(null);
+    appQueryClient.clear();
+  }, [auth]);
+
   const value = useMemo(
     (): AuthContextObj => ({
       auth,
       isAuth: !!auth?.accessToken,
       roles: auth?.role ?? [Roles.VISITOR],
       setAuth,
+      handleLogout,
     }),
     [auth]
   );
