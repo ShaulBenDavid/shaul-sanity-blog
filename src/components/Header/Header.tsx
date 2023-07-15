@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Logo } from '@/src/components/Icons';
 import { Routes } from '@/src/routes';
 import { useGetUserRoutes } from '@/src/roles/hooks';
+import { useLogout } from '@/src/api/auth/hooks';
 import { AuthContext } from '@/src/context/auth';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
@@ -15,9 +16,12 @@ import PermissionGate, { Roles } from '@/src/roles';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
-  const { auth } = useContext(AuthContext);
+  const { auth, handleLogout } = useContext(AuthContext);
   const userRoutes = useGetUserRoutes();
   const navigationLinks = getUserNavigationLinks(userRoutes);
+
+  // !TEMP - need to be moved to user menu
+  const { logout } = useLogout({ handleSuccess: handleLogout });
 
   const closeDrawer = () => {
     setShowDrawer(false);
@@ -39,7 +43,7 @@ const Header = (): JSX.Element => {
         </nav>
         <PermissionGate allowedRoles={[Roles.USER, Roles.ADMIN, Roles.WRITE]}>
           {auth?.firstName ? (
-            <button className="ml-5">
+            <button className="ml-5" onClick={() => logout()}>
               <Avatar name={`${auth.firstName} ${auth.lastName}`} />
             </button>
           ) : null}

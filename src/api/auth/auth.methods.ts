@@ -9,3 +9,9 @@ export const login = (payload: LoginPayloadType): Promise<LoginResponseType> =>
     method: Methods.POST,
     data: payload,
   });
+
+export const logout = (): Promise<void> =>
+  apiMethodInstance<void>({
+    url: ApiEndpoints.LOGOUT,
+    method: Methods.DELETE,
+  });
