@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from 'test-utils';
 import Button from './Button';
 import { ButtonVariants } from './Button.types';
 
