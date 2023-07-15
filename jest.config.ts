@@ -23,4 +23,5 @@ export default async (): Promise<Config.InitialOptions> => ({
     // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
   },
+  moduleDirectories: ['node_modules', 'test-utils', 'src/tests'],
 });
