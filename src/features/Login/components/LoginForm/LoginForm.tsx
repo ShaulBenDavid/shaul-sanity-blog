@@ -8,7 +8,7 @@ import { useLogin } from '@/src/api/auth/hooks';
 import Input from '@/src/components/Input';
 import Button, { ButtonVariants } from '@/src/components/Button';
 import { loginFormConfig } from './LoginForm.config';
-import { LoginPayloadType, LoginResponseType } from '@/src/api/auth';
+import { LoginPayloadType, AuthResponseType } from '@/src/api/auth';
 import Alert, { AlertVariants } from '@/src/components/Alert';
 import { LoginSchema } from './LoginForm.utils';
 
@@ -24,7 +24,7 @@ const LoginForm = (): JSX.Element => {
     formState: { isValid },
   } = methods;
 
-  const handleSuccess = (res: LoginResponseType): void => {
+  const handleSuccess = (res: AuthResponseType): void => {
     setAuth(res);
   };
 

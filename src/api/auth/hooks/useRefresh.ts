@@ -4,11 +4,12 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { refresh } from '../auth.methods';
 import { HttpStatusCode } from '@/src/types';
+import { AuthResponseType } from '..';
 
 export const GET_REFRESH_KEY = 'getRefresh';
 
 interface UseRefreshProps {
-  handleSuccess: () => void;
+  handleSuccess: (res: AuthResponseType) => void;
   handleLogout: () => void;
 }
 
@@ -20,7 +21,7 @@ export const useRefresh = ({
     [GET_REFRESH_KEY],
     refresh,
     {
-      onSuccess: () => handleSuccess(),
+      onSuccess: (res) => handleSuccess(res),
       onError: (err) => {
         if (!axios.isAxiosError(err)) {
           return;
