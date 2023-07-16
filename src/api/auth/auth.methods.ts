@@ -11,7 +11,7 @@ export const login = (payload: LoginPayloadType): Promise<AuthResponseType> =>
   });
 
 export const logout = (): Promise<void> =>
-  apiMethodInstance<void>({
+  refreshMethodInstance<void>({
     url: ApiEndpoints.LOGOUT,
     method: Methods.DELETE,
   });

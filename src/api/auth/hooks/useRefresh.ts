@@ -11,11 +11,13 @@ export const GET_REFRESH_KEY = 'getRefresh';
 interface UseRefreshProps {
   handleSuccess: (res: AuthResponseType) => void;
   handleLogout: () => void;
+  enabled?: boolean;
 }
 
 export const useRefresh = ({
   handleSuccess,
   handleLogout,
+  enabled = true,
 }: UseRefreshProps) => {
   const { refetch, isError, isLoading, error } = useQuery(
     [GET_REFRESH_KEY],
@@ -30,6 +32,7 @@ export const useRefresh = ({
           handleLogout();
         }
       },
+      enabled,
     }
   );
 

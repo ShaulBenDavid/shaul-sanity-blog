@@ -10,14 +10,21 @@ export const AuthProvider = ({
 }: {
   children: React.ReactNode;
 }): JSX.Element => {
-  const { handleLogout, setAuth } = useContext(AuthContext);
+  const { handleLogout, setAuth, auth } = useContext(AuthContext);
+
+  const isAuthInitialized = auth !== null;
+
   const { logout } = useLogout({ handleSuccess: handleLogout });
 
   const handleSuccess = (res: AuthResponseType): void => {
     setAuth(res);
   };
 
-  useRefresh({ handleSuccess, handleLogout: logout });
+  useRefresh({
+    handleSuccess,
+    handleLogout: logout,
+    enabled: !isAuthInitialized,
+  });
 
   return <>{children}</>;
 };
