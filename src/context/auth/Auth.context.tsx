@@ -27,11 +27,11 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode;
 }): JSX.Element => {
-  const [auth, setAuth] = useState<Auth | null | undefined>(null);
+  const [auth, setAuth] = useState<Auth | null | undefined>();
 
   const handleLogout = useCallback((): void => {
     appQueryClient.clear();
-    setAuth(undefined);
+    setAuth(null);
   }, [auth]);
 
   const value = useMemo(

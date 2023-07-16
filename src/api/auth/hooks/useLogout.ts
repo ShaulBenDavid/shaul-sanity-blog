@@ -16,6 +16,7 @@ export const useLogout = ({ handleSuccess }: UseLogoutProps) => {
     logout,
     {
       onSuccess: () => handleSuccess(),
+      onError: () => handleSuccess(),
     }
   );
 

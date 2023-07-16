@@ -12,7 +12,7 @@ export const AuthProvider = ({
 }): JSX.Element => {
   const { handleLogout, setAuth, auth } = useContext(AuthContext);
 
-  const isAuthInitialized = auth !== null;
+  const isAuthInitialized = auth !== undefined;
 
   const { logout } = useLogout({ handleSuccess: handleLogout });
 
@@ -25,6 +25,10 @@ export const AuthProvider = ({
     handleLogout: logout,
     enabled: !isAuthInitialized,
   });
+
+  if (!isAuthInitialized) {
+    return <></>;
+  }
 
   return <>{children}</>;
 };
