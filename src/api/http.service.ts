@@ -15,3 +15,17 @@ export const apiMethodInstance = <T>(
 ): Promise<T> => {
   return dwInstance(options).then((res) => res.data);
 };
+
+const refreshConfig: AxiosRequestConfig = {
+  baseURL,
+  headers: { 'Content-Type': 'application/json' },
+  withCredentials: true,
+};
+
+export const refreshInstance: AxiosInstance = axios.create(refreshConfig);
+
+export const refreshMethodInstance = <T>(
+  options: AxiosRequestConfig
+): Promise<T> => {
+  return refreshInstance(options).then((res) => res.data);
+};

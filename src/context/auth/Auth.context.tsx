@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { Auth } from '@/src/api/auth';
 import { Roles } from '@/src/roles';
-import { appQueryClient } from '@/src/api/reactQuery';
+import { appQueryClient } from '@/src/queries';
 
 type AuthContextObj = {
   auth: Auth | null | undefined;
@@ -27,11 +27,11 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode;
 }): JSX.Element => {
-  const [auth, setAuth] = useState<Auth | null | undefined>();
+  const [auth, setAuth] = useState<Auth | null | undefined>(null);
 
   const handleLogout = useCallback((): void => {
-    setAuth(null);
     appQueryClient.clear();
+    setAuth(undefined);
   }, [auth]);
 
   const value = useMemo(

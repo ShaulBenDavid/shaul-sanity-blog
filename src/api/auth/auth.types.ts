@@ -1,6 +1,6 @@
 import { Roles } from '@/src/roles';
 
-export type LoginResponseType = {
+export type AuthResponseType = {
   firstName: string;
   lastName: string;
   email: string;
@@ -9,7 +9,7 @@ export type LoginResponseType = {
   accessToken: string;
 };
 
-export type Auth = LoginResponseType | null | undefined;
+export type Auth = AuthResponseType | null | undefined;
 
 export type LoginPayloadType = {
   email: string;
