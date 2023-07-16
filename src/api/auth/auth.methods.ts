@@ -15,3 +15,9 @@ export const logout = (): Promise<void> =>
     url: ApiEndpoints.LOGOUT,
     method: Methods.DELETE,
   });
+
+export const refresh = (): Promise<void> =>
+  apiMethodInstance<void>({
+    url: ApiEndpoints.REFRESH,
+    method: Methods.GET,
+  });
