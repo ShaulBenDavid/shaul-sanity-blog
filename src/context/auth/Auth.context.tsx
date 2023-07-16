@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import { Auth } from '@/src/api/auth';
 import { Roles } from '@/src/roles';
-import { appQueryClient } from '@/src/api/reactQuery';
+import { appQueryClient } from '@/src/queries';
 
 type AuthContextObj = {
   auth: Auth | null | undefined;

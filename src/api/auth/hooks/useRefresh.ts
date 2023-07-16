@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { refresh } from '../auth.methods';
 import { HttpStatusCode } from '@/src/types';
 
-const GET_REFRESH_KEY = 'getRefresh';
+export const GET_REFRESH_KEY = 'getRefresh';
 
 interface UseRefreshProps {
   handleSuccess: () => void;
