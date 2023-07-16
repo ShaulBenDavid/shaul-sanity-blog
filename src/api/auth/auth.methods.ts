@@ -1,6 +1,6 @@
 import { ApiEndpoints } from '../api-endpoints.config';
 import { Methods } from '../api.config';
-import { apiMethodInstance } from '../http.service';
+import { apiMethodInstance, refreshMethodInstance } from '../http.service';
 import { LoginPayloadType, LoginResponseType } from './auth.types';
 
 export const login = (payload: LoginPayloadType): Promise<LoginResponseType> =>
@@ -17,7 +17,7 @@ export const logout = (): Promise<void> =>
   });
 
 export const refresh = (): Promise<void> =>
-  apiMethodInstance<void>({
+  refreshMethodInstance<void>({
     url: ApiEndpoints.REFRESH,
     method: Methods.GET,
   });
