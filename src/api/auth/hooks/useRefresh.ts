@@ -33,6 +33,7 @@ export const useRefresh = ({
         }
       },
       enabled,
+      staleTime: 0,
     }
   );
 
