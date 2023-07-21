@@ -15,6 +15,7 @@ import { appQueryClient } from '@/src/queries';
 type AuthContextObj = {
   auth: Auth | null | undefined;
   isAuth: boolean;
+  isAuthInitialized: boolean;
   roles: Roles[];
   setAuth: Dispatch<SetStateAction<Auth>>;
   handleLogout: () => void;
@@ -34,11 +35,24 @@ export const AuthContextProvider = ({
     setAuth(null);
   }, [auth]);
 
+  const userRoles = (): Roles[] => {
+    if (auth?.role) {
+      return auth.role;
+    }
+
+    if (auth === undefined) {
+      return [Roles.USER];
+    }
+
+    return [Roles.VISITOR];
+  };
+
   const value = useMemo(
     (): AuthContextObj => ({
       auth,
       isAuth: !!auth?.accessToken,
-      roles: auth?.role ?? [Roles.VISITOR],
+      isAuthInitialized: auth !== undefined,
+      roles: userRoles(),
       setAuth,
       handleLogout,
     }),

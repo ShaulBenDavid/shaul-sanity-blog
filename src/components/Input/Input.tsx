@@ -26,7 +26,10 @@ const Input = ({
 
   return (
     <div className="relative flex flex-col gap-1">
-      <label htmlFor={idFor} className="font-medium capitalize text-secondary">
+      <label
+        htmlFor={idFor}
+        className="font-medium capitalize text-secondary-900"
+      >
         {label}
       </label>
       <input
@@ -35,7 +38,7 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         className={twMerge(
-          `h-10 rounded-md border-[1px] border-secondary bg-transparent px-2 text-secondary placeholder:text-wizard-grey ${
+          `h-10 rounded-md border-[1px] border-secondary-900 bg-transparent px-2 text-secondary-900 placeholder:text-wizard-grey ${
             !!errors[idFor]?.message &&
             'border-red-500 focus:border-2 focus:border-red-500 focus:outline-none'
           }`,

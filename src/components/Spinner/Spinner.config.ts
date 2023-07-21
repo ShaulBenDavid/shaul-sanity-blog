@@ -6,6 +6,6 @@ export const spinnerSizesConfig: Record<SpinnerSize, string> = {
   [SpinnerSize.SMALL]: 'h-4 w-4',
 };
 export const spinnerVariantConfig: Record<SpinnerVariants, string> = {
-  [SpinnerVariants.PRIMARY]: 'fill-primary',
+  [SpinnerVariants.PRIMARY]: 'fill-primary-900',
   [SpinnerVariants.WHITE]: 'fill-white',
 };

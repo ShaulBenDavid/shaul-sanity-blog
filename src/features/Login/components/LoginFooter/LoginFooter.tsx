@@ -6,7 +6,7 @@ const LoginFooter = (): JSX.Element => (
   <div className="flex flex-col justify-center gap-4">
     <Link
       href={Routes.RESET_PASSWORD}
-      className="text-center text-primary hover:underline"
+      className="text-center text-primary-900 hover:underline"
     >
       I forgot my password
     </Link>
@@ -14,7 +14,7 @@ const LoginFooter = (): JSX.Element => (
       Don&apos;t have an account?{' '}
       <Link
         href={Routes.REGISTER}
-        className="text-center text-primary hover:underline"
+        className="text-center text-primary-900 hover:underline"
       >
         register
       </Link>
