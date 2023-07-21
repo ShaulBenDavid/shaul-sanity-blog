@@ -27,6 +27,6 @@ describe('Input', () => {
     );
     const inputElement = getByText('email');
     expect(inputElement).toBeInTheDocument();
-    expect(inputElement).toHaveClass('text-secondary-900');
+    expect(inputElement).toHaveClass('text-secondary-950');
   });
 });
