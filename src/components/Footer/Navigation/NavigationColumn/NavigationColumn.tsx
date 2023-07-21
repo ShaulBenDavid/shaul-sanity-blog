@@ -17,7 +17,7 @@ const NavigationColumn = ({
   isOutSourceLinks = false,
 }: NavigationColumnProps) => (
   <div>
-    <h2 className="text-gray-900 text-m mb-6 font-semibold uppercase text-secondary max-md:text-sm">
+    <h2 className="text-gray-900 text-m mb-6 font-semibold uppercase text-secondary-900 max-md:text-sm">
       {name}
     </h2>
     <ul

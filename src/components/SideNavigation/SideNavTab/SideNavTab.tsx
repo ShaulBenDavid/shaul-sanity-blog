@@ -32,7 +32,7 @@ const SideNavTab = ({
       } ${
         isActive &&
         variant === NavigationVariants.LINK &&
-        ' bg-primary bg-opacity-20 focus:bg-light-purple focus:bg-opacity-50'
+        ' bg-primary-900 bg-opacity-20 focus:bg-light-purple focus:bg-opacity-50'
       }`}
     >
       {icon && icon}

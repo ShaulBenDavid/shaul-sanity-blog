@@ -19,7 +19,7 @@ describe('Button', () => {
     const buttonElement = getByText('s');
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveClass('text-white');
-    expect(buttonElement).toHaveClass('bg-primary');
+    expect(buttonElement).toHaveClass('bg-primary-900');
   });
 
   it('triggers onClick event', () => {

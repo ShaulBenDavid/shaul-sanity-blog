@@ -33,7 +33,7 @@ const Header = (): JSX.Element => {
 
   return (
     <>
-      <header className="fixed z-10 flex h-14 w-full justify-center bg-white bg-opacity-[0.5] p-2 backdrop-blur-xl tb:px-8">
+      <header className="fixed z-10 flex h-14 w-full items-center justify-center bg-white bg-opacity-[0.5] p-2 backdrop-blur-xl tb:px-8">
         <nav className="flex w-full max-w-[1227px] flex-row items-center">
           <BurgerButton onClick={openDrawer} />
           <Link href={Routes.ROOT} aria-label="Dev Wizard Home">
@@ -46,7 +46,9 @@ const Header = (): JSX.Element => {
             <button className="ml-5" onClick={() => logout()}>
               <Avatar name={`${auth.firstName} ${auth.lastName}`} />
             </button>
-          ) : null}
+          ) : (
+            <div className="ml-5 h-8 w-8 animate-pulse rounded-full bg-secondary-100" />
+          )}
         </PermissionGate>
       </header>
       <SideNavigation

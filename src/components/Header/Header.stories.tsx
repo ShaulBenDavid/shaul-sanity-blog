@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { AppProviders } from '@/src/providers';
 import Header from './Header';
 
 const styles: CSSProperties = {
@@ -12,7 +13,13 @@ const meta: Meta<typeof Header> = {
   title: 'Layout/Header',
   component: Header,
   tags: ['autodocs'],
-  decorators: [(storyFn) => <div style={styles}>{storyFn()}</div>],
+  decorators: [
+    (storyFn) => (
+      <AppProviders>
+        <div style={styles}>{storyFn()}</div>
+      </AppProviders>
+    ),
+  ],
 };
 
 export default meta;
