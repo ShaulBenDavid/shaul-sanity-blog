@@ -47,7 +47,7 @@ const Header = (): JSX.Element => {
               <Avatar name={`${auth.firstName} ${auth.lastName}`} />
             </button>
           ) : (
-            <div className="ml-5 h-8 w-8 animate-pulse rounded-full bg-secondary-100" />
+            <div className="h-8 w-8 flex-shrink-0 animate-pulse rounded-full bg-secondary-100 sm:ml-5" />
           )}
         </PermissionGate>
       </header>
