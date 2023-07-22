@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Logo } from '@/src/components/Icons';
 import { Routes } from '@/src/routes';
 import { useGetUserRoutes } from '@/src/roles/hooks';
-import { AuthContext } from '@/src/context/auth';
 import PermissionGate, { Roles } from '@/src/roles';
 import NavigationTabs from '../NavigationTabs';
 import BurgerButton from './BurgerButton/BurgerButton';
@@ -15,7 +14,6 @@ import UserMenu from './UserMenu';
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
-  const { auth } = useContext(AuthContext);
   const userRoutes = useGetUserRoutes();
   const navigationLinks = getUserNavigationLinks(userRoutes);
 
@@ -38,11 +36,7 @@ const Header = (): JSX.Element => {
           <NavigationTabs navLinks={navigationLinks} />
         </nav>
         <PermissionGate allowedRoles={[Roles.USER, Roles.ADMIN, Roles.WRITE]}>
-          {auth?.firstName ? (
-            <UserMenu />
-          ) : (
-            <div className="h-8 w-8 flex-shrink-0 animate-pulse rounded-full bg-secondary-100 sm:ml-5" />
-          )}
+          <UserMenu />
         </PermissionGate>
       </header>
       <SideNavigation

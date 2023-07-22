@@ -8,4 +8,6 @@ export enum Routes {
   RESET_PASSWORD = 'reset-password',
   PRIVACY_POLICY = 'privacy-policy',
   TERMS_CONDITIONS = 'terms-conditions',
+  READING_LIST = 'reading-list',
+  SETTINGS = 'SETTINGS',
 }

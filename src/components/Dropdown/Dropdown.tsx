@@ -20,6 +20,7 @@ const Dropdown = ({
 }: PropsWithChildren<DropdownProps>): JSX.Element => {
   const ref = useRef<HTMLDivElement | null>(null);
   useOnClickOutside(ref, onClose);
+
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
     if (e.key === 'Escape' || e.key === 'ArrowDown') {
       onClose();
@@ -36,9 +37,9 @@ const Dropdown = ({
         className
       )}
       id={id}
-      data-testid="dropdown-component-test-id"
-      onKeyDown={handleKeyPress}
       role="presentation"
+      onKeyDown={handleKeyPress}
+      data-testid="dropdown-component-test-id"
     >
       {children}
     </div>

@@ -3,6 +3,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '@/src/context/auth';
 import { useLogout } from '@/src/api/auth/hooks';
+import { Routes } from '@/src/routes';
 import Avatar from '../../Avatar';
 import Dropdown from '../../Dropdown';
 import AppLink from '../../AppLink';
@@ -10,12 +11,11 @@ import AppLink from '../../AppLink';
 const UserMenu = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { auth, handleLogout } = useContext(AuthContext);
-
   const { logout } = useLogout({ handleSuccess: handleLogout });
 
   return (
     <div className="relative">
-      {auth && (
+      {auth ? (
         <>
           <button
             className="ml-5 hover:drop-shadow-lg"
@@ -48,10 +48,10 @@ const UserMenu = (): JSX.Element => {
               </li>
               <hr className="border-secondary-950 opacity-50" />
               <li role="menuitem">
-                <AppLink href="/reading-list">Reading list</AppLink>
+                <AppLink href={Routes.READING_LIST}>Reading list</AppLink>
               </li>
               <li role="menuitem">
-                <AppLink href="/settings">Settings</AppLink>
+                <AppLink href={Routes.SETTINGS}>Settings</AppLink>
               </li>
               <li role="menuitem">
                 <AppLink onClick={logout}>Logout</AppLink>
@@ -59,6 +59,8 @@ const UserMenu = (): JSX.Element => {
             </ul>
           </Dropdown>
         </>
+      ) : (
+        <div className="h-8 w-8 flex-shrink-0 animate-pulse rounded-full bg-secondary-100 sm:ml-5" />
       )}
     </div>
   );

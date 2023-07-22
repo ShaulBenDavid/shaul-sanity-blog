@@ -2,18 +2,18 @@ import React, { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Dropdown from './Dropdown';
 
+const styles: CSSProperties = {
+  transform: 'scale(1)',
+  height: '40vh',
+  position: 'relative',
+};
+
 /**
  * # The Dropdown component
  * The dropdown component is a reusable UI element that takes in children to display its content,
  * utilizes the isOpen boolean prop to control visibility, and triggers the onClose callback when
  * the dropdown needs to be closed.
  */
-
-const styles: CSSProperties = {
-  transform: 'scale(1)',
-  height: '40vh',
-  position: 'relative',
-};
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
