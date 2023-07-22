@@ -23,6 +23,7 @@ const Dropdown = ({
         isOpen ? 'flex' : 'hidden'
       }`}
       id={id}
+      data-testid="dropdown-component-test-id"
     >
       {children}
     </div>
