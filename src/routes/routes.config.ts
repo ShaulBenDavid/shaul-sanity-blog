@@ -26,4 +26,8 @@ export const visitorRoutes = [
   Routes.RESET_PASSWORD,
 ];
 
-export const userRoutes = [...publicRoutes];
+export const userRoutes = [
+  ...publicRoutes,
+  Routes.SETTINGS,
+  Routes.READING_LIST,
+];

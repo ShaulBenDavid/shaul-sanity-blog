@@ -78,6 +78,8 @@ module.exports = {
         dw: '2px 2px 4px rgba(45, 3, 59, 0.62)',
         button: '2px 2px 4px 0px rgba(45, 3, 59, 0.62)',
         container: ' 0px 4px 22px 3px rgba(29, 3, 37, 0.25)',
+        dropdown:
+          '0 10px 15px -3px rgba(45, 3, 59, 0.1), 0 4px 6px -2px rgba(45, 3, 59, 0.05), 0 0 0 1px rgba(45, 3, 59, 0.1)',
       },
       keyframes: {
         fadeIn: {
