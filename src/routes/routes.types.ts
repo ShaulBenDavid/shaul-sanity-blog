@@ -9,5 +9,7 @@ export enum Routes {
   PRIVACY_POLICY = 'privacy-policy',
   TERMS_CONDITIONS = 'terms-conditions',
   READING_LIST = 'reading-list',
-  SETTINGS = 'SETTINGS',
+  SETTINGS = 'settings',
+  TOPICS = 'topics',
+  TOPIC = 'topic',
 }

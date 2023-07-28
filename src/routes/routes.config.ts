@@ -17,6 +17,8 @@ export const publicRoutes = [
   Routes.PRIVACY_POLICY,
   Routes.ROOT,
   Routes.TERMS_CONDITIONS,
+  Routes.TOPICS,
+  Routes.TOPIC,
 ];
 
 export const visitorRoutes = [
