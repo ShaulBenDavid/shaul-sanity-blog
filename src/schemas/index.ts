@@ -1,7 +1,7 @@
 import blockContent from './blockContent';
-import category from './category';
+import topic from './topic';
 import post from './post';
 import author from './author';
 
-const schemaTypes = [post, author, category, blockContent];
+const schemaTypes = [post, author, topic, blockContent];
 export default schemaTypes;

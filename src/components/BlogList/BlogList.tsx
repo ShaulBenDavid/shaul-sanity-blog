@@ -16,7 +16,7 @@ const BlogList = ({ posts }: Props): JSX.Element => (
         _createdAt,
         author,
         mainImage,
-        categories,
+        topics,
         description,
         slug,
       }) => (
@@ -31,8 +31,8 @@ const BlogList = ({ posts }: Props): JSX.Element => (
               <Image src={forUrl(mainImage).url()} alt={author.name} fill />
             </div>
             <div>
-              {categories.map((category) => (
-                <span key={category._id}>{category.title}</span>
+              {topics.map((topic) => (
+                <span key={topic._id}>{topic.title}</span>
               ))}
             </div>
 

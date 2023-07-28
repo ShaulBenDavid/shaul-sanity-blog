@@ -34,7 +34,7 @@ const Post = async ({ params: { slug } }: Props) => {
     *[_type=='post' && slug.current == $slug][0] {
         ...,
         author->,
-        categories[]->
+        topics[]->
     } 
     `;
   const post: Post = await client.fetch(query, { slug });
@@ -73,8 +73,8 @@ const Post = async ({ params: { slug } }: Props) => {
         <div>
           <h2>{post.description}</h2>
           <div>
-            {post.categories.map((category) => (
-              <span key={category._id}>{category.title}</span>
+            {post.topics.map((topic) => (
+              <span key={topic._id}>{topic.title}</span>
             ))}
           </div>
         </div>
