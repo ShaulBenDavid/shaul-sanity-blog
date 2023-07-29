@@ -6,35 +6,6 @@ export const defaultMetadata: Metadata = {
     default: 'Dev Wizard - A Place For Developers',
     template: '%s | Dev Wizard',
   },
-  openGraph: {
-    title: 'Dev Wizard - A Place For Developers',
-    description:
-      'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
-    url: websiteUrl,
-    siteName: 'Dev Wizard',
-    type: 'website',
-    images: [
-      {
-        url: 'https://i.imgur.com/QHBBpkh.png',
-        alt: 'Logo',
-        type: 'image/png',
-      },
-    ],
-  },
-  twitter: {
-    title: 'Dev Wizard - A Place For Developers',
-    site: '@devwizard',
-    description:
-      'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
-    card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://ibb.co/xCqVsC7',
-        alt: 'Logo',
-        type: 'image/png',
-      },
-    ],
-  },
   description:
     'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
   applicationName: 'Dev Wizard',
@@ -84,6 +55,35 @@ export const defaultMetadata: Metadata = {
       {
         url: '/safari-pinned-tab.svg',
         rel: 'mask-icon',
+      },
+    ],
+  },
+  openGraph: {
+    title: 'Dev Wizard - A Place For Developers',
+    description:
+      'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
+    url: websiteUrl,
+    siteName: 'Dev Wizard',
+    type: 'website',
+    images: [
+      {
+        url: 'https://i.imgur.com/WwKlDyy.jpg',
+        alt: 'Intro',
+        type: 'image/jpg',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Dev Wizard - A Place For Developers',
+    site: '@devwizard',
+    description:
+      'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
+    card: 'summary_large_image',
+    images: [
+      {
+        url: 'https://i.imgur.com/WwKlDyy.jpg',
+        alt: 'Intro',
+        type: 'image/jpg',
       },
     ],
   },
