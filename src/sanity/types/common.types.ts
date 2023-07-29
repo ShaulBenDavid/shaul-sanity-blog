@@ -33,29 +33,6 @@ export interface Image {
   asset: Reference;
 }
 
-export interface Author extends Base {
-  bio: Block[];
-  image: Image;
-  name: string;
-  slug: Slug;
-}
-
-export interface Topic extends Base {
-  description: string;
-  title: string;
-  slug: Slug;
-}
-
-export interface Post extends Base {
-  author: Author;
-  body: Block[];
-  topics: Topic[];
-  mainImage: Image;
-  slug: Slug;
-  title: string;
-  description: string;
-}
-
 export interface MainImage {
   _type: 'image';
   asset: Reference;
