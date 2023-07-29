@@ -11,13 +11,26 @@ export const defaultMetadata: Metadata = {
     description:
       'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
     url: websiteUrl,
+    siteName: 'Dev Wizard',
+    type: 'website',
     images: [
       {
-        url: '/favicon-32x32.png',
+        url: 'https://ibb.co/xCqVsC7',
         alt: 'Logo',
         type: 'image/png',
-        width: 32,
-        height: 32,
+      },
+    ],
+  },
+  twitter: {
+    title: 'Dev Wizard - A Place For Developers',
+    site: '@devwizard',
+    description:
+      'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
+    images: [
+      {
+        url: 'https://ibb.co/xCqVsC7',
+        alt: 'Logo',
+        type: 'image/png',
       },
     ],
   },
