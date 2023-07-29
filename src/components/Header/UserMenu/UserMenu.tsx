@@ -14,11 +14,11 @@ const UserMenu = (): JSX.Element => {
   const { logout } = useLogout({ handleSuccess: handleLogout });
 
   return (
-    <div className="relative">
+    <div className="relative ml-5 max-tb:ml-auto">
       {auth ? (
         <>
           <button
-            className="ml-5 hover:drop-shadow-lg"
+            className="hover:drop-shadow-lg "
             onClick={() => setIsOpen(true)}
             type="button"
             aria-expanded={isOpen}
@@ -60,7 +60,7 @@ const UserMenu = (): JSX.Element => {
           </Dropdown>
         </>
       ) : (
-        <div className="h-8 w-8 flex-shrink-0 animate-pulse rounded-full bg-secondary-100 sm:ml-5" />
+        <div className="h-8 w-8 flex-shrink-0 animate-pulse rounded-full bg-secondary-100" />
       )}
     </div>
   );
