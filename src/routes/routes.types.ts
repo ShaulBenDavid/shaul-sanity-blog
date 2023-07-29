@@ -12,4 +12,5 @@ export enum Routes {
   SETTINGS = 'settings',
   TOPICS = 'topics',
   TOPIC = 'topic',
+  STUDIO = '/studio',
 }

@@ -5,6 +5,6 @@ import { Roles } from './roles.types';
 export const getRoutesByRole: Record<Roles, Routes[]> = {
   [Roles.VISITOR]: visitorRoutes,
   [Roles.USER]: userRoutes,
-  [Roles.ADMIN]: Object.values(Routes),
+  [Roles.ADMIN]: userRoutes,
   [Roles.WRITE]: Object.values(Routes),
 };
