@@ -15,7 +15,7 @@ export const defaultMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ibb.co/xCqVsC7',
+        url: 'https://i.imgur.com/QHBBpkh.png',
         alt: 'Logo',
         type: 'image/png',
       },
@@ -26,6 +26,7 @@ export const defaultMetadata: Metadata = {
     site: '@devwizard',
     description:
       'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
+    card: 'summary_large_image',
     images: [
       {
         url: 'https://ibb.co/xCqVsC7',
