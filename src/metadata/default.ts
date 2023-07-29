@@ -1,9 +1,25 @@
 import { Metadata } from 'next';
+import { websiteUrl } from '../constants';
 
 export const defaultMetadata: Metadata = {
   title: {
     default: 'Dev Wizard - A Place For Developers',
     template: '%s | Dev Wizard',
+  },
+  openGraph: {
+    title: 'Dev Wizard - A Place For Developers',
+    description:
+      'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
+    url: websiteUrl,
+    images: [
+      {
+        url: '/favicon-32x32.png',
+        alt: 'Logo',
+        type: 'image/png',
+        width: 32,
+        height: 32,
+      },
+    ],
   },
   description:
     'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
