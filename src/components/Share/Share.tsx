@@ -29,7 +29,10 @@ const Share = ({ url = '', subject, title }: ShareProps): JSX.Element => {
       <h2 className="text-md font-bold text-wizard-black">
         Share with your friends
       </h2>
-      <div className="flex flex-wrap gap-2 pl-2">
+      <div
+        className="flex flex-wrap gap-2 pl-2"
+        data-testid="share-component-test-id"
+      >
         <EmailShareButton
           url={`${shareContent.url}${url}`}
           subject={subject ?? shareContent.subject}
