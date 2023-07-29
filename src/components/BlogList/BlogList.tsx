@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import forUrl from '@/lib/urlFor';
+import { Post } from '@/src/sanity/types';
 import ClientSideRoute from '../ClientSideRoute/ClientSideRoute';
 
 type Props = {

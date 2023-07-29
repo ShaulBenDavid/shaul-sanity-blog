@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react';
 import { client } from '@/lib/sanity.client';
 import forUrl from '@/lib/urlFor';
 import RichTextComponents from '@/src/components/RichTextComponents/RichTextComponents';
+import { Post } from '@/src/sanity/types';
 
 type Props = {
   params: {
