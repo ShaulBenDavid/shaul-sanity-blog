@@ -33,6 +33,9 @@ export const defaultMetadata: Metadata = {
     'dwizard',
     'login',
   ],
+  alternates: {
+    canonical: websiteUrl,
+  },
   generator: 'Next.js',
   publisher: 'Dev Wizard Team',
   manifest: '/site.json',
