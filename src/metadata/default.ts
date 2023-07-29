@@ -82,12 +82,5 @@ export const defaultMetadata: Metadata = {
     description:
       'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
     card: 'summary_large_image',
-    images: [
-      {
-        url: 'https://i.imgur.com/WwKlDyy.jpg',
-        alt: 'Intro',
-        type: 'image/jpg',
-      },
-    ],
   },
 };
