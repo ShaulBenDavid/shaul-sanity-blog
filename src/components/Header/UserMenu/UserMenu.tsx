@@ -1,9 +1,12 @@
 'use client';
 
 import React, { useContext, useState } from 'react';
+import { MdAdminPanelSettings } from 'react-icons/md';
+import { Routes } from '@/src/routes';
+import PermissionGate, { Roles } from '@/src/roles';
 import { AuthContext } from '@/src/context/auth';
 import { useLogout } from '@/src/api/auth/hooks';
-import { Routes } from '@/src/routes';
+import theme from '@/src/styles/tailwind.theme';
 import Avatar from '../../Avatar';
 import Dropdown from '../../Dropdown';
 import AppLink from '../../AppLink';
@@ -36,6 +39,13 @@ const UserMenu = (): JSX.Element => {
             <ul role="menu" className="flex flex-col gap-1">
               <li role="menuitem">
                 <AppLink href={`/@${auth.username}`}>
+                  <PermissionGate allowedRoles={[Roles.ADMIN]}>
+                    <MdAdminPanelSettings
+                      size={24}
+                      aria-hidden
+                      fill={theme.secondary[950]}
+                    />
+                  </PermissionGate>
                   <div className="flex flex-col">
                     <span>
                       {auth.firstName} {auth.lastName}
@@ -50,6 +60,11 @@ const UserMenu = (): JSX.Element => {
               <li role="menuitem">
                 <AppLink href={Routes.READING_LIST}>Reading list</AppLink>
               </li>
+              <PermissionGate allowedRoles={[Roles.ADMIN, Roles.WRITE]}>
+                <li role="menuitem">
+                  <AppLink href={Routes.STUDIO}>Studio</AppLink>
+                </li>
+              </PermissionGate>
               <li role="menuitem">
                 <AppLink href={Routes.SETTINGS}>Settings</AppLink>
               </li>

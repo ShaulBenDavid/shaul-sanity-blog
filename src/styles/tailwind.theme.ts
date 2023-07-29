@@ -7,7 +7,9 @@ type Theme = {
       primary: string;
       'light-primary': string;
       'light-purple': string;
-      secondary: string;
+      secondary: {
+        950: string;
+      };
       'wizard-black': string;
       'wizard-white': string;
       orange: string;
