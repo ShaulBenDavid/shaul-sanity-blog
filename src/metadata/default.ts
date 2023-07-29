@@ -15,7 +15,7 @@ export const defaultMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ibb.co/xCqVsC7',
+        url: 'https://i.imgur.com/QHBBpkh.png',
         alt: 'Logo',
         type: 'image/png',
       },
