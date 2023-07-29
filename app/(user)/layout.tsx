@@ -20,16 +20,14 @@ const RootLayout = ({
 }): JSX.Element => (
   <html lang="en">
     <body
-      className={`min-h-[100dvh] w-full ${inter.variable} flex flex-col justify-start font-inter text-wizard-black`}
+      className={`min-h-[100dvh] w-full ${inter.variable} flex flex-col items-center justify-start font-inter text-wizard-black`}
     >
       <AppProviders>
-        <>
-          <Header />
-          <main className="mx-auto w-[1227px] flex-1 pt-14 max-lg:w-[1000px] max-md:w-full max-md:px-2">
-            {children}
-          </main>
-          <Footer />
-        </>
+        <Header />
+        <main className="w-[1227px] flex-1 justify-center pt-14 max-lg:w-[1000px] max-md:w-full max-md:px-2 tb:px-8">
+          {children}
+        </main>
+        <Footer />
       </AppProviders>
     </body>
   </html>
