@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { websiteUrl } from '../constants';
 
+const url = new URL('https://dwizard.io');
+
 export const defaultMetadata: Metadata = {
   title: {
     default: 'Dev Wizard - A Place For Developers',
@@ -8,8 +10,9 @@ export const defaultMetadata: Metadata = {
   },
   description:
     'Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.',
+  metadataBase: url,
   applicationName: 'Dev Wizard',
-  authors: { name: 'Dwizard team', url: 'https://dwizard.io' },
+  authors: { name: 'Dwizard team', url },
   themeColor: '#810CA8',
   creator: 'Dev Wizard Team',
   keywords: [
@@ -34,7 +37,7 @@ export const defaultMetadata: Metadata = {
     'login',
   ],
   alternates: {
-    canonical: websiteUrl,
+    canonical: new URL(websiteUrl),
   },
   generator: 'Next.js',
   publisher: 'Dev Wizard Team',
@@ -70,7 +73,7 @@ export const defaultMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://i.imgur.com/WwKlDyy.jpg',
+        url: new URL('https://i.imgur.com/WwKlDyy.jpg'),
         alt: 'Intro',
         type: 'image/jpg',
       },
