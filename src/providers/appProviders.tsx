@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import { QueryProvider } from './query.provider';
@@ -20,12 +20,14 @@ export const AppProviders = ({
         <AuthProvider>
           {children}
           <ToastContainer />
-          <ProgressBar
-            height="4px"
-            color="#810ca8"
-            options={{ showSpinner: false }}
-            shallowRouting
-          />
+          <Suspense fallback={null}>
+            <ProgressBar
+              height="4px"
+              color="#810ca8"
+              options={{ showSpinner: false }}
+              shallowRouting
+            />
+          </Suspense>
         </AuthProvider>
       </AxiosInterceptor>
     </AuthContextProvider>
