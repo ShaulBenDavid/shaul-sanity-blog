@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Roles } from './roles.types';
 import { AuthContext } from '../context/auth';
+import { hasMatchingRole } from './roles.utils';
 
 interface PermissionGateProps {
   allowedRoles: Roles[];
@@ -13,7 +14,7 @@ const PermissionGate = ({
 }: PermissionGateProps): JSX.Element | null => {
   const { roles } = useContext(AuthContext);
 
-  const isAllowed = !!allowedRoles.find((role) => roles.includes(role));
+  const isAllowed = hasMatchingRole(allowedRoles, roles);
 
   if (!isAllowed) {
     return null;
