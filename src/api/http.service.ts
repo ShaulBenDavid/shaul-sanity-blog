@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const baseURL = process.env.NEXT_PUBLIC_DEV_WIZARD_URL;
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const config: AxiosRequestConfig = {
   baseURL,
