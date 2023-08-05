@@ -2,6 +2,8 @@ import { NavigationVariants } from '../../Header/Header.config';
 
 export const sideNavTabStyleConfig = {
   [NavigationVariants.BUTTON]:
-    'w-full h-[35px] bg-primary-900 text-md items-center flex justify-center text-white rounded-md shadow-dw hover:bg-[#6C078E] transition-all capitalize',
-  [NavigationVariants.LINK]: `text-gray-900 group flex w-full items-center rounded-md p-2 capitalize focus:bg-gray focus:bg-opacity-20`,
+    'w-full h-[35px] bg-primary-900 text-md justify-center text-white shadow-dw hover:bg-[#6C078E] transition-all ',
+  [NavigationVariants.SECONDARY_BUTTON]:
+    'w-full h-[35px] text-md shadow-button border-primary-900 justify-center bg-white border-[1px] hover:bg-wizard-white text-primary-900 transition-all ',
+  [NavigationVariants.LINK]: `text-gray-900 group flex w-full p-2  focus:bg-gray focus:bg-opacity-20`,
 };

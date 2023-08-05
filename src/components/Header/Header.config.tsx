@@ -12,6 +12,7 @@ import { Routes, routesTitlesConfig } from '@/src/routes';
 export enum NavigationVariants {
   BUTTON = 'button',
   LINK = 'LINK',
+  SECONDARY_BUTTON = 'secondary-button',
 }
 
 export type NavigationLinksConfigType = {
@@ -70,5 +71,11 @@ export const navigationLinksConfig: NavigationLinksConfigType[] = [
     title: routesTitlesConfig[Routes.SIGN_IN],
     variant: NavigationVariants.BUTTON,
     isSideNavOnly: false,
+  },
+  {
+    href: Routes.SIGN_UP,
+    title: routesTitlesConfig[Routes.SIGN_UP],
+    variant: NavigationVariants.SECONDARY_BUTTON,
+    isSideNavOnly: true,
   },
 ];

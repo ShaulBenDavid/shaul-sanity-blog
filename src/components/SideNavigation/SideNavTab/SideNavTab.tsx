@@ -27,7 +27,7 @@ const SideNavTab = ({
       onClick={onClick}
       aria-label={title}
       aria-current={isActive ? 'page' : undefined}
-      className={`flex flex-row content-center gap-1  ${
+      className={`flex flex-row content-center items-center gap-1 rounded-md capitalize  ${
         sideNavTabStyleConfig[variant]
       } ${
         isActive &&

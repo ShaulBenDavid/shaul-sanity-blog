@@ -13,7 +13,7 @@ const LoginFooter = (): JSX.Element => (
     <span className="text-center text-sm">
       Don&apos;t have an account?{' '}
       <Link
-        href={Routes.REGISTER}
+        href={Routes.SIGN_UP}
         className="text-center text-primary-900 hover:underline"
       >
         register
