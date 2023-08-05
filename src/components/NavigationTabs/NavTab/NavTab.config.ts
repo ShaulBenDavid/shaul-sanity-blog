@@ -6,5 +6,6 @@ const NavLinkAnimation =
 export const navTabStyleConfig = {
   [NavigationVariants.BUTTON]:
     'w-[91px] h-[35px] bg-primary-900 text-md items-center flex justify-center text-white rounded-[6px] shadow-dw hover:bg-[#6C078E] transition-all',
+  [NavigationVariants.SECONDARY_BUTTON]: '',
   [NavigationVariants.LINK]: `text-wizard-black relative text-md ${NavLinkAnimation}`,
 };

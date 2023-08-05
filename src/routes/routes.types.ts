@@ -4,7 +4,7 @@ export enum Routes {
   CONTACT_US = 'contact-us',
   NEWS = 'news',
   SIGN_IN = 'sign-in',
-  REGISTER = 'register',
+  SIGN_UP = 'sign-up',
   RESET_PASSWORD = 'reset-password',
   PRIVACY_POLICY = 'privacy-policy',
   TERMS_CONDITIONS = 'terms-conditions',
