@@ -17,11 +17,11 @@ const NavigationColumn = ({
   isOutSourceLinks = false,
 }: NavigationColumnProps) => (
   <div>
-    <h2 className="text-gray-900 text-m mb-6 font-semibold uppercase text-secondary-950 max-md:text-sm">
+    <h2 className="text-m mb-6 font-semibold uppercase text-secondary-950 max-md:text-sm">
       {name}
     </h2>
     <ul
-      className="text-gray-600 font-medium text-wizard-black max-md:text-sm"
+      className="font-medium text-wizard-black max-md:text-sm"
       role="navigation"
       aria-label={name}
     >

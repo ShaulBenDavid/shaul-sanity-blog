@@ -13,7 +13,7 @@ const SocialIconsLinks = ({ links }: SocialIconsLinksProps): JSX.Element => (
         key={link}
         href={link}
         aria-label={title}
-        className="text-gray-500 hover:text-gray-900 transition-opacity hover:opacity-70"
+        className="text-gray-500 transition-opacity hover:text-gray-900 hover:opacity-70"
         target="_blank"
         rel="noopener noreferrer"
       >
