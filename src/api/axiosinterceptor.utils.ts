@@ -3,9 +3,9 @@ import { HttpStatusCode } from '../types';
 import { dwInstance } from './http.service';
 
 export const axiosRequest = (
-  config: InternalAxiosRequestConfig<any>,
+  config: InternalAxiosRequestConfig,
   token?: string
-): InternalAxiosRequestConfig<any> => {
+): InternalAxiosRequestConfig => {
   // eslint-disable-next-line no-param-reassign
   config.headers = config.headers ?? {};
   // eslint-disable-next-line no-param-reassign
@@ -24,7 +24,7 @@ export const errInterceptor = async (
   token?: string
 ): Promise<AxiosError> => {
   const prevConfig:
-    | (InternalAxiosRequestConfig<any> & { sent?: boolean })
+    | (InternalAxiosRequestConfig & { sent?: boolean })
     | undefined = error.config;
 
   if (

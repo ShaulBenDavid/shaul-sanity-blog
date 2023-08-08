@@ -62,7 +62,6 @@ module.exports = {
       orange: '#EC5D0D',
       white: '#ffffff',
       black: '#222222',
-      gray: '#808080',
     },
     extend: {
       height: {
