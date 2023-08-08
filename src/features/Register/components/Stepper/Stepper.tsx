@@ -14,6 +14,7 @@ const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
 
       return (
         <Step
+          key={step.title}
           title={step.title}
           subtitle={step.subtitle}
           stepNumber={stepNum}
