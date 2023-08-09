@@ -19,6 +19,7 @@ const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
           subtitle={step.subtitle}
           stepNumber={stepNum}
           isLastStep={steps.length === stepNum}
+          currentStep={3}
           isCompletedStep={stepNum <= currentStep}
         />
       );
