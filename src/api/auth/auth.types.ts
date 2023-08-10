@@ -15,3 +15,10 @@ export type LoginPayloadType = {
   email: string;
   password: string;
 };
+
+export type RegisterPayloadType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+};
