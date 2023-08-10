@@ -29,6 +29,7 @@ const Step = ({
       ${stepNumber <= currentStep ? step.current : ''}
       ${stepNumber < currentStep ? step.separator : ''}
     `}
+      data-testid="step-component-test-id"
     >
       <span className={`flex items-center ${isLastStep ? '' : smallSeparator}`}>
         {isCompletedStep ? (
