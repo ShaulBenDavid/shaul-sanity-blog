@@ -35,6 +35,17 @@ export const accountInfoSchema = z
       })
       .trim()
       .email('Not a valid email'),
+    username: z
+      .string({
+        required_error: 'Username is required',
+      })
+      .trim()
+      .min(1)
+      .max(16, 'Username can be long than 16 characters')
+      .refine(
+        (value) => /^[a-zA-Z0-9]+$/.test(value),
+        'The string contains invalid characters. Only numbers and letters are allowed'
+      ),
     password: z
       .string({
         required_error: 'Password is required',

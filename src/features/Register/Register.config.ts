@@ -28,6 +28,12 @@ const personalInfoInputs: RegisterFieldType[] = [
     placeholder: 'Enter your name',
     type: 'text',
   },
+  {
+    label: 'username',
+    idFor: 'username',
+    placeholder: 'Example123',
+    type: 'text',
+  },
 ];
 
 const accountInfoInputs: RegisterFieldType[] = [
@@ -37,6 +43,7 @@ const accountInfoInputs: RegisterFieldType[] = [
     placeholder: 'Example@example.com',
     type: 'text',
   },
+
   {
     label: 'password',
     idFor: 'password',

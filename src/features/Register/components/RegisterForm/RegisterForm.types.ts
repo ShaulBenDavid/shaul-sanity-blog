@@ -2,7 +2,7 @@ import { RegisterPayloadType } from '@/src/api/auth';
 
 export type PersonalMethodType = Pick<
   RegisterPayloadType,
-  'firstName' | 'lastName'
+  'firstName' | 'lastName' | 'username'
 >;
 
 export type AccountMethodType = Pick<

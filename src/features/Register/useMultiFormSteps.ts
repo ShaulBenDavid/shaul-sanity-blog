@@ -7,6 +7,7 @@ export const useMultiFormSteps = (length: number) => {
   const [credentials, setCredentials] = useState<RegisterPayloadType>({
     firstName: '',
     lastName: '',
+    username: '',
     email: '',
     password: '',
   });
