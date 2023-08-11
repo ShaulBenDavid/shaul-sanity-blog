@@ -1,13 +1,14 @@
 'use client';
 
 import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { PersonalInfoSchema } from './PersonalInfo.utils';
-import { RegisterPayloadType } from '@/src/api/auth';
+import { FormProvider, UseFormReturn } from 'react-hook-form';
 import Input from '@/src/components/Input';
+import { PersonalMethodType } from '../RegisterForm.types';
+import Button, { ButtonVariants } from '@/src/components/Button';
 
-// interface PersonalInfoProps {}
+interface PersonalInfoProps {
+  method: UseFormReturn<PersonalMethodType, any, undefined>;
+}
 
 // !! temp
 const mock = [
@@ -23,16 +24,11 @@ const mock = [
   },
 ];
 
-const PersonalInfo = (): JSX.Element => {
-  const methods = useForm<Pick<RegisterPayloadType, 'firstName' | 'lastName'>>({
-    resolver: zodResolver(PersonalInfoSchema),
-    mode: 'onChange',
-    delayError: 1000,
-  });
+const PersonalInfo = ({ method }: PersonalInfoProps): JSX.Element => {
   const {
     handleSubmit,
-    // formState: { isValid },
-  } = methods;
+    formState: { isValid },
+  } = method;
 
   const onSubmit = handleSubmit((value): void => {
     // handleLogin(value);
@@ -40,7 +36,7 @@ const PersonalInfo = (): JSX.Element => {
   });
 
   return (
-    <FormProvider {...methods}>
+    <FormProvider {...method}>
       <form className="flex flex-col" onSubmit={onSubmit}>
         {mock.map(({ label, idFor, type }) => (
           <Input
@@ -51,6 +47,14 @@ const PersonalInfo = (): JSX.Element => {
             className="mb-4"
           />
         ))}
+        <Button
+          variant={ButtonVariants.PRIMARY}
+          type="submit"
+          className="mt-2 max-mb:mt-4"
+          disabled={!isValid}
+        >
+          continue
+        </Button>
       </form>
     </FormProvider>
   );
