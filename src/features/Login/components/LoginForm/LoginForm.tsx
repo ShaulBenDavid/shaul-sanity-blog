@@ -43,6 +43,7 @@ const LoginForm = (): JSX.Element => {
           <Alert
             variant={AlertVariants.DANGER}
             content={loginError?.response?.data.message}
+            className="mb-4"
           />
         )}
         {loginFormConfig.map(({ label, idFor, type }) => (

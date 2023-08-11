@@ -10,6 +10,7 @@ import { RegisterFieldType } from '../../../Register.types';
 
 interface AccountInfoProps {
   fields: RegisterFieldType[];
+  isLoading: boolean;
   goBack: () => void;
   onClick: (data: Partial<RegisterPayloadType>) => void;
   method: UseFormReturn<AccountMethodType, any, undefined>;
@@ -17,6 +18,7 @@ interface AccountInfoProps {
 
 const AccountInfo = ({
   fields,
+  isLoading,
   goBack,
   onClick,
   method,
@@ -27,15 +29,14 @@ const AccountInfo = ({
   } = method;
 
   const onSubmit = handleSubmit((value): void => {
-    onClick(value);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { confirmPassword, ...credentials } = value;
+    onClick(credentials);
   });
 
   return (
     <FormProvider {...method}>
-      <form
-        className="mt-4 flex h-full w-full flex-col gap-4"
-        onSubmit={onSubmit}
-      >
+      <form className="flex h-full w-full flex-col gap-4" onSubmit={onSubmit}>
         {fields.map(({ label, idFor, placeholder, type }) => (
           <Input
             key={idFor}
@@ -53,6 +54,7 @@ const AccountInfo = ({
             variant={ButtonVariants.PRIMARY}
             type="submit"
             disabled={!isValid}
+            isLoading={isLoading}
           >
             submit
           </Button>
