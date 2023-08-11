@@ -9,8 +9,7 @@ import { RegisterStepsEnum } from '../../../Register.types';
 export const useMultiFormConfig = () => {
   const personalMethod = useForm<PersonalMethodType>({
     resolver: zodResolver(personalInfoSchema),
-    mode: 'onChange',
-    delayError: 1000,
+    mode: 'onTouched',
   });
 
   const accountMethod = useForm<AccountMethodType>({

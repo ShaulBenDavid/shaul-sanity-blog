@@ -8,5 +8,6 @@ export enum RegisterStepsEnum {
 export type RegisterFieldType = {
   label: string;
   idFor: string;
+  placeholder: string;
   type: HTMLInputTypeAttribute;
 };

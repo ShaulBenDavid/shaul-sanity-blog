@@ -19,11 +19,13 @@ const personalInfoInputs: RegisterFieldType[] = [
   {
     label: 'firstName',
     idFor: 'firstName',
+    placeholder: 'Enter your name',
     type: 'text',
   },
   {
     label: 'lastName',
     idFor: 'lastName',
+    placeholder: 'Enter your name',
     type: 'text',
   },
 ];
@@ -32,21 +34,24 @@ const accountInfoInputs: RegisterFieldType[] = [
   {
     label: 'email',
     idFor: 'email',
+    placeholder: 'Example@example.com',
     type: 'text',
   },
   {
     label: 'password',
     idFor: 'password',
+    placeholder: 'Enter your password',
     type: 'password',
   },
   {
     label: 'confirmPassword',
     idFor: 'confirmPassword',
+    placeholder: 'Enter your password',
     type: 'password',
   },
 ];
 
-export const getFormsFieldsConfig = {
+export const registerFormsFieldsConfig = {
   [RegisterStepsEnum.PERSONAL_INFO]: personalInfoInputs,
   [RegisterStepsEnum.ACCOUNT_INFO]: accountInfoInputs,
 };

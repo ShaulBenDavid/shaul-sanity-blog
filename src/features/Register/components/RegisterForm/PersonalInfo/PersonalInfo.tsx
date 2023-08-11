@@ -30,20 +30,23 @@ const PersonalInfo = ({
 
   return (
     <FormProvider {...method}>
-      <form className="flex flex-col" onSubmit={onSubmit}>
-        {fields.map(({ label, idFor, type }) => (
+      <form
+        className="mt-4 flex h-full w-full flex-col gap-4"
+        onSubmit={onSubmit}
+      >
+        {fields.map(({ label, idFor, placeholder, type }) => (
           <Input
             key={idFor}
             label={label}
             idFor={idFor}
             type={type}
-            className="mb-4"
+            placeholder={placeholder}
           />
         ))}
         <Button
           variant={ButtonVariants.PRIMARY}
           type="submit"
-          className="mt-2 max-mb:mt-4"
+          className="mt-auto"
           disabled={!isValid}
         >
           next
