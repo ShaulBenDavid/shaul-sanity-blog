@@ -7,15 +7,18 @@ import { RegisterStepsEnum } from '../../Register.types';
 import { registerFormsFieldsConfig } from '../../Register.config';
 import AccountInfo from './AccountInfo';
 import { useMultiFormConfig } from './useMultiFormConfig';
+import Confirmation from './Confirmation';
 
 interface RegisterFormProps {
   currentStep: number;
+  isLoading: boolean;
   backStep: () => void;
   onSubmit: (data: Partial<RegisterPayloadType>) => void;
 }
 
 const RegisterForm = ({
   currentStep,
+  isLoading,
   backStep,
   onSubmit,
 }: RegisterFormProps): JSX.Element => {
@@ -29,10 +32,12 @@ const RegisterForm = ({
     />,
     <AccountInfo
       method={methods[RegisterStepsEnum.ACCOUNT_INFO]}
+      isLoading={isLoading}
       goBack={backStep}
       onClick={onSubmit}
       fields={registerFormsFieldsConfig[RegisterStepsEnum.ACCOUNT_INFO]}
     />,
+    <Confirmation />,
   ];
 
   return <>{getForms[currentStep - 1]}</>;

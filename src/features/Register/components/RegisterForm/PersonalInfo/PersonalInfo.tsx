@@ -30,10 +30,7 @@ const PersonalInfo = ({
 
   return (
     <FormProvider {...method}>
-      <form
-        className="mt-4 flex h-full w-full flex-col gap-4"
-        onSubmit={onSubmit}
-      >
+      <form className="flex h-full w-full flex-col gap-4" onSubmit={onSubmit}>
         {fields.map(({ label, idFor, placeholder, type }) => (
           <Input
             key={idFor}

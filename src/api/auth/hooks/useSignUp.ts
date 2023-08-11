@@ -3,22 +3,15 @@
 import { useCallback } from 'react';
 import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
-import { login } from '../auth.methods';
-import { AuthResponseType, RegisterPayloadType } from '../auth.types';
+import { signUp } from '../auth.methods';
+import { RegisterPayloadType } from '../auth.types';
 
 const POST_SIGN_UP_KEY = 'postSignUp';
 
-interface UseSignUpProps {
-  handleSuccess: (res: AuthResponseType) => void;
-}
-
-export const useSignUp = ({ handleSuccess }: UseSignUpProps) => {
-  const { mutate, isError, isLoading, error } = useMutation(
+export const useSignUp = () => {
+  const { mutate, isError, isLoading, isSuccess, error } = useMutation(
     [POST_SIGN_UP_KEY],
-    (payload: RegisterPayloadType) => login(payload),
-    {
-      onSuccess: (res) => handleSuccess(res),
-    }
+    (payload: RegisterPayloadType) => signUp(payload)
   );
 
   const handleSignUp = useCallback(
@@ -30,8 +23,9 @@ export const useSignUp = ({ handleSuccess }: UseSignUpProps) => {
 
   return {
     handleSignUp,
-    isSignUpLoading: isLoading,
     isSignUpError: isError,
+    isSignUpSuccess: isSuccess,
+    isSignUpLoading: isLoading,
     signUpError: axios.isAxiosError(error) ? error : undefined,
   };
 };

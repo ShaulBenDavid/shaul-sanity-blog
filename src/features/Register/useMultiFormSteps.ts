@@ -3,7 +3,15 @@
 import { useCallback, useState } from 'react';
 import { RegisterPayloadType } from '@/src/api/auth';
 
-export const useMultiFormSteps = (length: number) => {
+interface UseMultiFormSteps {
+  stepsCount: number;
+  handleSubmit: (payload: RegisterPayloadType) => void;
+}
+
+export const useMultiFormSteps = ({
+  stepsCount,
+  handleSubmit,
+}: UseMultiFormSteps) => {
   const [credentials, setCredentials] = useState<RegisterPayloadType>({
     firstName: '',
     lastName: '',
@@ -14,10 +22,10 @@ export const useMultiFormSteps = (length: number) => {
   const [currentStep, setCurrentStep] = useState<number>(1);
 
   const nextStep = useCallback((): void => {
-    if (currentStep < length) {
+    if (currentStep < stepsCount) {
       setCurrentStep((prev) => prev + 1);
     }
-  }, [currentStep, length]);
+  }, [currentStep, stepsCount]);
 
   const backStep = useCallback((): void => {
     if (currentStep > 1) {
@@ -27,14 +35,14 @@ export const useMultiFormSteps = (length: number) => {
 
   const onSubmit = useCallback(
     (data: Partial<RegisterPayloadType>): void => {
-      setCredentials((prev) => ({ ...prev, data }));
-      if (currentStep === length) {
-        // handleSubmit()
+      setCredentials((prev) => ({ ...prev, ...data }));
+      if (currentStep === stepsCount) {
+        handleSubmit({ ...credentials, ...data });
         return;
       }
       nextStep();
     },
-    [currentStep, length, nextStep]
+    [credentials, currentStep, handleSubmit, stepsCount, nextStep]
   );
 
   return {
