@@ -43,6 +43,6 @@ export const AxiosInterceptor = ({
       dwInstance.interceptors.request.eject(reqInterceptor);
       dwInstance.interceptors.response.eject(responseInterceptor);
     };
-  }, []);
+  }, [auth?.accessToken, refresh]);
   return children;
 };

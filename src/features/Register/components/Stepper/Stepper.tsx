@@ -8,7 +8,10 @@ interface StepperProps {
 }
 
 const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
-  <ol className="flex w-full items-center text-center text-sm font-medium text-gray-500 sm:text-base ">
+  <ol
+    className="flex w-full items-center text-center text-sm font-medium text-gray-500 sm:text-base"
+    data-testid="stepper-component-test-id"
+  >
     {steps.map((step, idx) => {
       const stepNum = idx + 1;
 
@@ -18,6 +21,7 @@ const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
           title={step.title}
           subtitle={step.subtitle}
           stepNumber={stepNum}
+          currentStep={currentStep}
           isLastStep={steps.length === stepNum}
           isCompletedStep={stepNum <= currentStep}
         />

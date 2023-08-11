@@ -8,9 +8,11 @@
     "plugin:react/recommended",
     "plugin:@next/next/recommended",
     "airbnb",
+    "airbnb/hooks",
     "prettier",
     "plugin:storybook/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -20,7 +22,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "@typescript-eslint"],
+  "plugins": ["react", "prettier", "@typescript-eslint", "react-hooks"],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "error",
@@ -28,6 +30,7 @@
     "react/forbid-prop-types": "error",
     "no-underscore-dangle": 0,
     "no-console": "warn",
+    "react-hooks/exhaustive-deps": "error",
     "import/no-unresolved": 0,
     "react/prop-types": "off",
     "no-undef": "off",

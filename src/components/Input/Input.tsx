@@ -30,7 +30,7 @@ const Input = ({
         htmlFor={idFor}
         className="font-medium capitalize text-secondary-950"
       >
-        {label}
+        {label.replace(/([a-z])([A-Z])/g, '$1 $2')}
       </label>
       <input
         id={idFor}

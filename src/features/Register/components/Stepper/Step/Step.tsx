@@ -6,6 +6,7 @@ interface StepProps {
   title: string;
   subtitle?: string;
   stepNumber: number;
+  currentStep: number;
   isLastStep: boolean;
   isCompletedStep: boolean;
 }
@@ -14,6 +15,7 @@ const Step = ({
   title,
   subtitle,
   stepNumber,
+  currentStep,
   isLastStep,
   isCompletedStep,
 }: StepProps): JSX.Element => {
@@ -24,10 +26,12 @@ const Step = ({
       className={`
       flex items-center capitalize
       ${isLastStep ? '' : step.notLast} 
-      ${isCompletedStep ? step.completed : ''}
+      ${stepNumber <= currentStep ? step.current : ''}
+      ${stepNumber < currentStep ? step.separator : ''}
     `}
+      data-testid="step-component-test-id"
     >
-      <span className={isLastStep ? 'flex items-center' : smallSeparator}>
+      <span className={`flex items-center ${isLastStep ? '' : smallSeparator}`}>
         {isCompletedStep ? (
           <BsFillCheckCircleFill
             height="14px"

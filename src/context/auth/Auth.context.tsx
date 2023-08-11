@@ -33,9 +33,9 @@ export const AuthContextProvider = ({
   const handleLogout = useCallback((): void => {
     appQueryClient.clear();
     setAuth(null);
-  }, [auth]);
+  }, []);
 
-  const userRoles = (): Roles[] => {
+  const userRoles = useCallback((): Roles[] => {
     if (auth?.role) {
       return auth.role;
     }
@@ -45,7 +45,7 @@ export const AuthContextProvider = ({
     }
 
     return [Roles.VISITOR];
-  };
+  }, [auth]);
 
   const value = useMemo(
     (): AuthContextObj => ({
@@ -56,7 +56,7 @@ export const AuthContextProvider = ({
       setAuth,
       handleLogout,
     }),
-    [auth]
+    [auth, handleLogout, userRoles]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
