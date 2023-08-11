@@ -48,6 +48,7 @@ const Register = (): JSX.Element => {
         <Alert
           variant={AlertVariants.DANGER}
           content={signUpError?.response?.data.message}
+          className="mb-4"
         />
       )}
       <RegisterForm
