@@ -1,19 +1,25 @@
 'use client';
 
 import React from 'react';
-import { useMultiFormConfig, useMultiFormSteps } from './hooks';
+import { RegisterPayloadType } from '@/src/api/auth';
 import PersonalInfo from './PersonalInfo';
 import { RegisterStepsEnum } from '../../Register.types';
 import { registerFormsFieldsConfig } from '../../Register.config';
 import AccountInfo from './AccountInfo';
+import { useMultiFormConfig } from './useMultiFormConfig';
 
-// interface RegisterFormProps {}
+interface RegisterFormProps {
+  currentStep: number;
+  backStep: () => void;
+  onSubmit: (data: Partial<RegisterPayloadType>) => void;
+}
 
-const RegisterForm = (): JSX.Element => {
+const RegisterForm = ({
+  currentStep,
+  backStep,
+  onSubmit,
+}: RegisterFormProps): JSX.Element => {
   const methods = useMultiFormConfig();
-  const { currentStep, onSubmit, backStep } = useMultiFormSteps(
-    Object.keys(methods).length
-  );
 
   const getForms: JSX.Element[] = [
     <PersonalInfo

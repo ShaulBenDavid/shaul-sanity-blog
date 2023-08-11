@@ -51,7 +51,10 @@ const accountInfoInputs: RegisterFieldType[] = [
   },
 ];
 
-export const registerFormsFieldsConfig = {
+export const registerFormsFieldsConfig: Record<
+  RegisterStepsEnum,
+  RegisterFieldType[]
+> = {
   [RegisterStepsEnum.PERSONAL_INFO]: personalInfoInputs,
   [RegisterStepsEnum.ACCOUNT_INFO]: accountInfoInputs,
 };
