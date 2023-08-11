@@ -4,21 +4,21 @@ import React from 'react';
 import { FormProvider, UseFormReturn } from 'react-hook-form';
 import Input from '@/src/components/Input';
 import Button, { ButtonVariants } from '@/src/components/Button';
-import { PersonalMethodType } from '../RegisterForm.types';
 import { RegisterPayloadType } from '@/src/api/auth';
+import { AccountMethodType } from '../RegisterForm.types';
 import { RegisterFieldType } from '../../../Register.types';
 
-interface PersonalInfoProps {
+interface AccountInfoProps {
   fields: RegisterFieldType[];
   onClick: (data: Partial<RegisterPayloadType>) => void;
-  method: UseFormReturn<PersonalMethodType, any, undefined>;
+  method: UseFormReturn<AccountMethodType, any, undefined>;
 }
 
-const PersonalInfo = ({
+const AccountInfo = ({
   fields,
-  method,
   onClick,
-}: PersonalInfoProps): JSX.Element => {
+  method,
+}: AccountInfoProps): JSX.Element => {
   const {
     handleSubmit,
     formState: { isValid },
@@ -53,4 +53,4 @@ const PersonalInfo = ({
   );
 };
 
-export default PersonalInfo;
+export default AccountInfo;

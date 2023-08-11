@@ -1,26 +1,46 @@
 'use client';
 
 import { useCallback, useState } from 'react';
+import { RegisterPayloadType } from '@/src/api/auth';
 
-export const useMultiFormSteps = (forms: JSX.Element[]) => {
+export const useMultiFormSteps = (length: number) => {
+  const [credentials, setCredentials] = useState<RegisterPayloadType>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
   const [currentStep, setCurrentStep] = useState<number>(1);
 
   const nextStep = useCallback((): void => {
-    if (currentStep < forms.length) {
+    if (currentStep < length) {
       setCurrentStep((prev) => prev + 1);
     }
-  }, [setCurrentStep]);
+  }, [currentStep, length]);
 
   const backStep = useCallback((): void => {
     if (currentStep > 1) {
       setCurrentStep((prev) => prev - 1);
     }
-  }, [setCurrentStep]);
+  }, [currentStep]);
+
+  const onSubmit = useCallback(
+    (data: Partial<RegisterPayloadType>): void => {
+      setCredentials((prev) => ({ ...prev, data }));
+      if (currentStep === length) {
+        // handleSubmit()
+        return;
+      }
+      nextStep();
+    },
+    [currentStep, length, nextStep]
+  );
 
   return {
-    form: forms[currentStep],
     nextStep,
     backStep,
     currentStep,
+    onSubmit,
+    credentials,
   };
 };

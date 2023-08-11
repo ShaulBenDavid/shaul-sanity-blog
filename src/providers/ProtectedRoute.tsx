@@ -27,7 +27,7 @@ const ProtectedRoute = ({
     if (!isAllowed && isAuth) {
       router.push(defaultRoute);
     }
-  }, [router, roles, isAuth]);
+  }, [router, roles, isAuth, isAllowed, defaultRoute]);
 
   return isAllowed ? <>{children}</> : <></>;
 };
