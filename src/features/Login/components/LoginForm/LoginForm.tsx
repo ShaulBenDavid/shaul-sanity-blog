@@ -46,12 +46,13 @@ const LoginForm = (): JSX.Element => {
             className="mb-4"
           />
         )}
-        {loginFormConfig.map(({ label, idFor, type }) => (
+        {loginFormConfig.map(({ label, idFor, placeholder, type }) => (
           <Input
             key={idFor}
             label={label}
             idFor={idFor}
             type={type}
+            placeholder={placeholder}
             className="mb-4"
           />
         ))}
