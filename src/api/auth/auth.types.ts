@@ -1,15 +1,21 @@
 import { Roles } from '@/src/roles';
 
+export type Interested = {
+  topic: string;
+  sanityId: string;
+  slug: string;
+  _id: string;
+};
+
 export type AuthResponseType = {
   firstName: string;
   lastName: string;
   email: string;
   role: Roles[];
+  interested: Interested[] | null;
   username: string;
   accessToken: string;
 };
-
-export type Auth = AuthResponseType | null | undefined;
 
 export type LoginPayloadType = {
   email: string;

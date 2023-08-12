@@ -8,12 +8,14 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { Auth } from '@/src/api/auth';
+import { AuthResponseType } from '@/src/api/auth';
 import { Roles } from '@/src/roles';
 import { appQueryClient } from '@/src/queries';
 
+export type Auth = AuthResponseType | null | undefined;
+
 type AuthContextObj = {
-  auth: Auth | null | undefined;
+  auth: Auth;
   isAuth: boolean;
   isAuthInitialized: boolean;
   roles: Roles[];
@@ -28,7 +30,7 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode;
 }): JSX.Element => {
-  const [auth, setAuth] = useState<Auth | null | undefined>();
+  const [auth, setAuth] = useState<Auth>();
 
   const handleLogout = useCallback((): void => {
     appQueryClient.clear();
