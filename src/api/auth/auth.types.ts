@@ -11,7 +11,7 @@ export type AuthResponseType = {
   firstName: string;
   lastName: string;
   email: string;
-  role: Roles[];
+  roles: Roles[];
   interested: Interested[] | null;
   username: string;
   accessToken: string;
