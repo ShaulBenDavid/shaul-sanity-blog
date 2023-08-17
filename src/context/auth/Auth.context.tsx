@@ -38,8 +38,8 @@ export const AuthContextProvider = ({
   }, []);
 
   const userRoles = useCallback((): Roles[] => {
-    if (auth?.role) {
-      return auth.role;
+    if (auth?.roles) {
+      return auth.roles;
     }
 
     if (auth === undefined) {
