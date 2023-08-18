@@ -4,6 +4,11 @@ import { QueryProvider } from '@/src/providers/query.provider';
 import { AuthContextProvider } from '@/src/context/auth';
 import { AxiosInterceptor } from '@/src/api';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+  useSelectedLayoutSegment: (): string => '/sign-in',
+}));
+
 const AllTheProviders = ({ children }: { children: JSX.Element }) => {
   return (
     <QueryProvider>

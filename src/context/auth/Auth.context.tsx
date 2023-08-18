@@ -8,6 +8,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import { useRouter } from 'next/navigation';
 import { AuthResponseType } from '@/src/api/auth';
 import { Roles } from '@/src/roles';
 import { appQueryClient } from '@/src/queries';
@@ -31,11 +32,16 @@ export const AuthContextProvider = ({
   children: React.ReactNode;
 }): JSX.Element => {
   const [auth, setAuth] = useState<Auth>();
+  const router = useRouter();
 
   const handleLogout = useCallback((): void => {
     appQueryClient.clear();
+    appQueryClient.resetQueries();
+    appQueryClient.cancelQueries();
+    appQueryClient.removeQueries();
+    router.refresh();
     setAuth(null);
-  }, []);
+  }, [router]);
 
   const userRoles = useCallback((): Roles[] => {
     if (auth?.roles) {
