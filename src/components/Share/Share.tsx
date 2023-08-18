@@ -26,7 +26,7 @@ interface ShareProps {
 const Share = ({ url = '', subject, title }: ShareProps): JSX.Element => {
   return (
     <div className="flex w-full flex-col gap-3">
-      <h2 className="text-md font-bold text-wizard-black">
+      <h2 className="text-base font-bold text-wizard-black">
         Share with your friends
       </h2>
       <div

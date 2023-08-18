@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .button-link {
+    @apply flex h-10 w-full items-center justify-center rounded-[6px] bg-primary-900 capitalize text-white shadow-dw transition-all hover:bg-[#6C078E];
+  }
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
