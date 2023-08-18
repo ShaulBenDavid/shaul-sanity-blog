@@ -3,11 +3,14 @@ import { SpinnerSize, SpinnerVariants } from './Spinner.types';
 import { spinnerSizesConfig, spinnerVariantConfig } from './Spinner.config';
 
 interface SpinnerProps {
-  variant: SpinnerVariants;
-  size: SpinnerSize;
+  variant?: SpinnerVariants;
+  size?: SpinnerSize;
 }
 
-const Spinner = ({ variant, size }: SpinnerProps): JSX.Element => (
+const Spinner = ({
+  variant = SpinnerVariants.PRIMARY,
+  size = SpinnerSize.MEDIUM,
+}: SpinnerProps): JSX.Element => (
   <div role="status">
     <svg
       aria-hidden="true"

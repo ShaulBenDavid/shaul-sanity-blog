@@ -1,13 +1,23 @@
 'use client';
 
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { RegisterPayloadType } from '@/src/api/auth';
-import PersonalInfo from './PersonalInfo';
-import { RegisterStepsEnum } from '../../Register.types';
-import { registerFormsFieldsConfig } from '../../Register.config';
-import AccountInfo from './AccountInfo';
+import Spinner from '@/src/components/Spinner/index';
 import { useMultiFormConfig } from './useMultiFormConfig';
-import Confirmation from './Confirmation';
+import { registerFormsFieldsConfig } from '../../Register.config';
+import { RegisterStepsEnum } from '../../Register.types';
+import PersonalInfo from './PersonalInfo';
+import AccountInfo from './AccountInfo';
+
+const Confirmation = dynamic(() => import('./Confirmation'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-full w-full items-center justify-center">
+      <Spinner />
+    </div>
+  ),
+});
 
 interface RegisterFormProps {
   currentStep: number;

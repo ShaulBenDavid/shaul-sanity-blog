@@ -8,17 +8,20 @@ interface UseMultiFormSteps {
   handleSubmit: (payload: RegisterPayloadType) => void;
 }
 
+const initialState: RegisterPayloadType = {
+  firstName: '',
+  lastName: '',
+  username: '',
+  email: '',
+  password: '',
+};
+
 export const useMultiFormSteps = ({
   stepsCount,
   handleSubmit,
 }: UseMultiFormSteps) => {
-  const [credentials, setCredentials] = useState<RegisterPayloadType>({
-    firstName: '',
-    lastName: '',
-    username: '',
-    email: '',
-    password: '',
-  });
+  const [credentials, setCredentials] =
+    useState<RegisterPayloadType>(initialState);
   const [currentStep, setCurrentStep] = useState<number>(1);
 
   const nextStep = useCallback((): void => {

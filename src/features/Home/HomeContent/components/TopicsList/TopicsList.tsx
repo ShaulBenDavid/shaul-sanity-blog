@@ -12,7 +12,7 @@ const TopicsList = async (): Promise<JSX.Element> => {
 
   return (
     <div className="flex w-full flex-col gap-3">
-      <h2 className="text-md font-bold text-wizard-black">
+      <h2 className="text-base font-bold text-wizard-black">
         Discover more by the topics you like
       </h2>
       <div className="flex flex-wrap gap-2 pl-2">
