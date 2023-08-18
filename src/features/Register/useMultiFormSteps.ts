@@ -22,7 +22,7 @@ export const useMultiFormSteps = ({
 }: UseMultiFormSteps) => {
   const [credentials, setCredentials] =
     useState<RegisterPayloadType>(initialState);
-  const [currentStep, setCurrentStep] = useState<number>(3);
+  const [currentStep, setCurrentStep] = useState<number>(1);
 
   const nextStep = useCallback((): void => {
     if (currentStep < stepsCount) {

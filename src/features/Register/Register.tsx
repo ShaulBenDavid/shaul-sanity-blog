@@ -22,7 +22,7 @@ const Register = (): JSX.Element => {
 
   const stepsCount =
     Object.keys(RegisterStepsEnum).length +
-    (isSignUpSuccess ? CONFIRMATION_PAGE : 1);
+    (isSignUpSuccess ? CONFIRMATION_PAGE : 0);
 
   const { currentStep, backStep, nextStep, onSubmit } = useMultiFormSteps({
     stepsCount,
