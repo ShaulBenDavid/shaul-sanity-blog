@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  typescript: {
+    tsconfigPath: './tsconfig.json',
+  },
   images: {
     domains: ['cdn.sanity.io'],
     dangerouslyAllowSVG: true,

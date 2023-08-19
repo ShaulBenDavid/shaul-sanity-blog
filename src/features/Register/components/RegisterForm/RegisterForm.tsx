@@ -50,7 +50,7 @@ const RegisterForm = ({
     <Confirmation />,
   ];
 
-  return <>{getForms[currentStep - 1]}</>;
+  return getForms[currentStep - 1];
 };
 
 export default RegisterForm;

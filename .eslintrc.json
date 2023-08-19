@@ -4,6 +4,7 @@
     "es2021": true,
     "node": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:react/recommended",
     "plugin:@next/next/recommended",
@@ -14,7 +15,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/eslint-recommended"
   ],
-  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -22,15 +22,18 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "@typescript-eslint", "react-hooks"],
+  "plugins": ["react", "prettier", "react-hooks", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
     "react/react-in-jsx-scope": "error",
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-useless-fragment": "error",
     "react/forbid-prop-types": "error",
     "no-underscore-dangle": 0,
     "no-console": "warn",
     "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
     "import/no-unresolved": 0,
     "react/prop-types": "off",
     "no-undef": "off",
