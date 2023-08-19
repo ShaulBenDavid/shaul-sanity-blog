@@ -33,6 +33,7 @@ const Avatar = ({
         src={url as string}
         alt={`Avatar - ${url}`}
         className={avatarSizesConfig[size]}
+        loading="lazy"
         width={40}
         height={40}
         sizes="10vh"

@@ -29,6 +29,7 @@ const ProtectedRoute = ({
     }
   }, [router, roles, isAuth, isAllowed, defaultRoute]);
 
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return isAllowed ? <>{children}</> : <></>;
 };
 
