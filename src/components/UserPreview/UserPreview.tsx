@@ -24,7 +24,7 @@ const UserPreview = ({
     <div className="flex flex-col capitalize">
       <span className="text-sm">{name}</span>
       {title && (
-        <span className="text-xs font-medium text-[#6B6B6B]">{title}</span>
+        <span className="text-xs font-medium text-primary-gray">{title}</span>
       )}
     </div>
   </Link>

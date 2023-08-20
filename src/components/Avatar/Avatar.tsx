@@ -31,7 +31,7 @@ const Avatar = ({
     ) : (
       <Image
         src={url as string}
-        alt={`Avatar - ${url}`}
+        alt={`Avatar - ${name}`}
         className={avatarSizesConfig[size]}
         loading="lazy"
         width={40}

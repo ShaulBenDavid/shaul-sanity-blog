@@ -56,6 +56,7 @@ module.exports = {
         950: '#2d033b',
       },
       'wizard-grey': '#736278',
+      'primary-gray': '#6B6B6B',
       'dw-grey': '#E8E3EA',
       'wizard-black': '#1D0325',
       'wizard-white': '#FAF2FD',
