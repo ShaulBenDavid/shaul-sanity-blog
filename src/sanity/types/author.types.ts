@@ -4,5 +4,6 @@ export interface Author extends Base {
   bio: Block[];
   image: Image;
   name: string;
+  title: string;
   slug: Slug;
 }
