@@ -6,7 +6,7 @@ import { Author } from '@/src/sanity/types';
 import forUrl from '@/lib/urlFor';
 import UserPreview from '../../UserPreview';
 
-interface PostPreviewProps {
+export interface PostPreviewProps {
   title: string;
   content: string;
   href: string;
@@ -28,14 +28,22 @@ const PostPreview = ({
   <article>
     <Link href={href}>
       <figure>
-        <Image src={imgUrl} alt={title} fill loading="lazy" sizes="20vw" />
+        <Image
+          src={imgUrl}
+          alt={title}
+          loading="lazy"
+          sizes="20vw"
+          className="h-16 w-16"
+          height={80}
+          width={80}
+        />
       </figure>
     </Link>
     <div>
       <UserPreview
         name={author.name}
         title={author.title}
-        username={author.name}
+        username={author.username}
         imageUrl={forUrl(author.image).url()}
       />
       <Link href={href}>
