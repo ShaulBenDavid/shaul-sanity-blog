@@ -22,7 +22,7 @@ const Avatar = ({
   size = AvatarSizes.LARGE,
 }: AvatarProps): JSX.Element => (
   <div
-    className={`flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`}
+    className={`relative flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`}
     style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}
     data-testid="avatar-component-test-id"
   >
@@ -32,10 +32,9 @@ const Avatar = ({
       <Image
         src={url as string}
         alt={`Avatar - ${name}`}
-        className={avatarSizesConfig[size]}
+        className={`${avatarSizesConfig[size]} object-cover`}
         loading="lazy"
-        width={40}
-        height={40}
+        fill
         sizes="10vh"
       />
     )}

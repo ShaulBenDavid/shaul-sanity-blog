@@ -24,12 +24,13 @@ const mockAuthor: Author = {
 
 const mockPost = {
   title: 'Mock Post Title',
-  content: 'This is the content of the mock post.',
+  content:
+    'This is the content of the mock post. new features and cool stuff every day.',
   href: 'https://example.com/mock-post',
   imgUrl:
     'https://cdn.sanity.io/images/7qr01hja/production/9b6e633c9fe97cc8eadf8f62959df4b5db6fca27-6048x4024.jpg',
   date: new Date(),
-  readTime: '5 min read',
+  readTime: 5,
   author: mockAuthor,
 };
 
@@ -66,7 +67,7 @@ const meta: Meta<typeof PostPreview> = {
       description: 'Post date',
     },
     readTime: {
-      control: 'text',
+      control: 'number',
       description: 'Post read time',
     },
   },

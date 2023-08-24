@@ -12,7 +12,7 @@ export interface PostPreviewProps {
   href: string;
   imgUrl: string;
   date: Date;
-  readTime: string;
+  readTime: number;
   author: Author;
 }
 
@@ -25,21 +25,13 @@ const PostPreview = ({
   readTime,
   author,
 }: PostPreviewProps): JSX.Element => (
-  <article>
+  <article className="flex h-[130px] flex-row gap-1">
     <Link href={href}>
-      <figure>
-        <Image
-          src={imgUrl}
-          alt={title}
-          loading="lazy"
-          sizes="20vw"
-          className="h-16 w-16"
-          height={80}
-          width={80}
-        />
+      <figure className="relative h-full w-[200px]">
+        <Image src={imgUrl} alt={title} loading="lazy" sizes="15vw" fill />
       </figure>
     </Link>
-    <div>
+    <div className="flex h-full flex-col">
       <UserPreview
         name={author.name}
         title={author.title}
@@ -47,11 +39,11 @@ const PostPreview = ({
         imageUrl={forUrl(author.image).url()}
       />
       <Link href={href}>
-        <h4>{title}</h4>
-        <p>{content}</p>
+        <h4 className="text-lg font-bold text-black">{title}</h4>
+        <p className="line-clamp-2 text-base text-primary-gray">{content}</p>
       </Link>
-      <div>
-        <time>{formatDateToCustomFormat(date)}</time>
+      <div className="mt-auto flex flex-row items-center gap-1 text-sm text-primary-gray">
+        <time>{formatDateToCustomFormat(date)}</time>-
         <small>{readTime} min read</small>
       </div>
     </div>
