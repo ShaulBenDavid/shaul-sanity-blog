@@ -32,7 +32,7 @@ const Avatar = ({
       <Image
         src={url as string}
         alt={`Avatar - ${name}`}
-        className={`${avatarSizesConfig[size]} object-cover`}
+        className="object-cover"
         loading="lazy"
         fill
         sizes="10vh"

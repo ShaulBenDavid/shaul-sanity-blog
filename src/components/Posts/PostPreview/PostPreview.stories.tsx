@@ -1,6 +1,12 @@
+import React, { CSSProperties } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Author } from '@/src/sanity/types';
 import PostPreview from './PostPreview';
+
+const styles: CSSProperties = {
+  transform: 'scale(1)',
+  width: '600px',
+};
 
 const mockAuthor: Author = {
   _id: 'mock-author-id',
@@ -32,6 +38,7 @@ const mockPost = {
   date: new Date(),
   readTime: 5,
   author: mockAuthor,
+  isBookmarked: false,
 };
 
 /**
@@ -45,6 +52,7 @@ const meta: Meta<typeof PostPreview> = {
   title: 'Components/Post/PostPreview',
   component: PostPreview,
   tags: ['autodocs'],
+  decorators: [(storyFn) => <div style={styles}>{storyFn()}</div>],
   argTypes: {
     title: {
       control: 'text',
@@ -69,6 +77,10 @@ const meta: Meta<typeof PostPreview> = {
     readTime: {
       control: 'number',
       description: 'Post read time',
+    },
+    isBookmarked: {
+      control: 'boolean',
+      description: 'This post is saved for read later?',
     },
   },
 };
