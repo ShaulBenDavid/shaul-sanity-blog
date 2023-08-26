@@ -1,4 +1,4 @@
-import { client } from '@/lib/sanity.client';
+import { client } from '@/src/sanity/sanity.client';
 import { topicsQuery } from './home.queries';
 import { GetTopics } from './home.types';
 

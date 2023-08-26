@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import type { PortableTextReactComponents } from '@portabletext/react';
-import forUrl from '@/lib/urlFor';
+import { forUrl } from '@/src/sanity/sanity.utils';
 
 const RichTextComponents: Partial<PortableTextReactComponents> = {
   types: {

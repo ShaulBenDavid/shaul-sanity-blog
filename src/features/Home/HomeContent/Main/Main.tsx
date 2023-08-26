@@ -1,6 +1,6 @@
 import React from 'react';
 import groq from 'groq';
-import { client } from '@/lib/sanity.client';
+import { client } from '@/src/sanity/sanity.client';
 import BlogList from '@/src/components/BlogList/BlogList';
 
 const query = groq`

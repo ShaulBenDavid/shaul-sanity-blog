@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsBookmarkPlus, BsBookmarkPlusFill } from 'react-icons/bs';
 import { formatDateToCustomFormat } from '@/src/utils';
+import { forUrl } from '@/src/sanity/sanity.utils';
 import { Author } from '@/src/sanity/types';
-import forUrl from '@/lib/urlFor';
 import UserPreview from '../../UserPreview';
 
 export interface PostPreviewProps {
@@ -28,7 +28,10 @@ const PostPreview = ({
   isBookmarked,
   author,
 }: PostPreviewProps): JSX.Element => (
-  <article className="flex h-[130px] flex-row gap-1">
+  <article
+    className="flex h-[130px] flex-row gap-1"
+    data-testid="post-preview-component-test-id"
+  >
     <Link href={href}>
       <figure
         className="group relative h-full w-[200px] animate-[skeleton-loading_1s_ease-in-out_infinite] "
