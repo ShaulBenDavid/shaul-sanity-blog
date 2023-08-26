@@ -95,6 +95,14 @@ module.exports = {
           '0%': { transform: 'translateY(15px)', opacity: 0 },
           '100%': { translate: 'translateY(0)', opacity: 1 },
         },
+        'skeleton-loading': {
+          '0%': {
+            backgroundColor: 'hsl(200, 20%, 70%)',
+          },
+          '100%': {
+            backgroundColor: ' hsl(200, 20%, 95%)',
+          },
+        },
       },
     },
   },

@@ -1,18 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BsBookmarkPlus, BsBookmarkPlusFill } from 'react-icons/bs';
 import { formatDateToCustomFormat } from '@/src/utils';
+import { forUrl } from '@/src/sanity/sanity.utils';
 import { Author } from '@/src/sanity/types';
-import forUrl from '@/lib/urlFor';
 import UserPreview from '../../UserPreview';
 
-interface PostPreviewProps {
+export interface PostPreviewProps {
   title: string;
   content: string;
   href: string;
   imgUrl: string;
   date: Date;
-  readTime: string;
+  readTime: number;
+  isBookmarked: boolean;
   author: Author;
 }
 
@@ -23,27 +25,48 @@ const PostPreview = ({
   imgUrl,
   date,
   readTime,
+  isBookmarked,
   author,
 }: PostPreviewProps): JSX.Element => (
-  <article>
+  <article
+    className="flex h-[130px] flex-row gap-1"
+    data-testid="post-preview-component-test-id"
+  >
     <Link href={href}>
-      <figure>
-        <Image src={imgUrl} alt={title} fill loading="lazy" sizes="20vw" />
+      <figure
+        className="group relative h-full w-[200px] animate-[skeleton-loading_1s_ease-in-out_infinite] "
+        id="test2"
+      >
+        <Image src={imgUrl} alt={title} loading="lazy" sizes="15vw" fill />
       </figure>
     </Link>
-    <div>
-      <UserPreview
-        name={author.name}
-        title={author.title}
-        username={author.name}
-        imageUrl={forUrl(author.image).url()}
-      />
+    <div className="flex h-full flex-col">
+      <div className="flex flex-row justify-between">
+        <UserPreview
+          name={author.name}
+          title={author.title}
+          username={author.username}
+          imageUrl={forUrl(author.image).url()}
+        />
+        <button
+          type="button"
+          aria-label={`Save post ${title}`}
+          aria-pressed={isBookmarked}
+          className="text-secondary-950 hover:text-primary-950"
+        >
+          {isBookmarked ? (
+            <BsBookmarkPlusFill size={24} />
+          ) : (
+            <BsBookmarkPlus size={24} />
+          )}
+        </button>
+      </div>
       <Link href={href}>
-        <h4>{title}</h4>
-        <p>{content}</p>
+        <h4 className="text-lg font-bold text-black">{title}</h4>
+        <p className="line-clamp-2 text-base text-primary-gray">{content}</p>
       </Link>
-      <div>
-        <time>{formatDateToCustomFormat(date)}</time>
+      <div className="mt-auto flex flex-row items-center gap-1 text-sm text-primary-gray">
+        <time>{formatDateToCustomFormat(date)}</time>-
         <small>{readTime} min read</small>
       </div>
     </div>

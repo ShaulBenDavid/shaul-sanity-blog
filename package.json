@@ -15,7 +15,7 @@
     "prettier:fix": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|css)\"",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
-    "test": "jest"
+    "test": "dotenv -e .env jest"
   },
   "dependencies": {
     "@heroicons/react": "2.0.16",
@@ -73,6 +73,7 @@
     "autoprefixer": "10.4.14",
     "babel-jest": "29.5.0",
     "babel-loader": "8.3.0",
+    "dotenv-cli": "^7.3.0",
     "eslint": "^8.37.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-airbnb-base": "15.0.0",

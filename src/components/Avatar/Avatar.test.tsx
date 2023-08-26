@@ -17,8 +17,8 @@ describe('Avatar', () => {
       <Avatar size={AvatarSizes.LARGE} name="shaul" />
     );
     const avatarElement = getByTestId('avatar-component-test-id');
-    expect(avatarElement).toHaveClass('h-8');
-    expect(avatarElement).toHaveClass('w-8');
+    expect(avatarElement).toHaveClass('h-9');
+    expect(avatarElement).toHaveClass('w-9');
   });
 
   it('renders correctly with the name letters', () => {
