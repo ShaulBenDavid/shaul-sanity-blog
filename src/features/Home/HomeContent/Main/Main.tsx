@@ -17,7 +17,7 @@ const Main = async (): Promise<JSX.Element> => {
   const posts = await client.fetch(query);
 
   return (
-    <section>
+    <section className="flex flex-1 flex-col gap-4">
       <BlogList posts={posts} />
     </section>
   );
