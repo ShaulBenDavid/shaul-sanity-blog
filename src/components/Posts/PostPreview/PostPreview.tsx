@@ -29,7 +29,7 @@ const PostPreview = ({
   author,
 }: PostPreviewProps): JSX.Element => (
   <article
-    className="flex h-28 flex-row gap-1 sm:h-[130px]"
+    className="flex h-28 w-full flex-row gap-1 sm:h-[130px]"
     data-testid="post-preview-component-test-id"
   >
     <Link href={href} aria-hidden className="flex-shrink-0">
@@ -48,7 +48,7 @@ const PostPreview = ({
         />
       </figure>
     </Link>
-    <div className="flex h-full flex-col">
+    <div className="flex h-full w-full flex-col">
       <div className="flex flex-row justify-between">
         <UserPreview
           name={author.name}

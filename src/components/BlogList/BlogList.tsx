@@ -1,50 +1,37 @@
 import React from 'react';
-import Image from 'next/image';
 import { Post } from '@/src/sanity/types';
 import { forUrl } from '@/src/sanity/sanity.utils';
-import ClientSideRoute from '../ClientSideRoute/ClientSideRoute';
+import PostPreview from '../Posts/PostPreview';
 
 type Props = {
   posts: Post[];
 };
 
 const BlogList = ({ posts }: Props): JSX.Element => (
-  <div>
-    {posts.map(
-      ({
-        _id,
-        title,
-        _createdAt,
-        author,
-        mainImage,
-        topics,
-        description,
-        slug,
-      }) => (
-        <ClientSideRoute key={_id} route={`/post/${slug.current}`}>
-          <div style={{ backgroundColor: 'sky' }} className="w-full">
-            <h2>{title}</h2>
-            <h3>{_createdAt}</h3>
-            <p>{author.name}</p>
-            <div
-              style={{ width: '80px', height: '80px', position: 'relative' }}
-            >
-              <Image src={forUrl(mainImage).url()} alt={author.name} fill />
-            </div>
-            <div>
-              {topics.map((topic) => (
-                <span key={topic._id}>{topic.title}</span>
-              ))}
-            </div>
-
-            <div>
-              <p>{description}</p>
-            </div>
-          </div>
-        </ClientSideRoute>
-      )
-    )}
-  </div>
+  <>
+    {posts
+      .concat(posts)
+      .concat(posts)
+      .concat(posts)
+      .concat(posts)
+      .concat(posts)
+      .concat(posts)
+      .concat(posts)
+      .concat(posts)
+      .map(({ _id, title, author, mainImage, description, slug }) => (
+        <PostPreview
+          key={_id}
+          title={title}
+          content={description}
+          imgUrl={forUrl(mainImage).url()}
+          author={author}
+          href={`/post/${slug.current}`}
+          readTime={2}
+          date={new Date()}
+          isBookmarked={false}
+        />
+      ))}
+  </>
 );
 
 export default BlogList;
