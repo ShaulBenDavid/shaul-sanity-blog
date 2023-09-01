@@ -33,10 +33,7 @@ const PostPreview = ({
     data-testid="post-preview-component-test-id"
   >
     <Link href={href} aria-hidden className="flex-shrink-0">
-      <figure
-        className="group relative animate-[skeleton-loading_1s_ease-in-out_infinite]"
-        id="test2"
-      >
+      <figure className="dw-skeleton group relative">
         <Image
           src={imgUrl}
           alt={title}
@@ -44,7 +41,7 @@ const PostPreview = ({
           sizes="15wv"
           width={0}
           height={0}
-          className="aspect-video h-28 w-40 object-cover sm:h-[130px] sm:w-full"
+          className="aspect-square h-28 w-full object-cover mb:aspect-video mb:w-40 sm:h-[130px] sm:w-full"
         />
       </figure>
     </Link>
@@ -56,24 +53,25 @@ const PostPreview = ({
           username={author.username}
           imageUrl={forUrl(author.image).url()}
           avatarStyles="max-sm:h-6 max-sm:w-6"
-          className="max-sm:flex-row max-sm:items-center max-sm:gap-1"
         />
         <button
           type="button"
           aria-label={`Save post ${title}`}
           aria-pressed={isBookmarked}
-          className="text-secondary-950 hover:text-primary-950"
+          className="h-fit text-secondary-950 hover:text-primary-950"
         >
           {isBookmarked ? (
-            <BsBookmarkPlusFill size={24} />
+            <BsBookmarkPlusFill className="h-5 w-5 sm:h-6 sm:w-6" />
           ) : (
-            <BsBookmarkPlus size={24} />
+            <BsBookmarkPlus className="h-5 w-5 sm:h-6 sm:w-6" />
           )}
         </button>
       </div>
       <Link href={href}>
-        <h4 className="text-base font-bold text-black sm:text-lg">{title}</h4>
-        <p className="line-clamp-2 text-sm text-primary-gray sm:text-base">
+        <h4 className="line-clamp-2 text-base font-bold text-black sm:text-lg">
+          {title}
+        </h4>
+        <p className="line-clamp-1 text-sm text-primary-gray max-xs:hidden sm:line-clamp-2 sm:text-base">
           {content}
         </p>
       </Link>
