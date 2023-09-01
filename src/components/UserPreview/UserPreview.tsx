@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { twMerge } from 'tailwind-merge';
 import Avatar from '../Avatar';
 
 interface UserPreviewProps {
@@ -9,7 +8,6 @@ interface UserPreviewProps {
   imageUrl?: string | null;
   username: string;
   avatarStyles?: string;
-  className?: string;
 }
 
 const UserPreview = ({
@@ -18,7 +16,6 @@ const UserPreview = ({
   imageUrl,
   username,
   avatarStyles,
-  className,
 }: UserPreviewProps): JSX.Element => (
   <Link
     href={`/@${username}`}
@@ -29,7 +26,7 @@ const UserPreview = ({
       {...(imageUrl ? { url: imageUrl } : { name })}
       className={avatarStyles}
     />
-    <div className={twMerge('flex flex-col capitalize', className)}>
+    <div className="flex flex-col capitalize">
       <span className="text-sm">{name}</span>
       {title && (
         <span className="text-xs font-medium text-primary-gray">{title}</span>

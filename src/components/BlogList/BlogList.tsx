@@ -18,19 +18,21 @@ const BlogList = ({ posts }: Props): JSX.Element => (
       .concat(posts)
       .concat(posts)
       .concat(posts)
-      .map(({ _id, title, author, mainImage, description, slug }) => (
-        <PostPreview
-          key={_id}
-          title={title}
-          content={description}
-          imgUrl={forUrl(mainImage).url()}
-          author={author}
-          href={`/post/${slug.current}`}
-          readTime={2}
-          date={new Date()}
-          isBookmarked={false}
-        />
-      ))}
+      .map(
+        ({ _id, title, author, mainImage, description, slug, _createdAt }) => (
+          <PostPreview
+            key={_id}
+            title={title}
+            content={description}
+            imgUrl={forUrl(mainImage).url()}
+            author={author}
+            href={`/post/${slug.current}`}
+            readTime={2}
+            date={new Date(_createdAt)}
+            isBookmarked={false}
+          />
+        )
+      )}
   </>
 );
 

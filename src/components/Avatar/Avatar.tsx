@@ -27,7 +27,7 @@ const Avatar = ({
 }: AvatarProps): JSX.Element => (
   <div
     className={twMerge(
-      `relative flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`,
+      `dw-skeleton relative flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`,
       className
     )}
     style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}
