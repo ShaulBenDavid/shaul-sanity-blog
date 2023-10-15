@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Roles } from './roles.types';
+import type { Roles } from './roles.types';
 import { AuthContext } from '../context/auth';
 import { hasMatchingRole } from './roles.utils';
 

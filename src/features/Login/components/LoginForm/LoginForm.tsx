@@ -8,7 +8,7 @@ import { useLogin } from '@/src/api/auth/hooks';
 import Input from '@/src/components/Input';
 import Button, { ButtonVariants } from '@/src/components/Button';
 import { loginFormConfig } from './LoginForm.config';
-import { LoginPayloadType, AuthResponseType } from '@/src/api/auth';
+import type { LoginPayloadType, AuthResponseType } from '@/src/api/auth';
 import Alert, { AlertVariants } from '@/src/components/Alert';
 import { LoginSchema } from './LoginForm.utils';
 

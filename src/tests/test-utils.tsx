@@ -1,5 +1,7 @@
-import React, { ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
+import type { ReactElement } from 'react';
+import React from 'react';
+import type { RenderOptions } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { QueryProvider } from '@/src/providers/query.provider';
 import { AuthContextProvider } from '@/src/context/auth';
 import { AxiosInterceptor } from '@/src/api';

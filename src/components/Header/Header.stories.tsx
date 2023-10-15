@@ -1,4 +1,5 @@
-import React, { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { AppProviders } from '@/src/providers';
 import Header from './Header';

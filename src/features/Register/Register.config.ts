@@ -1,5 +1,6 @@
-import { RegisterFieldType, RegisterStepsEnum } from './Register.types';
-import { StepsType } from './components/Stepper';
+import type { RegisterFieldType } from './Register.types';
+import { RegisterStepsEnum } from './Register.types';
+import type { StepsType } from './components/Stepper';
 
 export const registerStepsConfig: StepsType = [
   {

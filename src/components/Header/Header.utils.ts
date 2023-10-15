@@ -1,8 +1,6 @@
-import { Routes } from '@/src/routes';
-import {
-  NavigationLinksConfigType,
-  navigationLinksConfig,
-} from './Header.config';
+import type { Routes } from '@/src/routes';
+import type { NavigationLinksConfigType } from './Header.config';
+import { navigationLinksConfig } from './Header.config';
 
 export const getUserNavigationLinks = (
   allowedRoutes: Routes[]

@@ -1,6 +1,6 @@
 import { client } from '@/src/sanity/sanity.client';
 import { topicsQuery } from './home.queries';
-import { GetTopics } from './home.types';
+import type { GetTopics } from './home.types';
 
 export const getTopics = async (): Promise<GetTopics> => {
   const topics = await client.fetch(topicsQuery);

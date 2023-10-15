@@ -1,4 +1,4 @@
-import { RegisterPayloadType } from '@/src/api/auth';
+import type { RegisterPayloadType } from '@/src/api/auth';
 
 export type PersonalMethodType = Pick<
   RegisterPayloadType,

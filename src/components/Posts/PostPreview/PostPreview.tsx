@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { BsBookmarkPlus, BsBookmarkPlusFill } from 'react-icons/bs';
 import { formatDateToCustomFormat } from '@/src/utils';
 import { forUrl } from '@/src/sanity/sanity.utils';
-import { Author } from '@/src/sanity/types';
+import type { Author } from '@/src/sanity/types';
 import UserPreview from '../../UserPreview';
 
 export interface PostPreviewProps {

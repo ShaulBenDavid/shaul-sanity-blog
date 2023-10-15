@@ -1,4 +1,4 @@
-import { DefaultDocumentNodeResolver } from 'sanity/desk';
+import type { DefaultDocumentNodeResolver } from 'sanity/desk';
 
 const defaultDocumentNode: DefaultDocumentNodeResolver = (S) =>
   S.document().views([S.view.form()]);

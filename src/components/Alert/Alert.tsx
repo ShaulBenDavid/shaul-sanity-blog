@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
 import { twMerge } from 'tailwind-merge';
-import { AlertVariants } from './Alert.types';
+import type { AlertVariants } from './Alert.types';
 import { alertVariantsStyleConfig } from './Alert.config';
 
 interface AlertProps {

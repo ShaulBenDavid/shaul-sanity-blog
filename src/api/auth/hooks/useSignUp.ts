@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
 import { signUp } from '../auth.methods';
-import { RegisterPayloadType } from '../auth.types';
+import type { RegisterPayloadType } from '../auth.types';
 
 const POST_SIGN_UP_KEY = 'postSignUp';
 

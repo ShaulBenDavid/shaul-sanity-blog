@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { NavigationLinksConfigType } from '../Header/Header.config';
+import type { NavigationLinksConfigType } from '../Header/Header.config';
 import Drawer from '../Drawer';
 import SideNavTab from './SideNavTab';
 

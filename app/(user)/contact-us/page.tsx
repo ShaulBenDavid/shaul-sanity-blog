@@ -1,5 +1,6 @@
 import React from 'react';
+import Contact from '@/src/features/Contact/Contact';
 
-const ContactUs = () => <div>Contact Us</div>;
+const ContactUs = () => <Contact />;
 
 export default ContactUs;
