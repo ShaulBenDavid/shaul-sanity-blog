@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { RegisterPayloadType } from '@/src/api/auth';
+import type { RegisterPayloadType } from '@/src/api/auth';
 
 interface UseMultiFormSteps {
   stepsCount: number;

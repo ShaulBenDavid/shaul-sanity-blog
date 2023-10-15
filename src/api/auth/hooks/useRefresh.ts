@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { refresh } from '../auth.methods';
 import { HttpStatusCode } from '@/src/types';
-import { AuthResponseType } from '..';
+import type { AuthResponseType } from '..';
 
 export const GET_REFRESH_KEY = 'getRefresh';
 

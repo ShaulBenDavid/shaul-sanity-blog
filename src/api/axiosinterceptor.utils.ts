@@ -1,4 +1,8 @@
-import { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import type {
+  AxiosError,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from 'axios';
 import { HttpStatusCode } from '../types';
 import { dwInstance } from './http.service';
 

@@ -1,4 +1,4 @@
-import { Roles } from './roles.types';
+import type { Roles } from './roles.types';
 
 export const hasMatchingRole = (
   allowedRoles: Roles[],

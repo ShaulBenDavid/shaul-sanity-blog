@@ -1,4 +1,4 @@
-import { Roles } from '@/src/roles';
+import type { Roles } from '@/src/roles';
 
 export type Interested = {
   topic: string;

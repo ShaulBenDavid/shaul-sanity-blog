@@ -1,5 +1,5 @@
 import React from 'react';
-import { Post } from '@/src/sanity/types';
+import type { Post } from '@/src/sanity/types';
 import { forUrl } from '@/src/sanity/sanity.utils';
 import PostPreview from '../Posts/PostPreview';
 

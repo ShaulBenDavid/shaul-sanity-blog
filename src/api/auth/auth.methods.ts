@@ -1,7 +1,7 @@
 import { ApiEndpoints } from '../api-endpoints.config';
 import { Methods } from '../api.config';
 import { apiMethodInstance, refreshMethodInstance } from '../http.service';
-import {
+import type {
   LoginPayloadType,
   AuthResponseType,
   RegisterPayloadType,

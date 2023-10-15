@@ -2,7 +2,7 @@
 
 import { useContext, useMemo } from 'react';
 import { AuthContext } from '@/src/context/auth';
-import { Routes } from '@/src/routes';
+import type { Routes } from '@/src/routes';
 import { getRoutesByRole } from '../roles.config';
 
 export const useGetUserRoutes = (): Routes[] => {

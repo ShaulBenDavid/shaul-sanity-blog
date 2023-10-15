@@ -1,6 +1,7 @@
 'use client';
 
-import React, { PropsWithChildren, useRef } from 'react';
+import type { PropsWithChildren } from 'react';
+import React, { useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useOnClickOutside } from '@/src/hooks';
 

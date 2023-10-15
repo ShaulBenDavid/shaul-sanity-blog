@@ -1,15 +1,9 @@
 'use client';
 
-import React, {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useCallback,
-  useMemo,
-  useState,
-} from 'react';
+import type { Dispatch, SetStateAction } from 'react';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { AuthResponseType } from '@/src/api/auth';
+import type { AuthResponseType } from '@/src/api/auth';
 import { Roles } from '@/src/roles';
 import { appQueryClient } from '@/src/queries';
 

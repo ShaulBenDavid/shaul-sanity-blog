@@ -2,7 +2,7 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { RegisterPayloadType } from '@/src/api/auth';
+import type { RegisterPayloadType } from '@/src/api/auth';
 import Spinner from '@/src/components/Spinner/index';
 import { useMultiFormConfig } from './useMultiFormConfig';
 import { registerFormsFieldsConfig } from '../../Register.config';

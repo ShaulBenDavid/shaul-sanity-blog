@@ -1,6 +1,7 @@
-import React, { CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Author } from '@/src/sanity/types';
+import type { Author } from '@/src/sanity/types';
 import PostPreview from './PostPreview';
 
 const styles: CSSProperties = {

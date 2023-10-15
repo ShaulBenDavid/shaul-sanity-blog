@@ -1,6 +1,6 @@
 import { Routes, routesTitlesConfig } from '@/src/routes';
 import { socialLinksConfig } from '@/src/constants/socials';
-import { NavigationColumnLinksType } from './NavigationColumn/NavigationColumn';
+import type { NavigationColumnLinksType } from './NavigationColumn/NavigationColumn';
 
 const legalNavigationConfig: NavigationColumnLinksType = [
   {

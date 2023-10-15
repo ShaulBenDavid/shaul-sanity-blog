@@ -1,4 +1,4 @@
-import { Base, Block, Image, Slug } from './common.types';
+import type { Base, Block, Image, Slug } from './common.types';
 
 export interface Author extends Base {
   bio: Block[];

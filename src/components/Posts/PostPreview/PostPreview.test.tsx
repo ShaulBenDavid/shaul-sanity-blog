@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'test-utils';
-import { Author } from '@/src/sanity/types';
+import type { Author } from '@/src/sanity/types';
 import PostPreview from './PostPreview';
 
 describe('PostPreview', () => {

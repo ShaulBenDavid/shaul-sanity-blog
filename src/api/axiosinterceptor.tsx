@@ -9,7 +9,7 @@ import {
 } from './axiosinterceptor.utils';
 import { AuthContext } from '../context/auth';
 import { useLogout, useRefresh } from './auth/hooks';
-import { AuthResponseType } from './auth';
+import type { AuthResponseType } from './auth';
 
 export const AxiosInterceptor = ({
   children,

@@ -1,4 +1,4 @@
-import { Base, Slug } from './common.types';
+import type { Base, Slug } from './common.types';
 
 export interface Topic extends Base {
   description: string;

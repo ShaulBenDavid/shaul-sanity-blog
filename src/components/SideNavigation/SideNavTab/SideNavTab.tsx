@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Routes } from '@/src/routes';
+import type { Routes } from '@/src/routes';
 import { sideNavTabStyleConfig } from './SideNavTab.config';
 import { NavigationVariants } from '../../Header/Header.config';
 

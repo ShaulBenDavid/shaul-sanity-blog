@@ -4,7 +4,7 @@ import { useCallback } from 'react';
 import axios from 'axios';
 import { useMutation } from '@tanstack/react-query';
 import { login } from '../auth.methods';
-import { LoginPayloadType, AuthResponseType } from '../auth.types';
+import type { LoginPayloadType, AuthResponseType } from '../auth.types';
 
 const POST_LOGIN_KEY = 'postLogin';
 
