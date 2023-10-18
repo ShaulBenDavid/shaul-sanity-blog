@@ -47,7 +47,9 @@ describe('PostPreview', () => {
     const { getByLabelText } = render(
       <PostPreview {...mockPost} isBookmarked />
     );
-    const bookmarkIcon = getByLabelText(`Save post ${mockPost.title}`);
+    const bookmarkIcon = getByLabelText(
+      `Save post in bookmarked ${mockPost.title}`
+    );
 
     expect(bookmarkIcon).toBeInTheDocument();
     expect(bookmarkIcon.querySelector('svg')).toBeInTheDocument();
@@ -58,7 +60,9 @@ describe('PostPreview', () => {
     const { getByLabelText } = render(
       <PostPreview {...mockPost} isBookmarked={false} />
     );
-    const bookmarkIcon = getByLabelText(`Save post ${mockPost.title}`);
+    const bookmarkIcon = getByLabelText(
+      `Save post in bookmarked ${mockPost.title}`
+    );
 
     expect(bookmarkIcon).toBeInTheDocument();
     expect(bookmarkIcon.querySelector('svg')).toBeInTheDocument();
