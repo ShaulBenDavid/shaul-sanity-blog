@@ -32,7 +32,7 @@ const PostPreview = ({
     className="flex h-28 w-full flex-row gap-1 sm:h-[130px]"
     data-testid="post-preview-component-test-id"
   >
-    <Link href={href} aria-hidden className="flex-shrink-0">
+    <Link href={href} aria-hidden className="flex-shrink-0" tabIndex={-1}>
       <figure className="dw-skeleton group relative">
         <Image
           src={imgUrl}
@@ -56,7 +56,8 @@ const PostPreview = ({
         />
         <button
           type="button"
-          aria-label={`Save post ${title}`}
+          id="save-button"
+          aria-label={`Save post in bookmarked ${title}`}
           aria-pressed={isBookmarked}
           className="h-fit text-secondary-950 hover:text-primary-950"
         >
@@ -76,8 +77,10 @@ const PostPreview = ({
         </p>
       </Link>
       <div className="mt-auto flex flex-row items-center gap-1 text-xs text-primary-gray sm:text-sm">
-        <time>{formatDateToCustomFormat(date)}</time>-
-        <small className="text-xs sm:text-sm">{readTime} min read</small>
+        <time dateTime={new Date(date).toISOString()}>
+          {formatDateToCustomFormat(date)}
+        </time>
+        -<small className="text-xs sm:text-sm">{readTime} min read</small>
       </div>
     </div>
   </article>
