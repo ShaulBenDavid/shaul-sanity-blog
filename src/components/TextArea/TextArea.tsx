@@ -47,6 +47,7 @@ const TextArea = ({
           }`,
           className
         )}
+        data-testid="textarea-component-test-id"
         style={{ width }}
         {...register(label)}
       />
