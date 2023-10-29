@@ -1,7 +1,12 @@
 import React from 'react';
+import { ContactHeader } from './components/ContactHeader';
 
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <section className="flex h-full items-center">
+      <ContactHeader />
+    </section>
+  );
 };
 
 export default Contact;
