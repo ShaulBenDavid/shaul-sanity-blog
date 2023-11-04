@@ -41,7 +41,7 @@ const PostPreview = ({
           sizes="15wv"
           width={0}
           height={0}
-          className="aspect-square h-28 w-full object-cover mb:aspect-video mb:w-40 sm:h-[130px] sm:w-full"
+          className="aspect-square h-28 w-auto object-cover sm:aspect-video mb:w-40 sm:h-[130px] sm:w-auto"
         />
       </figure>
     </Link>
