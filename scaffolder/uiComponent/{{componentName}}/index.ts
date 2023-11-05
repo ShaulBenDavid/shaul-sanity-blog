@@ -1,3 +1,2 @@
-import {{componentName}} from './{{componentName}}';
+export {{{ componentName }}} from './{{componentName}}';
 
-export default {{ componentName }};

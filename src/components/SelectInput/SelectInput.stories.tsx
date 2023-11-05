@@ -1,18 +1,16 @@
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import type { Meta, StoryObj } from '@storybook/react';
-import TextArea from './TextArea';
+import { SelectInput } from './SelectInput';
 
 /**
- * # The Text Area component
- * The <textarea> HTML element represents a multi-line plain-text editing control,
- * useful when you want to allow users to enter a sizeable amount of free-form text,
- * for example a comment on a review or feedback form.
+ * # The Text SelectInput component
+ * The <select> HTML element represents a input select options
  */
 
-const meta: Meta<typeof TextArea> = {
-  title: 'Components/Inputs/TextArea',
-  component: TextArea,
+const meta: Meta<typeof SelectInput> = {
+  title: 'Components/Inputs/SelectInput',
+  component: SelectInput,
   tags: ['autodocs'],
   decorators: [
     (storyFn) => {
@@ -40,10 +38,9 @@ const meta: Meta<typeof TextArea> = {
       description:
         'The form element that the <textarea> element is associated with (its "form owner"). ',
     },
-    rows: {
-      control: 'number',
-      description: `The number of visible text lines for the control. If it is specified,
-          it must be a positive integer.If it is not specified, the default value is 5.`,
+    options: {
+      control: 'object',
+      description: `Provides a select to choose a single value from the options.`,
     },
     idFor: {
       control: 'string',
@@ -68,12 +65,13 @@ const meta: Meta<typeof TextArea> = {
 
 export default meta;
 
-type Story = StoryObj<typeof TextArea>;
+type Story = StoryObj<typeof SelectInput>;
 
-export const Text: Story = {
+export const Default: Story = {
   args: {
-    label: 'Text Area',
+    label: 'Select',
     idFor: 'email',
     placeholder: 'Write something...',
+    options: ['other', 'blue', 'yellow'],
   },
 };
