@@ -47,7 +47,7 @@ export const SelectInput = ({
           }`,
           className
         )}
-        data-testid="textarea-component-test-id"
+        data-testid="selectinput-component-test-id"
         style={{ width }}
         {...register(label)}
       >
