@@ -30,10 +30,11 @@ describe('SelectInput', () => {
     const selectOptions = Array.from(
       selectInput.getElementsByTagName('option')
     );
+    options.unshift('');
 
     selectOptions.forEach((option, index) => {
       expect(option).toHaveAttribute('value', options[index]);
     });
-    expect(selectInput.getElementsByTagName('option').length).toBe(3);
+    expect(selectInput.getElementsByTagName('option').length).toBe(4);
   });
 });

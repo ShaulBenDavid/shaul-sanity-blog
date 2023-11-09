@@ -18,7 +18,6 @@ export const SelectInput = ({
   width,
   value,
   form,
-  placeholder,
   className,
   options,
 }: SelectInputProps): JSX.Element => {
@@ -38,7 +37,6 @@ export const SelectInput = ({
       <select
         form={form}
         id={idFor}
-        placeholder={placeholder}
         value={value}
         className={twMerge(
           `h-10 resize-none rounded-md border-[1px] border-secondary-950 bg-transparent px-2 text-secondary-950 placeholder:text-wizard-grey ${
@@ -51,9 +49,10 @@ export const SelectInput = ({
         style={{ width }}
         {...register(label)}
       >
+        <option value="">Please select</option>
         {options.map((option) => (
           <option key={option} value={option}>
-            {option}
+            {option.replace(/([a-z])([A-Z])/g, '$1 $2')}
           </option>
         ))}
       </select>
