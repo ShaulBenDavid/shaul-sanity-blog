@@ -70,24 +70,28 @@ export const ContactForm = (): JSX.Element => {
           idFor="email"
           type="text"
           placeholder="This email will get response"
+          required
         />
         <Input
           label="name"
           idFor="name"
           type="text"
           placeholder="What your name ?"
+          required
         />
         <SelectInput
           label="subjectType"
           idFor="subject"
           form="contact-us"
           options={Object.values(ContactTypesEnum)}
+          required
         />
         <TextArea
           form="contact-us"
           label="content"
           idFor="content"
           placeholder="Write your message..."
+          required
         />
         <Button
           variant={ButtonVariants.PRIMARY}
