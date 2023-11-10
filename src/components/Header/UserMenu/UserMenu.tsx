@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React, { useContext, useState } from 'react';
-import { MdAdminPanelSettings } from 'react-icons/md';
-import { Routes } from '@/src/routes';
-import PermissionGate, { Roles } from '@/src/roles';
-import { AuthContext } from '@/src/context/auth';
-import { useLogout } from '@/src/api/auth/hooks';
-import theme from '@/src/styles/tailwind.theme';
-import Avatar from '../../Avatar';
-import Dropdown from '../../Dropdown';
-import AppLink from '../../AppLink';
+import React, { useContext, useState } from "react";
+import { MdAdminPanelSettings } from "react-icons/md";
+import { Routes } from "@/src/routes";
+import PermissionGate, { Roles } from "@/src/roles";
+import { AuthContext } from "@/src/context/auth";
+import { useLogout } from "@/src/api/auth/hooks";
+import theme from "@/src/styles/tailwind.theme";
+import Avatar from "../../Avatar";
+import Dropdown from "../../Dropdown";
+import AppLink from "../../AppLink";
 
 const UserMenu = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

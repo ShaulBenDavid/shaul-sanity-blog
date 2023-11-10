@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import UserPreview from './UserPreview';
+import type { Meta, StoryObj } from "@storybook/react";
+import UserPreview from "./UserPreview";
 
 /**
  * # The UserPreview component
@@ -9,27 +9,27 @@ import UserPreview from './UserPreview';
  */
 
 const meta: Meta<typeof UserPreview> = {
-  title: 'Components/UserPreview',
+  title: "Components/UserPreview",
   component: UserPreview,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     name: {
-      control: 'text',
-      description: ' (string): The name of the user.',
+      control: "text",
+      description: " (string): The name of the user.",
     },
     title: {
-      control: 'text',
+      control: "text",
       description:
-        '(string | null): The title of the user. Can be null if no title is available.',
+        "(string | null): The title of the user. Can be null if no title is available.",
     },
     imageUrl: {
-      control: 'text',
+      control: "text",
       description:
         "(string | undefined): The URL of the user's image. Can be undefined if no image is available.",
     },
     username: {
-      control: 'text',
-      description: '(string): The username of the user.',
+      control: "text",
+      description: "(string): The username of the user.",
     },
   },
 };
@@ -40,8 +40,8 @@ type Story = StoryObj<typeof UserPreview>;
 
 export const Primary: Story = {
   args: {
-    name: 'shon david',
-    title: 'CTO',
-    username: 'shon12',
+    name: "shon david",
+    title: "CTO",
+    username: "shon12",
   },
 };

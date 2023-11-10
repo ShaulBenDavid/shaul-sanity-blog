@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   EmailIcon,
   EmailShareButton,
@@ -14,8 +14,8 @@ import {
   TwitterShareButton,
   WhatsappIcon,
   WhatsappShareButton,
-} from 'next-share';
-import { shareContent } from './Share.config';
+} from "next-share";
+import { shareContent } from "./Share.config";
 
 interface ShareProps {
   url?: string;
@@ -23,7 +23,7 @@ interface ShareProps {
   title?: string;
 }
 
-const Share = ({ url = '', subject, title }: ShareProps): JSX.Element => {
+const Share = ({ url = "", subject, title }: ShareProps): JSX.Element => {
   return (
     <div className="flex w-full flex-col gap-3">
       <h2 className="text-base font-bold text-wizard-black">

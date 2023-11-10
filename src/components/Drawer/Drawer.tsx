@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import ReactFocusLock from 'react-focus-lock';
-import Backdrop from '../Backdrop';
+import React, { useEffect } from "react";
+import ReactFocusLock from "react-focus-lock";
+import Backdrop from "../Backdrop";
 
 type DrawerProps = React.PropsWithChildren<{
   onClose: () => void;
@@ -11,13 +11,13 @@ type DrawerProps = React.PropsWithChildren<{
 
 const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
   useEffect((): any => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
     // eslint-disable-next-line no-return-assign
-    return () => (document.body.style.overflow = 'unset');
+    return () => (document.body.style.overflow = "unset");
   }, [isOpen]);
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
-    if (e.key === 'Escape' || e.key === 'ArrowDown') {
+    if (e.key === "Escape" || e.key === "ArrowDown") {
       onClose();
     }
   };
@@ -26,7 +26,7 @@ const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
     <div
       data-testid="drawer"
       className={`fixed inset-0 z-50 h-[100dvh] w-screen ${
-        isOpen ? 'flex' : 'hidden'
+        isOpen ? "flex" : "hidden"
       }`}
       role="presentation"
       onKeyDown={handleKeyPress}

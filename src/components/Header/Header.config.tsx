@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FcHome,
   FcAbout,
@@ -6,13 +6,13 @@ import {
   FcNews,
   FcRules,
   FcPrivacy,
-} from 'react-icons/fc';
-import { Routes, routesTitlesConfig } from '@/src/routes';
+} from "react-icons/fc";
+import { Routes, routesTitlesConfig } from "@/src/routes";
 
 export enum NavigationVariants {
-  BUTTON = 'button',
-  LINK = 'LINK',
-  SECONDARY_BUTTON = 'secondary-button',
+  BUTTON = "button",
+  LINK = "LINK",
+  SECONDARY_BUTTON = "secondary-button",
 }
 
 export type NavigationLinksConfigType = {

@@ -1,38 +1,38 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Button from './Button';
-import { ButtonVariants } from './Button.types';
+import type { Meta, StoryObj } from "@storybook/react";
+import Button from "./Button";
+import { ButtonVariants } from "./Button.types";
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: "Components/Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
     onClick: () => ({}),
-    children: 'button',
+    children: "button",
     disabled: false,
     isLoading: false,
-    width: '250px',
+    width: "250px",
   },
   argTypes: {
     onClick: {
-      control: 'ControlType',
-      description: 'Button click function',
+      control: "ControlType",
+      description: "Button click function",
       defaultValue: () => ({}),
     },
     width: {
-      control: 'string',
-      description: 'Width if not define the default will be 100%',
+      control: "string",
+      description: "Width if not define the default will be 100%",
     },
     variant: {
-      control: 'select',
+      control: "select",
       options: ButtonVariants,
-      description: 'Control the Button style',
+      description: "Control the Button style",
       default: ButtonVariants.PRIMARY,
     },
     isLoading: {
-      control: 'boolean',
+      control: "boolean",
       description:
-        'Control the state of the Button if loads or not if he loads the button will be disableds',
+        "Control the state of the Button if loads or not if he loads the button will be disableds",
     },
   },
 };

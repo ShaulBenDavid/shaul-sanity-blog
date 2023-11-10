@@ -1,5 +1,5 @@
-import Button from './Button';
+import Button from "./Button";
 
-export { ButtonVariants } from './Button.types';
+export { ButtonVariants } from "./Button.types";
 
 export default Button;

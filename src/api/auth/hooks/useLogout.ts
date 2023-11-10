@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import axios from 'axios';
-import { useMutation } from '@tanstack/react-query';
-import { logout } from '../auth.methods';
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
+import { logout } from "../auth.methods";
 
-const DELETE_LOGOUT_KEY = 'deleteLogout';
+const DELETE_LOGOUT_KEY = "deleteLogout";
 
 interface UseLogoutProps {
   handleSuccess: () => void;
@@ -17,7 +17,7 @@ export const useLogout = ({ handleSuccess }: UseLogoutProps) => {
     {
       onSuccess: () => handleSuccess(),
       onError: () => handleSuccess(),
-    }
+    },
   );
 
   return {

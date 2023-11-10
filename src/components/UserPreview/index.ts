@@ -1,3 +1,3 @@
-import UserPreview from './UserPreview';
+import UserPreview from "./UserPreview";
 
 export default UserPreview;

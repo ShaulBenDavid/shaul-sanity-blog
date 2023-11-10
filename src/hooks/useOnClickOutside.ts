@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { RefObject } from 'react';
-import { useEffect } from 'react';
+import type { RefObject } from "react";
+import { useEffect } from "react";
 
 export const useOnClickOutside = (
   ref: RefObject<HTMLElement>,
-  cb: () => void
+  cb: () => void,
 ) => {
   useEffect(() => {
     const listener = (event: Event) => {
@@ -15,12 +15,12 @@ export const useOnClickOutside = (
       cb();
     };
 
-    document.addEventListener('mousedown', listener);
-    document.addEventListener('touchstart', listener);
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
 
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
     };
   }, [ref, cb]);
 };

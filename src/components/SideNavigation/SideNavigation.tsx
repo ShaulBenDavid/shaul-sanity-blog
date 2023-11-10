@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import type { NavigationLinksConfigType } from '../Header/Header.config';
-import Drawer from '../Drawer';
-import SideNavTab from './SideNavTab';
+import React from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
+import type { NavigationLinksConfigType } from "../Header/Header.config";
+import Drawer from "../Drawer";
+import SideNavTab from "./SideNavTab";
 
 interface SideNavigationProps {
   isOpen: boolean;
@@ -13,7 +13,7 @@ interface SideNavigationProps {
 }
 
 const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
-  const activeSegment = useSelectedLayoutSegment() ?? '/';
+  const activeSegment = useSelectedLayoutSegment() ?? "/";
 
   return (
     <Drawer onClose={onClick} isOpen={isOpen}>

@@ -1,3 +1,3 @@
-import NavigationColumn from './NavigationColumn';
+import NavigationColumn from "./NavigationColumn";
 
 export default NavigationColumn;

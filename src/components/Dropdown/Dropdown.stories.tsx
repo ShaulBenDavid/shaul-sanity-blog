@@ -1,12 +1,12 @@
-import type { CSSProperties } from 'react';
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import Dropdown from './Dropdown';
+import type { CSSProperties } from "react";
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import Dropdown from "./Dropdown";
 
 const styles: CSSProperties = {
-  transform: 'scale(1)',
-  height: '40vh',
-  position: 'relative',
+  transform: "scale(1)",
+  height: "40vh",
+  position: "relative",
 };
 
 /**
@@ -17,25 +17,25 @@ const styles: CSSProperties = {
  */
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'Components/Dropdown',
+  title: "Components/Dropdown",
   component: Dropdown,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [(storyFn) => <div style={styles}>{storyFn()}</div>],
   argTypes: {
     onClose: {
-      control: 'ControlType',
-      description: 'Close the dropdown onClick out of the dropdown range.',
+      control: "ControlType",
+      description: "Close the dropdown onClick out of the dropdown range.",
       defaultValue: () => ({}),
     },
     isOpen: {
-      control: 'boolean',
-      description: 'Control the state of the Dropdown open or close.',
+      control: "boolean",
+      description: "Control the state of the Dropdown open or close.",
       default: true,
     },
     id: {
-      control: 'string',
+      control: "string",
       description:
-        'For accessibility purpose to know which button control the Dropdown',
+        "For accessibility purpose to know which button control the Dropdown",
     },
   },
 };
@@ -53,6 +53,6 @@ export const Basic: Story = {
         <h1>Welcome to DWizard</h1>
       </div>
     ),
-    id: 'usermenu-desc',
+    id: "usermenu-desc",
   },
 };

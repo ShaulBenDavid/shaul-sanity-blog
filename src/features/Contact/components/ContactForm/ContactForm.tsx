@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   ContactTypesEnum,
   type ContactPayloadType,
-} from '@/src/api/contact/contact.types';
-import Input from '@/src/components/Input';
-import TextArea from '@/src/components/TextArea';
-import { SelectInput } from '@/src/components/SelectInput';
-import Button, { ButtonVariants } from '@/src/components/Button';
-import Alert, { AlertVariants } from '@/src/components/Alert';
-import { usePostContactUs } from '@/src/api/contact/hooks';
-import { contactSchemaValidation } from './ContactForm.utils';
+} from "@/src/api/contact/contact.types";
+import Input from "@/src/components/Input";
+import TextArea from "@/src/components/TextArea";
+import { SelectInput } from "@/src/components/SelectInput";
+import Button, { ButtonVariants } from "@/src/components/Button";
+import Alert, { AlertVariants } from "@/src/components/Alert";
+import { usePostContactUs } from "@/src/api/contact/hooks";
+import { contactSchemaValidation } from "./ContactForm.utils";
 
 export const ContactForm = (): JSX.Element => {
   const methods = useForm<ContactPayloadType>({
     resolver: zodResolver(contactSchemaValidation),
-    mode: 'onChange',
+    mode: "onChange",
     delayError: 1000,
   });
 
@@ -37,10 +37,10 @@ export const ContactForm = (): JSX.Element => {
   } = usePostContactUs({
     onSuccess: () =>
       reset({
-        email: '',
-        name: '',
+        email: "",
+        name: "",
         subjectType: undefined,
-        content: '',
+        content: "",
       }),
   });
 
@@ -51,7 +51,7 @@ export const ContactForm = (): JSX.Element => {
   return (
     <FormProvider {...methods}>
       <form
-        className="w-5/12 gap-4 flex flex-col"
+        className="flex w-full flex-col gap-4 sm:w-10/12 tb:w-3/4 md:w-5/12"
         id="contact-us"
         onSubmit={onSubmit}
       >

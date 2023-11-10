@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   AiFillGithub,
   AiFillInstagram,
   AiOutlineTwitter,
-} from 'react-icons/ai';
-import theme from '@/src/styles/tailwind.theme';
-import { SocialEnum } from '@/src/constants/socials';
+} from "react-icons/ai";
+import theme from "@/src/styles/tailwind.theme";
+import { SocialEnum } from "@/src/constants/socials";
 
 export const socialIconsConfig: Record<SocialEnum, JSX.Element> = {
   [SocialEnum.GITHUB]: (

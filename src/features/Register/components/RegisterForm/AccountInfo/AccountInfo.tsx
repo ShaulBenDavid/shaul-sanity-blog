@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import type { UseFormReturn } from 'react-hook-form';
-import { FormProvider } from 'react-hook-form';
-import Input from '@/src/components/Input';
-import Button, { ButtonVariants } from '@/src/components/Button';
-import type { RegisterPayloadType } from '@/src/api/auth';
-import type { AccountMethodType } from '../RegisterForm.types';
-import type { RegisterFieldType } from '../../../Register.types';
+import React from "react";
+import type { UseFormReturn } from "react-hook-form";
+import { FormProvider } from "react-hook-form";
+import Input from "@/src/components/Input";
+import Button, { ButtonVariants } from "@/src/components/Button";
+import type { RegisterPayloadType } from "@/src/api/auth";
+import type { AccountMethodType } from "../RegisterForm.types";
+import type { RegisterFieldType } from "../../../Register.types";
 
 interface AccountInfoProps {
   fields: RegisterFieldType[];

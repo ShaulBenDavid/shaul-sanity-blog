@@ -1,10 +1,10 @@
-import React from 'react';
-import Link from 'next/link';
-import Chip from '@/src/components/Chip';
-import { Routes } from '@/src/routes';
-import { buildRoutePath } from '@/src/utils';
-import type { GetTopics } from '@/src/sanity/queries/home';
-import { getTopics } from '@/src/sanity/queries/home';
+import React from "react";
+import Link from "next/link";
+import Chip from "@/src/components/Chip";
+import { Routes } from "@/src/routes";
+import { buildRoutePath } from "@/src/utils";
+import type { GetTopics } from "@/src/sanity/queries/home";
+import { getTopics } from "@/src/sanity/queries/home";
 
 export const revalidate = 86400; // revalidate build every day
 

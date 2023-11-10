@@ -2,18 +2,18 @@ import type {
   AxiosError,
   AxiosResponse,
   InternalAxiosRequestConfig,
-} from 'axios';
-import { HttpStatusCode } from '../types';
-import { dwInstance } from './http.service';
+} from "axios";
+import { HttpStatusCode } from "../types";
+import { dwInstance } from "./http.service";
 
 export const axiosRequest = (
   config: InternalAxiosRequestConfig,
-  token?: string
+  token?: string,
 ): InternalAxiosRequestConfig => {
   // eslint-disable-next-line no-param-reassign
   config.headers = config.headers ?? {};
   // eslint-disable-next-line no-param-reassign
-  config.headers.Authorization = token ? `Bearer ${token}` : '';
+  config.headers.Authorization = token ? `Bearer ${token}` : "";
 
   return config;
 };
@@ -25,7 +25,7 @@ export const resInterceptor = (response: AxiosResponse) => {
 export const errInterceptor = async (
   error: AxiosError,
   refresh: () => void,
-  token?: string
+  token?: string,
 ): Promise<AxiosError> => {
   const prevConfig:
     | (InternalAxiosRequestConfig & { sent?: boolean })

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useContext, useLayoutEffect } from 'react';
-import { dwInstance } from './http.service';
+import { useContext, useLayoutEffect } from "react";
+import { dwInstance } from "./http.service";
 import {
   axiosRequest,
   errInterceptor,
   resInterceptor,
-} from './axiosinterceptor.utils';
-import { AuthContext } from '../context/auth';
-import { useLogout, useRefresh } from './auth/hooks';
-import type { AuthResponseType } from './auth';
+} from "./axiosinterceptor.utils";
+import { AuthContext } from "../context/auth";
+import { useLogout, useRefresh } from "./auth/hooks";
+import type { AuthResponseType } from "./auth";
 
 export const AxiosInterceptor = ({
   children,
@@ -31,12 +31,12 @@ export const AxiosInterceptor = ({
 
   useLayoutEffect(() => {
     const reqInterceptor = dwInstance.interceptors.request.use((config) =>
-      axiosRequest(config, auth?.accessToken)
+      axiosRequest(config, auth?.accessToken),
     );
 
     const responseInterceptor = dwInstance.interceptors.response.use(
       resInterceptor,
-      (error) => errInterceptor(error, refresh, auth?.accessToken)
+      (error) => errInterceptor(error, refresh, auth?.accessToken),
     );
 
     return () => {

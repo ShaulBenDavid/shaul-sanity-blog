@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import type { LayoutProps } from 'sanity';
+import React from "react";
+import Link from "next/link";
+import type { LayoutProps } from "sanity";
 
 const StudioNavbar = (props: LayoutProps) => (
   <>

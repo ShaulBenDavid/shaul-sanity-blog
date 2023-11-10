@@ -1,8 +1,8 @@
 // To customize it, use it as a children component:
-import React from 'react';
-import { NextStudioHead } from 'next-sanity/studio/head';
+import React from "react";
+import { NextStudioHead } from "next-sanity/studio/head";
 // Re-export `NextStudioHead` as default if you're happy with the default behavior
-export { NextStudioHead } from 'next-sanity/studio/head';
+export { NextStudioHead } from "next-sanity/studio/head";
 
 const CustomStudioHead = (): JSX.Element => (
   <>

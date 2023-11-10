@@ -1,1 +1,1 @@
-export const websiteUrl = 'https://dwizard.io/';
+export const websiteUrl = "https://dwizard.io/";

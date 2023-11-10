@@ -1,6 +1,6 @@
-import { Routes, routesTitlesConfig } from '@/src/routes';
-import { socialLinksConfig } from '@/src/constants/socials';
-import type { NavigationColumnLinksType } from './NavigationColumn/NavigationColumn';
+import { Routes, routesTitlesConfig } from "@/src/routes";
+import { socialLinksConfig } from "@/src/constants/socials";
+import type { NavigationColumnLinksType } from "./NavigationColumn/NavigationColumn";
 
 const legalNavigationConfig: NavigationColumnLinksType = [
   {
@@ -15,12 +15,12 @@ const legalNavigationConfig: NavigationColumnLinksType = [
 
 export const footerNavigationConfig = [
   {
-    name: 'follow us',
+    name: "follow us",
     links: socialLinksConfig,
     isOutSourceLinks: true,
   },
   {
-    name: 'terms',
+    name: "terms",
     links: legalNavigationConfig,
     isOutSourceLinks: false,
   },

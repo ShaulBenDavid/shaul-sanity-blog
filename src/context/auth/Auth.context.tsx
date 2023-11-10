@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import type { Dispatch, SetStateAction } from 'react';
-import React, { createContext, useCallback, useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import type { AuthResponseType } from '@/src/api/auth';
-import { Roles } from '@/src/roles';
-import { appQueryClient } from '@/src/queries';
+import type { Dispatch, SetStateAction } from "react";
+import React, { createContext, useCallback, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import type { AuthResponseType } from "@/src/api/auth";
+import { Roles } from "@/src/roles";
+import { appQueryClient } from "@/src/queries";
 
 export type Auth = AuthResponseType | null | undefined;
 
@@ -58,7 +58,7 @@ export const AuthContextProvider = ({
       setAuth,
       handleLogout,
     }),
-    [auth, handleLogout, userRoles]
+    [auth, handleLogout, userRoles],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

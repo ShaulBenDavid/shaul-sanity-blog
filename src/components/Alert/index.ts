@@ -1,5 +1,5 @@
-import Alert from './Alert';
+import Alert from "./Alert";
 
-export { AlertVariants } from './Alert.types';
+export { AlertVariants } from "./Alert.types";
 
 export default Alert;

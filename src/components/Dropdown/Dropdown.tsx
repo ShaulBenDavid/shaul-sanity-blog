@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import type { PropsWithChildren } from 'react';
-import React, { useRef } from 'react';
-import { twMerge } from 'tailwind-merge';
-import { useOnClickOutside } from '@/src/hooks';
+import type { PropsWithChildren } from "react";
+import React, { useRef } from "react";
+import { twMerge } from "tailwind-merge";
+import { useOnClickOutside } from "@/src/hooks";
 
 interface DropdownProps {
   id: string;
@@ -23,7 +23,7 @@ const Dropdown = ({
   useOnClickOutside(ref, onClose);
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
-    if (e.key === 'Escape' || e.key === 'ArrowDown') {
+    if (e.key === "Escape" || e.key === "ArrowDown") {
       onClose();
     }
   };
@@ -33,9 +33,9 @@ const Dropdown = ({
       ref={ref}
       className={twMerge(
         `absolute h-fit w-fit rounded-md bg-white p-2 shadow-dropdown ${
-          isOpen ? 'flex' : 'hidden'
+          isOpen ? "flex" : "hidden"
         }`,
-        className
+        className,
       )}
       id={id}
       role="presentation"

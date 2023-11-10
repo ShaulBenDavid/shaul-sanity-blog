@@ -1,3 +1,3 @@
-import SocialLogin from './SocialLogin';
+import SocialLogin from "./SocialLogin";
 
 export default SocialLogin;

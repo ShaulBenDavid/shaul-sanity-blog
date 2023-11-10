@@ -1,9 +1,9 @@
 export enum ContactTypesEnum {
-  OTHER = 'other',
-  HELP = 'help',
-  BUG_REPORT = 'bugReport',
-  USER_ISSUE = 'userIssue',
-  COLLABORATION = 'collaboration',
+  OTHER = "other",
+  HELP = "help",
+  BUG_REPORT = "bugReport",
+  USER_ISSUE = "userIssue",
+  COLLABORATION = "collaboration",
 }
 
 export type ContactPayloadType = {

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
-import { refresh } from '../auth.methods';
-import { HttpStatusCode } from '@/src/types';
-import type { AuthResponseType } from '..';
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { refresh } from "../auth.methods";
+import { HttpStatusCode } from "@/src/types";
+import type { AuthResponseType } from "..";
 
-export const GET_REFRESH_KEY = 'getRefresh';
+export const GET_REFRESH_KEY = "getRefresh";
 
 interface UseRefreshProps {
   handleSuccess: (res: AuthResponseType) => void;
@@ -35,7 +35,7 @@ export const useRefresh = ({
       enabled,
       staleTime: 0,
       cacheTime: 0,
-    }
+    },
   );
 
   return {

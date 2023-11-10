@@ -1,6 +1,6 @@
-import React from 'react';
-import { FcGoogle } from 'react-icons/fc';
-import { FaFacebook, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook, FaTwitter } from "react-icons/fa";
 
 export type SocialsLoginButtonsConfig = {
   children: JSX.Element;
@@ -14,7 +14,7 @@ export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
         <FaTwitter aria-hidden size={24} fill="#1DA1F2" /> Twitter
       </>
     ),
-    borderColor: '#1DA1F2',
+    borderColor: "#1DA1F2",
   },
   {
     children: (
@@ -22,7 +22,7 @@ export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
         <FcGoogle aria-hidden size={24} /> Google
       </>
     ),
-    borderColor: '#FC479E',
+    borderColor: "#FC479E",
   },
   {
     children: (
@@ -30,6 +30,6 @@ export const socialsLoginButtonsConfig: SocialsLoginButtonsConfig = [
         <FaFacebook aria-hidden size={24} fill="#1877F2" /> Facebook
       </>
     ),
-    borderColor: '#1877F2',
+    borderColor: "#1877F2",
   },
 ];

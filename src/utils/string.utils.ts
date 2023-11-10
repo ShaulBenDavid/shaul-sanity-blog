@@ -7,7 +7,7 @@ export const stringToColor = (string: string): string => {
     hash = string.charCodeAt(i) + ((hash << 5) - hash);
   }
 
-  let color = '#';
+  let color = "#";
 
   for (i = 0; i < 3; i += 1) {
     const value = (hash >> (i * 8)) & 0xff;
@@ -20,5 +20,5 @@ export const stringToColor = (string: string): string => {
 
 export const stringToAvatar = (name: string): string => {
   const matches = name.match(/\b(\w)/g);
-  return matches?.join('').slice(0, 2) ?? '';
+  return matches?.join("").slice(0, 2) ?? "";
 };

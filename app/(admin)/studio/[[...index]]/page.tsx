@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { NextStudio } from 'next-sanity/studio';
+import React from "react";
+import { NextStudio } from "next-sanity/studio";
 
-import config from '@/sanity.config';
+import config from "@/sanity.config";
 
 //  Supports the same props as `import {Studio} from 'sanity'`, `config` is required
 const StudioPage = (): JSX.Element => <NextStudio config={config} />;

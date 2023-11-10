@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import { useSignUp } from '@/src/api/auth/hooks';
-import Alert, { AlertVariants } from '@/src/components/Alert';
-import Stepper from './components/Stepper';
-import { registerStepsConfig } from './Register.config';
-import RegisterForm from './components/RegisterForm';
-import { RegisterStepsEnum } from './Register.types';
-import { useMultiFormSteps } from './useMultiFormSteps';
+import React, { useEffect } from "react";
+import { useSignUp } from "@/src/api/auth/hooks";
+import Alert, { AlertVariants } from "@/src/components/Alert";
+import Stepper from "./components/Stepper";
+import { registerStepsConfig } from "./Register.config";
+import RegisterForm from "./components/RegisterForm";
+import { RegisterStepsEnum } from "./Register.types";
+import { useMultiFormSteps } from "./useMultiFormSteps";
 
 const CONFIRMATION_PAGE = 1;
 

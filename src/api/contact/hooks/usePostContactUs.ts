@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { useMutation } from '@tanstack/react-query';
-import { postContactUs } from '../contact.methods';
-import type { ContactPayloadType } from '../contact.types';
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
+import { postContactUs } from "../contact.methods";
+import type { ContactPayloadType } from "../contact.types";
 
-export const POST_CONTACT_US_KEY = 'postContactUsKey';
+export const POST_CONTACT_US_KEY = "postContactUsKey";
 
 interface UsePostContactUs {
   onSuccess: () => void;
@@ -15,7 +15,7 @@ export const usePostContactUs = ({ onSuccess }: UsePostContactUs) => {
     (payload: ContactPayloadType) => postContactUs(payload),
     {
       onSuccess,
-    }
+    },
   );
 
   return {

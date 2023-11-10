@@ -1,12 +1,12 @@
-import React from 'react';
-import { notFound } from 'next/navigation';
-import { groq } from 'next-sanity';
-import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
-import { client } from '@/src/sanity/sanity.client';
-import { forUrl } from '@/src/sanity/sanity.utils';
-import RichTextComponents from '@/src/components/RichTextComponents/RichTextComponents';
-import { Post } from '@/src/sanity/types';
+import React from "react";
+import { notFound } from "next/navigation";
+import { groq } from "next-sanity";
+import Image from "next/image";
+import { PortableText } from "@portabletext/react";
+import { client } from "@/src/sanity/sanity.client";
+import { forUrl } from "@/src/sanity/sanity.utils";
+import RichTextComponents from "@/src/components/RichTextComponents/RichTextComponents";
+import { Post } from "@/src/sanity/types";
 
 type Props = {
   params: {
@@ -48,7 +48,7 @@ const Post = async ({ params: { slug } }: Props) => {
     <article>
       <section>
         <div>
-          <div style={{ width: '80px', height: '80px', position: 'relative' }}>
+          <div style={{ width: "80px", height: "80px", position: "relative" }}>
             <Image
               src={forUrl(post.mainImage).url()}
               alt={post.author.name}
@@ -64,10 +64,10 @@ const Post = async ({ params: { slug } }: Props) => {
         <div>
           <h1>{post.title}</h1>
           <p>
-            {new Date(post._createdAt).toLocaleDateString('en-US', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
+            {new Date(post._createdAt).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
             })}
           </p>
         </div>

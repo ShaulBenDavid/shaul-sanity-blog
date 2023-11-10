@@ -1,3 +1,3 @@
-import Confirmation from './Confirmation';
+import Confirmation from "./Confirmation";
 
 export default Confirmation;

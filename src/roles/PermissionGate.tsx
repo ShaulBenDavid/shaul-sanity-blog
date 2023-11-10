@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import type { Roles } from './roles.types';
-import { AuthContext } from '../context/auth';
-import { hasMatchingRole } from './roles.utils';
+import { useContext } from "react";
+import type { Roles } from "./roles.types";
+import { AuthContext } from "../context/auth";
+import { hasMatchingRole } from "./roles.utils";
 
 interface PermissionGateProps {
   allowedRoles: Roles[];

@@ -1,3 +1,3 @@
-import TopContentTablet from './TopContentTablet';
+import TopContentTablet from "./TopContentTablet";
 
 export default TopContentTablet;

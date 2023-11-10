@@ -1,6 +1,6 @@
-import React from 'react';
-import Share from '@/src/components/Share';
-import TopicsList from '../components/TopicsList';
+import React from "react";
+import Share from "@/src/components/Share";
+import TopicsList from "../components/TopicsList";
 
 const TopContentTablet = (): JSX.Element => (
   <div className="hidden flex-col gap-4 max-md:flex">

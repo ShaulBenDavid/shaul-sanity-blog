@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import type { NavigationLinksConfigType } from '../Header/Header.config';
-import NavTab from './NavTab';
+import React from "react";
+import { useSelectedLayoutSegment } from "next/navigation";
+import type { NavigationLinksConfigType } from "../Header/Header.config";
+import NavTab from "./NavTab";
 
 interface NavigationTabsProps {
   navLinks: NavigationLinksConfigType[];
 }
 
 const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {
-  const activeSegment = useSelectedLayoutSegment() ?? '/';
+  const activeSegment = useSelectedLayoutSegment() ?? "/";
 
   return (
     <ul
@@ -28,7 +28,7 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {
             title={title}
             isActive={href.includes(activeSegment)}
           />
-        )
+        ),
       )}
     </ul>
   );
