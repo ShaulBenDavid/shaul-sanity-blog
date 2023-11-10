@@ -26,7 +26,7 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {
             href={href}
             variant={variant}
             title={title}
-            isActive={href.includes(activeSegment)}
+            isActive={activeSegment === href.substring(1)}
           />
         ),
       )}

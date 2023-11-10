@@ -31,7 +31,7 @@ const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
             title={title}
             variant={variant}
             icon={icon}
-            isActive={href.includes(activeSegment)}
+            isActive={activeSegment === href.substring(1)}
           />
         ))}
       </ul>
