@@ -19,6 +19,7 @@ const LoginForm = (): JSX.Element => {
     mode: 'onChange',
     delayError: 1000,
   });
+
   const {
     handleSubmit,
     formState: { isValid },

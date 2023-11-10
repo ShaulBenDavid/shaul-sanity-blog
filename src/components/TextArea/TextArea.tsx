@@ -52,7 +52,7 @@ const TextArea = ({
         {...register(label)}
       />
       {!!errors[idFor]?.message && (
-        <p className="absolute top-[68px] text-sm font-medium leading-4 text-red-500 first-letter:capitalize">
+        <p className="absolute top-[100%] text-sm font-medium leading-4 text-red-500 first-letter:capitalize">
           {errors[idFor]?.message as string}
         </p>
       )}

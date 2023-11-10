@@ -9,20 +9,14 @@ import type {
 } from './RegisterForm.types';
 import { RegisterStepsEnum } from '../../Register.types';
 
-export const useMultiFormConfig = () => {
-  const personalMethod = useForm<PersonalMethodType>({
+export const useMultiFormConfig = () => ({
+  [RegisterStepsEnum.PERSONAL_INFO]: useForm<PersonalMethodType>({
     resolver: zodResolver(personalInfoSchema),
     mode: 'onTouched',
-  });
-
-  const accountMethod = useForm<AccountMethodType>({
+  }),
+  [RegisterStepsEnum.ACCOUNT_INFO]: useForm<AccountMethodType>({
     resolver: zodResolver(accountInfoSchema),
     mode: 'onChange',
     delayError: 1000,
-  });
-
-  return {
-    [RegisterStepsEnum.PERSONAL_INFO]: personalMethod,
-    [RegisterStepsEnum.ACCOUNT_INFO]: accountMethod,
-  };
-};
+  }),
+});

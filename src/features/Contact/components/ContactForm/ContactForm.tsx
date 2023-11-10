@@ -11,6 +11,8 @@ import Input from '@/src/components/Input';
 import TextArea from '@/src/components/TextArea';
 import { SelectInput } from '@/src/components/SelectInput';
 import Button, { ButtonVariants } from '@/src/components/Button';
+import Alert, { AlertVariants } from '@/src/components/Alert';
+import { usePostContactUs } from '@/src/api/contact/hooks';
 import { contactSchemaValidation } from './ContactForm.utils';
 
 export const ContactForm = (): JSX.Element => {
@@ -22,11 +24,28 @@ export const ContactForm = (): JSX.Element => {
 
   const {
     handleSubmit,
+    reset,
     formState: { isValid },
   } = methods;
 
+  const {
+    sendMail,
+    isContactLoading,
+    contactError,
+    isContactError,
+    contactData,
+  } = usePostContactUs({
+    onSuccess: () =>
+      reset({
+        email: '',
+        name: '',
+        subjectType: undefined,
+        content: '',
+      }),
+  });
+
   const onSubmit = handleSubmit((data) => {
-    console.log('text =', data);
+    sendMail(data);
   });
 
   return (
@@ -36,6 +55,16 @@ export const ContactForm = (): JSX.Element => {
         id="contact-us"
         onSubmit={onSubmit}
       >
+        {(isContactError || contactData?.message) && (
+          <Alert
+            variant={
+              isContactError ? AlertVariants.DANGER : AlertVariants.SUCCESS
+            }
+            content={
+              contactError?.response?.data.message || contactData?.message
+            }
+          />
+        )}
         <Input
           label="email"
           idFor="email"
@@ -55,7 +84,7 @@ export const ContactForm = (): JSX.Element => {
           options={Object.values(ContactTypesEnum)}
         />
         <TextArea
-          // form="contact-us"
+          form="contact-us"
           label="content"
           idFor="content"
           placeholder="Write your message..."
@@ -64,6 +93,8 @@ export const ContactForm = (): JSX.Element => {
           variant={ButtonVariants.PRIMARY}
           type="submit"
           disabled={!isValid}
+          className="mt-2"
+          isLoading={isContactLoading}
         >
           Send
         </Button>
