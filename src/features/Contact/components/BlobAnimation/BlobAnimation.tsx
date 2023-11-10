@@ -1,5 +1,5 @@
-import React from 'react';
-import S from './BlobAnimation.module.css';
+import React from "react";
+import S from "./BlobAnimation.module.css";
 
 interface BlobAnimationProps {
   fill?: string;
@@ -15,8 +15,8 @@ export const BlobAnimation = ({
   amount = 5,
 }: BlobAnimationProps): JSX.Element => {
   const style = {
-    '--time': `${time}s`,
-    '--amount': amount,
+    "--time": `${time}s`,
+    "--amount": amount,
   } as React.CSSProperties;
 
   return (

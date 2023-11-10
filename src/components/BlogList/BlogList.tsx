@@ -1,7 +1,7 @@
-import React from 'react';
-import type { Post } from '@/src/sanity/types';
-import { forUrl } from '@/src/sanity/sanity.utils';
-import PostPreview from '../Posts/PostPreview';
+import React from "react";
+import type { Post } from "@/src/sanity/types";
+import { forUrl } from "@/src/sanity/sanity.utils";
+import PostPreview from "../Posts/PostPreview";
 
 type Props = {
   posts: Post[];
@@ -31,7 +31,7 @@ const BlogList = ({ posts }: Props): JSX.Element => (
             date={new Date(_createdAt)}
             isBookmarked={false}
           />
-        )
+        ),
       )}
   </>
 );

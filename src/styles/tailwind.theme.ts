@@ -1,5 +1,5 @@
-import resolveConfig from 'tailwindcss/resolveConfig';
-import myConfig from '../../tailwind.config.js';
+import resolveConfig from "tailwindcss/resolveConfig";
+import myConfig from "../../tailwind.config.js";
 
 type Theme = {
   theme: {
@@ -17,13 +17,13 @@ type Theme = {
         900: string;
         950: string;
       };
-      'light-primary': string;
-      'light-purple': string;
+      "light-primary": string;
+      "light-purple": string;
       secondary: {
         950: string;
       };
-      'wizard-black': string;
-      'wizard-white': string;
+      "wizard-black": string;
+      "wizard-white": string;
       orange: string;
       white: string;
       black: string;

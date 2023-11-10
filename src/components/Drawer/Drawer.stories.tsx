@@ -1,18 +1,18 @@
-import React from 'react';
-import type { CSSProperties } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import Drawer from './Drawer';
+import React from "react";
+import type { CSSProperties } from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import Drawer from "./Drawer";
 
 const styles: CSSProperties = {
-  transform: 'scale(1)',
-  height: '40vh',
-  position: 'relative',
+  transform: "scale(1)",
+  height: "40vh",
+  position: "relative",
 };
 
 const meta: Meta<typeof Drawer> = {
-  title: 'Components/Drawer',
+  title: "Components/Drawer",
   component: Drawer,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [(storyFn) => <div style={styles}>{storyFn()}</div>],
 };
 
@@ -27,14 +27,14 @@ export const Primary: Story = {
   },
   argTypes: {
     onClose: {
-      control: 'ControlType',
+      control: "ControlType",
       description:
         'Close the side navigation when user click "esc" or click on the overlay',
       defaultValue: () => ({}),
     },
     isOpen: {
-      control: 'boolean',
-      description: 'Control the state of the drawer open or close',
+      control: "boolean",
+      description: "Control the state of the drawer open or close",
       default: true,
     },
   },

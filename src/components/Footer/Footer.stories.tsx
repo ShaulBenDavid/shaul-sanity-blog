@@ -1,11 +1,11 @@
-import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import Footer from './Footer';
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import Footer from "./Footer";
 
 const meta: Meta<typeof Footer> = {
-  title: 'Layout/Footer',
+  title: "Layout/Footer",
   component: Footer,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 };
 
 export default meta;

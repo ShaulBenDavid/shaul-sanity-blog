@@ -1,1 +1,1 @@
-export { BlobAnimation } from './BlobAnimation';
+export { BlobAnimation } from "./BlobAnimation";

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useFormContext } from 'react-hook-form';
-import { twMerge } from 'tailwind-merge';
+import React from "react";
+import { useFormContext } from "react-hook-form";
+import { twMerge } from "tailwind-merge";
 
 interface SelectInputProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
@@ -18,7 +18,6 @@ export const SelectInput = ({
   width,
   value,
   form,
-  placeholder,
   className,
   options,
 }: SelectInputProps): JSX.Element => {
@@ -33,27 +32,27 @@ export const SelectInput = ({
         htmlFor={idFor}
         className="font-medium capitalize text-secondary-950"
       >
-        {label.replace(/([a-z])([A-Z])/g, '$1 $2')}
+        {label.replace(/([a-z])([A-Z])/g, "$1 $2")}
       </label>
       <select
         form={form}
         id={idFor}
-        placeholder={placeholder}
         value={value}
         className={twMerge(
           `h-10 resize-none rounded-md border-[1px] border-secondary-950 bg-transparent px-2 text-secondary-950 placeholder:text-wizard-grey ${
             !!errors[idFor]?.message &&
-            'border-red-500 focus:border-2 focus:border-red-500 focus:outline-none'
+            "border-red-500 focus:border-2 focus:border-red-500 focus:outline-none"
           }`,
-          className
+          className,
         )}
         data-testid="selectinput-component-test-id"
         style={{ width }}
         {...register(label)}
       >
+        <option value="">Please select</option>
         {options.map((option) => (
           <option key={option} value={option}>
-            {option}
+            {option.replace(/([a-z])([A-Z])/g, "$1 $2")}
           </option>
         ))}
       </select>

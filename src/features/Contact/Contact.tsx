@@ -1,10 +1,10 @@
-import React from 'react';
-import { ContactHeader } from './components/ContactHeader';
-import { ContactForm } from './components/ContactForm';
+import React from "react";
+import { ContactHeader } from "./components/ContactHeader";
+import { ContactForm } from "./components/ContactForm";
 
 const Contact = () => {
   return (
-    <section className="flex h-full pt-10 md:items-center w-full flex-row justify-between">
+    <section className="flex h-full w-full flex-col items-center justify-between pt-10 md:flex-row md:items-center">
       <ContactHeader />
       <ContactForm />
     </section>

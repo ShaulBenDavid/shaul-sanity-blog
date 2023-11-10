@@ -1,12 +1,12 @@
-import { ApiEndpoints } from '../api-endpoints.config';
-import { Methods } from '../api.config';
-import { apiMethodInstance, refreshMethodInstance } from '../http.service';
+import { ApiEndpoints } from "../api-endpoints.config";
+import { Methods } from "../api.config";
+import { apiMethodInstance, refreshMethodInstance } from "../http.service";
 import type {
   LoginPayloadType,
   AuthResponseType,
   RegisterPayloadType,
   RegisterResponseType,
-} from './auth.types';
+} from "./auth.types";
 
 export const login = (payload: LoginPayloadType): Promise<AuthResponseType> =>
   apiMethodInstance<AuthResponseType>({
@@ -16,7 +16,7 @@ export const login = (payload: LoginPayloadType): Promise<AuthResponseType> =>
   });
 
 export const signUp = (
-  payload: RegisterPayloadType
+  payload: RegisterPayloadType,
 ): Promise<RegisterResponseType> =>
   apiMethodInstance<RegisterResponseType>({
     url: ApiEndpoints.SIGN_UP,

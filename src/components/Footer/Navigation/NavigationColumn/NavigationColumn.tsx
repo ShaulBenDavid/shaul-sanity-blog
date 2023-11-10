@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 export type NavigationColumnLinksType = {
   title: string;
@@ -48,7 +48,7 @@ const NavigationColumn = ({
               {title}
             </Link>
           </li>
-        )
+        ),
       )}
     </ul>
   </div>

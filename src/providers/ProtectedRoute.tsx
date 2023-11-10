@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useContext, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { AuthContext } from '@/src/context/auth';
-import { hasMatchingRole } from '../roles/roles.utils';
-import type { Roles } from '../roles';
-import { Routes } from '../routes';
+import React, { useContext, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { AuthContext } from "@/src/context/auth";
+import { hasMatchingRole } from "../roles/roles.utils";
+import type { Roles } from "../roles";
+import { Routes } from "../routes";
 
 interface ProtectedRouteProps {
   allowedRoles: Roles[];

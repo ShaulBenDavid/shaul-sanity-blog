@@ -1,6 +1,6 @@
-import React from 'react';
-import { BsFillCheckCircleFill } from 'react-icons/bs';
-import { stepStyles } from './Step.style';
+import React from "react";
+import { BsFillCheckCircleFill } from "react-icons/bs";
+import { stepStyles } from "./Step.style";
 
 interface StepProps {
   title: string;
@@ -25,13 +25,13 @@ const Step = ({
     <li
       className={`
       flex items-center capitalize
-      ${isLastStep ? '' : step.notLast} 
-      ${stepNumber <= currentStep ? step.current : ''}
-      ${stepNumber < currentStep ? step.separator : ''}
+      ${isLastStep ? "" : step.notLast} 
+      ${stepNumber <= currentStep ? step.current : ""}
+      ${stepNumber < currentStep ? step.separator : ""}
     `}
       data-testid="step-component-test-id"
     >
-      <span className={`flex items-center ${isLastStep ? '' : smallSeparator}`}>
+      <span className={`flex items-center ${isLastStep ? "" : smallSeparator}`}>
         {isCompletedStep ? (
           <BsFillCheckCircleFill
             height="14px"

@@ -1,6 +1,6 @@
-import React from 'react';
-import { socialsLoginButtonsConfig } from './SocialLogin.config';
-import SocialButton from './SocialButton';
+import React from "react";
+import { socialsLoginButtonsConfig } from "./SocialLogin.config";
+import SocialButton from "./SocialButton";
 
 const SocialLogin = (): JSX.Element => (
   <div className="flex flex-row gap-4 max-sm:flex-col max-sm:gap-2">

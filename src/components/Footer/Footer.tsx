@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import { Routes } from '@/src/routes';
-import { socialLinksConfig } from '@/src/constants/socials';
-import SocialIconsLinks from './SocialIconsLinks';
-import Navigation from './Navigation';
+import React from "react";
+import Link from "next/link";
+import { Routes } from "@/src/routes";
+import { socialLinksConfig } from "@/src/constants/socials";
+import SocialIconsLinks from "./SocialIconsLinks";
+import Navigation from "./Navigation";
 
 const Footer = () => (
   <footer className="w-full bg-white">
@@ -12,7 +12,7 @@ const Footer = () => (
       <hr className="my-6 border-wizard-grey sm:mx-auto lg:my-8" aria-hidden />
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-wizard-grey sm:text-center">
-          © 2023{' '}
+          © 2023{" "}
           <Link
             href={Routes.ROOT}
             aria-label="Home"

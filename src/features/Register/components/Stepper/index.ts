@@ -1,5 +1,5 @@
-import Stepper from './Stepper';
+import Stepper from "./Stepper";
 
-export type { StepsType } from './Stepper.types';
+export type { StepsType } from "./Stepper.types";
 
 export default Stepper;

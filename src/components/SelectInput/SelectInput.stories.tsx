@@ -1,7 +1,7 @@
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import type { Meta, StoryObj } from '@storybook/react';
-import { SelectInput } from './SelectInput';
+import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import type { Meta, StoryObj } from "@storybook/react";
+import { SelectInput } from "./SelectInput";
 
 /**
  * # The Text SelectInput component
@@ -9,9 +9,9 @@ import { SelectInput } from './SelectInput';
  */
 
 const meta: Meta<typeof SelectInput> = {
-  title: 'Components/Inputs/SelectInput',
+  title: "Components/Inputs/SelectInput",
   component: SelectInput,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [
     (storyFn) => {
       const formMethods = useForm();
@@ -22,42 +22,42 @@ const meta: Meta<typeof SelectInput> = {
       );
     },
   ],
-  args: { width: '400px' },
+  args: { width: "400px" },
   argTypes: {
     width: {
-      control: 'string',
+      control: "string",
       description:
-        'The default width is 100%, If you want something else enter value in px.',
+        "The default width is 100%, If you want something else enter value in px.",
     },
     label: {
-      control: 'string',
-      description: 'Label write for what the input use.',
+      control: "string",
+      description: "Label write for what the input use.",
     },
     form: {
-      control: 'string',
+      control: "string",
       description:
         'The form element that the <textarea> element is associated with (its "form owner"). ',
     },
     options: {
-      control: 'object',
+      control: "object",
       description: `Provides a select to choose a single value from the options.`,
     },
     idFor: {
-      control: 'string',
-      description: 'Just connect between the label to the input.',
+      control: "string",
+      description: "Just connect between the label to the input.",
     },
     placeholder: {
-      control: 'string',
+      control: "string",
       description:
-        'Write an example or explanation of what the user should enter.',
+        "Write an example or explanation of what the user should enter.",
     },
     value: {
-      control: 'string',
-      description: 'The input value.',
+      control: "string",
+      description: "The input value.",
     },
     onChange: {
-      control: 'ControlType',
-      description: 'Input change callback.',
+      control: "ControlType",
+      description: "Input change callback.",
       defaultValue: () => ({}),
     },
   },
@@ -69,9 +69,9 @@ type Story = StoryObj<typeof SelectInput>;
 
 export const Default: Story = {
   args: {
-    label: 'Select',
-    idFor: 'email',
-    placeholder: 'Write something...',
-    options: ['other', 'blue', 'yellow'],
+    label: "Select",
+    idFor: "email",
+    placeholder: "Write something...",
+    options: ["other", "blue", "yellow"],
   },
 };

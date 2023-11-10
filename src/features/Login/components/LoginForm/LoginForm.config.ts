@@ -1,4 +1,4 @@
-import type { HTMLInputTypeAttribute } from 'react';
+import type { HTMLInputTypeAttribute } from "react";
 
 type LoginFormConfig = {
   label: string;
@@ -9,15 +9,15 @@ type LoginFormConfig = {
 
 export const loginFormConfig: LoginFormConfig[] = [
   {
-    label: 'email',
-    idFor: 'email',
-    placeholder: 'Example@example.com',
-    type: 'text',
+    label: "email",
+    idFor: "email",
+    placeholder: "Example@example.com",
+    type: "text",
   },
   {
-    label: 'password',
-    idFor: 'password',
-    placeholder: 'Enter your password',
-    type: 'password',
+    label: "password",
+    idFor: "password",
+    placeholder: "Enter your password",
+    type: "password",
   },
 ];

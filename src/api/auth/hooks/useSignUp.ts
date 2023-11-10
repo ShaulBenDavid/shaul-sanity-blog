@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import { useCallback } from 'react';
-import axios from 'axios';
-import { useMutation } from '@tanstack/react-query';
-import { signUp } from '../auth.methods';
-import type { RegisterPayloadType } from '../auth.types';
+import { useCallback } from "react";
+import axios from "axios";
+import { useMutation } from "@tanstack/react-query";
+import { signUp } from "../auth.methods";
+import type { RegisterPayloadType } from "../auth.types";
 
-const POST_SIGN_UP_KEY = 'postSignUp';
+const POST_SIGN_UP_KEY = "postSignUp";
 
 export const useSignUp = () => {
   const { mutate, isError, isLoading, isSuccess, error } = useMutation(
     [POST_SIGN_UP_KEY],
-    (payload: RegisterPayloadType) => signUp(payload)
+    (payload: RegisterPayloadType) => signUp(payload),
   );
 
   const handleSignUp = useCallback(
     (payload: RegisterPayloadType): void => {
       mutate(payload);
     },
-    [mutate]
+    [mutate],
   );
 
   return {

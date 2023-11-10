@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useContext } from 'react';
-import { AuthContext } from '../context/auth';
-import { useLogout, useRefresh } from '../api/auth/hooks';
-import type { AuthResponseType } from '../api/auth';
+import React, { useContext } from "react";
+import { AuthContext } from "../context/auth";
+import { useLogout, useRefresh } from "../api/auth/hooks";
+import type { AuthResponseType } from "../api/auth";
 
 export const AuthProvider = ({
   children,

@@ -1,11 +1,11 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { BsBookmarkPlus, BsBookmarkPlusFill } from 'react-icons/bs';
-import { formatDateToCustomFormat } from '@/src/utils';
-import { forUrl } from '@/src/sanity/sanity.utils';
-import type { Author } from '@/src/sanity/types';
-import UserPreview from '../../UserPreview';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { BsBookmarkPlus, BsBookmarkPlusFill } from "react-icons/bs";
+import { formatDateToCustomFormat } from "@/src/utils";
+import { forUrl } from "@/src/sanity/sanity.utils";
+import type { Author } from "@/src/sanity/types";
+import UserPreview from "../../UserPreview";
 
 export interface PostPreviewProps {
   title: string;
@@ -41,7 +41,7 @@ const PostPreview = ({
           sizes="15wv"
           width={0}
           height={0}
-          className="aspect-square h-28 w-auto object-cover sm:aspect-video mb:w-40 sm:h-[130px] sm:w-auto"
+          className="aspect-square h-28 w-auto object-cover mb:w-40 sm:aspect-video sm:h-[130px] sm:w-auto"
         />
       </figure>
     </Link>

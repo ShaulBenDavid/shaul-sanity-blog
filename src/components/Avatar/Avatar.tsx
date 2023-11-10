@@ -1,9 +1,9 @@
-import React from 'react';
-import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
-import { stringToAvatar, stringToColor } from '@/src/utils';
-import { avatarSizesConfig } from './Avatar.config';
-import { AvatarSizes } from './Avatar.types';
+import React from "react";
+import Image from "next/image";
+import { twMerge } from "tailwind-merge";
+import { stringToAvatar, stringToColor } from "@/src/utils";
+import { avatarSizesConfig } from "./Avatar.config";
+import { AvatarSizes } from "./Avatar.types";
 
 type AvatarProps =
   | {
@@ -28,9 +28,9 @@ const Avatar = ({
   <div
     className={twMerge(
       `relative flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`,
-      className
+      className,
     )}
-    style={{ backgroundColor: `${name ? stringToColor(name) : 'initial'}` }}
+    style={{ backgroundColor: `${name ? stringToColor(name) : "initial"}` }}
     data-testid="avatar-component-test-id"
   >
     {name ? (

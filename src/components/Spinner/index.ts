@@ -1,5 +1,5 @@
-import Spinner from './Spinner';
-import { SpinnerSize, SpinnerVariants } from './Spinner.types';
+import Spinner from "./Spinner";
+import { SpinnerSize, SpinnerVariants } from "./Spinner.types";
 
 export { SpinnerSize, SpinnerVariants };
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import S from './EmailAnimation.module.css';
+import React from "react";
+import S from "./EmailAnimation.module.css";
 
 const EmailAnimation = (): JSX.Element => (
   <div aria-hidden>

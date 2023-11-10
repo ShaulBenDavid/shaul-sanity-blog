@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Stepper from './Stepper';
-import { registerStepsConfig } from '../../Register.config';
+import type { Meta, StoryObj } from "@storybook/react";
+import Stepper from "./Stepper";
+import { registerStepsConfig } from "../../Register.config";
 
 /**
  * # The Stepper component
@@ -10,17 +10,17 @@ import { registerStepsConfig } from '../../Register.config';
  */
 
 const meta: Meta<typeof Stepper> = {
-  title: 'Feature/Register/Stepper',
+  title: "Feature/Register/Stepper",
   component: Stepper,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     steps: {
-      control: 'object',
-      description: 'Pass array of steps to show',
+      control: "object",
+      description: "Pass array of steps to show",
     },
     currentStep: {
-      control: 'number',
-      description: 'The number of the current step. the step that you see',
+      control: "number",
+      description: "The number of the current step. the step that you see",
     },
   },
 };

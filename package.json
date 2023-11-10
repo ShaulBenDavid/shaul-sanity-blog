@@ -91,7 +91,7 @@
     "lint-staged": "13.2.2",
     "postcss": "8.4.23",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.6",
+    "prettier-plugin-tailwindcss": "^0.5.7",
     "react-docgen-typescript-plugin": "1.0.5",
     "storybook": "^7.5.2",
     "tailwindcss": "3.3.2",
@@ -109,5 +109,10 @@
   },
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

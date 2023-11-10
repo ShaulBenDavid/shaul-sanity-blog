@@ -1,34 +1,34 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import SocialButton from './SocialButton';
-import { socialsLoginButtonsConfig } from '../SocialLogin.config';
+import type { Meta, StoryObj } from "@storybook/react";
+import SocialButton from "./SocialButton";
+import { socialsLoginButtonsConfig } from "../SocialLogin.config";
 
 const meta: Meta<typeof SocialButton> = {
-  title: 'Login/SocialButton',
+  title: "Login/SocialButton",
   component: SocialButton,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
     onClick: () => ({}),
     disabled: false,
-    width: '250px',
+    width: "250px",
   },
   argTypes: {
     borderColor: {
-      type: 'string',
+      type: "string",
       description:
         'The color of the border need to contain the social theme "Facebook = blue"',
     },
     onClick: {
-      control: 'ControlType',
-      description: 'Button click function',
+      control: "ControlType",
+      description: "Button click function",
       defaultValue: () => ({}),
     },
     width: {
-      control: 'string',
-      description: 'Width if not define the default will be 100%',
+      control: "string",
+      description: "Width if not define the default will be 100%",
     },
     children: {
-      type: 'string',
-      description: 'Need to contain a social icon and text.',
+      type: "string",
+      description: "Need to contain a social icon and text.",
     },
   },
 };

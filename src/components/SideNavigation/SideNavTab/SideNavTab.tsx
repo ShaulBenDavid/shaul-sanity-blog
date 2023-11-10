@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import type { Routes } from '@/src/routes';
-import { sideNavTabStyleConfig } from './SideNavTab.config';
-import { NavigationVariants } from '../../Header/Header.config';
+import React from "react";
+import Link from "next/link";
+import type { Routes } from "@/src/routes";
+import { sideNavTabStyleConfig } from "./SideNavTab.config";
+import { NavigationVariants } from "../../Header/Header.config";
 
 interface SideNavTabProps {
   href: Routes;
@@ -26,13 +26,13 @@ const SideNavTab = ({
       href={href}
       onClick={onClick}
       aria-label={title}
-      aria-current={isActive ? 'page' : undefined}
+      aria-current={isActive ? "page" : undefined}
       className={`flex flex-row content-center items-center gap-1 rounded-md capitalize  ${
         sideNavTabStyleConfig[variant]
       } ${
         isActive &&
         variant === NavigationVariants.LINK &&
-        ' bg-primary-900 bg-opacity-20 focus:bg-light-purple focus:bg-opacity-50'
+        " bg-primary-900 bg-opacity-20 focus:bg-light-purple focus:bg-opacity-50"
       }`}
     >
       {icon && icon}

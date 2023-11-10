@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Logo } from '@/src/components/Icons';
-import { Routes } from '@/src/routes';
-import { useGetUserRoutes } from '@/src/roles/hooks';
-import PermissionGate, { Roles } from '@/src/roles';
-import NavigationTabs from '../NavigationTabs';
-import BurgerButton from './BurgerButton/BurgerButton';
-import SideNavigation from '../SideNavigation';
-import { getUserNavigationLinks } from './Header.utils';
-import UserMenu from './UserMenu';
+import React, { useState } from "react";
+import Link from "next/link";
+import { Logo } from "@/src/components/Icons";
+import { Routes } from "@/src/routes";
+import { useGetUserRoutes } from "@/src/roles/hooks";
+import PermissionGate, { Roles } from "@/src/roles";
+import NavigationTabs from "../NavigationTabs";
+import BurgerButton from "./BurgerButton/BurgerButton";
+import SideNavigation from "../SideNavigation";
+import { getUserNavigationLinks } from "./Header.utils";
+import UserMenu from "./UserMenu";
 
 const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);

@@ -1,8 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import JamesClearImg from '../images/IntroTextJC.png';
-import JamesClearImgM from '../images/IntroTextJCM.png';
-import JamesClearImgS from '../images/IntroTextJCS.png';
+import React from "react";
+import Image from "next/image";
+import JamesClearImg from "../images/IntroTextJC.png";
+import JamesClearImgM from "../images/IntroTextJCM.png";
+import JamesClearImgS from "../images/IntroTextJCS.png";
 
 const Intro = () => (
   <section className="relative mt-40 flex flex-col items-center text-center text-wizard-black max-tb:mt-32">
@@ -14,18 +14,18 @@ const Intro = () => (
         className="relative left-[calc(50%-11rem)] aspect-[1455/1078] w-[70rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
         style={{
           clipPath:
-            'polygon(13% 25%, 52% 35%, 100% 60%, 99% 12%, 25% 73%, 45% 8%, 0 3%)',
+            "polygon(13% 25%, 52% 35%, 100% 60%, 99% 12%, 25% 73%, 45% 8%, 0 3%)",
         }}
       />
     </div>
     <h1 className="animate-[fadeIn_1s_ease-in_forwards] text-h1-dynamic font-bold text-[#3D0B4E]">
-      Get{' '}
+      Get{" "}
       <span
         className="bg-gradient-to-r from-[#ad52cb] via-light-primary to-primary-900 bg-clip-text text-transparent"
-        style={{ color: 'transparent' }}
+        style={{ color: "transparent" }}
       >
         Inspired
-      </span>{' '}
+      </span>{" "}
       Every Day!
     </h1>
     <p className="text-p-dynamic leading-8 max-sm:leading-6">

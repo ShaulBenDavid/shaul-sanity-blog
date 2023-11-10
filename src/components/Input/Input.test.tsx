@@ -1,32 +1,32 @@
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import { render } from 'test-utils';
-import Input from './Input';
+import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import { render } from "test-utils";
+import Input from "./Input";
 
-describe('Input', () => {
+describe("Input", () => {
   const Wrapper = (props: { children: JSX.Element }) => {
     const formMethods = useForm();
 
     return <FormProvider {...formMethods}>{props.children}</FormProvider>;
   };
-  it('Label renders correctly', () => {
+  it("Label renders correctly", () => {
     const { getByText } = render(
       <Wrapper>
         <Input idFor="email" label="email" />
-      </Wrapper>
+      </Wrapper>,
     );
-    const buttonElement = getByText('email');
+    const buttonElement = getByText("email");
     expect(buttonElement).toBeInTheDocument();
   });
 
-  it('renders correctly with variant color', () => {
+  it("renders correctly with variant color", () => {
     const { getByText } = render(
       <Wrapper>
         <Input idFor="email" label="email" />
-      </Wrapper>
+      </Wrapper>,
     );
-    const inputElement = getByText('email');
+    const inputElement = getByText("email");
     expect(inputElement).toBeInTheDocument();
-    expect(inputElement).toHaveClass('text-secondary-950');
+    expect(inputElement).toHaveClass("text-secondary-950");
   });
 });

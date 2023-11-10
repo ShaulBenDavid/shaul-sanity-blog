@@ -1,6 +1,6 @@
-import React from 'react';
-import { SpinnerSize, SpinnerVariants } from './Spinner.types';
-import { spinnerSizesConfig, spinnerVariantConfig } from './Spinner.config';
+import React from "react";
+import { SpinnerSize, SpinnerVariants } from "./Spinner.types";
+import { spinnerSizesConfig, spinnerVariantConfig } from "./Spinner.config";
 
 interface SpinnerProps {
   variant?: SpinnerVariants;

@@ -1,28 +1,22 @@
-'use client';
+"use client";
 
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { accountInfoSchema, personalInfoSchema } from './RegisterForm.utils';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { accountInfoSchema, personalInfoSchema } from "./RegisterForm.utils";
 import type {
   AccountMethodType,
   PersonalMethodType,
-} from './RegisterForm.types';
-import { RegisterStepsEnum } from '../../Register.types';
+} from "./RegisterForm.types";
+import { RegisterStepsEnum } from "../../Register.types";
 
-export const useMultiFormConfig = () => {
-  const personalMethod = useForm<PersonalMethodType>({
+export const useMultiFormConfig = () => ({
+  [RegisterStepsEnum.PERSONAL_INFO]: useForm<PersonalMethodType>({
     resolver: zodResolver(personalInfoSchema),
-    mode: 'onTouched',
-  });
-
-  const accountMethod = useForm<AccountMethodType>({
+    mode: "onTouched",
+  }),
+  [RegisterStepsEnum.ACCOUNT_INFO]: useForm<AccountMethodType>({
     resolver: zodResolver(accountInfoSchema),
-    mode: 'onChange',
+    mode: "onChange",
     delayError: 1000,
-  });
-
-  return {
-    [RegisterStepsEnum.PERSONAL_INFO]: personalMethod,
-    [RegisterStepsEnum.ACCOUNT_INFO]: accountMethod,
-  };
-};
+  }),
+});

@@ -1,22 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Spinner from './Spinner';
-import { SpinnerSize, SpinnerVariants } from './Spinner.types';
+import type { Meta, StoryObj } from "@storybook/react";
+import Spinner from "./Spinner";
+import { SpinnerSize, SpinnerVariants } from "./Spinner.types";
 
 const meta: Meta<typeof Spinner> = {
-  title: 'Components/Spinner',
+  title: "Components/Spinner",
   component: Spinner,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
+      control: "select",
       options: SpinnerVariants,
-      description: 'Control the Spinner style',
+      description: "Control the Spinner style",
       default: SpinnerVariants.PRIMARY,
     },
     size: {
-      control: 'select',
+      control: "select",
       options: SpinnerSize,
-      description: 'Control the Spinner style',
+      description: "Control the Spinner style",
       default: SpinnerSize.LARGE,
     },
   },

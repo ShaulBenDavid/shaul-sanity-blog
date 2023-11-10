@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useCallback, useState } from 'react';
-import type { RegisterPayloadType } from '@/src/api/auth';
+import { useCallback, useState } from "react";
+import type { RegisterPayloadType } from "@/src/api/auth";
 
 interface UseMultiFormSteps {
   stepsCount: number;
@@ -9,11 +9,11 @@ interface UseMultiFormSteps {
 }
 
 const initialState: RegisterPayloadType = {
-  firstName: '',
-  lastName: '',
-  username: '',
-  email: '',
-  password: '',
+  firstName: "",
+  lastName: "",
+  username: "",
+  email: "",
+  password: "",
 };
 
 export const useMultiFormSteps = ({
@@ -45,7 +45,7 @@ export const useMultiFormSteps = ({
       }
       nextStep();
     },
-    [credentials, currentStep, handleSubmit, stepsCount, nextStep]
+    [credentials, currentStep, handleSubmit, stepsCount, nextStep],
   );
 
   return {

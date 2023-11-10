@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useContext, useMemo } from 'react';
-import { AuthContext } from '@/src/context/auth';
-import type { Routes } from '@/src/routes';
-import { getRoutesByRole } from '../roles.config';
+import { useContext, useMemo } from "react";
+import { AuthContext } from "@/src/context/auth";
+import type { Routes } from "@/src/routes";
+import { getRoutesByRole } from "../roles.config";
 
 export const useGetUserRoutes = (): Routes[] => {
   const { roles } = useContext(AuthContext);
@@ -14,9 +14,9 @@ export const useGetUserRoutes = (): Routes[] => {
         (prev, current) => [
           ...new Set<Routes>([...prev, ...getRoutesByRole[current]]),
         ],
-        []
+        [],
       ),
-    [roles]
+    [roles],
   );
 
   return userRoutes;

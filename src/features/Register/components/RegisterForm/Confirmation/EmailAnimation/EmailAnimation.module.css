@@ -18,7 +18,7 @@
 
 .envelope:before,
 .envelope:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
 }
@@ -54,7 +54,7 @@
 }
 
 .paper:before {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -87,7 +87,7 @@
   height: 35px;
   border-radius: 35px;
   color: #fff;
-  font: bold 20px/36px 'Helvetica';
+  font: bold 20px/36px "Helvetica";
   text-align: center;
   background: #2ecc71;
   box-shadow: 0 4px 0 rgba(216, 217, 216, 0.7);

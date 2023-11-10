@@ -1,8 +1,8 @@
-import type { HTMLInputTypeAttribute } from 'react';
+import type { HTMLInputTypeAttribute } from "react";
 
 export enum RegisterStepsEnum {
-  PERSONAL_INFO = 'personalInfo',
-  ACCOUNT_INFO = 'accountInfo',
+  PERSONAL_INFO = "personalInfo",
+  ACCOUNT_INFO = "accountInfo",
 }
 
 export type RegisterFieldType = {

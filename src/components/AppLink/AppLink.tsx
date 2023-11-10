@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import type { PropsWithChildren } from 'react';
-import React from 'react';
-import Link from 'next/link';
-import type { Routes } from '@/src/routes';
-import { AppLinkStyles } from './AppLink.config';
+import type { PropsWithChildren } from "react";
+import React from "react";
+import Link from "next/link";
+import type { Routes } from "@/src/routes";
+import { AppLinkStyles } from "./AppLink.config";
 
 type AppLinkProps =
   | {

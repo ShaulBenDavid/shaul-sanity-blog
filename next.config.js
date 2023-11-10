@@ -2,18 +2,18 @@
 
 const nextConfig = {
   typescript: {
-    tsconfigPath: './tsconfig.json',
+    tsconfigPath: "./tsconfig.json",
   },
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ["cdn.sanity.io"],
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   rewrites: async () => {
     return [
       {
-        source: '/api/:path*',
+        source: "/api/:path*",
         destination: `${process.env.NEXT_PUBLIC_DEV_WIZARD_URL}:path*`,
       },
     ];

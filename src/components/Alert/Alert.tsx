@@ -1,8 +1,8 @@
-import React from 'react';
-import { BsFillInfoCircleFill } from 'react-icons/bs';
-import { twMerge } from 'tailwind-merge';
-import type { AlertVariants } from './Alert.types';
-import { alertVariantsStyleConfig } from './Alert.config';
+import React from "react";
+import { BsFillInfoCircleFill } from "react-icons/bs";
+import { twMerge } from "tailwind-merge";
+import type { AlertVariants } from "./Alert.types";
+import { alertVariantsStyleConfig } from "./Alert.config";
 
 interface AlertProps {
   variant: AlertVariants;
@@ -20,7 +20,7 @@ const Alert = ({
   <div
     className={twMerge(
       `flex w-full flex-row items-center gap-2 rounded-lg p-4 text-sm ${alertVariantsStyleConfig[variant]}`,
-      className
+      className,
     )}
     role="alert"
     style={{ width }}

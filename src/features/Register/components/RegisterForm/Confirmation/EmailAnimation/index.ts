@@ -1,3 +1,3 @@
-import EmailAnimation from './EmailAnimation';
+import EmailAnimation from "./EmailAnimation";
 
 export default EmailAnimation;

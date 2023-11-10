@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Chip from './Chip';
+import type { Meta, StoryObj } from "@storybook/react";
+import Chip from "./Chip";
 
 /**
  * # The Chip component
@@ -9,18 +9,18 @@ import Chip from './Chip';
  */
 
 const meta: Meta<typeof Chip> = {
-  title: 'Components/Chip',
+  title: "Components/Chip",
   component: Chip,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {},
   argTypes: {
     name: {
-      control: 'text',
-      description: 'The text you want to show on the chip link',
+      control: "text",
+      description: "The text you want to show on the chip link",
     },
     href: {
-      control: 'string',
-      description: 'A path for the wanted route',
+      control: "string",
+      description: "A path for the wanted route",
     },
   },
 };
@@ -31,7 +31,7 @@ type Story = StoryObj<typeof Chip>;
 
 export const Basic: Story = {
   args: {
-    name: 'front end',
-    href: '',
+    name: "front end",
+    href: "",
   },
 };

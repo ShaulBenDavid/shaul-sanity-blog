@@ -1,6 +1,6 @@
-import { Routes } from '../routes';
-import { userRoutes, visitorRoutes } from '../routes/routes.config';
-import { Roles } from './roles.types';
+import { Routes } from "../routes";
+import { userRoutes, visitorRoutes } from "../routes/routes.config";
+import { Roles } from "./roles.types";
 
 export const getRoutesByRole: Record<Roles, Routes[]> = {
   [Roles.VISITOR]: visitorRoutes,

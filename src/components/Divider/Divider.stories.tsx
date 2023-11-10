@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Divider from './Divider';
+import type { Meta, StoryObj } from "@storybook/react";
+import Divider from "./Divider";
 
 /**
  * # The Divider component
  * Shows a custom HR with text
  */
 const meta: Meta<typeof Divider> = {
-  title: 'Components/Divider',
+  title: "Components/Divider",
   component: Divider,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 
   argTypes: {
     title: {
-      control: 'string',
-      description: 'Text of the divider',
+      control: "string",
+      description: "Text of the divider",
     },
   },
 };
@@ -24,6 +24,6 @@ type Story = StoryObj<typeof Divider>;
 
 export const Hr: Story = {
   args: {
-    title: 'or',
+    title: "or",
   },
 };

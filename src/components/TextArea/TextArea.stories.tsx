@@ -1,7 +1,7 @@
-import React from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
-import type { Meta, StoryObj } from '@storybook/react';
-import TextArea from './TextArea';
+import React from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import type { Meta, StoryObj } from "@storybook/react";
+import TextArea from "./TextArea";
 
 /**
  * # The Text Area component
@@ -11,9 +11,9 @@ import TextArea from './TextArea';
  */
 
 const meta: Meta<typeof TextArea> = {
-  title: 'Components/Inputs/TextArea',
+  title: "Components/Inputs/TextArea",
   component: TextArea,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [
     (storyFn) => {
       const formMethods = useForm();
@@ -24,43 +24,43 @@ const meta: Meta<typeof TextArea> = {
       );
     },
   ],
-  args: { width: '400px' },
+  args: { width: "400px" },
   argTypes: {
     width: {
-      control: 'string',
+      control: "string",
       description:
-        'The default width is 100%, If you want something else enter value in px.',
+        "The default width is 100%, If you want something else enter value in px.",
     },
     label: {
-      control: 'string',
-      description: 'Label write for what the input use.',
+      control: "string",
+      description: "Label write for what the input use.",
     },
     form: {
-      control: 'string',
+      control: "string",
       description:
         'The form element that the <textarea> element is associated with (its "form owner"). ',
     },
     rows: {
-      control: 'number',
+      control: "number",
       description: `The number of visible text lines for the control. If it is specified,
           it must be a positive integer.If it is not specified, the default value is 5.`,
     },
     idFor: {
-      control: 'string',
-      description: 'Just connect between the label to the input.',
+      control: "string",
+      description: "Just connect between the label to the input.",
     },
     placeholder: {
-      control: 'string',
+      control: "string",
       description:
-        'Write an example or explanation of what the user should enter.',
+        "Write an example or explanation of what the user should enter.",
     },
     value: {
-      control: 'string',
-      description: 'The input value.',
+      control: "string",
+      description: "The input value.",
     },
     onChange: {
-      control: 'ControlType',
-      description: 'Input change callback.',
+      control: "ControlType",
+      description: "Input change callback.",
       defaultValue: () => ({}),
     },
   },
@@ -72,8 +72,8 @@ type Story = StoryObj<typeof TextArea>;
 
 export const Text: Story = {
   args: {
-    label: 'Text Area',
-    idFor: 'email',
-    placeholder: 'Write something...',
+    label: "Text Area",
+    idFor: "email",
+    placeholder: "Write something...",
   },
 };

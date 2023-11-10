@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Alert from './Alert';
-import { AlertVariants } from './Alert.types';
+import type { Meta, StoryObj } from "@storybook/react";
+import Alert from "./Alert";
+import { AlertVariants } from "./Alert.types";
 
 /**
  * # The Alert component
@@ -9,27 +9,27 @@ import { AlertVariants } from './Alert.types';
  */
 
 const meta: Meta<typeof Alert> = {
-  title: 'Components/Alert',
+  title: "Components/Alert",
   component: Alert,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   args: {
-    width: '500px',
+    width: "500px",
     content:
-      'The alert component can be used to provide information to your users such as success or error messages, but also highlighted information',
+      "The alert component can be used to provide information to your users such as success or error messages, but also highlighted information",
   },
   argTypes: {
     content: {
-      control: 'string',
-      description: 'Provide information to your users.',
+      control: "string",
+      description: "Provide information to your users.",
     },
     width: {
-      control: 'string',
-      description: 'Width if not define the default will be 100%',
+      control: "string",
+      description: "Width if not define the default will be 100%",
     },
     variant: {
-      control: 'select',
+      control: "select",
       options: AlertVariants,
-      description: 'Control the Alert style',
+      description: "Control the Alert style",
       default: AlertVariants.INFO,
     },
   },

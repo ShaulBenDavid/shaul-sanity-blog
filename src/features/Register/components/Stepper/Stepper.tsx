@@ -1,6 +1,6 @@
-import React from 'react';
-import Step from './Step';
-import type { StepsType } from './Stepper.types';
+import React from "react";
+import Step from "./Step";
+import type { StepsType } from "./Stepper.types";
 
 interface StepperProps {
   steps: StepsType;

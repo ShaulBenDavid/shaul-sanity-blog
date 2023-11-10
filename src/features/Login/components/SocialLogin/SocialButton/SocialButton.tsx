@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SocialButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

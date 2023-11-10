@@ -1,12 +1,12 @@
-import React from 'react';
-import type { CSSProperties } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import AppLink from './AppLink';
+import React from "react";
+import type { CSSProperties } from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+import AppLink from "./AppLink";
 
 const styles: CSSProperties = {
-  transform: 'scale(1)',
-  height: '40vh',
-  position: 'relative',
+  transform: "scale(1)",
+  height: "40vh",
+  position: "relative",
 };
 
 /**
@@ -16,19 +16,19 @@ const styles: CSSProperties = {
  */
 
 const meta: Meta<typeof AppLink> = {
-  title: 'Components/AppLink',
+  title: "Components/AppLink",
   component: AppLink,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   decorators: [(storyFn) => <div style={styles}>{storyFn()}</div>],
   argTypes: {
     onClick: {
-      control: 'ControlType',
-      description: 'A callback function of the button.',
+      control: "ControlType",
+      description: "A callback function of the button.",
       defaultValue: () => ({}),
     },
     href: {
-      control: 'string',
-      description: 'A path for the wanted route',
+      control: "string",
+      description: "A path for the wanted route",
     },
   },
 };
@@ -39,14 +39,14 @@ type Story = StoryObj<typeof AppLink>;
 
 export const Link: Story = {
   args: {
-    href: '/',
-    children: 'Settings',
+    href: "/",
+    children: "Settings",
   },
 };
 
 export const Button: Story = {
   args: {
     onClick: () => ({}),
-    children: 'Settings',
+    children: "Settings",
   },
 };

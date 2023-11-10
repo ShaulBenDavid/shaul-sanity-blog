@@ -1,1 +1,1 @@
-export { ContactTypesEnum } from './contact.types';
+export { ContactTypesEnum } from "./contact.types";
