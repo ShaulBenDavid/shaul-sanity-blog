@@ -1,5 +1,5 @@
-import type { CSSProperties } from "react";
 import React from "react";
+import type { CSSProperties } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import SideNavigation from "./SideNavigation";
 import { navigationLinksConfig } from "../Header/Header.config";
