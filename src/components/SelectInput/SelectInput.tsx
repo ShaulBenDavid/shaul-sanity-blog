@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Controller, useFormContext } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
+import { Controller, useFormContext } from "react-hook-form";
+import { camelCaseToWords } from "@/src/utils";
 
 interface SelectInputProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
@@ -32,7 +33,7 @@ export const SelectInput = ({
         htmlFor={idFor}
         className="font-medium capitalize text-secondary-950"
       >
-        {label.replace(/([a-z])([A-Z])/g, "$1 $2")}
+        {camelCaseToWords(label)}
       </label>
       <Controller
         name={label}
@@ -55,7 +56,7 @@ export const SelectInput = ({
             <option value="">Please select</option>
             {options.map((option) => (
               <option key={option} value={option}>
-                {option.replace(/([a-z])([A-Z])/g, "$1 $2")}
+                {camelCaseToWords(option)}
               </option>
             ))}
           </select>

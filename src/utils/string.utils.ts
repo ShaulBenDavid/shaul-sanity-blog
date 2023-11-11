@@ -22,3 +22,8 @@ export const stringToAvatar = (name: string): string => {
   const matches = name.match(/\b(\w)/g);
   return matches?.join("").slice(0, 2) ?? "";
 };
+
+export const camelCaseToWords = (s: string): string => {
+  const result = s.replace(/([A-Z])/g, " $1");
+  return result.charAt(0).toUpperCase() + result.slice(1);
+};
