@@ -15,7 +15,7 @@ describe("TextArea", () => {
         <TextArea idFor="email" label="email" />
       </Wrapper>,
     );
-    const buttonElement = getByText("email");
+    const buttonElement = getByText("Email");
     expect(buttonElement).toBeInTheDocument();
   });
 
@@ -25,7 +25,7 @@ describe("TextArea", () => {
         <TextArea idFor="email" label="email" />
       </Wrapper>,
     );
-    const inputElement = getByText("email");
+    const inputElement = getByText("Email");
     expect(inputElement).toBeInTheDocument();
     expect(inputElement).toHaveClass("text-secondary-950");
   });

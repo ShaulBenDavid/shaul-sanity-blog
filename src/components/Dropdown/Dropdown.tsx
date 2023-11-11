@@ -29,21 +29,28 @@ const Dropdown = ({
   };
 
   return (
-    <div
-      ref={ref}
-      className={twMerge(
-        `absolute h-fit w-fit rounded-md bg-white p-2 shadow-dropdown ${
-          isOpen ? "flex" : "hidden"
-        }`,
-        className,
+    <>
+      {isOpen && (
+        <div aria-hidden className="fixed inset-0 h-screen w-screen" />
       )}
-      id={id}
-      role="presentation"
-      onKeyDown={handleKeyPress}
-      data-testid="dropdown-component-test-id"
-    >
-      {children}
-    </div>
+      <div
+        ref={ref}
+        className={twMerge(
+          `absolute h-fit w-fit rounded-md bg-white p-2 shadow-dropdown ${
+            isOpen ? "flex" : "hidden"
+          }`,
+          className,
+        )}
+        id={id}
+        role="presentation"
+        tabIndex={-1}
+        aria-hidden={!isOpen}
+        onKeyDown={handleKeyPress}
+        data-testid="dropdown-component-test-id"
+      >
+        {children}
+      </div>
+    </>
   );
 };
 

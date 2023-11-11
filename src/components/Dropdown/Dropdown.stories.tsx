@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import type { CSSProperties } from "react";
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import Dropdown from "./Dropdown";
 
 const styles: CSSProperties = {
@@ -42,17 +42,32 @@ const meta: Meta<typeof Dropdown> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Dropdown>;
+export const Basic = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export const Basic: Story = {
-  args: {
-    onClose: () => ({}),
-    isOpen: true,
-    children: (
-      <div>
-        <h1>Welcome to DWizard</h1>
-      </div>
-    ),
-    id: "usermenu-desc",
-  },
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setIsOpen(true)}
+        aria-expanded={isOpen}
+        aria-controls="username-desc"
+        aria-label="User menu"
+      >
+        Open
+      </button>
+      <Dropdown
+        id="usermenu-desc"
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        <ul>
+          <li>Test</li>
+          <li>Test</li>
+          <li>Test</li>
+          <li>Test</li>
+        </ul>
+      </Dropdown>
+    </div>
+  );
 };
