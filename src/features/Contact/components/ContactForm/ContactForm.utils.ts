@@ -2,14 +2,6 @@ import { z } from "zod";
 import { ContactTypesEnum } from "@/src/api/contact";
 import { NAME_MAX_CHARACTERS_LENGTH } from "@/src/constant/common";
 
-const SubjectTypeEnum = z.enum([
-  ContactTypesEnum.BUG_REPORT,
-  ContactTypesEnum.COLLABORATION,
-  ContactTypesEnum.HELP,
-  ContactTypesEnum.OTHER,
-  ContactTypesEnum.USER_ISSUE,
-]);
-
 export const contactSchemaValidation = z
   .object({
     email: z
@@ -36,6 +28,10 @@ export const contactSchemaValidation = z
       .trim()
       .min(1)
       .max(255),
-    subjectType: SubjectTypeEnum,
+    subjectType: z.nativeEnum(ContactTypesEnum, {
+      errorMap: () => {
+        return { message: "Please select your subject type" };
+      },
+    }),
   })
   .strict();

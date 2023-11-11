@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 
 interface SelectInputProps
@@ -16,15 +16,15 @@ export const SelectInput = ({
   label,
   idFor,
   width,
-  value,
   form,
   className,
   options,
 }: SelectInputProps): JSX.Element => {
   const {
-    register,
+    control,
     formState: { errors },
   } = useFormContext();
+  const errorMessage = errors[label]?.message;
 
   return (
     <div className="relative flex flex-col gap-1">
@@ -34,31 +34,36 @@ export const SelectInput = ({
       >
         {label.replace(/([a-z])([A-Z])/g, "$1 $2")}
       </label>
-      <select
-        form={form}
-        id={idFor}
-        value={value}
-        className={twMerge(
-          `h-10 resize-none rounded-md border-[1px] border-secondary-950 bg-transparent px-2 text-secondary-950 placeholder:text-wizard-grey ${
-            !!errors[idFor]?.message &&
-            "border-red-500 focus:border-2 focus:border-red-500 focus:outline-none"
-          }`,
-          className,
+      <Controller
+        name={label}
+        control={control}
+        render={({ field }) => (
+          <select
+            form={form}
+            id={idFor}
+            className={twMerge(
+              `h-10 resize-none rounded-md border-[1px] border-secondary-950 bg-transparent px-2 text-secondary-950 placeholder:text-wizard-grey ${
+                !!errorMessage &&
+                "border-red-500 focus:border-2 focus:border-red-500 focus:outline-none"
+              }`,
+              className,
+            )}
+            data-testid="selectinput-component-test-id"
+            style={{ width }}
+            {...field}
+          >
+            <option value="">Please select</option>
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option.replace(/([a-z])([A-Z])/g, "$1 $2")}
+              </option>
+            ))}
+          </select>
         )}
-        data-testid="selectinput-component-test-id"
-        style={{ width }}
-        {...register(label)}
-      >
-        <option value="">Please select</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option.replace(/([a-z])([A-Z])/g, "$1 $2")}
-          </option>
-        ))}
-      </select>
-      {!!errors[idFor]?.message && (
+      />
+      {!!errorMessage && (
         <p className="absolute top-[68px] text-sm font-medium leading-4 text-red-500 first-letter:capitalize">
-          {errors[idFor]?.message as string}
+          {errorMessage as string}
         </p>
       )}
     </div>
