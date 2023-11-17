@@ -17,6 +17,15 @@ export type AuthResponseType = {
   username: string;
   accessToken: string;
 };
+export type UserInfoResponseType = {
+  firstName: string;
+  lastName: string;
+  title: string | null;
+  email: string;
+  roles: Roles[];
+  interested: Interested[] | null;
+  username: string;
+};
 
 export type LoginPayloadType = {
   email: string;

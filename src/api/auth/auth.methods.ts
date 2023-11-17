@@ -6,6 +6,7 @@ import type {
   AuthResponseType,
   RegisterPayloadType,
   RegisterResponseType,
+  UserInfoResponseType,
 } from "./auth.types";
 
 export const login = (payload: LoginPayloadType): Promise<AuthResponseType> =>
@@ -33,5 +34,11 @@ export const logout = (): Promise<void> =>
 export const refresh = (): Promise<AuthResponseType> =>
   refreshMethodInstance<AuthResponseType>({
     url: ApiEndpoints.REFRESH,
+    method: Methods.GET,
+  });
+
+export const userInfo = () =>
+  apiMethodInstance<UserInfoResponseType>({
+    url: ApiEndpoints.USER_INFO,
     method: Methods.GET,
   });
