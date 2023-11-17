@@ -10,12 +10,15 @@ interface UseGetInfoProps {
   enabled?: boolean;
 }
 
-export const useGetInfo = ({ enabled }: UseGetInfoProps) => {
+export const useGetInfo = (
+  { enabled }: UseGetInfoProps = { enabled: false },
+) => {
   const { data, isError, isLoading, error } = useQuery(
     [GET_INFO_KEY],
     userInfo,
     {
       enabled,
+      cacheTime: 60 * 60 * 1000,
     },
   );
 

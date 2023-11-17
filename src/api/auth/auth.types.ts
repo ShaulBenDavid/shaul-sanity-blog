@@ -8,13 +8,7 @@ export type Interested = {
 };
 
 export type AuthResponseType = {
-  firstName: string;
-  lastName: string;
-  title: string | null;
-  email: string;
   roles: Roles[];
-  interested: Interested[] | null;
-  username: string;
   accessToken: string;
 };
 export type UserInfoResponseType = {
