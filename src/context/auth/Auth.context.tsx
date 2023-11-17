@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { AuthResponseType } from "@/src/api/auth";
 import { Roles } from "@/src/roles";
 import { appQueryClient } from "@/src/queries";
+import { dwInstance } from "@/src/api/http.service";
 
 export type Auth = AuthResponseType | null | undefined;
 
@@ -29,6 +30,7 @@ export const AuthContextProvider = ({
   const router = useRouter();
 
   const handleLogout = useCallback((): void => {
+    dwInstance.defaults.headers.Authorization = null;
     appQueryClient.clear();
     appQueryClient.resetQueries();
     appQueryClient.cancelQueries();

@@ -2,7 +2,7 @@
 
 import React, { useContext } from "react";
 import { AuthContext } from "../context/auth";
-import { useLogout, useRefresh } from "../api/auth/hooks";
+import { useGetInfo, useLogout, useRefresh } from "../api/auth/hooks";
 import type { AuthResponseType } from "../api/auth";
 
 export const AuthProvider = ({
@@ -10,7 +10,8 @@ export const AuthProvider = ({
 }: {
   children: React.ReactNode;
 }): JSX.Element => {
-  const { handleLogout, setAuth, isAuthInitialized } = useContext(AuthContext);
+  const { handleLogout, isAuth, setAuth, isAuthInitialized } =
+    useContext(AuthContext);
 
   const { logout } = useLogout({ handleSuccess: handleLogout });
 
@@ -23,6 +24,8 @@ export const AuthProvider = ({
     handleLogout: logout,
     enabled: !isAuthInitialized,
   });
+
+  useGetInfo({ enabled: isAuth });
 
   // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;

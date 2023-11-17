@@ -5,7 +5,7 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { Routes } from "@/src/routes";
 import PermissionGate, { Roles } from "@/src/roles";
 import { AuthContext } from "@/src/context/auth";
-import { useLogout } from "@/src/api/auth/hooks";
+import { useGetInfo, useLogout } from "@/src/api/auth/hooks";
 import theme from "@/src/styles/tailwind.theme";
 import Avatar from "../../Avatar";
 import Dropdown from "../../Dropdown";
@@ -13,12 +13,13 @@ import AppLink from "../../AppLink";
 
 const UserMenu = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { auth, handleLogout } = useContext(AuthContext);
+  const { handleLogout } = useContext(AuthContext);
   const { logout } = useLogout({ handleSuccess: handleLogout });
+  const { info } = useGetInfo();
 
   return (
     <div className="relative ml-5 max-tb:ml-auto">
-      {auth ? (
+      {info ? (
         <>
           <button
             className="hover:drop-shadow-lg "
@@ -28,7 +29,7 @@ const UserMenu = (): JSX.Element => {
             aria-controls="username-desc"
             aria-label="User menu"
           >
-            <Avatar name={`${auth.firstName} ${auth.lastName}`} />
+            <Avatar name={`${info.firstName} ${info.lastName}`} />
           </button>
           <Dropdown
             onClose={() => setIsOpen(false)}
@@ -38,7 +39,7 @@ const UserMenu = (): JSX.Element => {
           >
             <ul role="menu" className="flex flex-col gap-1">
               <li role="menuitem">
-                <AppLink href={`/@${auth.username}`}>
+                <AppLink href={`/@${info.username}`}>
                   <PermissionGate allowedRoles={[Roles.ADMIN]}>
                     <MdAdminPanelSettings
                       size={24}
@@ -48,10 +49,10 @@ const UserMenu = (): JSX.Element => {
                   </PermissionGate>
                   <div className="flex flex-col">
                     <span>
-                      {auth.firstName} {auth.lastName}
+                      {info.firstName} {info.lastName}
                     </span>
                     <small className="text-sm opacity-70">
-                      @{auth.username}
+                      @{info.username}
                     </small>
                   </div>
                 </AppLink>

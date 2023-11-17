@@ -8,6 +8,10 @@ export type Interested = {
 };
 
 export type AuthResponseType = {
+  roles: Roles[];
+  accessToken: string;
+};
+export type UserInfoResponseType = {
   firstName: string;
   lastName: string;
   title: string | null;
@@ -15,7 +19,6 @@ export type AuthResponseType = {
   roles: Roles[];
   interested: Interested[] | null;
   username: string;
-  accessToken: string;
 };
 
 export type LoginPayloadType = {
