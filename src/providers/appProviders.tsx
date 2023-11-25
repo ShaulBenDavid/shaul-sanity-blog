@@ -9,6 +9,8 @@ import { AuthContextProvider } from "../context/auth";
 import { AuthProvider } from "./auth.provider";
 import "react-toastify/dist/ReactToastify.css";
 
+const MAX_NUMBER_DISPLAYED_TOASTS = 4;
+
 export const AppProviders = ({
   children,
 }: {
@@ -19,7 +21,7 @@ export const AppProviders = ({
       <AxiosInterceptor>
         <AuthProvider>
           {children}
-          <ToastContainer />
+          <ToastContainer limit={MAX_NUMBER_DISPLAYED_TOASTS} />
           <Suspense fallback={null}>
             <ProgressBar
               height="4px"

@@ -38,3 +38,11 @@ export type RegisterResponseType = {
   message: string;
   userId: string;
 };
+
+export type PostActivePayloadType = {
+  email: string;
+};
+
+export type PostActiveResponseType = {
+  message: string;
+};

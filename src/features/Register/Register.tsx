@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useSignUp } from "@/src/api/auth/hooks";
+import React, { type FormEvent, useEffect } from "react";
+import { toast } from "react-toastify";
+import { usePostActive, useSignUp } from "@/src/api/auth/hooks";
 import Alert, { AlertVariants } from "@/src/components/Alert";
 import Stepper from "./components/Stepper";
 import { registerStepsConfig } from "./Register.config";
 import RegisterForm from "./components/RegisterForm";
 import { RegisterStepsEnum } from "./Register.types";
 import { useMultiFormSteps } from "./useMultiFormSteps";
+import { Header } from "./components/Header";
 
-const CONFIRMATION_PAGE = 1;
+const CONFIRMATION_PAGE_COUNT = 1;
 
 const Register = (): JSX.Element => {
   const {
@@ -20,14 +22,41 @@ const Register = (): JSX.Element => {
     handleSignUp,
   } = useSignUp();
 
-  const stepsCount =
+  const stepsCount: number =
     Object.keys(RegisterStepsEnum).length +
-    (isSignUpSuccess ? CONFIRMATION_PAGE : 0);
+    (isSignUpSuccess ? CONFIRMATION_PAGE_COUNT : 0);
 
-  const { currentStep, backStep, nextStep, onSubmit } = useMultiFormSteps({
-    stepsCount,
-    handleSubmit: handleSignUp,
+  const { currentStep, backStep, nextStep, onSubmit, credentials } =
+    useMultiFormSteps({
+      stepsCount,
+      handleSubmit: handleSignUp,
+    });
+
+  const handleResendSuccess = (): void => {
+    toast.success("Verification email sent successfully!", {
+      position: toast.POSITION.TOP_LEFT,
+      role: "alert",
+      pauseOnFocusLoss: true,
+    });
+  };
+
+  const handleResendFail = (): void => {
+    toast.error("Some error occurred, please try again later...", {
+      position: toast.POSITION.TOP_LEFT,
+      role: "alert",
+      pauseOnFocusLoss: true,
+    });
+  };
+
+  const { postActive, isPostActiveLoading } = usePostActive({
+    handleSuccess: handleResendSuccess,
+    handleError: handleResendFail,
   });
+
+  const handleResendActivation = (e: FormEvent): void => {
+    e.preventDefault();
+    postActive({ email: credentials.email });
+  };
 
   useEffect(() => {
     if (isSignUpSuccess) {
@@ -38,16 +67,7 @@ const Register = (): JSX.Element => {
   return (
     <div className="my-8 flex h-[608px] w-[612px] flex-col rounded-md p-4 shadow-container max-tb:max-w-[612px] max-sm:h-[700px] sm:p-8">
       <Stepper currentStep={currentStep} steps={registerStepsConfig} />
-      {currentStep < 3 && (
-        <div className="flex flex-col gap-1 pb-4 pt-4">
-          <h1 className="text-center text-xl font-bold">
-            Sign Up to Dev Wizard
-          </h1>
-          <p className="text-center">
-            Join our community and explore the tech every day.
-          </p>
-        </div>
-      )}
+      {currentStep < 3 && <Header />}
       {isSignUpError && (
         <Alert
           variant={AlertVariants.DANGER}
@@ -57,9 +77,11 @@ const Register = (): JSX.Element => {
       )}
       <RegisterForm
         currentStep={currentStep}
-        isLoading={isSignUpLoading}
+        isSignUpLoading={isSignUpLoading}
+        isPostActiveLoading={isPostActiveLoading}
         backStep={backStep}
         onSubmit={onSubmit}
+        handleResendActivation={handleResendActivation}
       />
     </div>
   );
