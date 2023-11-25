@@ -6,7 +6,7 @@ import { Routes } from "@/src/routes";
 import Button, { ButtonVariants } from "@/src/components/Button";
 import EmailAnimation from "./EmailAnimation";
 
-const Confirmation = (): JSX.Element => (
+export const Confirmation = (): JSX.Element => (
   <>
     <EmailAnimation />
     <header className="mt-12 flex justify-center text-center sm:mt-8">
@@ -26,5 +26,3 @@ const Confirmation = (): JSX.Element => (
     </section>
   </>
 );
-
-export default Confirmation;

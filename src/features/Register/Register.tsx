@@ -8,6 +8,7 @@ import { registerStepsConfig } from "./Register.config";
 import RegisterForm from "./components/RegisterForm";
 import { RegisterStepsEnum } from "./Register.types";
 import { useMultiFormSteps } from "./useMultiFormSteps";
+import { Header } from "./components/Header";
 
 const CONFIRMATION_PAGE = 1;
 
@@ -20,7 +21,7 @@ const Register = (): JSX.Element => {
     handleSignUp,
   } = useSignUp();
 
-  const stepsCount =
+  const stepsCount: number =
     Object.keys(RegisterStepsEnum).length +
     (isSignUpSuccess ? CONFIRMATION_PAGE : 0);
 
@@ -38,16 +39,7 @@ const Register = (): JSX.Element => {
   return (
     <div className="my-8 flex h-[608px] w-[612px] flex-col rounded-md p-4 shadow-container max-tb:max-w-[612px] max-sm:h-[700px] sm:p-8">
       <Stepper currentStep={currentStep} steps={registerStepsConfig} />
-      {currentStep < 3 && (
-        <div className="flex flex-col gap-1 pb-4 pt-4">
-          <h1 className="text-center text-xl font-bold">
-            Sign Up to Dev Wizard
-          </h1>
-          <p className="text-center">
-            Join our community and explore the tech every day.
-          </p>
-        </div>
-      )}
+      {currentStep < 3 && <Header />}
       {isSignUpError && (
         <Alert
           variant={AlertVariants.DANGER}
@@ -57,7 +49,7 @@ const Register = (): JSX.Element => {
       )}
       <RegisterForm
         currentStep={currentStep}
-        isLoading={isSignUpLoading}
+        isSignUpLoading={isSignUpLoading}
         backStep={backStep}
         onSubmit={onSubmit}
       />

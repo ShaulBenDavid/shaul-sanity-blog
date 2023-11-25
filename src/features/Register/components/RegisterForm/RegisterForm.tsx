@@ -10,25 +10,28 @@ import { RegisterStepsEnum } from "../../Register.types";
 import PersonalInfo from "./PersonalInfo";
 import AccountInfo from "./AccountInfo";
 
-const Confirmation = dynamic(() => import("./Confirmation"), {
-  ssr: false,
-  loading: () => (
-    <div className="flex h-full w-full items-center justify-center">
-      <Spinner />
-    </div>
-  ),
-});
+const Confirmation = dynamic(
+  () => import("./Confirmation").then((mod) => mod.Confirmation),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-full w-full items-center justify-center">
+        <Spinner />
+      </div>
+    ),
+  },
+);
 
 interface RegisterFormProps {
   currentStep: number;
-  isLoading: boolean;
+  isSignUpLoading: boolean;
   backStep: () => void;
   onSubmit: (data: Partial<RegisterPayloadType>) => void;
 }
 
 const RegisterForm = ({
   currentStep,
-  isLoading,
+  isSignUpLoading,
   backStep,
   onSubmit,
 }: RegisterFormProps): JSX.Element => {
@@ -42,7 +45,7 @@ const RegisterForm = ({
     />,
     <AccountInfo
       method={methods[RegisterStepsEnum.ACCOUNT_INFO]}
-      isLoading={isLoading}
+      isLoading={isSignUpLoading}
       goBack={backStep}
       onClick={onSubmit}
       fields={registerFormsFieldsConfig[RegisterStepsEnum.ACCOUNT_INFO]}
