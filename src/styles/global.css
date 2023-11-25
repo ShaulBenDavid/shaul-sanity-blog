@@ -6,6 +6,9 @@
   .button-link {
     @apply flex h-10 w-full items-center justify-center rounded-[6px] bg-primary-900 capitalize text-white shadow-dw transition-all hover:bg-[#6C078E];
   }
+  .app-link {
+    @apply text-center text-primary-900 hover:underline;
+  }
   .dw-skeleton {
     @apply animate-[skeleton-loading_1s_ease-in-out_infinite];
   }
