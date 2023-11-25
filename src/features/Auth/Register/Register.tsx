@@ -9,7 +9,7 @@ import { registerStepsConfig } from "./Register.config";
 import RegisterForm from "./components/RegisterForm";
 import { RegisterStepsEnum } from "./Register.types";
 import { useMultiFormSteps } from "./useMultiFormSteps";
-import { Header } from "./components/Header";
+import { AuthHeader } from "../components/AuthHeader";
 import { AuthLayout } from "../components/AuthLayout";
 
 const CONFIRMATION_PAGE_COUNT = 1;
@@ -69,7 +69,13 @@ const Register = (): JSX.Element => {
     <AuthLayout>
       <>
         <Stepper currentStep={currentStep} steps={registerStepsConfig} />
-        {currentStep < 3 && <Header />}
+        {currentStep < 3 && (
+          <AuthHeader
+            title="Sign Up to Dev Wizard"
+            content="Join our community and explore the tech every day."
+            className="pb-4 pt-4"
+          />
+        )}
         {isSignUpError && (
           <Alert
             variant={AlertVariants.DANGER}

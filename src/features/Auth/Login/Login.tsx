@@ -4,19 +4,16 @@ import SocialLogin from "./components/SocialLogin";
 import LoginForm from "./components/LoginForm";
 import LoginFooter from "./components/LoginFooter";
 import { AuthLayout } from "../components/AuthLayout";
+import { AuthHeader } from "../components/AuthHeader";
 
 const Login = () => {
   return (
     <AuthLayout className="justify-between">
       <>
-        <div className="flex flex-col gap-2">
-          <h1 className="text-center text-xl font-bold">
-            Welcome to Dev Wizard
-          </h1>
-          <p className="text-center">
-            Join our community and explore the tech every day.
-          </p>
-        </div>
+        <AuthHeader
+          title="Welcome to Dev Wizard"
+          content="Join our community and explore the tech every day."
+        />
         <SocialLogin />
         <Divider title="or" />
         <LoginForm />
