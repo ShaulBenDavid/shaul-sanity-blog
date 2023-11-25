@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "@/src/features/Login";
+import Login from "@/src/features/Auth/Login";
 import { loginMetadata } from "@/src/metadata";
 
 export const metadata = loginMetadata;

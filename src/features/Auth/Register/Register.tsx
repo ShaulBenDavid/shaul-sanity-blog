@@ -9,7 +9,8 @@ import { registerStepsConfig } from "./Register.config";
 import RegisterForm from "./components/RegisterForm";
 import { RegisterStepsEnum } from "./Register.types";
 import { useMultiFormSteps } from "./useMultiFormSteps";
-import { Header } from "./components/Header";
+import { AuthHeader } from "../components/AuthHeader";
+import { AuthLayout } from "../components/AuthLayout";
 
 const CONFIRMATION_PAGE_COUNT = 1;
 
@@ -65,25 +66,33 @@ const Register = (): JSX.Element => {
   }, [isSignUpSuccess, nextStep]);
 
   return (
-    <div className="my-8 flex h-[608px] w-[612px] flex-col rounded-md p-4 shadow-container max-tb:max-w-[612px] max-sm:h-[700px] sm:p-8">
-      <Stepper currentStep={currentStep} steps={registerStepsConfig} />
-      {currentStep < 3 && <Header />}
-      {isSignUpError && (
-        <Alert
-          variant={AlertVariants.DANGER}
-          content={signUpError?.response?.data.message}
-          className="mb-4"
+    <AuthLayout>
+      <>
+        <Stepper currentStep={currentStep} steps={registerStepsConfig} />
+        {currentStep < 3 && (
+          <AuthHeader
+            title="Sign Up to Dev Wizard"
+            content="Join our community and explore the tech every day."
+            className="pb-4 pt-4"
+          />
+        )}
+        {isSignUpError && (
+          <Alert
+            variant={AlertVariants.DANGER}
+            content={signUpError?.response?.data.message}
+            className="mb-4"
+          />
+        )}
+        <RegisterForm
+          currentStep={currentStep}
+          isSignUpLoading={isSignUpLoading}
+          isPostActiveLoading={isPostActiveLoading}
+          backStep={backStep}
+          onSubmit={onSubmit}
+          handleResendActivation={handleResendActivation}
         />
-      )}
-      <RegisterForm
-        currentStep={currentStep}
-        isSignUpLoading={isSignUpLoading}
-        isPostActiveLoading={isPostActiveLoading}
-        backStep={backStep}
-        onSubmit={onSubmit}
-        handleResendActivation={handleResendActivation}
-      />
-    </div>
+      </>
+    </AuthLayout>
   );
 };
 

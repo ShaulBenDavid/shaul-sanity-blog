@@ -1,15 +1,18 @@
 "use client";
 
 import React, { useContext } from "react";
+import Link from "next/link";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthContext } from "@/src/context/auth";
 import { useLogin } from "@/src/api/auth/hooks";
 import Input from "@/src/components/Input";
+import { Routes } from "@/src/routes";
 import Button, { ButtonVariants } from "@/src/components/Button";
-import { loginFormConfig } from "./LoginForm.config";
 import type { LoginPayloadType, AuthResponseType } from "@/src/api/auth";
+import { HttpStatusCode } from "@/src/types";
 import Alert, { AlertVariants } from "@/src/components/Alert";
+import { loginFormConfig } from "./LoginForm.config";
 import { LoginSchema } from "./LoginForm.utils";
 
 const LoginForm = (): JSX.Element => {
@@ -22,6 +25,7 @@ const LoginForm = (): JSX.Element => {
 
   const {
     handleSubmit,
+    getValues,
     formState: { isValid },
   } = methods;
 
@@ -67,6 +71,14 @@ const LoginForm = (): JSX.Element => {
           continue
         </Button>
       </form>
+      {loginError?.response?.status === HttpStatusCode.FORBIDDEN && (
+        <Link
+          href={`${Routes.VERIFY}?email=${getValues("email")}`}
+          className="app-link"
+        >
+          Verify your email
+        </Link>
+      )}
     </FormProvider>
   );
 };
