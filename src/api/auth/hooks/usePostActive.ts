@@ -10,17 +10,15 @@ const POST_ACTIVE_KEY = "postActive";
 interface UsePostActiveProps {
   handleSuccess: () => void;
   handleError: () => void;
-  params: PostActivePayloadType;
 }
 
 export const usePostActive = ({
   handleSuccess,
   handleError,
-  params,
 }: UsePostActiveProps) => {
   const { mutate, isError, isLoading, error } = useMutation(
-    [POST_ACTIVE_KEY, params],
-    () => postActive(params),
+    [POST_ACTIVE_KEY],
+    (params: PostActivePayloadType) => postActive(params),
     {
       onSuccess: handleSuccess,
       onError: handleError,

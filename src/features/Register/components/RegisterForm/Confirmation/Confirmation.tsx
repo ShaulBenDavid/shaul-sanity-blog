@@ -1,12 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { type FormEvent } from "react";
 import Link from "next/link";
 import { Routes } from "@/src/routes";
 import Button, { ButtonVariants } from "@/src/components/Button";
 import EmailAnimation from "./EmailAnimation";
 
-export const Confirmation = (): JSX.Element => (
+interface ConfirmationProps {
+  isLoading: boolean;
+  onSubmit: (e: FormEvent) => void;
+}
+
+export const Confirmation = ({
+  isLoading,
+  onSubmit,
+}: ConfirmationProps): JSX.Element => (
   <>
     <EmailAnimation />
     <header className="mt-12 flex justify-center text-center sm:mt-8">
@@ -22,7 +30,26 @@ export const Confirmation = (): JSX.Element => (
       <Link className="button-link mt-auto text-base" href={Routes.SIGN_IN}>
         go to login page
       </Link>
-      <Button variant={ButtonVariants.LINK}>resend email</Button>
+      <form onSubmit={onSubmit}>
+        <label htmlFor="hiddenEmail" className="sr-only">
+          Email:
+          <input
+            type="email"
+            id="hiddenEmail"
+            name="email"
+            aria-hidden
+            className="hidden"
+          />
+        </label>
+        <span className="sr-only">Resend Activation for your account</span>
+        <Button
+          variant={ButtonVariants.LINK}
+          type="submit"
+          isLoading={isLoading}
+        >
+          resend email
+        </Button>
+      </form>
     </section>
   </>
 );

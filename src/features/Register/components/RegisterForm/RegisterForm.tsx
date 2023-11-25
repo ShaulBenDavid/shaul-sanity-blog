@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { type FormEvent } from "react";
 import dynamic from "next/dynamic";
 import type { RegisterPayloadType } from "@/src/api/auth";
 import Spinner from "@/src/components/Spinner/index";
@@ -25,15 +25,19 @@ const Confirmation = dynamic(
 interface RegisterFormProps {
   currentStep: number;
   isSignUpLoading: boolean;
+  isPostActiveLoading: boolean;
   backStep: () => void;
   onSubmit: (data: Partial<RegisterPayloadType>) => void;
+  handleResendActivation: (e: FormEvent) => void;
 }
 
 const RegisterForm = ({
   currentStep,
   isSignUpLoading,
+  isPostActiveLoading,
   backStep,
   onSubmit,
+  handleResendActivation,
 }: RegisterFormProps): JSX.Element => {
   const methods = useMultiFormConfig();
 
@@ -50,7 +54,10 @@ const RegisterForm = ({
       onClick={onSubmit}
       fields={registerFormsFieldsConfig[RegisterStepsEnum.ACCOUNT_INFO]}
     />,
-    <Confirmation />,
+    <Confirmation
+      isLoading={isPostActiveLoading}
+      onSubmit={handleResendActivation}
+    />,
   ];
 
   return getForms[currentStep - 1];

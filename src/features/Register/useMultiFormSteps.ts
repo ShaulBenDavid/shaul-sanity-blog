@@ -9,11 +9,11 @@ interface UseMultiFormSteps {
 }
 
 const initialState: RegisterPayloadType = {
-  firstName: "asd",
-  lastName: "asd",
-  username: "asd",
-  email: "asd@asd.com",
-  password: "asdasd",
+  firstName: "",
+  lastName: "",
+  username: "",
+  email: "",
+  password: "",
 };
 
 export const useMultiFormSteps = ({
@@ -22,7 +22,7 @@ export const useMultiFormSteps = ({
 }: UseMultiFormSteps) => {
   const [credentials, setCredentials] =
     useState<RegisterPayloadType>(initialState);
-  const [currentStep, setCurrentStep] = useState<number>(3);
+  const [currentStep, setCurrentStep] = useState<number>(1);
 
   const nextStep = useCallback((): void => {
     if (currentStep < stepsCount) {

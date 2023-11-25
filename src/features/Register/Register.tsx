@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useSignUp } from "@/src/api/auth/hooks";
+import React, { type FormEvent, useEffect } from "react";
+import { toast } from "react-toastify";
+import { usePostActive, useSignUp } from "@/src/api/auth/hooks";
 import Alert, { AlertVariants } from "@/src/components/Alert";
 import Stepper from "./components/Stepper";
 import { registerStepsConfig } from "./Register.config";
@@ -10,7 +11,7 @@ import { RegisterStepsEnum } from "./Register.types";
 import { useMultiFormSteps } from "./useMultiFormSteps";
 import { Header } from "./components/Header";
 
-const CONFIRMATION_PAGE = 1;
+const CONFIRMATION_PAGE_COUNT = 1;
 
 const Register = (): JSX.Element => {
   const {
@@ -23,12 +24,39 @@ const Register = (): JSX.Element => {
 
   const stepsCount: number =
     Object.keys(RegisterStepsEnum).length +
-    (isSignUpSuccess ? CONFIRMATION_PAGE : 0);
+    (isSignUpSuccess ? CONFIRMATION_PAGE_COUNT : 0);
 
-  const { currentStep, backStep, nextStep, onSubmit } = useMultiFormSteps({
-    stepsCount,
-    handleSubmit: handleSignUp,
+  const { currentStep, backStep, nextStep, onSubmit, credentials } =
+    useMultiFormSteps({
+      stepsCount,
+      handleSubmit: handleSignUp,
+    });
+
+  const handleResendSuccess = (): void => {
+    toast.success("Verification email sent successfully!", {
+      position: toast.POSITION.TOP_LEFT,
+      role: "alert",
+      pauseOnFocusLoss: true,
+    });
+  };
+
+  const handleResendFail = (): void => {
+    toast.error("Some error occurred, please try again later...", {
+      position: toast.POSITION.TOP_LEFT,
+      role: "alert",
+      pauseOnFocusLoss: true,
+    });
+  };
+
+  const { postActive, isPostActiveLoading } = usePostActive({
+    handleSuccess: handleResendSuccess,
+    handleError: handleResendFail,
   });
+
+  const handleResendActivation = (e: FormEvent): void => {
+    e.preventDefault();
+    postActive({ email: credentials.email });
+  };
 
   useEffect(() => {
     if (isSignUpSuccess) {
@@ -50,8 +78,10 @@ const Register = (): JSX.Element => {
       <RegisterForm
         currentStep={currentStep}
         isSignUpLoading={isSignUpLoading}
+        isPostActiveLoading={isPostActiveLoading}
         backStep={backStep}
         onSubmit={onSubmit}
+        handleResendActivation={handleResendActivation}
       />
     </div>
   );
