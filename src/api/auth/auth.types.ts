@@ -46,3 +46,11 @@ export type PostActivePayloadType = {
 export type PostActiveResponseType = {
   message: string;
 };
+
+export type GetActiveParamsType = {
+  token: string;
+};
+
+export type GetActiveResponseType = {
+  message: string;
+};

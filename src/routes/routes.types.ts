@@ -6,6 +6,7 @@ export enum Routes {
   SIGN_IN = "/sign-in",
   SIGN_UP = "/sign-up",
   VERIFY = "/verify",
+  ACTIVATE = "/activate",
   RESET_PASSWORD = "/reset-password",
   PRIVACY_POLICY = "/privacy-policy",
   TERMS_CONDITIONS = "/terms-conditions",
