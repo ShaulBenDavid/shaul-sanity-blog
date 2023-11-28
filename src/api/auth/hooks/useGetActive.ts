@@ -11,12 +11,14 @@ interface UseGetActiveProps {
   handleSuccess?: () => void;
   handleError?: () => void;
   params: GetActiveParamsType;
+  isEnabled: boolean;
 }
 
 export const useGetActive = ({
   handleSuccess,
   handleError,
   params,
+  isEnabled,
 }: UseGetActiveProps) => {
   const { data, isError, isLoading, isSuccess, error } = useQuery(
     [GET_ACTIVE_KEY, params],
@@ -24,6 +26,7 @@ export const useGetActive = ({
     {
       onSuccess: handleSuccess,
       onError: handleError,
+      enabled: isEnabled,
     },
   );
 
