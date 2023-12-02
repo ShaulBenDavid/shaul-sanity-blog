@@ -5,12 +5,14 @@ interface EmptyStateProps {
   svgUrl?: string;
   header: string;
   description: string;
+  footer?: JSX.Element;
 }
 
 export const EmptyState = ({
   svgUrl,
   header,
   description,
+  footer,
 }: EmptyStateProps): JSX.Element => (
   <div
     className="flex max-w-[500px] flex-col items-center gap-4"
@@ -27,5 +29,6 @@ export const EmptyState = ({
     )}
     <h2 className="text-xl font-semibold">{header}</h2>
     <p className="text-center">{description}</p>
+    {footer}
   </div>
 );

@@ -27,6 +27,11 @@ const meta: Meta<typeof EmptyState> = {
       description:
         "Short description on the error, and what option the user have.",
     },
+    footer: {
+      control: "object",
+      description:
+        "A component props for footer. If we want to add a link for example..",
+    },
   },
 };
 

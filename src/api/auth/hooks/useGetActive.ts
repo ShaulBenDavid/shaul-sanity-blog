@@ -24,6 +24,7 @@ export const useGetActive = ({
     {
       onSuccess: handleSuccess,
       onError: handleError,
+      cacheTime: 0,
     },
   );
 
