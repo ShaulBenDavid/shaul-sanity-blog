@@ -22,7 +22,7 @@ export const EmptyState = ({
         role="presentation"
         src={svgUrl}
         priority
-        className="w-[300px]"
+        className="w-[250px]"
       />
     )}
     <h2 className="text-xl font-semibold">{header}</h2>
