@@ -29,6 +29,6 @@ export const EmptyState = ({
     )}
     <h2 className="text-xl font-semibold">{header}</h2>
     <p className="text-center">{description}</p>
-    {footer}
+    {footer && footer}
   </div>
 );
