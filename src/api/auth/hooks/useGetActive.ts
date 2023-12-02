@@ -20,10 +20,11 @@ export const useGetActive = ({
 }: UseGetActiveProps) => {
   const { data, isError, isLoading, isSuccess, error } = useQuery(
     [GET_ACTIVE_KEY, params],
-    () => getActive(params),
+    () => params && getActive(params),
     {
       onSuccess: handleSuccess,
       onError: handleError,
+      cacheTime: 0,
     },
   );
 
