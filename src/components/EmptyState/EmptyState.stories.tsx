@@ -14,7 +14,7 @@ const meta: Meta<typeof EmptyState> = {
   tags: ["autodocs"],
 
   argTypes: {
-    svg: {
+    svgUrl: {
       control: "string",
       description: "The SVG image 'import' that you want to show.",
     },
@@ -36,7 +36,7 @@ type Story = StoryObj<typeof EmptyState>;
 
 export const Error: Story = {
   args: {
-    svg: WarningSVG,
+    svgUrl: WarningSVG,
     header: "Fail to verify",
     description:
       "Make sure the issue exists in this project. If it does, ask a project admin for permission to see the project's issues.",
