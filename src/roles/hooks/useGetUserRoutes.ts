@@ -3,7 +3,7 @@
 import { useContext, useMemo } from "react";
 import { AuthContext } from "@/src/context/auth";
 import type { Routes } from "@/src/routes";
-import { getRoutesByRole } from "../roles.config";
+import { routesByRoleConfig } from "../roles.config";
 
 export const useGetUserRoutes = (): Routes[] => {
   const { roles } = useContext(AuthContext);
@@ -12,7 +12,7 @@ export const useGetUserRoutes = (): Routes[] => {
     () =>
       roles.reduce<Routes[]>(
         (prev, current) => [
-          ...new Set<Routes>([...prev, ...getRoutesByRole[current]]),
+          ...new Set<Routes>([...prev, ...routesByRoleConfig[current]]),
         ],
         [],
       ),
