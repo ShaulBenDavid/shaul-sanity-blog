@@ -1,4 +1,5 @@
 import type { Roles } from "@/src/roles";
+import type { MessageResponseType } from "../api.types";
 
 export type Interested = {
   topic: string;
@@ -43,14 +44,16 @@ export type PostActivePayloadType = {
   email: string;
 };
 
-export type PostActiveResponseType = {
-  message: string;
-};
+export type PostActiveResponseType = MessageResponseType;
 
 export type GetActiveParamsType = {
   token: string;
 };
 
-export type GetActiveResponseType = {
-  message: string;
+export type GetActiveResponseType = MessageResponseType;
+
+export type PostResetPasswordResponseType = MessageResponseType;
+
+export type PostResetPasswordPayloadType = {
+  email: string;
 };
