@@ -6,3 +6,4 @@ export { useGetInfo } from "./useGetInfo";
 export { usePostActive } from "./usePostActive";
 export { useGetActive } from "./useGetActive";
 export { usePostResetPassword } from "./usePostResetPassword";
+export { usePostNewPassword } from "./usePostNewPassword";

@@ -83,7 +83,7 @@ export const postNewPassword = (
   token: string,
 ): Promise<PostResetPasswordResponseType> =>
   refreshMethodInstance<PostNewPasswordResponseType>({
-    url: [ApiEndpoints.RESET_PASSWORD, `${token}/`].join(""),
+    url: [ApiEndpoints.NEW_PASSWORD, `${token}/`].join(""),
     method: Methods.POST,
     data: payload,
   });

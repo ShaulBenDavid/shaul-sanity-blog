@@ -1,18 +1,16 @@
 "use client";
 
 import React from "react";
-import { useSearchParams } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { PostActivePayloadType } from "@/src/api/auth";
+import type { PostResetPasswordPayloadType } from "@/src/api/auth";
 import Input from "@/src/components/Input";
 import Button, { ButtonVariants } from "@/src/components/Button";
 import { usePostResetPassword } from "@/src/api/auth/hooks";
-import { ResetPasswordSchema } from "./ResetPasswordForm.utils";
 import Alert, { AlertVariants } from "@/src/components/Alert";
+import { ResetPasswordSchema } from "./ResetPasswordForm.utils";
 
 export const ResetPasswordForm = (): JSX.Element => {
-  const searchParams = useSearchParams();
   const {
     postResetPassword,
     resetPasswordData,
@@ -22,13 +20,8 @@ export const ResetPasswordForm = (): JSX.Element => {
     resetPasswordError,
   } = usePostResetPassword({});
 
-  const defaultValues = {
-    email: searchParams.get("email") ?? "",
-  };
-
-  const methods = useForm<PostActivePayloadType>({
+  const methods = useForm<PostResetPasswordPayloadType>({
     resolver: zodResolver(ResetPasswordSchema),
-    defaultValues,
     mode: "onChange",
     delayError: 1000,
   });
