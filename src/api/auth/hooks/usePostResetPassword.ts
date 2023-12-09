@@ -12,7 +12,7 @@ interface UsePostResetPasswordProps {
   handleError?: () => void;
 }
 
-export const usePostActive = ({
+export const usePostResetPassword = ({
   handleSuccess,
   handleError,
 }: UsePostResetPasswordProps) => {
