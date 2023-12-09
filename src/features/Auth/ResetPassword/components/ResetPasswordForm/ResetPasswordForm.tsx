@@ -77,7 +77,7 @@ export const ResetPasswordForm = (): JSX.Element => {
           isLoading={isResetPasswordLoading}
           disabled={!isValid}
         >
-          send verification
+          send reset link
         </Button>
       </form>
     </FormProvider>

@@ -57,3 +57,9 @@ export type PostResetPasswordResponseType = MessageResponseType;
 export type PostResetPasswordPayloadType = {
   email: string;
 };
+
+export type PostNewPasswordPayloadType = {
+  password: string;
+};
+
+export type PostNewPasswordResponseType = MessageResponseType;
