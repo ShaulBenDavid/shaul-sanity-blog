@@ -13,6 +13,8 @@ import type {
   GetActiveResponseType,
   PostResetPasswordResponseType,
   PostResetPasswordPayloadType,
+  PostNewPasswordPayloadType,
+  PostNewPasswordResponseType,
 } from "./auth.types";
 
 export const login = (payload: LoginPayloadType): Promise<AuthResponseType> =>
@@ -52,15 +54,6 @@ export const postActive = (
     data: payload,
   });
 
-export const postResetPassword = (
-  payload: PostResetPasswordPayloadType,
-): Promise<PostResetPasswordResponseType> =>
-  refreshMethodInstance<PostResetPasswordResponseType>({
-    url: ApiEndpoints.RESET_PASSWORD,
-    method: Methods.POST,
-    data: payload,
-  });
-
 export const getActive = (
   params: GetActiveParamsType,
 ): Promise<GetActiveResponseType> =>
@@ -74,4 +67,23 @@ export const userInfo = () =>
   apiMethodInstance<UserInfoResponseType>({
     url: ApiEndpoints.USER_INFO,
     method: Methods.GET,
+  });
+
+export const postResetPassword = (
+  payload: PostResetPasswordPayloadType,
+): Promise<PostResetPasswordResponseType> =>
+  refreshMethodInstance<PostResetPasswordResponseType>({
+    url: ApiEndpoints.RESET_PASSWORD,
+    method: Methods.POST,
+    data: payload,
+  });
+
+export const postNewPassword = (
+  payload: PostNewPasswordPayloadType,
+  token: string,
+): Promise<PostResetPasswordResponseType> =>
+  refreshMethodInstance<PostNewPasswordResponseType>({
+    url: [ApiEndpoints.NEW_PASSWORD, `${token}/`].join(""),
+    method: Methods.POST,
+    data: payload,
   });

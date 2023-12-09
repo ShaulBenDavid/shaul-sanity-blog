@@ -7,7 +7,7 @@ import { AuthLayout } from "../components/AuthLayout";
 import { AuthHeader } from "../components/AuthHeader";
 
 const VerifyForm = dynamic(
-  () => import("./components/VerifyForm").then((mod) => mod.VerifyForm),
+  () => import("./VerifyForm").then((mod) => mod.VerifyForm),
   {
     ssr: false,
     loading: () => (

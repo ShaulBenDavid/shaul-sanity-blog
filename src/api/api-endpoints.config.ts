@@ -6,6 +6,7 @@ export enum ApiEndpoints {
   REFRESH = "auth/refresh/",
   ACTIVATION = "auth/activation/",
   RESET_PASSWORD = "auth/reset-password/",
+  NEW_PASSWORD = "auth/new-password/",
 
   // INFO
   USER_INFO = "user/info/",

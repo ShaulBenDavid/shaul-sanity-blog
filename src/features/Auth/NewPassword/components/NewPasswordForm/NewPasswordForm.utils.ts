@@ -1,15 +1,8 @@
 import { z } from "zod";
 import { userSchemaValidation } from "../../../Auth.config";
 
-export const personalInfoSchema = z.object({
-  firstName: userSchemaValidation.firstName,
-  lastName: userSchemaValidation.lastName,
-  username: userSchemaValidation.username,
-});
-
-export const accountInfoSchema = z
+export const NewPasswordSchema = z
   .object({
-    email: userSchemaValidation.email,
     password: userSchemaValidation.password,
     confirmPassword: userSchemaValidation.password,
   })
