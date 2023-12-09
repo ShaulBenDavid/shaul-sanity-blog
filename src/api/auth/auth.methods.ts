@@ -11,6 +11,8 @@ import type {
   PostActiveResponseType,
   GetActiveParamsType,
   GetActiveResponseType,
+  PostResetPasswordResponseType,
+  PostResetPasswordPayloadType,
 } from "./auth.types";
 
 export const login = (payload: LoginPayloadType): Promise<AuthResponseType> =>
@@ -46,6 +48,15 @@ export const postActive = (
 ): Promise<PostActiveResponseType> =>
   refreshMethodInstance<PostActiveResponseType>({
     url: ApiEndpoints.ACTIVATION,
+    method: Methods.POST,
+    data: payload,
+  });
+
+export const postResetPassword = (
+  payload: PostResetPasswordPayloadType,
+): Promise<PostResetPasswordResponseType> =>
+  refreshMethodInstance<PostResetPasswordResponseType>({
+    url: ApiEndpoints.RESET_PASSWORD,
     method: Methods.POST,
     data: payload,
   });
