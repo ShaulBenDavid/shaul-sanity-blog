@@ -5,3 +5,4 @@ export { useSignUp } from "./useSignUp";
 export { useGetInfo } from "./useGetInfo";
 export { usePostActive } from "./usePostActive";
 export { useGetActive } from "./useGetActive";
+export { usePostResetPassword } from "./usePostResetPassword";
