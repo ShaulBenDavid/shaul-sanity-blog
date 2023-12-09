@@ -7,10 +7,7 @@ import { AuthLayout } from "../components/AuthLayout";
 import { AuthHeader } from "../components/AuthHeader";
 
 const ResetPasswordForm = dynamic(
-  () =>
-    import("./components/ResetPasswordForm").then(
-      (mod) => mod.ResetPasswordForm,
-    ),
+  () => import("./ResetPasswordForm").then((mod) => mod.ResetPasswordForm),
   {
     ssr: false,
     loading: () => (

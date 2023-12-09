@@ -1,61 +1,62 @@
 "use client";
 
 import React from "react";
-import { useSearchParams } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { PostActivePayloadType } from "@/src/api/auth";
+import type { PostResetPasswordPayloadType } from "@/src/api/auth";
 import Input from "@/src/components/Input";
 import Button, { ButtonVariants } from "@/src/components/Button";
-import { usePostActive } from "@/src/api/auth/hooks";
-import { VerifySchema } from "./VerifyForm.utils";
+import { usePostResetPassword } from "@/src/api/auth/hooks";
 import Alert, { AlertVariants } from "@/src/components/Alert";
+import { ResetPasswordSchema } from "./ResetPasswordForm.utils";
 
-export const VerifyForm = (): JSX.Element => {
-  const searchParams = useSearchParams();
-  const {
-    postActive,
-    postActiveData,
-    isPostActiveLoading,
-    isPostActiveError,
-    isPostActiveSuccess,
-    postActiveError,
-  } = usePostActive({});
-
-  const defaultValues = {
-    email: searchParams.get("email") ?? "",
-  };
-
-  const methods = useForm<PostActivePayloadType>({
-    resolver: zodResolver(VerifySchema),
-    defaultValues,
+export const ResetPasswordForm = (): JSX.Element => {
+  const methods = useForm<PostResetPasswordPayloadType>({
+    resolver: zodResolver(ResetPasswordSchema),
     mode: "onChange",
     delayError: 1000,
   });
 
   const {
     handleSubmit,
+    reset,
     formState: { isValid },
   } = methods;
 
+  const handleSuccess = (): void => {
+    reset({ email: "" });
+  };
+
+  const {
+    postResetPassword,
+    resetPasswordData,
+    isResetPasswordLoading,
+    isResetPasswordError,
+    isResetPasswordSuccess,
+    resetPasswordError,
+  } = usePostResetPassword({ handleSuccess });
+
   const onSubmit = handleSubmit((value): void => {
-    postActive(value);
+    postResetPassword(value);
   });
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={onSubmit}>
-        {isPostActiveError && (
+        {isResetPasswordError && (
           <Alert
             variant={AlertVariants.DANGER}
-            content={postActiveError?.response?.data.message}
+            content={
+              resetPasswordError?.response?.data.message ??
+              resetPasswordError?.message
+            }
             className="mb-4"
           />
         )}
-        {isPostActiveSuccess && (
+        {isResetPasswordSuccess && (
           <Alert
             variant={AlertVariants.SUCCESS}
-            content={postActiveData?.message ?? ""}
+            content={resetPasswordData?.message ?? ""}
             className="mb-4"
           />
         )}
@@ -71,10 +72,10 @@ export const VerifyForm = (): JSX.Element => {
           variant={ButtonVariants.PRIMARY}
           type="submit"
           className="mt-2 max-mb:mt-4"
-          isLoading={isPostActiveLoading}
+          isLoading={isResetPasswordLoading}
           disabled={!isValid}
         >
-          send verification
+          send reset link
         </Button>
       </form>
     </FormProvider>
