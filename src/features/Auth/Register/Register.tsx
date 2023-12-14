@@ -3,7 +3,7 @@
 import React, { type FormEvent, useEffect } from "react";
 import { toast } from "react-toastify";
 import { usePostActive, useSignUp } from "@/src/api/auth/hooks";
-import Alert, { AlertVariants } from "@/src/components/Alert";
+import { Alert, AlertVariants } from "@/src/components/Alert";
 import Stepper from "./components/Stepper";
 import { registerStepsConfig } from "./Register.config";
 import RegisterForm from "./components/RegisterForm";

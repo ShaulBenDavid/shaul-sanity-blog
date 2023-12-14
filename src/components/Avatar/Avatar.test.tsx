@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import Avatar from "./Avatar";
+import { Avatar } from "./Avatar";
 import { AvatarSizes } from "./Avatar.types";
 
 describe("Avatar", () => {

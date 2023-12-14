@@ -11,7 +11,7 @@ interface AlertProps {
   className?: string;
 }
 
-const Alert = ({
+export const Alert = ({
   variant,
   content,
   width,
@@ -38,5 +38,3 @@ const Alert = ({
     </div>
   </div>
 );
-
-export default Alert;

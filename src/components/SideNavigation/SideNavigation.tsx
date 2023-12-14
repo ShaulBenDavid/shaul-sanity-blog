@@ -3,7 +3,7 @@
 import React from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import type { NavigationLinksConfigType } from "../Header/Header.config";
-import Drawer from "../Drawer";
+import { Drawer } from "../Drawer";
 import SideNavTab from "./SideNavTab";
 
 interface SideNavigationProps {

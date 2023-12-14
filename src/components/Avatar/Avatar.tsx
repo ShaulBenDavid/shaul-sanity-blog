@@ -19,7 +19,7 @@ type AvatarProps =
       className?: string;
     };
 
-const Avatar = ({
+export const Avatar = ({
   url,
   name,
   size = AvatarSizes.LARGE,
@@ -47,5 +47,3 @@ const Avatar = ({
     )}
   </div>
 );
-
-export default Avatar;

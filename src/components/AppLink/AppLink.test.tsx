@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import AppLink from "./AppLink";
+import { AppLink } from "./AppLink";
 
 describe("AppLink", () => {
   it("renders correctly", () => {

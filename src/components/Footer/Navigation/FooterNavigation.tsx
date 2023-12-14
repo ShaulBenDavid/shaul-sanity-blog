@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Routes } from "@/src/routes";
-import NavigationColumn from "./NavigationColumn";
+import { NavigationColumn } from "./NavigationColumn";
 import { footerNavigationConfig } from "./FooterNavigation.config";
 import { Logo } from "../../Icons";
 
-const FooterNavigation = (): JSX.Element => (
+export const FooterNavigation = (): JSX.Element => (
   <nav
     className="md:flex md:justify-between"
     id="footer-nav"
@@ -33,5 +33,3 @@ const FooterNavigation = (): JSX.Element => (
     </div>
   </nav>
 );
-
-export default FooterNavigation;

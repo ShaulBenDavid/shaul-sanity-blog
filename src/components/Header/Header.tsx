@@ -7,12 +7,12 @@ import { Routes } from "@/src/routes";
 import { useGetUserRoutes } from "@/src/roles/hooks";
 import PermissionGate, { Roles } from "@/src/roles";
 import NavigationTabs from "../NavigationTabs";
-import BurgerButton from "./BurgerButton/BurgerButton";
+import { BurgerButton } from "./BurgerButton/BurgerButton";
 import SideNavigation from "../SideNavigation";
 import { getUserNavigationLinks } from "./Header.utils";
-import UserMenu from "./UserMenu";
+import { UserMenu } from "./UserMenu";
 
-const Header = (): JSX.Element => {
+export const Header = (): JSX.Element => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
   const userRoutes = useGetUserRoutes();
   const navigationLinks = getUserNavigationLinks(userRoutes);
@@ -47,5 +47,3 @@ const Header = (): JSX.Element => {
     </>
   );
 };
-
-export default Header;

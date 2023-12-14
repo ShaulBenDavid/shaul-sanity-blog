@@ -10,7 +10,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
-const Button = ({
+export const Button = ({
   variant,
   width,
   isLoading = false,
@@ -47,5 +47,3 @@ const Button = ({
     )}
   </button>
 );
-
-export default Button;

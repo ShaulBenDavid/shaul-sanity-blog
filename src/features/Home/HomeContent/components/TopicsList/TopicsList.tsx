@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Chip from "@/src/components/Chip";
+import { Chip } from "@/src/components/Chip";
 import { Routes } from "@/src/routes";
 import { buildRoutePath } from "@/src/utils";
 import type { GetTopics } from "@/src/sanity/queries/home";

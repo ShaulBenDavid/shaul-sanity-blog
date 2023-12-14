@@ -10,8 +10,8 @@ import {
 import Input from "@/src/components/Input";
 import TextArea from "@/src/components/TextArea";
 import { SelectInput } from "@/src/components/SelectInput";
-import Button, { ButtonVariants } from "@/src/components/Button";
-import Alert, { AlertVariants } from "@/src/components/Alert";
+import { Button, ButtonVariants } from "@/src/components/Button";
+import { Alert, AlertVariants } from "@/src/components/Alert";
 import { usePostContactUs } from "@/src/api/contact/hooks";
 import { contactSchemaValidation } from "./ContactForm.utils";
 

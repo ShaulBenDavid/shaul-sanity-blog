@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Avatar from "../Avatar";
+import { Avatar } from "../Avatar";
 
 interface UserPreviewProps {
   name: string;

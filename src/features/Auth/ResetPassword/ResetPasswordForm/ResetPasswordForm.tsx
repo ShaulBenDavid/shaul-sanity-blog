@@ -5,9 +5,9 @@ import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { PostResetPasswordPayloadType } from "@/src/api/auth";
 import Input from "@/src/components/Input";
-import Button, { ButtonVariants } from "@/src/components/Button";
+import { Button, ButtonVariants } from "@/src/components/Button";
 import { usePostResetPassword } from "@/src/api/auth/hooks";
-import Alert, { AlertVariants } from "@/src/components/Alert";
+import { Alert, AlertVariants } from "@/src/components/Alert";
 import { ResetPasswordSchema } from "./ResetPasswordForm.utils";
 
 export const ResetPasswordForm = (): JSX.Element => {

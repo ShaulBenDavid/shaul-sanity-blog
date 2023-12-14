@@ -1,3 +1,1 @@
-import FooterNavigation from "./FooterNavigation";
-
-export default FooterNavigation;
+export { FooterNavigation } from "./FooterNavigation";

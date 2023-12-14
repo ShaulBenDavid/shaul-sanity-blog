@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import Alert from "./Alert";
+import { Alert } from "./Alert";
 import { AlertVariants } from "./Alert.types";
 
 describe("Alert", () => {

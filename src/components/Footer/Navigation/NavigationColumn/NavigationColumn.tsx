@@ -11,7 +11,7 @@ interface NavigationColumnProps {
   isOutSourceLinks?: boolean;
 }
 
-const NavigationColumn = ({
+export const NavigationColumn = ({
   name,
   links,
   isOutSourceLinks = false,
@@ -53,5 +53,3 @@ const NavigationColumn = ({
     </ul>
   </div>
 );
-
-export default NavigationColumn;

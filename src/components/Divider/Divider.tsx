@@ -4,7 +4,7 @@ interface DividerProps {
   title: string;
 }
 
-const Divider = ({ title }: DividerProps): JSX.Element => (
+export const Divider = ({ title }: DividerProps): JSX.Element => (
   <div className="flex flex-row items-center gap-2">
     <div
       className="h-[2px] w-full bg-gradient-to-l from-wizard-grey from-10%"
@@ -17,5 +17,3 @@ const Divider = ({ title }: DividerProps): JSX.Element => (
     />
   </div>
 );
-
-export default Divider;

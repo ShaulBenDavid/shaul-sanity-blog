@@ -1,7 +1,7 @@
 import React from "react";
 import groq from "groq";
 import { client } from "@/src/sanity/sanity.client";
-import BlogList from "@/src/components/BlogList/BlogList";
+import { BlogList } from "@/src/components/BlogList/BlogList";
 
 const query = groq`
   *[_type=='post'] {

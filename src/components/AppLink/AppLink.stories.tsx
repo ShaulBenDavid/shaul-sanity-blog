@@ -1,7 +1,7 @@
 import React from "react";
 import type { CSSProperties } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import AppLink from "./AppLink";
+import { AppLink } from "./AppLink";
 
 const styles: CSSProperties = {
   transform: "scale(1)",

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Alert from "./Alert";
+import { Alert } from "./Alert";
 import { AlertVariants } from "./Alert.types";
 
 /**
