@@ -7,11 +7,11 @@ import PermissionGate, { Roles } from "@/src/roles";
 import { AuthContext } from "@/src/context/auth";
 import { useGetInfo, useLogout } from "@/src/api/auth/hooks";
 import theme from "@/src/styles/tailwind.theme";
-import Avatar from "../../Avatar";
-import Dropdown from "../../Dropdown";
-import AppLink from "../../AppLink";
+import { Avatar } from "../../Avatar";
+import { Dropdown } from "../../Dropdown";
+import { AppLink } from "../../AppLink";
 
-const UserMenu = (): JSX.Element => {
+export const UserMenu = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { handleLogout } = useContext(AuthContext);
   const { logout } = useLogout({ handleSuccess: handleLogout });
@@ -81,5 +81,3 @@ const UserMenu = (): JSX.Element => {
     </div>
   );
 };
-
-export default UserMenu;

@@ -16,7 +16,7 @@ type AppLinkProps =
       onClick?: never;
     };
 
-const AppLink = ({
+export const AppLink = ({
   href,
   onClick,
   children,
@@ -30,5 +30,3 @@ const AppLink = ({
       {children}
     </button>
   );
-
-export default AppLink;

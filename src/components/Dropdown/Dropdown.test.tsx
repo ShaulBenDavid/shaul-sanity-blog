@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import Dropdown from "./Dropdown";
+import { Dropdown } from "./Dropdown";
 
 describe("Dropdown component", () => {
   it("renders correctly", () => {

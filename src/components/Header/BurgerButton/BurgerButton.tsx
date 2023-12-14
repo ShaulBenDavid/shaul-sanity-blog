@@ -4,7 +4,7 @@ import React from "react";
 
 type BurgerButton = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const BurgerButton = ({ onClick }: BurgerButton) => (
+export const BurgerButton = ({ onClick }: BurgerButton) => (
   <button
     onClick={onClick}
     type="button"
@@ -31,5 +31,3 @@ const BurgerButton = ({ onClick }: BurgerButton) => (
     </svg>
   </button>
 );
-
-export default BurgerButton;

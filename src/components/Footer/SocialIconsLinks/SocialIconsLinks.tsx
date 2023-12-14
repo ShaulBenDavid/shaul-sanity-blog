@@ -6,7 +6,9 @@ interface SocialIconsLinksProps {
   links: SocialLinkConfigType[];
 }
 
-const SocialIconsLinks = ({ links }: SocialIconsLinksProps): JSX.Element => (
+export const SocialIconsLinks = ({
+  links,
+}: SocialIconsLinksProps): JSX.Element => (
   <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
     {links.map(({ link, title }) => (
       <a
@@ -23,4 +25,3 @@ const SocialIconsLinks = ({ links }: SocialIconsLinksProps): JSX.Element => (
     ))}
   </div>
 );
-export default SocialIconsLinks;

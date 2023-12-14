@@ -1,5 +1,5 @@
 import React from "react";
-import Divider from "@/src/components/Divider";
+import { Divider } from "@/src/components/Divider";
 import SocialLogin from "./components/SocialLogin";
 import LoginForm from "./components/LoginForm";
 import LoginFooter from "./components/LoginFooter";

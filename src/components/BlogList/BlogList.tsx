@@ -7,7 +7,7 @@ type Props = {
   posts: Post[];
 };
 
-const BlogList = ({ posts }: Props): JSX.Element => (
+export const BlogList = ({ posts }: Props): JSX.Element => (
   <>
     {posts
       .concat(posts)
@@ -35,5 +35,3 @@ const BlogList = ({ posts }: Props): JSX.Element => (
       )}
   </>
 );
-
-export default BlogList;

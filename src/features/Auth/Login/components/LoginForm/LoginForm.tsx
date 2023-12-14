@@ -8,10 +8,10 @@ import { AuthContext } from "@/src/context/auth";
 import { useLogin } from "@/src/api/auth/hooks";
 import Input from "@/src/components/Input";
 import { Routes } from "@/src/routes";
-import Button, { ButtonVariants } from "@/src/components/Button";
+import { Button, ButtonVariants } from "@/src/components/Button";
 import type { LoginPayloadType, AuthResponseType } from "@/src/api/auth";
 import { HttpStatusCode } from "@/src/types";
-import Alert, { AlertVariants } from "@/src/components/Alert";
+import { Alert, AlertVariants } from "@/src/components/Alert";
 import { loginFormConfig } from "./LoginForm.config";
 import { LoginSchema } from "./LoginForm.utils";
 

@@ -4,9 +4,9 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Input from "@/src/components/Input";
-import Button, { ButtonVariants } from "@/src/components/Button";
+import { Button, ButtonVariants } from "@/src/components/Button";
 import { usePostNewPassword } from "@/src/api/auth/hooks";
-import Alert, { AlertVariants } from "@/src/components/Alert";
+import { Alert, AlertVariants } from "@/src/components/Alert";
 import { NewPasswordSchema } from "./NewPasswordForm.utils";
 import type { NewPasswordFormPayloadType } from "./NewPasswordForm.types";
 

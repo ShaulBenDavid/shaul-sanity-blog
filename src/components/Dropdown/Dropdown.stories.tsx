@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { CSSProperties } from "react";
 import type { Meta } from "@storybook/react";
-import Dropdown from "./Dropdown";
+import { Dropdown } from "./Dropdown";
 
 const styles: CSSProperties = {
   transform: "scale(1)",

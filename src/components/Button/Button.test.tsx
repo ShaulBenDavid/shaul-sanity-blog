@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render } from "test-utils";
-import Button from "./Button";
+import { Button } from "./Button";
 import { ButtonVariants } from "./Button.types";
 
 describe("Button", () => {

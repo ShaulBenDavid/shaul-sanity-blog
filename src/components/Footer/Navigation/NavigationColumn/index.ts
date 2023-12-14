@@ -1,3 +1,1 @@
-import NavigationColumn from "./NavigationColumn";
-
-export default NavigationColumn;
+export { NavigationColumn } from "./NavigationColumn";

@@ -2,14 +2,14 @@
 
 import React, { useEffect } from "react";
 import ReactFocusLock from "react-focus-lock";
-import Backdrop from "../Backdrop";
+import { Backdrop } from "../Backdrop";
 
 type DrawerProps = React.PropsWithChildren<{
   onClose: () => void;
   isOpen: boolean;
 }>;
 
-const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
+export const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
   useEffect((): any => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
     // eslint-disable-next-line no-return-assign
@@ -45,5 +45,3 @@ const Drawer = ({ onClose, isOpen, children }: DrawerProps) => {
     </div>
   );
 };
-
-export default Drawer;

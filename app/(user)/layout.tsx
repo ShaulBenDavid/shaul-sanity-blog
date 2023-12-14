@@ -2,8 +2,8 @@ import React from "react";
 import { Inter } from "next/font/google";
 import { defaultMetadata } from "@/src/metadata";
 import { AppProviders } from "@/src/providers";
-import Header from "@/src/components/Header";
-import Footer from "@/src/components/Footer";
+import { Header } from "@/src/components/Header";
+import { Footer } from "@/src/components/Footer";
 import "@/src/styles/global.css";
 
 const inter = Inter({

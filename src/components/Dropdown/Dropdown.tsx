@@ -11,7 +11,7 @@ interface DropdownProps {
   onClose: () => void;
 }
 
-const Dropdown = ({
+export const Dropdown = ({
   id,
   className,
   isOpen,
@@ -59,5 +59,3 @@ const Dropdown = ({
     </>
   );
 };
-
-export default Dropdown;
