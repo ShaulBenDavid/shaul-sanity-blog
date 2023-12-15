@@ -1,5 +1,5 @@
 import React from "react";
-import Share from "@/src/components/Share";
+import { Share } from "@/src/components/Share";
 import TopicsList from "../components/TopicsList";
 
 const TopContentTablet = (): JSX.Element => (

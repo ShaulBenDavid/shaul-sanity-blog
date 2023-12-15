@@ -1,7 +1,7 @@
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import type { Meta, StoryObj } from "@storybook/react";
-import TextArea from "./TextArea";
+import { TextArea } from "./TextArea";
 
 /**
  * # The Text Area component

@@ -3,13 +3,15 @@
 import React from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import type { NavigationLinksConfigType } from "../Header/Header.config";
-import NavTab from "./NavTab";
+import { NavTab } from "./NavTab";
 
 interface NavigationTabsProps {
   navLinks: NavigationLinksConfigType[];
 }
 
-const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {
+export const NavigationTabs = ({
+  navLinks,
+}: NavigationTabsProps): JSX.Element => {
   const activeSegment = useSelectedLayoutSegment() ?? "/";
 
   return (
@@ -33,5 +35,3 @@ const NavigationTabs = ({ navLinks }: NavigationTabsProps): JSX.Element => {
     </ul>
   );
 };
-
-export default NavigationTabs;

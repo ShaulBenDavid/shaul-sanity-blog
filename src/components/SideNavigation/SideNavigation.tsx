@@ -4,7 +4,7 @@ import React from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import type { NavigationLinksConfigType } from "../Header/Header.config";
 import { Drawer } from "../Drawer";
-import SideNavTab from "./SideNavTab";
+import { SideNavTab } from "./SideNavTab";
 
 interface SideNavigationProps {
   isOpen: boolean;
@@ -12,7 +12,11 @@ interface SideNavigationProps {
   navLinks: NavigationLinksConfigType[];
 }
 
-const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
+export const SideNavigation = ({
+  isOpen,
+  onClick,
+  navLinks,
+}: SideNavigationProps) => {
   const activeSegment = useSelectedLayoutSegment() ?? "/";
 
   return (
@@ -38,5 +42,3 @@ const SideNavigation = ({ isOpen, onClick, navLinks }: SideNavigationProps) => {
     </Drawer>
   );
 };
-
-export default SideNavigation;

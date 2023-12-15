@@ -1,3 +1,1 @@
-import NavigationTabs from "./NavigationTabs";
-
-export default NavigationTabs;
+export { NavigationTabs } from "./NavigationTabs";

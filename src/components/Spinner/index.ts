@@ -1,6 +1,2 @@
-import Spinner from "./Spinner";
-import { SpinnerSize, SpinnerVariants } from "./Spinner.types";
-
-export { SpinnerSize, SpinnerVariants };
-
-export default Spinner;
+export { Spinner } from "./Spinner";
+export { SpinnerSize, SpinnerVariants } from "./Spinner.types";

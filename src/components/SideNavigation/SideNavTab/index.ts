@@ -1,3 +1,1 @@
-import SideNavTab from "./SideNavTab";
-
-export default SideNavTab;
+export { SideNavTab } from "./SideNavTab";

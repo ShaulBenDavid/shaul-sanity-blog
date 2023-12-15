@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import type { Author } from "@/src/sanity/types";
-import PostPreview from "./PostPreview";
+import { PostPreview } from "./PostPreview";
 
 const styles: CSSProperties = {
   transform: "scale(1)",

@@ -1,3 +1,1 @@
-import Share from "./Share";
-
-export default Share;
+export { Share } from "./Share";

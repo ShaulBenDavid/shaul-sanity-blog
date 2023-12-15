@@ -1,5 +1,5 @@
 import React from "react";
-import Spinner, { SpinnerSize } from "@/src/components/Spinner";
+import { Spinner, SpinnerSize } from "@/src/components/Spinner";
 
 export const ActivateLoader = (): JSX.Element => (
   <div className="flex flex-col items-center gap-4">

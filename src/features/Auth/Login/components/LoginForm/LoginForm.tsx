@@ -6,7 +6,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AuthContext } from "@/src/context/auth";
 import { useLogin } from "@/src/api/auth/hooks";
-import Input from "@/src/components/Input";
+import { Input } from "@/src/components/Input";
 import { Routes } from "@/src/routes";
 import { Button, ButtonVariants } from "@/src/components/Button";
 import type { LoginPayloadType, AuthResponseType } from "@/src/api/auth";

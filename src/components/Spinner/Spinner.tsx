@@ -7,7 +7,7 @@ interface SpinnerProps {
   size?: SpinnerSize;
 }
 
-const Spinner = ({
+export const Spinner = ({
   variant = SpinnerVariants.PRIMARY,
   size = SpinnerSize.MEDIUM,
 }: SpinnerProps): JSX.Element => (
@@ -31,5 +31,3 @@ const Spinner = ({
     <span className="sr-only">Loading...</span>
   </div>
 );
-
-export default Spinner;

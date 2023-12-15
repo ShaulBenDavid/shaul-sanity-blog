@@ -1,3 +1,1 @@
-import NavTab from "./NavTab";
-
-export default NavTab;
+export { NavTab } from "./NavTab";

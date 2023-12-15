@@ -3,7 +3,7 @@
 import React, { type FormEvent } from "react";
 import dynamic from "next/dynamic";
 import type { RegisterPayloadType } from "@/src/api/auth";
-import Spinner from "@/src/components/Spinner/index";
+import { Spinner } from "@/src/components/Spinner/index";
 import { useMultiFormConfig } from "./useMultiFormConfig";
 import { registerFormsFieldsConfig } from "../../Register.config";
 import { RegisterStepsEnum } from "../../Register.types";

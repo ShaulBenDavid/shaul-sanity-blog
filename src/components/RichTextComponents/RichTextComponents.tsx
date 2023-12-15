@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { PortableTextReactComponents } from "@portabletext/react";
 import { forUrl } from "@/src/sanity/sanity.utils";
 
-const RichTextComponents: Partial<PortableTextReactComponents> = {
+export const RichTextComponents: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }) => (
       <div style={{ width: "90px", height: "90px", position: "relative" }}>
@@ -19,5 +19,3 @@ const RichTextComponents: Partial<PortableTextReactComponents> = {
     blockquote: ({ children }) => <blockquote>{children}</blockquote>,
   },
 };
-
-export default RichTextComponents;

@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { ButtonVariants } from "./Button.types";
 import { buttonVariantsStyleConfig } from "./Button.config";
-import Spinner, { SpinnerSize, SpinnerVariants } from "../Spinner";
+import { Spinner, SpinnerSize, SpinnerVariants } from "../Spinner";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: ButtonVariants;

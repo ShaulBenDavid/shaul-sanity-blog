@@ -7,8 +7,8 @@ import {
   ContactTypesEnum,
   type ContactPayloadType,
 } from "@/src/api/contact/contact.types";
-import Input from "@/src/components/Input";
-import TextArea from "@/src/components/TextArea";
+import { Input } from "@/src/components/Input";
+import { TextArea } from "@/src/components/TextArea";
 import { SelectInput } from "@/src/components/SelectInput";
 import { Button, ButtonVariants } from "@/src/components/Button";
 import { Alert, AlertVariants } from "@/src/components/Alert";

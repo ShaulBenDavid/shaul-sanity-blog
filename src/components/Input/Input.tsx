@@ -11,7 +11,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   width?: string;
 }
 
-const Input = ({
+export const Input = ({
   label,
   idFor,
   width,
@@ -57,5 +57,3 @@ const Input = ({
     </div>
   );
 };
-
-export default Input;

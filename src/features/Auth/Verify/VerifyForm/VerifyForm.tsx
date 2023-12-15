@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { PostActivePayloadType } from "@/src/api/auth";
-import Input from "@/src/components/Input";
+import { Input } from "@/src/components/Input";
 import { Button, ButtonVariants } from "@/src/components/Button";
 import { usePostActive } from "@/src/api/auth/hooks";
 import { Alert, AlertVariants } from "@/src/components/Alert";
