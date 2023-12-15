@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "@/src/features/Auth/Register";
+import { Register } from "@/src/features/Auth/Register";
 import { registerMetadata } from "@/src/metadata";
 
 export const metadata = registerMetadata;

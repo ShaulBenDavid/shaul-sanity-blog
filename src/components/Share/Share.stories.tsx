@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Share from "./Share";
+import { Share } from "./Share";
 /**
  * # The Share component
  * The alert component is a collection buttons to share the website if the socials.

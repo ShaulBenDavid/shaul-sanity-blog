@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import Stepper from "./Stepper";
+import { Stepper } from "./Stepper";
 
 const mockSteps = [
   {

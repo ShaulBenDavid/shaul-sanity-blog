@@ -2,7 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import Spinner from "@/src/components/Spinner";
+import { Spinner } from "@/src/components/Spinner";
 import { AuthLayout } from "../components/AuthLayout";
 import { AuthHeader } from "../components/AuthHeader";
 

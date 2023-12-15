@@ -5,7 +5,7 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { client } from "@/src/sanity/sanity.client";
 import { forUrl } from "@/src/sanity/sanity.utils";
-import RichTextComponents from "@/src/components/RichTextComponents/RichTextComponents";
+import { RichTextComponents } from "@/src/components/RichTextComponents/RichTextComponents";
 import { Post } from "@/src/sanity/types";
 
 type Props = {

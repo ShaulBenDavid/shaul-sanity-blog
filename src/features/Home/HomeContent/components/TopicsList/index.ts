@@ -1,3 +1,1 @@
-import TopicsList from "./TopicsList";
-
-export default TopicsList;
+export { TopicsList } from "./TopicsList";

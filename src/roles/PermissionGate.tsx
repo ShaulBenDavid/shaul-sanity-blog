@@ -8,7 +8,7 @@ interface PermissionGateProps {
   children: JSX.Element | null;
 }
 
-const PermissionGate = ({
+export const PermissionGate = ({
   allowedRoles,
   children,
 }: PermissionGateProps): JSX.Element | null => {
@@ -22,5 +22,3 @@ const PermissionGate = ({
 
   return children;
 };
-
-export default PermissionGate;

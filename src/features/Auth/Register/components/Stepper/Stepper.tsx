@@ -1,5 +1,5 @@
 import React from "react";
-import Step from "./Step";
+import { Step } from "./Step";
 import type { StepsType } from "./Stepper.types";
 
 interface StepperProps {
@@ -7,7 +7,7 @@ interface StepperProps {
   currentStep: number;
 }
 
-const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
+export const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
   <ol
     className="flex w-full items-center text-center text-sm font-medium text-gray-500 sm:text-base"
     data-testid="stepper-component-test-id"
@@ -29,5 +29,3 @@ const Stepper = ({ steps, currentStep }: StepperProps): JSX.Element => (
     })}
   </ol>
 );
-
-export default Stepper;

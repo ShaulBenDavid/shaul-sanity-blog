@@ -1,3 +1,1 @@
-import UserPreview from "./UserPreview";
-
-export default UserPreview;
+export { UserPreview } from "./UserPreview";

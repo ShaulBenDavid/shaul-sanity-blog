@@ -8,7 +8,7 @@ import { getTopics } from "@/src/sanity/queries/home";
 
 export const revalidate = 86400; // revalidate build every day
 
-const TopicsList = async (): Promise<JSX.Element> => {
+export const TopicsList = async (): Promise<JSX.Element> => {
   const topics: GetTopics = await getTopics();
 
   return (
@@ -31,5 +31,3 @@ const TopicsList = async (): Promise<JSX.Element> => {
     </div>
   );
 };
-
-export default TopicsList;

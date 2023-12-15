@@ -23,7 +23,11 @@ interface ShareProps {
   title?: string;
 }
 
-const Share = ({ url = "", subject, title }: ShareProps): JSX.Element => {
+export const Share = ({
+  url = "",
+  subject,
+  title,
+}: ShareProps): JSX.Element => {
   return (
     <div className="flex w-full flex-col gap-3">
       <h2 className="text-base font-bold text-wizard-black">
@@ -74,5 +78,3 @@ const Share = ({ url = "", subject, title }: ShareProps): JSX.Element => {
     </div>
   );
 };
-
-export default Share;

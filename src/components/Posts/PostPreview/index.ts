@@ -1,3 +1,1 @@
-import PostPreview from "./PostPreview";
-
-export default PostPreview;
+export { PostPreview } from "./PostPreview";

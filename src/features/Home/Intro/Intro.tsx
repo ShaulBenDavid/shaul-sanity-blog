@@ -4,7 +4,7 @@ import JamesClearImg from "../images/IntroTextJC.png";
 import JamesClearImgM from "../images/IntroTextJCM.png";
 import JamesClearImgS from "../images/IntroTextJCS.png";
 
-const Intro = () => (
+export const Intro = () => (
   <section className="relative mt-40 flex flex-col items-center text-center text-wizard-black max-tb:mt-32">
     <div
       className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -51,5 +51,3 @@ const Intro = () => (
     </picture>
   </section>
 );
-
-export default Intro;

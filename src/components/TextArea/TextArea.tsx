@@ -12,7 +12,7 @@ interface TextAreaProps
   width?: string;
 }
 
-const TextArea = ({
+export const TextArea = ({
   label,
   idFor,
   width,
@@ -61,5 +61,3 @@ const TextArea = ({
     </div>
   );
 };
-
-export default TextArea;

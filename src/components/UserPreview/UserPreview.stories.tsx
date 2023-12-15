@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import UserPreview from "./UserPreview";
+import { UserPreview } from "./UserPreview";
 
 /**
  * # The UserPreview component

@@ -3,7 +3,7 @@
 import React from "react";
 import type { UseFormReturn } from "react-hook-form";
 import { FormProvider } from "react-hook-form";
-import Input from "@/src/components/Input";
+import { Input } from "@/src/components/Input";
 import { Button, ButtonVariants } from "@/src/components/Button";
 import type { RegisterPayloadType } from "@/src/api/auth";
 import type { AccountMethodType } from "../RegisterForm.types";
@@ -17,7 +17,7 @@ interface AccountInfoProps {
   method: UseFormReturn<AccountMethodType, any, undefined>;
 }
 
-const AccountInfo = ({
+export const AccountInfo = ({
   fields,
   isLoading,
   goBack,
@@ -64,5 +64,3 @@ const AccountInfo = ({
     </FormProvider>
   );
 };
-
-export default AccountInfo;

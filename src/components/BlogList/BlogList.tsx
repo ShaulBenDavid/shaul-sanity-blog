@@ -1,7 +1,7 @@
 import React from "react";
 import type { Post } from "@/src/sanity/types";
 import { forUrl } from "@/src/sanity/sanity.utils";
-import PostPreview from "../Posts/PostPreview";
+import { PostPreview } from "../Posts/PostPreview";
 
 type Props = {
   posts: Post[];

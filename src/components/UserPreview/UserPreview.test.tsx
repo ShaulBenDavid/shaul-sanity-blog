@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import UserPreview from "./UserPreview";
+import { UserPreview } from "./UserPreview";
 
 describe("UserPreview", () => {
   const user = {

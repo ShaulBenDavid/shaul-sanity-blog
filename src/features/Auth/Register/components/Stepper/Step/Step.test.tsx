@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "test-utils";
-import Step from "./Step";
+import { Step } from "./Step";
 
 const mockStep = {
   title: "personal",

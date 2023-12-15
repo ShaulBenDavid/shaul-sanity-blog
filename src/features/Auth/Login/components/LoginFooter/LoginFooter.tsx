@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Routes } from "@/src/routes";
 
-const LoginFooter = (): JSX.Element => (
+export const LoginFooter = (): JSX.Element => (
   <div className="flex flex-col justify-center gap-4">
     <Link href={Routes.RESET_PASSWORD} className="app-link">
       I forgot my password
@@ -15,5 +15,3 @@ const LoginFooter = (): JSX.Element => (
     </span>
   </div>
 );
-
-export default LoginFooter;

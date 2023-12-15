@@ -13,7 +13,7 @@ interface NavTabProps {
   isActive: boolean;
 }
 
-const NavTab = ({
+export const NavTab = ({
   href,
   title,
   variant,
@@ -35,5 +35,3 @@ const NavTab = ({
     </Link>
   </li>
 );
-
-export default NavTab;

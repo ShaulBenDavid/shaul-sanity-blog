@@ -5,7 +5,7 @@ import { BsBookmarkPlus, BsBookmarkPlusFill } from "react-icons/bs";
 import { formatDateToCustomFormat } from "@/src/utils";
 import { forUrl } from "@/src/sanity/sanity.utils";
 import type { Author } from "@/src/sanity/types";
-import UserPreview from "../../UserPreview";
+import { UserPreview } from "../../UserPreview";
 
 export interface PostPreviewProps {
   title: string;
@@ -18,7 +18,7 @@ export interface PostPreviewProps {
   author: Author;
 }
 
-const PostPreview = ({
+export const PostPreview = ({
   title,
   content,
   href,
@@ -85,5 +85,3 @@ const PostPreview = ({
     </div>
   </article>
 );
-
-export default PostPreview;

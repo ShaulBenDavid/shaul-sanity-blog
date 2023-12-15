@@ -3,12 +3,12 @@
 import React, { type FormEvent } from "react";
 import dynamic from "next/dynamic";
 import type { RegisterPayloadType } from "@/src/api/auth";
-import Spinner from "@/src/components/Spinner/index";
+import { Spinner } from "@/src/components/Spinner/index";
 import { useMultiFormConfig } from "./useMultiFormConfig";
 import { registerFormsFieldsConfig } from "../../Register.config";
 import { RegisterStepsEnum } from "../../Register.types";
-import PersonalInfo from "./PersonalInfo";
-import AccountInfo from "./AccountInfo";
+import { PersonalInfo } from "./PersonalInfo";
+import { AccountInfo } from "./AccountInfo";
 
 const Confirmation = dynamic(
   () => import("./Confirmation").then((mod) => mod.Confirmation),
@@ -31,7 +31,7 @@ interface RegisterFormProps {
   handleResendActivation: (e: FormEvent) => void;
 }
 
-const RegisterForm = ({
+export const RegisterForm = ({
   currentStep,
   isSignUpLoading,
   isPostActiveLoading,
@@ -62,5 +62,3 @@ const RegisterForm = ({
 
   return getForms[currentStep - 1];
 };
-
-export default RegisterForm;

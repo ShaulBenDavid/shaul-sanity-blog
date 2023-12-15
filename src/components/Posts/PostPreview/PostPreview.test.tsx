@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "test-utils";
 import type { Author } from "@/src/sanity/types";
-import PostPreview from "./PostPreview";
+import { PostPreview } from "./PostPreview";
 
 describe("PostPreview", () => {
   const mockAuthor: Author = {

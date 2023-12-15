@@ -10,7 +10,7 @@ interface UserPreviewProps {
   avatarStyles?: string;
 }
 
-const UserPreview = ({
+export const UserPreview = ({
   name,
   title,
   imageUrl,
@@ -34,5 +34,3 @@ const UserPreview = ({
     </div>
   </Link>
 );
-
-export default UserPreview;

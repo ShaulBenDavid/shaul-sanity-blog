@@ -3,7 +3,7 @@
 import React, { useContext, useState } from "react";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { Routes } from "@/src/routes";
-import PermissionGate, { Roles } from "@/src/roles";
+import { PermissionGate, Roles } from "@/src/roles";
 import { AuthContext } from "@/src/context/auth";
 import { useGetInfo, useLogout } from "@/src/api/auth/hooks";
 import theme from "@/src/styles/tailwind.theme";

@@ -13,7 +13,7 @@ interface SideNavTabProps {
   onClick: () => void;
 }
 
-const SideNavTab = ({
+export const SideNavTab = ({
   href,
   title,
   variant,
@@ -40,5 +40,3 @@ const SideNavTab = ({
     </Link>
   </li>
 );
-
-export default SideNavTab;

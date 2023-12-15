@@ -4,9 +4,9 @@ import React, { type FormEvent, useEffect } from "react";
 import { toast } from "react-toastify";
 import { usePostActive, useSignUp } from "@/src/api/auth/hooks";
 import { Alert, AlertVariants } from "@/src/components/Alert";
-import Stepper from "./components/Stepper";
+import { Stepper } from "./components/Stepper";
 import { registerStepsConfig } from "./Register.config";
-import RegisterForm from "./components/RegisterForm";
+import { RegisterForm } from "./components/RegisterForm";
 import { RegisterStepsEnum } from "./Register.types";
 import { useMultiFormSteps } from "./useMultiFormSteps";
 import { AuthHeader } from "../components/AuthHeader";
@@ -14,7 +14,7 @@ import { AuthLayout } from "../components/AuthLayout";
 
 const CONFIRMATION_PAGE_COUNT = 1;
 
-const Register = (): JSX.Element => {
+export const Register = (): JSX.Element => {
   const {
     isSignUpLoading,
     isSignUpError,
@@ -95,5 +95,3 @@ const Register = (): JSX.Element => {
     </AuthLayout>
   );
 };
-
-export default Register;

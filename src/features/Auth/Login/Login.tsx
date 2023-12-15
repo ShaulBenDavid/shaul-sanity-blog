@@ -1,12 +1,12 @@
 import React from "react";
 import { Divider } from "@/src/components/Divider";
-import SocialLogin from "./components/SocialLogin";
-import LoginForm from "./components/LoginForm";
-import LoginFooter from "./components/LoginFooter";
+import { SocialLogin } from "./components/SocialLogin";
+import { LoginForm } from "./components/LoginForm";
+import { LoginFooter } from "./components/LoginFooter";
 import { AuthLayout } from "../components/AuthLayout";
 import { AuthHeader } from "../components/AuthHeader";
 
-const Login = () => {
+export const Login = () => {
   return (
     <AuthLayout className="justify-between">
       <>
@@ -22,5 +22,3 @@ const Login = () => {
     </AuthLayout>
   );
 };
-
-export default Login;
