@@ -1,3 +1,1 @@
-import SocialButton from "./SocialButton";
-
-export default SocialButton;
+export { SocialButton } from "./SocialButton";

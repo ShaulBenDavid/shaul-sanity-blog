@@ -11,7 +11,7 @@ interface StepProps {
   isCompletedStep: boolean;
 }
 
-const Step = ({
+export const Step = ({
   title,
   subtitle,
   stepNumber,
@@ -51,5 +51,3 @@ const Step = ({
     </li>
   );
 };
-
-export default Step;

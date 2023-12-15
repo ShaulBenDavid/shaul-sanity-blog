@@ -1,3 +1,1 @@
-import SocialLogin from "./SocialLogin";
-
-export default SocialLogin;
+export { SocialLogin } from "./SocialLogin";

@@ -13,7 +13,7 @@ const query = groq`
 
 export const revalidate = 86400; // revalidate build every day
 
-const Main = async (): Promise<JSX.Element> => {
+export const Main = async (): Promise<JSX.Element> => {
   const posts = await client.fetch(query);
 
   return (
@@ -22,5 +22,3 @@ const Main = async (): Promise<JSX.Element> => {
     </section>
   );
 };
-
-export default Main;

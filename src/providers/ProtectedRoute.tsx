@@ -13,7 +13,7 @@ interface ProtectedRouteProps {
   children: React.ReactNode;
 }
 
-const ProtectedRoute = ({
+export const ProtectedRoute = ({
   allowedRoles,
   defaultRoute = Routes.SIGN_IN,
   children,
@@ -32,5 +32,3 @@ const ProtectedRoute = ({
   // eslint-disable-next-line react/jsx-no-useless-fragment
   return isAllowed ? <>{children}</> : <></>;
 };
-
-export default ProtectedRoute;

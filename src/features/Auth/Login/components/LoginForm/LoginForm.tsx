@@ -15,7 +15,7 @@ import { Alert, AlertVariants } from "@/src/components/Alert";
 import { loginFormConfig } from "./LoginForm.config";
 import { LoginSchema } from "./LoginForm.utils";
 
-const LoginForm = (): JSX.Element => {
+export const LoginForm = (): JSX.Element => {
   const { setAuth } = useContext(AuthContext);
   const methods = useForm<LoginPayloadType>({
     resolver: zodResolver(LoginSchema),
@@ -82,5 +82,3 @@ const LoginForm = (): JSX.Element => {
     </FormProvider>
   );
 };
-
-export default LoginForm;

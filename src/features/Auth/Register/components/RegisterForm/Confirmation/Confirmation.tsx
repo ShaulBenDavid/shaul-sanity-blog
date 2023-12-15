@@ -4,7 +4,7 @@ import React, { type FormEvent } from "react";
 import Link from "next/link";
 import { Routes } from "@/src/routes";
 import { Button, ButtonVariants } from "@/src/components/Button";
-import EmailAnimation from "./EmailAnimation";
+import { EmailAnimation } from "./EmailAnimation";
 
 interface ConfirmationProps {
   isLoading: boolean;

@@ -1,7 +1,7 @@
 import React from "react";
 import S from "./EmailAnimation.module.css";
 
-const EmailAnimation = (): JSX.Element => (
+export const EmailAnimation = (): JSX.Element => (
   <div aria-hidden>
     <div className={S.container}>
       <div className={S.envelope}>
@@ -19,5 +19,3 @@ const EmailAnimation = (): JSX.Element => (
     </div>
   </div>
 );
-
-export default EmailAnimation;

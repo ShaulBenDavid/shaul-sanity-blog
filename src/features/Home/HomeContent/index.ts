@@ -1,3 +1,1 @@
-import HomeContent from "./HomeContent";
-
-export default HomeContent;
+export { HomeContent } from "./HomeContent";

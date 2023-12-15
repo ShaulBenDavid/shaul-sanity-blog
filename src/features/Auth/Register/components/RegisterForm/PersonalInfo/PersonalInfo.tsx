@@ -15,7 +15,7 @@ interface PersonalInfoProps {
   method: UseFormReturn<PersonalMethodType, any, undefined>;
 }
 
-const PersonalInfo = ({
+export const PersonalInfo = ({
   fields,
   method,
   onClick,
@@ -53,5 +53,3 @@ const PersonalInfo = ({
     </FormProvider>
   );
 };
-
-export default PersonalInfo;

@@ -1,3 +1,1 @@
-import LoginFooter from "./LoginFooter";
-
-export default LoginFooter;
+export { LoginFooter } from "./LoginFooter";

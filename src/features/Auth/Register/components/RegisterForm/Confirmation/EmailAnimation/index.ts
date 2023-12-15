@@ -1,3 +1,1 @@
-import EmailAnimation from "./EmailAnimation";
-
-export default EmailAnimation;
+export { EmailAnimation } from "./EmailAnimation";

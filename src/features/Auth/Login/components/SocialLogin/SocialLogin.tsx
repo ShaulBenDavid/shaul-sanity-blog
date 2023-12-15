@@ -1,8 +1,8 @@
 import React from "react";
 import { socialsLoginButtonsConfig } from "./SocialLogin.config";
-import SocialButton from "./SocialButton";
+import { SocialButton } from "./SocialButton";
 
-const SocialLogin = (): JSX.Element => (
+export const SocialLogin = (): JSX.Element => (
   <div className="flex flex-row gap-4 max-sm:flex-col max-sm:gap-2">
     {socialsLoginButtonsConfig.map(({ borderColor, children }) => (
       <SocialButton borderColor={borderColor} key={borderColor}>
@@ -11,5 +11,3 @@ const SocialLogin = (): JSX.Element => (
     ))}
   </div>
 );
-
-export default SocialLogin;

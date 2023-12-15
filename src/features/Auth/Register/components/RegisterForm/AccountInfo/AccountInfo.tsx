@@ -17,7 +17,7 @@ interface AccountInfoProps {
   method: UseFormReturn<AccountMethodType, any, undefined>;
 }
 
-const AccountInfo = ({
+export const AccountInfo = ({
   fields,
   isLoading,
   goBack,
@@ -64,5 +64,3 @@ const AccountInfo = ({
     </FormProvider>
   );
 };
-
-export default AccountInfo;

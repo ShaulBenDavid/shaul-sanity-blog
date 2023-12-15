@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Stepper from "./Stepper";
+import { Stepper } from "./Stepper";
 import { registerStepsConfig } from "../../Register.config";
 
 /**

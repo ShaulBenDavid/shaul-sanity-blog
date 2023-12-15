@@ -1,3 +1,1 @@
-import Aside from "./Aside";
-
-export default Aside;
+export { Aside } from "./Aside";

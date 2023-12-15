@@ -6,7 +6,7 @@ interface SocialButtonProps
   borderColor?: string;
 }
 
-const SocialButton = ({
+export const SocialButton = ({
   width,
   borderColor,
   children,
@@ -26,5 +26,3 @@ const SocialButton = ({
     {children}
   </button>
 );
-
-export default SocialButton;

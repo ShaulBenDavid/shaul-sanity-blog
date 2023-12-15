@@ -1,5 +1,5 @@
 import React from "react";
-import ProtectedRoute from "@/src/providers/ProtectedRoute";
+import { ProtectedRoute } from "@/src/providers/ProtectedRoute";
 import { Routes } from "@/src/routes";
 import { Roles } from "@/src/roles";
 
