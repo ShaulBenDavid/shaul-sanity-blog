@@ -4,7 +4,7 @@ import Image from "next/image";
 interface EmptyStateProps {
   svgUrl?: string;
   header: string;
-  description: string;
+  description?: string;
   footer?: JSX.Element;
 }
 
@@ -28,7 +28,7 @@ export const EmptyState = ({
       />
     )}
     <h2 className="text-xl font-semibold">{header}</h2>
-    <p className="text-center">{description}</p>
+    {description && <p className="text-center">{description}</p>}
     {footer && footer}
   </div>
 );
