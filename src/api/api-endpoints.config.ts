@@ -8,8 +8,9 @@ export enum ApiEndpoints {
   RESET_PASSWORD = "auth/reset-password/",
   NEW_PASSWORD = "auth/new-password/",
 
-  // INFO
+  // USER
   USER_INFO = "user/info/",
+  USER_IMAGE = "user/image/",
 
   // SERVICES
   CONTACT_US = "services/contact/",

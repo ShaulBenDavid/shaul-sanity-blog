@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
 import React from "react";
+import { notFound } from "next/navigation";
 
 const AT_SIGN = "%40";
 
