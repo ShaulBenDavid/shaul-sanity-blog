@@ -86,3 +86,11 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/*
+      10. Backdrop for dialog
+    */
+
+::backdrop {
+  background: rgba(29, 13, 37, 0.3);
+}
