@@ -1,0 +1,1 @@
+export { usePostUserImage } from "./usePostUserImage";
