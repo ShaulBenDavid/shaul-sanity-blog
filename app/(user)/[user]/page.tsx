@@ -1,22 +1,30 @@
 import React from "react";
 import { notFound } from "next/navigation";
+import { HydratedUser } from "@/src/features/User";
 
 const AT_SIGN = "%40";
 
-type Props = {
+type UserPageProps = {
   params: {
     user: string;
   };
 };
 
-const Post = ({ params: { user } }: Props) => {
-  const username: string | null = user.startsWith(AT_SIGN) ? user : null;
+const UserPage = async ({ params: { user } }: UserPageProps) => {
+  const username: string | null = user.startsWith(AT_SIGN)
+    ? user.replace(AT_SIGN, "")
+    : null;
 
   if (!username) {
     notFound();
   }
 
-  return <article>{user}</article>;
+  return (
+    <article>
+      {/* @ts-expect-error Server Component */}
+      <HydratedUser username={username} />
+    </article>
+  );
 };
 
-export default Post;
+export default UserPage;
