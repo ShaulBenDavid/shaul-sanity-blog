@@ -12,6 +12,7 @@ export type AuthResponseType = {
   roles: Roles[];
   accessToken: string;
 };
+
 export type UserInfoResponseType = {
   firstName: string;
   lastName: string;
