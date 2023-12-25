@@ -1,18 +1,18 @@
-import React, { cache } from "react";
-import { Hydrate, dehydrate, QueryClient } from "@tanstack/react-query";
+import React from "react";
+import { Hydrate, dehydrate } from "@tanstack/react-query";
 import { getUserProfile } from "@/src/api/user/user.methods";
+import { getQueryClient } from "@/src/queries/getQueryClient";
+import { GET_USER_PROFILE_KEY } from "@/src/api/user/hooks/useGetUserProfile";
 import { User } from "./User";
 
-const getQueryClient = cache(() => new QueryClient());
-
-interface UserProps {
+interface HydratedUserProps {
   username: string;
 }
 
-export const HydratedUser = async ({ username }: UserProps) => {
+export const HydratedUser = async ({ username }: HydratedUserProps) => {
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ["getUserProfile", username],
+    queryKey: [GET_USER_PROFILE_KEY, username],
     queryFn: () => getUserProfile(username),
   });
   const dehydratedState = dehydrate(queryClient);
