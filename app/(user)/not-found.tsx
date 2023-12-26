@@ -10,7 +10,7 @@ const NotFound = () => (
       svgUrl={NotFoundSVG}
       header="Page Not Found"
       footer={
-        <Link href={Routes.ROOT} className="button-link w-40">
+        <Link href={Routes.ROOT} replace className="button-link w-40">
           Go to home page
         </Link>
       }
