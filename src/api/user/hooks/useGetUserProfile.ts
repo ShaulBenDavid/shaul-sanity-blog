@@ -4,7 +4,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { getUserProfile } from "../user.methods";
 
-export const GET_USER_PROFILE_KEY = "getUserProfile";
+const GET_USER_PROFILE_KEY = "getUserProfile";
 
 interface UseGetUserInfoProps {
   username: string;

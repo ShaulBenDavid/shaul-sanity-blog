@@ -2,9 +2,9 @@ import React from "react";
 import { Hydrate, dehydrate } from "@tanstack/react-query";
 import { getUserProfile } from "@/src/api/user/user.methods";
 import { getQueryClient } from "@/src/queries/getQueryClient";
-import { GET_USER_PROFILE_KEY } from "@/src/api/user/hooks/useGetUserProfile";
 import { User } from "./User";
 
+const GET_USER_PROFILE_KEY = "getUserProfile";
 interface HydratedUserProps {
   username: string;
 }
