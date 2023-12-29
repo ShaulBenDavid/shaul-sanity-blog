@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useGetUserProfile } from "@/src/api/user/hooks";
+import { UserBanner } from "./components/UserBanner";
 
 interface UserProps {
   username: string;
@@ -12,5 +13,8 @@ export const User = ({ username }: UserProps) => {
 
   //   !! TEMP just for testing prefetch
   if (isUserInfoLoading) return <>loading..</>;
-  return <div>{JSON.stringify(userInfo)}</div>;
+
+  return (
+    <div className="py-8">{userInfo && <UserBanner userInfo={userInfo} />}</div>
+  );
 };
