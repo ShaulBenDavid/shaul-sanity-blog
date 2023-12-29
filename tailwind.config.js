@@ -59,6 +59,7 @@ module.exports = {
       "wizard-grey": "#736278",
       "primary-gray": "#6B6B6B",
       "dw-grey": "#E8E3EA",
+      "bg-grey": "#F3F2F4",
       "wizard-black": "#1D0325",
       "wizard-white": "#FAF2FD",
       orange: "#EC5D0D",

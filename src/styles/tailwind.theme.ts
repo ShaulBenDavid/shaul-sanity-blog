@@ -19,6 +19,8 @@ type Theme = {
       };
       "light-primary": string;
       "light-purple": string;
+      "bg-grey": string;
+      "dw-grey": string;
       secondary: {
         950: string;
       };
