@@ -3,11 +3,11 @@ import type { GetUserProfileResponseType } from "@/src/api/user";
 import { Avatar } from "@/src/components/Avatar";
 import { Card } from "@/src/components/Card";
 
-interface UserBannerProps {
+interface InfoBannerProps {
   userInfo: GetUserProfileResponseType;
 }
 
-export const UserBanner = ({ userInfo }: UserBannerProps): JSX.Element => {
+export const InfoBanner = ({ userInfo }: InfoBannerProps): JSX.Element => {
   const { firstName, lastName } = userInfo;
 
   return (
