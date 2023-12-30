@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useGetUserProfile } from "@/src/api/user/hooks";
-import { UserBanner } from "./components/UserBanner";
+import { InfoBanner } from "./components/InfoBanner";
 
 interface UserProps {
   username: string;
@@ -15,6 +15,6 @@ export const User = ({ username }: UserProps) => {
   if (isUserInfoLoading) return <>loading..</>;
 
   return (
-    <div className="py-8">{userInfo && <UserBanner userInfo={userInfo} />}</div>
+    <div className="py-8">{userInfo && <InfoBanner userInfo={userInfo} />}</div>
   );
 };
