@@ -5,7 +5,7 @@ import { Avatar } from "@/src/components/Avatar";
 interface UserInfoProps {
   fullName: string;
   username: string;
-  title: string | null;
+  title?: string | null;
 }
 
 export const UserInfo = ({
@@ -19,7 +19,7 @@ export const UserInfo = ({
       <h1 className="text-l line-clamp-1 text-ellipsis font-bold capitalize">
         {fullName}
       </h1>
-      {title && <p className="line-clamp-1 text-ellipsis ">{title}</p>}
+      {title && <p className="line-clamp-2 text-ellipsis leading-5">{title}</p>}
       <Link href={`/@${username}`} className="app-link">
         @{username}
       </Link>

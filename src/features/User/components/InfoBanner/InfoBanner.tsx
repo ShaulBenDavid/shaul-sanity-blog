@@ -12,10 +12,10 @@ export const InfoBanner = ({ userInfo }: InfoBannerProps): JSX.Element => {
   const fullName = `${firstName} ${lastName}`;
 
   return (
-    <section>
-      <Card className="w-full">
+    <Card className="w-full">
+      <header>
         <UserInfo fullName={fullName} username={username} title={title} />
-      </Card>
-    </section>
+      </header>
+    </Card>
   );
 };
