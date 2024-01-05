@@ -25,5 +25,10 @@ export const UserDetails = ({ details }: UserDetailsProps): JSX.Element => {
     </div>
   );
 
-  return <div>{categorizedDetails.positions && renderPositions()}</div>;
+  return (
+    <div className="flex flex-col gap-2">
+      {categorizedDetails.positions && renderPositions()}
+      <hr className="rounded-md border-dw-grey" />
+    </div>
+  );
 };
