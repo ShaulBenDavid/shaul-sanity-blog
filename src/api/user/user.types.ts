@@ -6,6 +6,22 @@ export type PostUserImagePayloadType = FormData;
 
 export type PostUserImageResponseType = MessageResponseType;
 
+export enum UserDetailsEnum {
+  WEBSITE = "website",
+  JOB = "job",
+  EDUCATION = "education",
+  GITHUB = "github",
+  JOIN_DATE = "joinDate",
+  ABOUT = "about",
+  SKILLS = "skills",
+}
+
+export type UserDetailsType = {
+  type: UserDetailsEnum;
+  value?: string | null | undefined;
+  _id: string;
+};
+
 export type GetUserProfileResponseType = {
   firstName: string;
   lastName: string;
@@ -14,4 +30,5 @@ export type GetUserProfileResponseType = {
   roles: Roles[];
   interested: Interested[] | null;
   username: string;
+  details: UserDetailsType[];
 };

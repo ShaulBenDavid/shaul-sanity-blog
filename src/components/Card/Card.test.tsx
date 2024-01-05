@@ -16,7 +16,7 @@ describe("Card Component", () => {
 
     expect(cardElement).toBeInTheDocument();
     expect(cardElement).toHaveClass(
-      "border-[1px] border-dw-grey bg-bg-grey p-3",
+      "rounded-md border-[1px] border-dw-grey bg-bg-grey p-3",
     );
     expect(cardElement).toHaveClass(customClassName);
     expect(childElement).toBeInTheDocument();
