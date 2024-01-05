@@ -9,7 +9,7 @@ export const getCategorizedDetails = (
   details.reduce<CategorizedDetailsType>(
     (acc, current) => {
       if (positionTypes.includes(current.type)) {
-        acc.positions.push(current as UserDetailsType);
+        acc.positions.push(current);
         return acc;
       }
 
