@@ -14,6 +14,7 @@ export enum UserDetailsEnum {
   JOIN_DATE = "joinDate",
   ABOUT = "about",
   SKILLS = "skills",
+  LOCATION = "location",
 }
 
 export type UserDetailsType = {
