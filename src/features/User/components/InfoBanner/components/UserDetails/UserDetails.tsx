@@ -27,12 +27,14 @@ export const UserDetails = ({ details }: UserDetailsProps): JSX.Element => {
   );
 
   const renderDetails = (): JSX.Element => (
-    <div className="flex flex-row">
+    <div className="flex flex-row gap-3">
       {categorizedDetails.details.map(({ type, value }) => (
-        <div key={type} className="flex-1">
+        <span key={type} className="flex flex-row items-end gap-2">
           {userDetailsIconsConfig[type]}
-          <p className="line-clamp-1 text-ellipsis capitalize">{value}</p>
-        </div>
+          <span className="line-clamp-1 max-w-[145px] text-ellipsis text-sm font-medium capitalize text-wizard-grey">
+            {value}
+          </span>
+        </span>
       ))}
     </div>
   );
