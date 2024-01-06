@@ -14,7 +14,7 @@ export const InfoBanner = ({ userInfo }: InfoBannerProps): JSX.Element => {
 
   return (
     <Card className="w-full">
-      <header>
+      <header className="flex flex-col gap-6">
         <UserInfo fullName={fullName} username={username} title={title} />
         <UserDetails details={details} />
       </header>

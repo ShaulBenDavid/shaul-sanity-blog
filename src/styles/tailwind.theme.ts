@@ -21,6 +21,8 @@ type Theme = {
       "light-purple": string;
       "bg-grey": string;
       "dw-grey": string;
+      "primary-gray": string;
+      "wizard-grey": string;
       secondary: {
         950: string;
       };
