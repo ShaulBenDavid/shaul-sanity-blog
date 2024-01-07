@@ -23,6 +23,9 @@ export type UserDetailsType = {
 };
 
 export type UserProfileResponseType = {
+  _id: string;
+  profileImage: string | null;
+  lastLogin: Date;
   firstName: string;
   lastName: string;
   title: string | null;
