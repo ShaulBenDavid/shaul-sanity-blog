@@ -6,19 +6,17 @@ import { LoginFooter } from "./components/LoginFooter";
 import { AuthLayout } from "../components/AuthLayout";
 import { AuthHeader } from "../components/AuthHeader";
 
-export const Login = () => {
-  return (
-    <AuthLayout className="justify-between">
-      <>
-        <AuthHeader
-          title="Welcome to Dev Wizard"
-          content="Join our community and explore the tech every day."
-        />
-        <SocialLogin />
-        <Divider title="or" />
-        <LoginForm />
-        <LoginFooter />
-      </>
-    </AuthLayout>
-  );
-};
+export const Login = () => (
+  <AuthLayout className="justify-between">
+    <>
+      <AuthHeader
+        title="Welcome to Dev Wizard"
+        content="Join our community and explore the tech every day."
+      />
+      <SocialLogin />
+      <Divider title="or" />
+      <LoginForm />
+      <LoginFooter />
+    </>
+  </AuthLayout>
+);

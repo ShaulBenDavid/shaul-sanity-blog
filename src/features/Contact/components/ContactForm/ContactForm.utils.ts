@@ -29,9 +29,7 @@ export const contactSchemaValidation = z
       .min(1)
       .max(255),
     subjectType: z.nativeEnum(ContactTypesEnum, {
-      errorMap: () => {
-        return { message: "Please select your subject type" };
-      },
+      errorMap: () => ({ message: "Please select your subject type" }),
     }),
   })
   .strict();

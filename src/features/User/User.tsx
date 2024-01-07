@@ -2,19 +2,21 @@
 
 import React from "react";
 import { useGetUserProfile } from "@/src/api/user/hooks";
-import { InfoBanner } from "./components/InfoBanner";
+import { UserPageBody } from "./UserPageBody";
 
 interface UserProps {
   username: string;
 }
 
 export const User = ({ username }: UserProps) => {
-  const { userInfo, isUserInfoLoading } = useGetUserProfile({ username });
+  const { userInfo, isUserInfoLoading, isUserInfoError } = useGetUserProfile({
+    username,
+  });
 
   //   !! TEMP just for testing prefetch
   if (isUserInfoLoading) return <>loading..</>;
 
-  return (
-    <div className="py-8">{userInfo && <InfoBanner userInfo={userInfo} />}</div>
-  );
+  if (!userInfo || isUserInfoError) return <>error</>;
+
+  return <UserPageBody userInfo={userInfo} />;
 };

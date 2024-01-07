@@ -1,3 +1,2 @@
-export const buildRoutePath = (...segments: string[]): string => {
-  return segments.join("/");
-};
+export const buildRoutePath = (...segments: string[]): string =>
+  segments.join("/");

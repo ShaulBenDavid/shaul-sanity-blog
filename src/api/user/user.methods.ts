@@ -2,7 +2,7 @@ import { ApiEndpoints } from "../api-endpoints.config";
 import { Methods } from "../api.config";
 import { apiMethodInstance } from "../http.service";
 import type {
-  GetUserProfileResponseType,
+  UserProfileResponseType,
   PostUserImagePayloadType,
   PostUserImageResponseType,
 } from "./user.types";
@@ -18,7 +18,7 @@ export const postUserImage = (
   });
 
 export const getUserProfile = (username: string) =>
-  apiMethodInstance<GetUserProfileResponseType>({
+  apiMethodInstance<UserProfileResponseType>({
     url: [ApiEndpoints.USER_INFO, `${username}/`].join(""),
     method: Methods.GET,
   });
