@@ -27,3 +27,8 @@ export const camelCaseToWords = (s: string): string => {
   const result = s.replace(/([A-Z])/g, " $1");
   return result.charAt(0).toUpperCase() + result.slice(1);
 };
+
+export const isLink = (str: string): boolean => {
+  const urlPattern = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:\d+)?(\/\S*)?$/;
+  return urlPattern.test(str);
+};

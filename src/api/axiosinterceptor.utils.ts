@@ -18,9 +18,7 @@ export const axiosRequest = (
   return config;
 };
 
-export const resInterceptor = (response: AxiosResponse) => {
-  return response;
-};
+export const resInterceptor = (response: AxiosResponse) => response;
 
 export const errInterceptor = async (
   error: AxiosError,

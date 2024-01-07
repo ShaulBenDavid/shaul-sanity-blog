@@ -1,10 +1,10 @@
 import React from "react";
-import { camelCaseToWords } from "@/src/utils";
-import { userDetailsIconsConfig } from "./UserDetails.config";
 import type {
   DetailsType,
   PositionsType,
-} from "../../../../UserPageBody.types";
+} from "@/src/features/User/UserPageBody/UserPageBody.types";
+import { userDetailsIconsConfig } from "./UserDetails.config";
+import { Position } from "./components/Position";
 
 interface UserDetailsProps {
   positions: PositionsType[];
@@ -18,14 +18,7 @@ export const UserDetails = ({
   const renderPositions = (): JSX.Element => (
     <div className="flex flex-row">
       {positions.map(({ type, value }) => (
-        <div key={type} className="flex-1">
-          <strong className="font-semibold opacity-70">
-            <p className="line-clamp-1 text-ellipsis text-sm">
-              {camelCaseToWords(type)}
-            </p>
-          </strong>
-          <p className="line-clamp-1 text-ellipsis capitalize">{value}</p>
-        </div>
+        <Position key={type} type={type} value={value ?? ""} />
       ))}
     </div>
   );

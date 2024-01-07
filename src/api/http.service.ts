@@ -11,11 +11,8 @@ const config: AxiosRequestConfig = {
 
 export const dwInstance: AxiosInstance = axios.create(config);
 
-export const apiMethodInstance = <T>(
-  options: AxiosRequestConfig,
-): Promise<T> => {
-  return dwInstance(options).then((res) => res.data);
-};
+export const apiMethodInstance = <T>(options: AxiosRequestConfig): Promise<T> =>
+  dwInstance(options).then((res) => res.data);
 
 const refreshConfig: AxiosRequestConfig = {
   baseURL,
@@ -27,6 +24,4 @@ export const refreshInstance: AxiosInstance = axios.create(refreshConfig);
 
 export const refreshMethodInstance = <T>(
   options: AxiosRequestConfig,
-): Promise<T> => {
-  return refreshInstance(options).then((res) => res.data);
-};
+): Promise<T> => refreshInstance(options).then((res) => res.data);

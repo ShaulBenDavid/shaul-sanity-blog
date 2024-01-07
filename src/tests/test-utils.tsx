@@ -20,15 +20,13 @@ jest.mock("react", () => {
   };
 });
 
-const AllTheProviders = ({ children }: { children: JSX.Element }) => {
-  return (
-    <QueryProvider>
-      <AuthContextProvider>
-        <AxiosInterceptor>{children}</AxiosInterceptor>
-      </AuthContextProvider>
-    </QueryProvider>
-  );
-};
+const AllTheProviders = ({ children }: { children: JSX.Element }) => (
+  <QueryProvider>
+    <AuthContextProvider>
+      <AxiosInterceptor>{children}</AxiosInterceptor>
+    </AuthContextProvider>
+  </QueryProvider>
+);
 
 const customRender = (
   ui: ReactElement,

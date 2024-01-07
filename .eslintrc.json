@@ -41,7 +41,7 @@
     "react/destructuring-assignment": 0,
     "import/prefer-default-export": "off",
     "react/button-has-type": "off",
-    "arrow-body-style": "off",
+    "arrow-body-style": ["error", "as-needed"],
     "import/no-extraneous-dependencies": [
       "off",
       { "devDependencies": ["**/*.ts", "**/*.tsx"] }
