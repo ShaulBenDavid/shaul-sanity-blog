@@ -5,7 +5,7 @@ import {
   type CategorizedDetailsType,
   type PositionsType,
   type DetailsType,
-} from "./UserDetails.types";
+} from "./UserPageBody.types";
 
 export const getCategorizedDetails = (
   details: UserDetailsType[],

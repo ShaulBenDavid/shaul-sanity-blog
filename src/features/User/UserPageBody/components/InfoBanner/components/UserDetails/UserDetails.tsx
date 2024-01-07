@@ -1,19 +1,23 @@
 import React from "react";
-import { type UserDetailsType } from "@/src/api/user";
-import { getCategorizedDetails } from "./UserDetails.utils";
 import { camelCaseToWords } from "@/src/utils";
 import { userDetailsIconsConfig } from "./UserDetails.config";
+import type {
+  DetailsType,
+  PositionsType,
+} from "../../../../UserPageBody.types";
 
 interface UserDetailsProps {
-  details: UserDetailsType[];
+  positions: PositionsType[];
+  details: DetailsType[];
 }
 
-export const UserDetails = ({ details }: UserDetailsProps): JSX.Element => {
-  const categorizedDetails = getCategorizedDetails(details);
-
+export const UserDetails = ({
+  positions,
+  details,
+}: UserDetailsProps): JSX.Element => {
   const renderPositions = (): JSX.Element => (
     <div className="flex flex-row">
-      {categorizedDetails.positions.map(({ type, value }) => (
+      {positions.map(({ type, value }) => (
         <div key={type} className="flex-1">
           <strong className="font-semibold opacity-70">
             <p className="line-clamp-1 text-ellipsis text-sm">
@@ -28,7 +32,7 @@ export const UserDetails = ({ details }: UserDetailsProps): JSX.Element => {
 
   const renderDetails = (): JSX.Element => (
     <div className="flex flex-row gap-3">
-      {categorizedDetails.details.map(({ type, value }) => (
+      {details.map(({ type, value }) => (
         <span key={type} className="flex flex-row items-end gap-2">
           {userDetailsIconsConfig[type]}
           <span className="line-clamp-1 max-w-[145px] text-ellipsis text-sm font-medium capitalize text-wizard-grey">
@@ -41,9 +45,9 @@ export const UserDetails = ({ details }: UserDetailsProps): JSX.Element => {
 
   return (
     <div className="flex flex-col gap-2">
-      {categorizedDetails.positions && renderPositions()}
+      {positions && renderPositions()}
       <hr className="rounded-md border-dw-grey" />
-      {categorizedDetails.details && renderDetails()}
+      {details && renderDetails()}
     </div>
   );
 };
