@@ -5,6 +5,8 @@ import type {
 } from "@/src/features/User/UserPageBody/UserPageBody.types";
 import { userDetailsIconsConfig } from "./UserDetails.config";
 import { Position } from "./components/Position";
+import { Detail } from "./components/Detail";
+import { isLink } from "@/src/utils";
 
 interface UserDetailsProps {
   positions: PositionsType[];
@@ -24,15 +26,18 @@ export const UserDetails = ({
   );
 
   const renderDetails = (): JSX.Element => (
-    <div className="flex flex-row gap-3">
-      {details.map(({ type, value }) => (
-        <span key={type} className="flex flex-row items-end gap-2">
-          {userDetailsIconsConfig[type]}
-          <span className="line-clamp-1 max-w-[145px] text-ellipsis text-sm font-medium capitalize text-wizard-grey">
-            {value}
-          </span>
-        </span>
-      ))}
+    <div className="flex flex-row flex-wrap gap-3">
+      {details.map(
+        ({ type, value }) =>
+          value && (
+            <Detail
+              key={type}
+              value={value ?? ""}
+              icon={userDetailsIconsConfig[type]}
+              href={isLink(value) ? value : undefined}
+            />
+          ),
+      )}
     </div>
   );
 
