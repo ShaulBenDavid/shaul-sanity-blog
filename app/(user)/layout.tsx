@@ -24,7 +24,7 @@ const RootLayout = ({
     >
       <AppProviders>
         <Header />
-        <main className="w-[1227px] flex-1 justify-center pt-14 max-lg:w-[1000px] max-md:w-full max-md:px-2">
+        <main className="w-[1227px] flex-1 justify-center pt-14 max-lg:w-[1000px] max-md:w-full max-md:px-2 ">
           {children}
         </main>
         <Footer />
