@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { Button, ButtonVariants } from "@/src/components/Button";
+import { ActionDropdown } from "../ActionDropdown";
 
 //  TODO implement logic
 // interface ProfileActionsProps {
@@ -7,7 +10,8 @@ import { Button, ButtonVariants } from "@/src/components/Button";
 // }
 
 export const ProfileActions = (): JSX.Element => (
-  <div>
+  <div className="flex flex-row">
     <Button variant={ButtonVariants.PRIMARY}>Follow</Button>
+    <ActionDropdown />
   </div>
 );
