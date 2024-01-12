@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { Dropdown } from "@/src/components/Dropdown";
+import { AppLink } from "@/src/components/AppLink";
 //  TODO implement logic
 // interface ActionDropdownProps {}
 
@@ -21,7 +22,10 @@ export const ActionDropdown = (): JSX.Element => {
         </span>
       }
     >
-      <div>test</div>
+      <div className="w-36">
+        <AppLink onClick={() => ({})}>Block</AppLink>
+        <AppLink onClick={() => ({})}>Report</AppLink>
+      </div>
     </Dropdown>
   );
 };

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Card } from "@/src/components/Card";
 import { UserInfo } from "./components/UserInfo";
