@@ -5,22 +5,26 @@ import type { PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface DropdownProps {
-  id: string;
+  label: string;
   className?: string;
   isOpen: boolean;
-  onClose: () => void;
+  trigger: JSX.Element;
+  setState: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Dropdown = ({
-  id,
+  label,
   className,
   isOpen,
-  onClose,
+  trigger,
+  setState,
   children,
 }: PropsWithChildren<DropdownProps>): JSX.Element => {
+  const ariaLabel = `${label.replace(" ", "-")}-desc`;
+
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>): void => {
     if (e.key === "Escape" || e.key === "ArrowDown") {
-      onClose();
+      setState(false);
     }
   };
 
@@ -28,11 +32,21 @@ export const Dropdown = ({
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ): void => {
     event.stopPropagation();
-    onClose();
+    setState(false);
   };
 
   return (
-    <>
+    <div className="relative">
+      <button
+        className="hover:drop-shadow-lg"
+        onClick={() => setState(true)}
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={ariaLabel}
+        aria-label={label}
+      >
+        {trigger}
+      </button>
       {isOpen && (
         <div
           aria-hidden
@@ -42,12 +56,12 @@ export const Dropdown = ({
       )}
       <div
         className={twMerge(
-          `absolute h-fit w-fit rounded-md bg-white p-2 shadow-dropdown ${
+          `absolute top-[115%] h-fit w-fit flex-col rounded-md bg-white p-2 shadow-dropdown ${
             isOpen ? "flex" : "hidden"
           }`,
           className,
         )}
-        id={id}
+        id={ariaLabel}
         role="presentation"
         tabIndex={-1}
         aria-hidden={!isOpen}
@@ -56,6 +70,6 @@ export const Dropdown = ({
       >
         {children}
       </div>
-    </>
+    </div>
   );
 };

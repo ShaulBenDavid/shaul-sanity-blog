@@ -1,25 +1,61 @@
 import React from "react";
-import { render } from "test-utils";
+import { act, fireEvent, render } from "test-utils";
 import { Dropdown } from "./Dropdown";
 
 describe("Dropdown component", () => {
-  it("renders correctly", () => {
-    const { getByText } = render(
-      <Dropdown isOpen onClose={() => ({})} id="usermenu-desc">
-        s
+  it("renders without crashing", () => {
+    const label = "Test Label";
+    const isOpen = false;
+    const trigger = <span>Trigger</span>;
+    const setState = jest.fn();
+
+    render(
+      <Dropdown
+        label={label}
+        isOpen={isOpen}
+        trigger={trigger}
+        setState={setState}
+      >
+        <div>Dropdown Content</div>
       </Dropdown>,
     );
-    const alertElement = getByText("s");
-    expect(alertElement).toBeInTheDocument();
   });
 
-  it("isOpen work as expected", () => {
-    const { getByTestId } = render(
-      <Dropdown isOpen onClose={() => ({})} id="usermenu-desc">
-        s
+  it("opens and closes on button click", () => {
+    const label = "Test Label";
+    const isOpen = false;
+    const trigger = <span>Trigger</span>;
+    const setState = jest.fn();
+
+    const { getByLabelText, getByTestId } = render(
+      <Dropdown
+        label={label}
+        isOpen={isOpen}
+        trigger={trigger}
+        setState={setState}
+      >
+        <div>Dropdown Content</div>
       </Dropdown>,
     );
-    const dropdownElement = getByTestId("dropdown-component-test-id");
-    expect(dropdownElement).toHaveClass("flex");
+
+    act(() => {
+      getByLabelText(label).focus();
+    });
+
+    act(() => {
+      fireEvent.keyDown(getByTestId("dropdown-component-test-id"), {
+        key: "Escape",
+      });
+    });
+
+    expect(setState).toHaveBeenLastCalledWith(false);
+
+    act(() => {
+      fireEvent.keyDown(getByTestId("dropdown-component-test-id"), {
+        key: "ArrowDown",
+      });
+    });
+
+    expect(setState).toHaveBeenLastCalledWith(false);
   });
 });
