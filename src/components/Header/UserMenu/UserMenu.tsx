@@ -2,6 +2,7 @@
 
 import React, { useContext, useState } from "react";
 import { MdAdminPanelSettings } from "react-icons/md";
+import ReactFocusLock from "react-focus-lock";
 import { Routes } from "@/src/routes";
 import { PermissionGate, Roles } from "@/src/roles";
 import { AuthContext } from "@/src/context/auth";
@@ -18,25 +19,16 @@ export const UserMenu = (): JSX.Element => {
   const { info } = useGetInfo();
 
   return (
-    <div className="relative ml-5 max-tb:ml-auto">
+    <div className="ml-5 max-tb:ml-auto">
       {info ? (
-        <>
-          <button
-            className="hover:drop-shadow-lg "
-            onClick={() => setIsOpen(true)}
-            type="button"
-            aria-expanded={isOpen}
-            aria-controls="username-desc"
-            aria-label="User menu"
-          >
-            <Avatar name={`${info.firstName} ${info.lastName}`} />
-          </button>
-          <Dropdown
-            onClose={() => setIsOpen(false)}
-            isOpen={isOpen}
-            id="usermenu-desc"
-            className="right-0 top-[115%] w-56 flex-col"
-          >
+        <Dropdown
+          setState={setIsOpen}
+          isOpen={isOpen}
+          trigger={<Avatar name={`${info.firstName} ${info.lastName}`} />}
+          label="user menu"
+          className="right-0 w-56"
+        >
+          <ReactFocusLock>
             <ul role="menu" className="flex flex-col gap-1">
               <li role="menuitem">
                 <AppLink href={`/@${info.username}`}>
@@ -73,8 +65,8 @@ export const UserMenu = (): JSX.Element => {
                 <AppLink onClick={logout}>Logout</AppLink>
               </li>
             </ul>
-          </Dropdown>
-        </>
+          </ReactFocusLock>
+        </Dropdown>
       ) : (
         <div className="h-8 w-8 flex-shrink-0 animate-pulse rounded-full bg-secondary-100" />
       )}
