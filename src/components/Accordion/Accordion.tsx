@@ -7,7 +7,7 @@ interface AccordionProps {
 
 export const Accordion = ({ title, content }: AccordionProps): JSX.Element => (
   <details className="app-card group overflow-hidden p-3">
-    <summary className="flex w-full cursor-pointer items-center justify-between text-xl font-bold capitalize">
+    <summary className="text-l flex w-full cursor-pointer items-center justify-between font-bold capitalize">
       <h3>{title}</h3>
       <div
         aria-hidden="true"
