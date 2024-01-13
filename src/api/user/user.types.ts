@@ -18,7 +18,7 @@ export enum UserDetailsEnum {
 
 export type UserDetailsType = {
   type: UserDetailsEnum;
-  value?: string | null | undefined;
+  value: string;
   _id: string;
 };
 

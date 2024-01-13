@@ -31,9 +31,7 @@ export const InfoBanner = ({
       <header className="flex flex-col gap-6">
         <div className="flex flex-row justify-between">
           <UserInfo fullName={fullName} username={username} title={title} />
-          <div>
-            <ActionDropdown />
-          </div>
+          <ActionDropdown />
         </div>
         <ProfileActions />
         <UserDetails positions={positions} details={details} />
