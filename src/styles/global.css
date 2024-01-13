@@ -12,6 +12,9 @@
   .dw-skeleton {
     @apply animate-[skeleton-loading_1s_ease-in-out_infinite];
   }
+  .app-card {
+    @apply rounded-md border-[1px] border-dw-grey bg-bg-grey;
+  }
 }
 
 /*

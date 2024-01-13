@@ -4,27 +4,37 @@ import React from "react";
 import type { UserProfileResponseType } from "@/src/api/user";
 import { getCategorizedDetails } from "./UserPageBody.utils";
 import { InfoBanner } from "./components/InfoBanner";
+import { DetailsList } from "./components/DetailsList";
 
 interface UserPageBodyProps {
   userInfo: UserProfileResponseType;
 }
 
 export const UserPageBody = ({ userInfo }: UserPageBodyProps): JSX.Element => {
-  const { firstName, lastName, title, username, details } = userInfo;
-  const fullName = `${firstName} ${lastName}`;
+  const {
+    firstName,
+    lastName,
+    title,
+    username,
+    details: userDetails,
+  } = userInfo;
 
-  const categorizedDetails = getCategorizedDetails(details);
+  const { positions, details, extraDetails } =
+    getCategorizedDetails(userDetails);
 
   return (
-    <div className="py-8">
+    <div className="flex flex-col gap-3 py-8">
       {userInfo && (
-        <InfoBanner
-          fullName={fullName}
-          title={title}
-          username={username}
-          positions={categorizedDetails.positions}
-          details={categorizedDetails.details}
-        />
+        <>
+          <InfoBanner
+            fullName={`${firstName} ${lastName}`}
+            title={title}
+            username={username}
+            positions={positions}
+            details={details}
+          />
+          <DetailsList details={extraDetails} />
+        </>
       )}
     </div>
   );
