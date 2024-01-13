@@ -1,25 +1,16 @@
-import { UserDetailsEnum, type UserDetailsType } from "@/src/api/user";
+import type { UserDetailsEnum, UserDetailsType } from "@/src/api/user";
 
-export const positionsOptions = [
-  UserDetailsEnum.EDUCATION,
-  UserDetailsEnum.JOB,
-];
+export type PositionsType =
+  | UserDetailsEnum.JOIN_DATE
+  | UserDetailsEnum.GITHUB
+  | UserDetailsEnum.WEBSITE
+  | UserDetailsEnum.LOCATION;
 
-export const detailsOptions = [
-  UserDetailsEnum.JOIN_DATE,
-  UserDetailsEnum.GITHUB,
-  UserDetailsEnum.WEBSITE,
-  UserDetailsEnum.LOCATION,
-];
-
-const positionType = [UserDetailsEnum.EDUCATION, UserDetailsEnum.JOB] as const;
-
-const detailsType = [
-  UserDetailsEnum.JOIN_DATE,
-  UserDetailsEnum.GITHUB,
-  UserDetailsEnum.WEBSITE,
-  UserDetailsEnum.LOCATION,
-] as const;
+export type DetailsType =
+  | UserDetailsEnum.JOIN_DATE
+  | UserDetailsEnum.GITHUB
+  | UserDetailsEnum.WEBSITE
+  | UserDetailsEnum.LOCATION;
 
 type CategorizedDetailType<T extends UserDetailsEnum> = Omit<
   UserDetailsType,
@@ -28,14 +19,12 @@ type CategorizedDetailType<T extends UserDetailsEnum> = Omit<
   type: T;
 };
 
-export type PositionsType = CategorizedDetailType<
-  (typeof positionType)[number]
->;
+export type PositionsCategoryType = CategorizedDetailType<PositionsType>;
 
-export type DetailsType = CategorizedDetailType<(typeof detailsType)[number]>;
+export type DetailsCategoryType = CategorizedDetailType<DetailsType>;
 
 export type CategorizedDetailsType = {
-  positions: PositionsType[];
-  details: DetailsType[];
+  positions: PositionsCategoryType[];
+  details: DetailsCategoryType[];
   extraDetails: UserDetailsType[];
 };

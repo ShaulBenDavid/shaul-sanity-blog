@@ -1,16 +1,17 @@
 import React from "react";
 import type {
-  DetailsType,
-  PositionsType,
+  DetailsCategoryType,
+  PositionsCategoryType,
 } from "@/src/features/User/UserPageBody/UserPageBody.types";
 import { userDetailsIconsConfig } from "./UserDetails.config";
 import { Position } from "./components/Position";
 import { Detail } from "./components/Detail";
 import { isLink } from "@/src/utils";
+import { getValueFromLink } from "./UserDetails.utils";
 
 interface UserDetailsProps {
-  positions: PositionsType[];
-  details: DetailsType[];
+  positions: PositionsCategoryType[];
+  details: DetailsCategoryType[];
 }
 
 export const UserDetails = ({
@@ -27,17 +28,22 @@ export const UserDetails = ({
 
   const renderDetails = (): JSX.Element => (
     <div className="flex flex-row flex-wrap gap-3">
-      {details.map(
-        ({ type, value }) =>
-          value && (
+      {details.map(({ type, value }) => {
+        // !! fix after BK fix
+        const isLinkValue = value ? isLink(value) : undefined;
+        const label = isLinkValue ? getValueFromLink(type, value ?? "") : value;
+
+        return (
+          label && (
             <Detail
               key={type}
-              value={value ?? ""}
+              value={label ?? ""}
               icon={userDetailsIconsConfig[type]}
-              href={isLink(value) ? value : undefined}
+              href={isLinkValue ? label : undefined}
             />
-          ),
-      )}
+          )
+        );
+      })}
     </div>
   );
 
