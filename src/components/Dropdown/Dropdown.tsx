@@ -36,7 +36,7 @@ export const Dropdown = ({
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-fit">
       <button
         className="hover:drop-shadow-lg"
         onClick={() => setState(true)}

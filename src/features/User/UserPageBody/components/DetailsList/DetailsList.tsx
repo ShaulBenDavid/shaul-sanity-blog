@@ -9,8 +9,7 @@ interface DetailsListProps {
 export const DetailsList = ({ details }: DetailsListProps): JSX.Element => (
   <section aria-label="User Details" className="flex flex-col gap-2">
     {details.map(({ type, value }) => (
-      // !! Fix content
-      <Accordion key={type} title={type} content={value ?? ""} />
+      <Accordion key={type} title={type} content={value} />
     ))}
   </section>
 );

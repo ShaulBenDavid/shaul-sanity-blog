@@ -6,14 +6,17 @@ import { UserInfo } from "./components/UserInfo";
 import { UserDetails } from "./components/UserDetails";
 import { ProfileActions } from "./components/ProfileActions";
 import { ActionDropdown } from "./components/ActionDropdown";
-import type { DetailsType, PositionsType } from "../../UserPageBody.types";
+import type {
+  DetailsCategoryType,
+  PositionsCategoryType,
+} from "../../UserPageBody.types";
 
 interface InfoBannerProps {
   fullName: string;
   title: string | null;
   username: string;
-  positions: PositionsType[];
-  details: DetailsType[];
+  positions: PositionsCategoryType[];
+  details: DetailsCategoryType[];
 }
 
 export const InfoBanner = ({
@@ -28,9 +31,7 @@ export const InfoBanner = ({
       <header className="flex flex-col gap-6">
         <div className="flex flex-row justify-between">
           <UserInfo fullName={fullName} username={username} title={title} />
-          <div>
-            <ActionDropdown />
-          </div>
+          <ActionDropdown />
         </div>
         <ProfileActions />
         <UserDetails positions={positions} details={details} />

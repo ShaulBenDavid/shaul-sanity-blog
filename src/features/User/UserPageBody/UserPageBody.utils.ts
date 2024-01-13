@@ -1,11 +1,10 @@
 import { type UserDetailsType } from "@/src/api/user";
 import {
-  positionsOptions,
-  detailsOptions,
   type CategorizedDetailsType,
-  type PositionsType,
-  type DetailsType,
+  type PositionsCategoryType,
+  type DetailsCategoryType,
 } from "./UserPageBody.types";
+import { detailsOptions, positionsOptions } from "./UserPageBody.config";
 
 export const getCategorizedDetails = (
   details: UserDetailsType[],
@@ -13,12 +12,12 @@ export const getCategorizedDetails = (
   details.reduce<CategorizedDetailsType>(
     (acc, current) => {
       if (positionsOptions.includes(current.type)) {
-        acc.positions.push(current as PositionsType);
+        acc.positions.push(current as PositionsCategoryType);
         return acc;
       }
 
       if (detailsOptions.includes(current.type)) {
-        acc.details.push(current as DetailsType);
+        acc.details.push(current as DetailsCategoryType);
         return acc;
       }
 

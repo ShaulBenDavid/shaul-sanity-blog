@@ -1,16 +1,17 @@
 import React from "react";
 import type {
-  DetailsType,
-  PositionsType,
+  DetailsCategoryType,
+  PositionsCategoryType,
 } from "@/src/features/User/UserPageBody/UserPageBody.types";
 import { userDetailsIconsConfig } from "./UserDetails.config";
 import { Position } from "./components/Position";
 import { Detail } from "./components/Detail";
 import { isLink } from "@/src/utils";
+import { getValueFromLink } from "./UserDetails.utils";
 
 interface UserDetailsProps {
-  positions: PositionsType[];
-  details: DetailsType[];
+  positions: PositionsCategoryType[];
+  details: DetailsCategoryType[];
 }
 
 export const UserDetails = ({
@@ -20,24 +21,26 @@ export const UserDetails = ({
   const renderPositions = (): JSX.Element => (
     <div className="flex flex-row">
       {positions.map(({ type, value }) => (
-        <Position key={type} type={type} value={value ?? ""} />
+        <Position key={type} type={type} value={value} />
       ))}
     </div>
   );
 
   const renderDetails = (): JSX.Element => (
     <div className="flex flex-row flex-wrap gap-3">
-      {details.map(
-        ({ type, value }) =>
-          value && (
-            <Detail
-              key={type}
-              value={value ?? ""}
-              icon={userDetailsIconsConfig[type]}
-              href={isLink(value) ? value : undefined}
-            />
-          ),
-      )}
+      {details.map(({ type, value }) => {
+        const isLinkValue = isLink(value);
+        const label = isLinkValue ? getValueFromLink(type, value) : value;
+
+        return (
+          <Detail
+            key={type}
+            value={label}
+            icon={userDetailsIconsConfig[type]}
+            href={isLinkValue ? label : undefined}
+          />
+        );
+      })}
     </div>
   );
 
