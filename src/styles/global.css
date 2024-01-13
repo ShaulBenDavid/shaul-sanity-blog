@@ -70,6 +70,11 @@ textarea,
 select {
   font: inherit;
 }
+/* This also hides the ::marker pseudo-element, but in Safari */
+summary::-webkit-details-marker {
+  display: none;
+}
+
 /*
     8. Avoid text overflows
   */
