@@ -12,6 +12,8 @@ import { ActionDropdown } from "../ActionDropdown";
 export const ProfileActions = (): JSX.Element => (
   <div className="flex flex-row">
     <Button variant={ButtonVariants.PRIMARY}>Follow</Button>
-    <ActionDropdown />
+    <div className="hidden">
+      <ActionDropdown />
+    </div>
   </div>
 );
