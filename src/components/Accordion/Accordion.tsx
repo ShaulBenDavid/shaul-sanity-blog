@@ -14,7 +14,7 @@ export const Accordion = ({ title, content }: AccordionProps): JSX.Element => (
         className="after:content-['+'] group-open:after:content-['-']"
       />
     </summary>
-    <div className="max-h-0 overflow-hidden pt-3 transition-all duration-500 group-open:max-h-96">
+    <div className="max-h-0 overflow-hidden pt-3 transition-all duration-500 ease-out group-open:max-h-96">
       <p className="opacity-80">{content}</p>
     </div>
   </details>
