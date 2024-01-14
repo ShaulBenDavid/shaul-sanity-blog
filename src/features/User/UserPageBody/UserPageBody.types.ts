@@ -24,7 +24,7 @@ export type PositionsCategoryType = CategorizedDetailType<PositionsType>;
 export type DetailsCategoryType = CategorizedDetailType<DetailsType>;
 
 export type CategorizedDetailsType = {
-  positions: PositionsCategoryType[];
-  details: DetailsCategoryType[];
-  extraDetails: UserDetailsType[];
+  positions?: PositionsCategoryType[];
+  details?: DetailsCategoryType[];
+  extraDetails?: UserDetailsType[];
 };

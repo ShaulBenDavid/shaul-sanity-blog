@@ -10,8 +10,8 @@ import { isLink } from "@/src/utils";
 import { getValueFromLink } from "./UserDetails.utils";
 
 interface UserDetailsProps {
-  positions: PositionsCategoryType[];
-  details: DetailsCategoryType[];
+  positions?: PositionsCategoryType[];
+  details?: DetailsCategoryType[];
 }
 
 export const UserDetails = ({
@@ -20,7 +20,7 @@ export const UserDetails = ({
 }: UserDetailsProps): JSX.Element => {
   const renderPositions = (): JSX.Element => (
     <div className="flex flex-row">
-      {positions.map(({ type, value }) => (
+      {positions?.map(({ type, value }) => (
         <Position key={type} type={type} value={value} />
       ))}
     </div>
@@ -28,7 +28,7 @@ export const UserDetails = ({
 
   const renderDetails = (): JSX.Element => (
     <div className="flex flex-row flex-wrap gap-3">
-      {details.map(({ type, value }) => {
+      {details?.map(({ type, value }) => {
         const isLinkValue = isLink(value);
         const label = isLinkValue ? getValueFromLink(type, value) : value;
 
