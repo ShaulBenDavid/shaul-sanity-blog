@@ -33,7 +33,7 @@ export const UserPageBody = ({ userInfo }: UserPageBodyProps): JSX.Element => {
             positions={positions}
             details={details}
           />
-          <DetailsList details={extraDetails} />
+          {extraDetails && <DetailsList details={extraDetails} />}
         </>
       )}
     </div>

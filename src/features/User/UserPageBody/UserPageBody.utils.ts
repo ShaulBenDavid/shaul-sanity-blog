@@ -12,17 +12,29 @@ export const getCategorizedDetails = (
   details.reduce<CategorizedDetailsType>(
     (acc, current) => {
       if (positionsOptions.includes(current.type)) {
+        if (!acc.positions) {
+          acc.positions = [];
+        }
+
         acc.positions.push(current as PositionsCategoryType);
         return acc;
       }
 
       if (detailsOptions.includes(current.type)) {
+        if (!acc.details) {
+          acc.details = [];
+        }
+
         acc.details.push(current as DetailsCategoryType);
         return acc;
+      }
+
+      if (!acc.extraDetails) {
+        acc.extraDetails = [];
       }
 
       acc.extraDetails.push(current);
       return acc;
     },
-    { positions: [], details: [], extraDetails: [] },
+    { positions: undefined, details: undefined, extraDetails: undefined },
   );

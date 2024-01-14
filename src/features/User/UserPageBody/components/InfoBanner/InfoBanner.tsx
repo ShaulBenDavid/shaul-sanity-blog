@@ -15,8 +15,8 @@ interface InfoBannerProps {
   fullName: string;
   title: string | null;
   username: string;
-  positions: PositionsCategoryType[];
-  details: DetailsCategoryType[];
+  positions?: PositionsCategoryType[];
+  details?: DetailsCategoryType[];
 }
 
 export const InfoBanner = ({
