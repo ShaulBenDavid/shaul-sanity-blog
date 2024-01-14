@@ -27,14 +27,18 @@ export const InfoBanner = ({
   details,
 }: InfoBannerProps): JSX.Element => (
   <section aria-label="User Info">
-    <Card className="w-full">
-      <header className="flex flex-col gap-6">
-        <div className="flex flex-row justify-between">
+    <Card className="w-full tb:h-56">
+      <header className="flex h-full flex-col gap-6 tb:flex-row tb:justify-between tb:gap-2">
+        <div className="flex w-full flex-row justify-between tb:w-96">
           <UserInfo fullName={fullName} username={username} title={title} />
-          <ActionDropdown />
+          <div className="tb:hidden">
+            <ActionDropdown />
+          </div>
         </div>
-        <ProfileActions />
-        <UserDetails positions={positions} details={details} />
+        <div className="flex flex-col gap-6 tb:items-end tb:gap-0">
+          <ProfileActions />
+          <UserDetails positions={positions} details={details} />
+        </div>
       </header>
     </Card>
   </section>
