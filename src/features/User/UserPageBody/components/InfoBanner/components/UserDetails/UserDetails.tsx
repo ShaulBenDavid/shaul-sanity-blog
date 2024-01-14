@@ -45,7 +45,7 @@ export const UserDetails = ({
   );
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex max-w-xl flex-col gap-2 tb:min-w-[300px]">
       {positions && renderPositions()}
       <hr className="rounded-md border-dw-grey" />
       {details && renderDetails()}

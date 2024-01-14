@@ -7,7 +7,7 @@ interface DetailsListProps {
 }
 
 export const DetailsList = ({ details }: DetailsListProps): JSX.Element => (
-  <section aria-label="User Details" className="flex flex-col gap-2">
+  <section aria-label="User Details" className="flex flex-col gap-2 tb:w-64">
     {details.map(({ type, value }) => (
       <Accordion key={type} title={type} content={value} />
     ))}

@@ -17,7 +17,7 @@ export const ActionDropdown = (): JSX.Element => {
       setState={setIsOpen}
       className="right-0"
       trigger={
-        <span className="flex h-10 w-10 items-center justify-center text-wizard-black duration-200 hover:opacity-70">
+        <span className="flex h-[35px] w-10 items-center justify-center text-wizard-black duration-200 hover:opacity-70">
           <BiDotsVerticalRounded size={24} />
         </span>
       }
