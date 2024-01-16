@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { ContactTypesEnum } from "@/src/api/contact";
-import { NAME_MAX_CHARACTERS_LENGTH } from "@/src/constant/common";
+import { NAME_MAX_CHARACTERS_LENGTH } from "@/src/constants/common";
 
 export const contactSchemaValidation = z
   .object({

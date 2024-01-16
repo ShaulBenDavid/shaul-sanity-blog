@@ -35,7 +35,9 @@ export const SideNavigation = ({
             title={title}
             variant={variant}
             icon={icon}
-            isActive={activeSegment === href.substring(1)}
+            isActive={
+              activeSegment === href.substring(1) || activeSegment === href
+            }
           />
         ))}
       </ul>

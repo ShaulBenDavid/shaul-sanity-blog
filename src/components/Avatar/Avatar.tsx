@@ -5,19 +5,12 @@ import { stringToAvatar, stringToColor } from "@/src/utils";
 import { avatarSizesConfig } from "./Avatar.config";
 import { AvatarSizes } from "./Avatar.types";
 
-type AvatarProps =
-  | {
-      url: string;
-      name?: never;
-      size?: AvatarSizes;
-      className?: string;
-    }
-  | {
-      url?: never;
-      name: string;
-      size?: AvatarSizes;
-      className?: string;
-    };
+interface AvatarProps {
+  url?: string;
+  name: string;
+  size?: AvatarSizes;
+  className?: string;
+}
 
 export const Avatar = ({
   url,
@@ -30,12 +23,10 @@ export const Avatar = ({
       `relative flex items-center justify-center overflow-hidden rounded-full uppercase text-white ${avatarSizesConfig[size]}`,
       className,
     )}
-    style={{ backgroundColor: `${name ? stringToColor(name) : "initial"}` }}
+    style={{ backgroundColor: `${url ? "initial" : stringToColor(name)}` }}
     data-testid="avatar-component-test-id"
   >
-    {name ? (
-      stringToAvatar(name)
-    ) : (
+    {url ? (
       <Image
         src={url as string}
         alt={`Avatar - ${name}`}
@@ -44,6 +35,8 @@ export const Avatar = ({
         fill
         sizes="10vh"
       />
+    ) : (
+      stringToAvatar(name)
     )}
   </div>
 );
