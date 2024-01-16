@@ -22,10 +22,7 @@ export const UserPreview = ({
     className="flex flex-row items-center gap-1"
     data-testid="user-preview-component-test-id"
   >
-    <Avatar
-      {...(imageUrl ? { url: imageUrl } : { name })}
-      className={avatarStyles}
-    />
+    <Avatar url={imageUrl ?? undefined} name={name} className={avatarStyles} />
     <div className="flex flex-col capitalize">
       <span className="text-sm">{name}</span>
       {title && (

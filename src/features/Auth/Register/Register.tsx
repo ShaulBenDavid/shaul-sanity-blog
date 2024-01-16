@@ -33,25 +33,21 @@ export const Register = (): JSX.Element => {
       handleSubmit: handleSignUp,
     });
 
-  const handleResendSuccess = (): void => {
-    toast.success("Verification email sent successfully!", {
-      position: toast.POSITION.TOP_LEFT,
-      role: "alert",
-      pauseOnFocusLoss: true,
-    });
-  };
-
-  const handleResendFail = (): void => {
-    toast.error("Some error occurred, please try again later...", {
-      position: toast.POSITION.TOP_LEFT,
-      role: "alert",
-      pauseOnFocusLoss: true,
-    });
-  };
-
   const { postActive, isPostActiveLoading } = usePostActive({
-    handleSuccess: handleResendSuccess,
-    handleError: handleResendFail,
+    handleSuccess: (): void => {
+      toast.success("Verification email sent successfully!", {
+        position: toast.POSITION.TOP_LEFT,
+        role: "alert",
+        pauseOnFocusLoss: true,
+      });
+    },
+    handleError: (): void => {
+      toast.error("Some error occurred, please try again later...", {
+        position: toast.POSITION.TOP_LEFT,
+        role: "alert",
+        pauseOnFocusLoss: true,
+      });
+    },
   });
 
   const handleResendActivation = (e: FormEvent): void => {
