@@ -1,15 +1,19 @@
 import React from "react";
 import type { UserDetailsType } from "@/src/api/user";
-import { Accordion } from "@/src/components/Accordion";
+import { DetailsListDesktop } from "./components/DetailsListDesktop";
+import { DetailsListMobile } from "./components/DetailsListMobile";
 
 interface DetailsListProps {
   details: UserDetailsType[];
 }
 
 export const DetailsList = ({ details }: DetailsListProps): JSX.Element => (
-  <section aria-label="User Details" className="flex flex-col gap-2 tb:w-64">
-    {details.map(({ type, value }) => (
-      <Accordion key={type} title={type} content={value} />
-    ))}
-  </section>
+  <>
+    <div className="hidden md:flex">
+      <DetailsListDesktop details={details} />
+    </div>
+    <div className="hidden max-md:flex">
+      <DetailsListMobile details={details} />
+    </div>
+  </>
 );
