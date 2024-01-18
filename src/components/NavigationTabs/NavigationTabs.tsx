@@ -2,17 +2,19 @@
 
 import React from "react";
 import { useSelectedLayoutSegment } from "next/navigation";
-import type { NavigationLinksConfigType } from "../Header/Header.config";
+import type { NavigationLinkConfigType } from "../Header/Header.config";
 import { NavTab } from "./NavTab";
+import { ButtonLink } from "../ButtonLink";
 
 interface NavigationTabsProps {
-  navLinks: NavigationLinksConfigType[];
+  navLinks: NavigationLinkConfigType[];
 }
 
 export const NavigationTabs = ({
   navLinks,
 }: NavigationTabsProps): JSX.Element => {
   const activeSegment = useSelectedLayoutSegment() ?? "/";
+  const filteredLinks = navLinks.filter(({ isSideNavOnly }) => !isSideNavOnly);
 
   return (
     <ul
@@ -21,12 +23,22 @@ export const NavigationTabs = ({
       aria-label="Main"
       id="main-nav"
     >
-      {navLinks.map(({ title, href, variant, isSideNavOnly }) =>
-        isSideNavOnly ? null : (
+      {filteredLinks.map(({ title, href, linkVariant }) =>
+        linkVariant ? (
+          <li key={href}>
+            <ButtonLink
+              href={href}
+              variant={linkVariant}
+              ariaLabel={title}
+              isAriaCurrent={activeSegment === href.substring(1)}
+            >
+              {title}
+            </ButtonLink>
+          </li>
+        ) : (
           <NavTab
             key={href}
             href={href}
-            variant={variant}
             title={title}
             isActive={activeSegment === href.substring(1)}
           />
