@@ -3,9 +3,21 @@ import { Alert } from "./Alert";
 import { AlertVariants } from "./Alert.types";
 
 /**
- * # The Alert component
- * The alert component can be used to provide information to your users such as success or error messages,
- * but also highlighted information complementing the normal flow of paragraphs and headers on a page.
+ * # The ButtonLink component
+ * The ButtonLink component combines the functionality of a link with the appearance of a button.
+ * It is useful for creating interactive elements that trigger navigation actions in your application.
+ * The component supports different variants to match your design system and is styled accordingly.
+ *
+ * @component
+ * @example
+ * // Basic usage
+ * <ButtonLink variant="primary" href="/dashboard">Go to Dashboard</ButtonLink>
+ *
+ * @param {ButtonLinkProps} props - The properties of the ButtonLink component.
+ * @param {ButtonLinkVariants} props.variant - The visual variant of the button link.
+ * @param {ReactNode} props.children - The content of the button link.
+ * @param {LinkProps} props... - Additional properties from the Next.js Link component.
+ * @returns {JSX.Element} - The rendered ButtonLink component.
  */
 
 const meta: Meta<typeof Alert> = {

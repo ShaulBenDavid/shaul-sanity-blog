@@ -3,27 +3,18 @@
 import React from "react";
 import Link from "next/link";
 import type { Routes } from "@/src/routes";
-import { NavigationVariants } from "../../Header/Header.config";
-import { navTabStyleConfig } from "./NavTab.config";
+import { NavLinkAnimation } from "./NavTab.config";
 
 interface NavTabProps {
   href: Routes;
   title: string;
-  variant: NavigationVariants;
   isActive: boolean;
 }
 
-export const NavTab = ({
-  href,
-  title,
-  variant,
-  isActive,
-}: NavTabProps): JSX.Element => (
+export const NavTab = ({ href, title, isActive }: NavTabProps): JSX.Element => (
   <li
-    className={`cursor-pointer capitalize ${navTabStyleConfig[variant]} ${
-      variant === NavigationVariants.LINK &&
-      isActive &&
-      "before:w-full before:hover:w-full"
+    className={`relative cursor-pointer text-base capitalize text-wizard-black ${NavLinkAnimation} ${
+      isActive && "before:w-full before:hover:w-full"
     }`}
   >
     <Link

@@ -1,8 +1,8 @@
 import type { Routes } from "@/src/routes";
-import type { NavigationLinksConfigType } from "./Header.config";
+import type { NavigationLinkConfigType } from "./Header.config";
 import { navigationLinksConfig } from "./Header.config";
 
 export const getUserNavigationLinks = (
   allowedRoutes: Routes[],
-): NavigationLinksConfigType[] =>
+): NavigationLinkConfigType[] =>
   navigationLinksConfig.filter((link) => allowedRoutes.includes(link.href));
