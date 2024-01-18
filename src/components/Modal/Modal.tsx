@@ -19,7 +19,7 @@ export const Modal = forwardRef(
       <dialog
         onCancel={closeModal}
         ref={ref}
-        className="left-1/2 top-1/2 translate-x-[-50%] overflow-hidden rounded-md focus:outline-none"
+        className="left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] overflow-hidden rounded-md focus:outline-none"
       >
         <div ref={contentRef}>{children}</div>
       </dialog>
