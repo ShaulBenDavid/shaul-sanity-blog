@@ -2,6 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import WarningSVG from "@/src/assets/WarningDrawSVG.svg";
 import { EmptyState } from "./EmptyState";
+import { ButtonLink, ButtonLinkVariants } from "../ButtonLink";
 
 /**
  * # The EmptyState component
@@ -56,8 +57,12 @@ export const WithFooter: Story = {
       "Make sure the issue exists in this project. If it does, ask a project admin for permission to see the project's issues.",
     footer: (
       <div className="grid w-80 grid-cols-2 flex-row items-center gap-2">
-        <button className="app-link whitespace-nowrap">Contact Us</button>
-        <button className="button-link">Verify Email</button>
+        <ButtonLink href="#" variant={ButtonLinkVariants.LINK}>
+          Contact Us
+        </ButtonLink>
+        <ButtonLink href="#" variant={ButtonLinkVariants.PRIMARY}>
+          Reset Password
+        </ButtonLink>
       </div>
     ),
   },

@@ -1,9 +1,9 @@
 "use client";
 
 import React, { type FormEvent } from "react";
-import Link from "next/link";
 import { Routes } from "@/src/routes";
 import { Button, ButtonVariants } from "@/src/components/Button";
+import { ButtonLink, ButtonLinkVariants } from "@/src/components/ButtonLink";
 import { EmailAnimation } from "./EmailAnimation";
 
 interface ConfirmationProps {
@@ -23,13 +23,13 @@ export const Confirmation = ({
       </h1>
     </header>
     <section className="mt-2 flex h-full flex-col items-center text-center">
-      <p className="sm:max-w-[75%]">
+      <p className="mb-auto sm:max-w-[75%]">
         Please check your email for a confirmation message. You will need to
         confirm your email address before you can access your account.
       </p>
-      <Link className="button-link mt-auto text-base" href={Routes.SIGN_IN}>
+      <ButtonLink href={Routes.SIGN_IN} variant={ButtonLinkVariants.PRIMARY}>
         go to login page
-      </Link>
+      </ButtonLink>
       <form onSubmit={onSubmit}>
         <label htmlFor="hiddenEmail" className="sr-only">
           Email:

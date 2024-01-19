@@ -2,13 +2,13 @@
 
 import React from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import Link from "next/link";
 import { toast } from "react-toastify";
 import { useGetActive } from "@/src/api/auth/hooks";
 import { EmptyState } from "@/src/components/EmptyState";
 import WarningSVG from "@/src/assets/WarningDrawSVG.svg";
 import { Routes } from "@/src/routes";
 import { ActivateLoader } from "./ActivateLoader";
+import { ButtonLink, ButtonLinkVariants } from "@/src/components/ButtonLink";
 
 const TOKEN_QUERY_PARAMS = "token";
 
@@ -44,15 +44,18 @@ export const Activate = (): JSX.Element => {
           description="Oops! It looks like the verification via the provided link didn't go through. Please double-check the link or try an alternative method. If the issue persists, reach out to our support team for assistance."
           footer={
             <div className="grid w-80 grid-cols-2 flex-row items-center gap-2">
-              <Link
+              <ButtonLink
                 href={Routes.CONTACT_US}
-                className="app-link whitespace-nowrap"
+                variant={ButtonLinkVariants.LINK}
               >
                 Contact Us
-              </Link>
-              <Link href={Routes.VERIFY} className="button-link">
+              </ButtonLink>
+              <ButtonLink
+                href={Routes.VERIFY}
+                variant={ButtonLinkVariants.PRIMARY}
+              >
                 Verify Email
-              </Link>
+              </ButtonLink>
             </div>
           }
         />

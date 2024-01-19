@@ -51,9 +51,9 @@ describe("Empty State", () => {
         header={mockData.header}
         description={mockData.description}
         footer={
-          <div className="grid w-80 grid-cols-2 flex-row items-center gap-2">
-            <button className="app-link whitespace-nowrap">Contact Us</button>
-            <button className="button-link">Verify Email</button>
+          <div>
+            <button>Contact Us</button>
+            <button>Verify Email</button>
           </div>
         }
       />,
