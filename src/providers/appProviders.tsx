@@ -24,7 +24,11 @@ export const AppProviders = ({
         <AuthProvider>
           <SkeletonTheme baseColor="#E8E3EA" highlightColor="#F3F2F4">
             {children}
-            <ToastContainer limit={MAX_NUMBER_DISPLAYED_TOASTS} />
+            <ToastContainer
+              limit={MAX_NUMBER_DISPLAYED_TOASTS}
+              stacked
+              position="top-left"
+            />
           </SkeletonTheme>
           <Suspense fallback={null}>
             <ProgressBar
