@@ -36,14 +36,12 @@ export const Register = (): JSX.Element => {
   const { postActive, isPostActiveLoading } = usePostActive({
     handleSuccess: (): void => {
       toast.success("Verification email sent successfully!", {
-        position: toast.POSITION.TOP_LEFT,
         role: "alert",
         pauseOnFocusLoss: true,
       });
     },
     handleError: (): void => {
       toast.error("Some error occurred, please try again later...", {
-        position: toast.POSITION.TOP_LEFT,
         role: "alert",
         pauseOnFocusLoss: true,
       });

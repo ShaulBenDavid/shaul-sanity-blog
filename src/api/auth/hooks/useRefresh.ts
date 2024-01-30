@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { refresh } from "../auth.methods";
@@ -19,24 +20,27 @@ export const useRefresh = ({
   handleLogout,
   enabled = true,
 }: UseRefreshProps) => {
-  const { refetch, isError, isLoading, error } = useQuery(
-    [GET_REFRESH_KEY],
-    refresh,
-    {
-      onSuccess: (res) => handleSuccess(res),
-      onError: (err) => {
-        if (!axios.isAxiosError(err)) {
-          return;
-        }
-        if (err?.response?.status === HttpStatusCode.UNAUTHORIZED) {
-          handleLogout();
-        }
-      },
-      enabled,
-      staleTime: 0,
-      cacheTime: 0,
-    },
-  );
+  const { refetch, isError, isLoading, error, isSuccess, data } = useQuery({
+    queryKey: [GET_REFRESH_KEY],
+    queryFn: refresh,
+    enabled,
+    staleTime: 0,
+    gcTime: 0,
+  });
+
+  useEffect(() => {
+    if (isSuccess && data) {
+      handleSuccess(data);
+    }
+  }, [handleSuccess, isSuccess, data]);
+
+  useEffect(() => {
+    if (error && axios.isAxiosError(error)) {
+      if (error?.response?.status === HttpStatusCode.UNAUTHORIZED) {
+        handleLogout();
+      }
+    }
+  }, [error, handleLogout]);
 
   return {
     refresh: refetch,

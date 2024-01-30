@@ -16,19 +16,18 @@ export const usePostResetPassword = ({
   handleSuccess,
   handleError,
 }: UsePostResetPasswordProps) => {
-  const { mutate, data, isError, isLoading, isSuccess, error } = useMutation(
-    [POST_RESET_PASSWORD_KEY],
-    (params: PostResetPasswordPayloadType) => postResetPassword(params),
-    {
-      onSuccess: handleSuccess,
-      onError: handleError,
-    },
-  );
+  const { mutate, data, isError, isPending, isSuccess, error } = useMutation({
+    mutationKey: [POST_RESET_PASSWORD_KEY],
+    mutationFn: (params: PostResetPasswordPayloadType) =>
+      postResetPassword(params),
+    onSuccess: handleSuccess,
+    onError: handleError,
+  });
 
   return {
     postResetPassword: mutate,
     resetPasswordData: data,
-    isResetPasswordLoading: isLoading,
+    isResetPasswordLoading: isPending,
     isResetPasswordError: isError,
     isResetPasswordSuccess: isSuccess,
     resetPasswordError: axios.isAxiosError(error) ? error : undefined,

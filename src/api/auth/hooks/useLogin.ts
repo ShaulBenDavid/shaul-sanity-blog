@@ -13,13 +13,11 @@ interface UseLoginProps {
 }
 
 export const useLogin = ({ handleSuccess }: UseLoginProps) => {
-  const { mutate, isError, isLoading, error } = useMutation(
-    [POST_LOGIN_KEY],
-    (payload: LoginPayloadType) => login(payload),
-    {
-      onSuccess: (res) => handleSuccess(res),
-    },
-  );
+  const { mutate, isError, isPending, error } = useMutation({
+    mutationKey: [POST_LOGIN_KEY],
+    mutationFn: (payload: LoginPayloadType) => login(payload),
+    onSuccess: (res) => handleSuccess(res),
+  });
 
   const handleLogin = useCallback(
     (payload: LoginPayloadType): void => {
@@ -30,7 +28,7 @@ export const useLogin = ({ handleSuccess }: UseLoginProps) => {
 
   return {
     handleLogin,
-    isLoginLoading: isLoading,
+    isLoginLoading: isPending,
     isLoginError: isError,
     loginError: axios.isAxiosError(error) ? error : undefined,
   };

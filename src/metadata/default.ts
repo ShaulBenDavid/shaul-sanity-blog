@@ -13,7 +13,6 @@ export const defaultMetadata: Metadata = {
   metadataBase: url,
   applicationName: "Dev Wizard",
   authors: { name: "Dwizard team", url },
-  themeColor: "#810CA8",
   creator: "Dev Wizard Team",
   keywords: [
     "Next.js",

@@ -1,4 +1,5 @@
 import React from "react";
+import type { Viewport } from "next";
 import { Inter } from "next/font/google";
 import { defaultMetadata } from "@/src/metadata";
 import { AppProviders } from "@/src/providers";
@@ -12,6 +13,10 @@ const inter = Inter({
 });
 
 export const metadata = defaultMetadata;
+
+export const viewport: Viewport = {
+  themeColor: "#810CA8",
+};
 
 const RootLayout = ({
   children,

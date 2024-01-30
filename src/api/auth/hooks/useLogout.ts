@@ -11,18 +11,16 @@ interface UseLogoutProps {
 }
 
 export const useLogout = ({ handleSuccess }: UseLogoutProps) => {
-  const { mutate, isError, isLoading, error } = useMutation(
-    [DELETE_LOGOUT_KEY],
-    logout,
-    {
-      onSuccess: () => handleSuccess(),
-      onError: () => handleSuccess(),
-    },
-  );
+  const { mutate, isError, isPending, error } = useMutation({
+    mutationKey: [DELETE_LOGOUT_KEY],
+    mutationFn: logout,
+    onSuccess: () => handleSuccess(),
+    onError: () => handleSuccess(),
+  });
 
   return {
     logout: mutate,
-    isLogoutLoading: isLoading,
+    isLogoutLoading: isPending,
     isLogoutError: isError,
     loginError: axios.isAxiosError(error) ? error : undefined,
   };

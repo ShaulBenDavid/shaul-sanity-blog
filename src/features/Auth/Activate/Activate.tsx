@@ -22,7 +22,6 @@ export const Activate = (): JSX.Element => {
 
   const handleSuccess = (): void => {
     toast.success("Account verified successfully!, please login.", {
-      position: toast.POSITION.TOP_LEFT,
       role: "alert",
       pauseOnFocusLoss: true,
     });

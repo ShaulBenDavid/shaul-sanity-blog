@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { getActive } from "../auth.methods";
@@ -18,15 +19,23 @@ export const useGetActive = ({
   handleError,
   params,
 }: UseGetActiveProps) => {
-  const { data, isError, isLoading, isSuccess, error } = useQuery(
-    [GET_ACTIVE_KEY, params],
-    () => params && getActive(params),
-    {
-      onSuccess: handleSuccess,
-      onError: handleError,
-      cacheTime: 0,
-    },
-  );
+  const { data, isError, isLoading, isSuccess, error } = useQuery({
+    queryKey: [GET_ACTIVE_KEY, params],
+    queryFn: () => params && getActive(params),
+    gcTime: 0,
+  });
+
+  useEffect(() => {
+    if (isSuccess && data && handleSuccess) {
+      handleSuccess();
+    }
+  }, [handleSuccess, isSuccess, data]);
+
+  useEffect(() => {
+    if (error && handleError) {
+      handleError();
+    }
+  }, [handleError, error]);
 
   return {
     getActiveData: data,
