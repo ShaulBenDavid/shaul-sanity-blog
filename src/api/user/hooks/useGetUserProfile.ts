@@ -11,13 +11,11 @@ interface UseGetUserInfoProps {
 }
 
 export const useGetUserProfile = ({ username }: UseGetUserInfoProps) => {
-  const { data, isError, isLoading, error } = useQuery(
-    [GET_USER_PROFILE_KEY, username],
-    () => getUserProfile(username),
-    {
-      cacheTime: 60 * 60 * 1000,
-    },
-  );
+  const { data, isError, isLoading, error } = useQuery({
+    queryKey: [GET_USER_PROFILE_KEY, username],
+    queryFn: () => getUserProfile(username),
+    gcTime: 60 * 60 * 1000,
+  });
 
   return {
     userInfo: data,

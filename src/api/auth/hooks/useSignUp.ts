@@ -9,10 +9,10 @@ import type { RegisterPayloadType } from "../auth.types";
 const POST_SIGN_UP_KEY = "postSignUp";
 
 export const useSignUp = () => {
-  const { mutate, isError, isLoading, isSuccess, error } = useMutation(
-    [POST_SIGN_UP_KEY],
-    (payload: RegisterPayloadType) => signUp(payload),
-  );
+  const { mutate, isError, isPending, isSuccess, error } = useMutation({
+    mutationKey: [POST_SIGN_UP_KEY],
+    mutationFn: (payload: RegisterPayloadType) => signUp(payload),
+  });
 
   const handleSignUp = useCallback(
     (payload: RegisterPayloadType): void => {
@@ -25,7 +25,7 @@ export const useSignUp = () => {
     handleSignUp,
     isSignUpError: isError,
     isSignUpSuccess: isSuccess,
-    isSignUpLoading: isLoading,
+    isSignUpLoading: isPending,
     signUpError: axios.isAxiosError(error) ? error : undefined,
   };
 };

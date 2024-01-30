@@ -9,10 +9,10 @@ import type { PostUserImagePayloadType } from "../user.types";
 const POST_USER_IMAGE_KEY = "postUserImage";
 
 export const usePostUserImage = () => {
-  const { mutate, isError, isLoading, isSuccess, error } = useMutation(
-    [POST_USER_IMAGE_KEY],
-    (payload: PostUserImagePayloadType) => postUserImage(payload),
-  );
+  const { mutate, isError, isPending, isSuccess, error } = useMutation({
+    mutationKey: [POST_USER_IMAGE_KEY],
+    mutationFn: (payload: PostUserImagePayloadType) => postUserImage(payload),
+  });
 
   const handlePostImage = useCallback(
     (payload: File): void => {
@@ -27,7 +27,7 @@ export const usePostUserImage = () => {
     handlePostImage,
     isUserImageError: isError,
     isUserImageSuccess: isSuccess,
-    isUserImageLoading: isLoading,
+    isUserImageLoading: isPending,
     userImageError: axios.isAxiosError(error) ? error : undefined,
   };
 };

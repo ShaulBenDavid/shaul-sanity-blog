@@ -10,19 +10,17 @@ interface UsePostContactUs {
 }
 
 export const usePostContactUs = ({ onSuccess }: UsePostContactUs) => {
-  const { mutate, isLoading, isError, error, data } = useMutation(
-    [POST_CONTACT_US_KEY],
-    (payload: ContactPayloadType) => postContactUs(payload),
-    {
-      onSuccess,
-    },
-  );
+  const { mutate, isPending, isError, error, data } = useMutation({
+    mutationKey: [POST_CONTACT_US_KEY],
+    mutationFn: (payload: ContactPayloadType) => postContactUs(payload),
+    onSuccess,
+  });
 
   return {
     sendMail: mutate,
     contactData: data,
     contactError: axios.isAxiosError(error) ? error : undefined,
-    isContactLoading: isLoading,
+    isContactLoading: isPending,
     isContactError: isError,
   };
 };

@@ -18,19 +18,18 @@ export const usePostNewPassword = ({
   handleError,
   token,
 }: UsePostNewPasswordProps) => {
-  const { mutate, data, isError, isLoading, isSuccess, error } = useMutation(
-    [POST_NEW_PASSWORD_KEY, token],
-    (params: PostNewPasswordPayloadType) => postNewPassword(params, token),
-    {
-      onSuccess: handleSuccess,
-      onError: handleError,
-    },
-  );
+  const { mutate, data, isError, isPending, isSuccess, error } = useMutation({
+    mutationKey: [POST_NEW_PASSWORD_KEY, token],
+    mutationFn: (params: PostNewPasswordPayloadType) =>
+      postNewPassword(params, token),
+    onSuccess: handleSuccess,
+    onError: handleError,
+  });
 
   return {
     postNewPassword: mutate,
     newPasswordData: data,
-    isNewPasswordLoading: isLoading,
+    isNewPasswordLoading: isPending,
     isNewPasswordError: isError,
     isNewPasswordSuccess: isSuccess,
     newPasswordError: axios.isAxiosError(error) ? error : undefined,
