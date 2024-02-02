@@ -16,6 +16,10 @@ export enum UserDetailsEnum {
   LOCATION = "location",
 }
 
+export enum UserReadListEnum {
+  SANITY_POST = "sanityPost",
+}
+
 export type UserDetailsType = {
   type: UserDetailsEnum;
   value: string;
@@ -34,3 +38,14 @@ export type UserProfileResponseType = {
   username: string;
   details: UserDetailsType[];
 };
+
+export interface UserReadingListItemType {
+  type: UserReadListEnum;
+  id: string;
+  slug: string;
+  title: string;
+}
+
+export type ReadingListPayloadType = UserReadingListItemType;
+
+export type ReadingListResponseType = MessageResponseType;

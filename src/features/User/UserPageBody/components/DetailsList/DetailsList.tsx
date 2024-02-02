@@ -9,9 +9,9 @@ interface DetailsListProps {
 
 export const DetailsList = ({ details }: DetailsListProps): JSX.Element => (
   <>
-    <div className="hidden md:flex">
+    <aside className="hidden md:flex">
       <DetailsListDesktop details={details} />
-    </div>
+    </aside>
     <div className="hidden max-md:flex">
       <DetailsListMobile details={details} />
     </div>
