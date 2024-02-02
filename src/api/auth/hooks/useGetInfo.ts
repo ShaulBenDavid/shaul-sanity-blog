@@ -1,5 +1,6 @@
 "use client";
 
+import ms from "ms";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { userInfo } from "../auth.methods";
@@ -17,7 +18,7 @@ export const useGetInfo = (
     queryKey: [GET_INFO_KEY],
     queryFn: userInfo,
     enabled,
-    gcTime: 60 * 60 * 1000,
+    gcTime: ms("2h"),
   });
 
   return {

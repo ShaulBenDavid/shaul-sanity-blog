@@ -1,5 +1,6 @@
 "use client";
 
+import ms from "ms";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { getUserProfile } from "../user.methods";
@@ -14,7 +15,7 @@ export const useGetUserProfile = ({ username }: UseGetUserInfoProps) => {
   const { data, isError, isLoading, error } = useQuery({
     queryKey: [GET_USER_PROFILE_KEY, username],
     queryFn: () => getUserProfile(username),
-    gcTime: 60 * 60 * 1000,
+    gcTime: ms("2h"),
   });
 
   return {

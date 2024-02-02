@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import ms from "ms";
 import { useQuery } from "@tanstack/react-query";
 import { getReadingListItem } from "../user.methods";
 
@@ -14,7 +15,7 @@ export const useGetReadingListItem = ({ id }: UseGetReadingListItemProps) => {
   const { data, isError, isLoading, error } = useQuery({
     queryKey: [GET_READING_LIST_ITEM_KEY, id],
     queryFn: () => getReadingListItem(id),
-    gcTime: 60 * 60 * 1000,
+    gcTime: ms("2h"),
   });
 
   return {
