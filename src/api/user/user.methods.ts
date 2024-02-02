@@ -5,6 +5,8 @@ import type {
   UserProfileResponseType,
   PostUserImagePayloadType,
   PostUserImageResponseType,
+  ReadingListResponseType,
+  ReadingListPayloadType,
 } from "./user.types";
 
 export const postUserImage = (
@@ -20,5 +22,22 @@ export const postUserImage = (
 export const getUserProfile = (username: string) =>
   apiMethodInstance<UserProfileResponseType>({
     url: [ApiEndpoints.USER_INFO, `${username}/`].join(""),
+    method: Methods.GET,
+  });
+
+export const postReadingList = (
+  payload: ReadingListPayloadType,
+): Promise<ReadingListResponseType> =>
+  apiMethodInstance<ReadingListResponseType>({
+    url: ApiEndpoints.READING_LIST,
+    method: Methods.POST,
+    data: payload,
+  });
+
+export const getReadingListItem = (
+  id: string,
+): Promise<ReadingListResponseType> =>
+  apiMethodInstance<ReadingListResponseType>({
+    url: ApiEndpoints.READING_LIST_ITEM.replace(":id", id),
     method: Methods.GET,
   });

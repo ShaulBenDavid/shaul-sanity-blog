@@ -11,6 +11,8 @@ export enum ApiEndpoints {
   // USER
   USER_INFO = "user/info/",
   USER_IMAGE = "user/image/",
+  READING_LIST = "user/reading-list/",
+  READING_LIST_ITEM = "user/:id/reading-list/",
 
   // SERVICES
   CONTACT_US = "services/contact/",
