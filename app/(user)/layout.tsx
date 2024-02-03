@@ -1,11 +1,11 @@
 import React from "react";
 import type { Viewport } from "next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import { defaultMetadata } from "@/src/metadata";
 import { AppProviders } from "@/src/providers";
 import { Header } from "@/src/components/Header";
 import { Footer } from "@/src/components/Footer";
+import { GoogleAnalytics } from "@/src/providers/GoogleAnalytics";
 import "@/src/styles/global.css";
 
 const inter = Inter({
@@ -25,11 +25,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }): JSX.Element => (
   <html lang="en">
-    {process.env.NODE_ENV === "production" && (
-      <GoogleAnalytics
-        gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string}
-      />
-    )}
+    {process.env.NODE_ENV === "production" && <GoogleAnalytics />}
     <body
       className={`min-h-[100dvh] w-full ${inter.variable} flex flex-col items-center justify-start font-inter text-wizard-black`}
     >
