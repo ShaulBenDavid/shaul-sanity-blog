@@ -54,6 +54,7 @@ open http://localhost:3000
   ![Storybook](https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
   ![React_Query](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=ReactQuery&logoColor=white)
   ![Axios](https://img.shields.io/badge/axios-671ddf?&style=for-the-badge&logo=axios&logoColor=white)
+  ![Google_analytics](https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white)
   ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)  
 - **Frameworks:** Next.js.
 - **CMS:** Sanity.io.
@@ -64,8 +65,20 @@ open http://localhost:3000
 - **Conventions:** Prettier, Eslint, Airbnb, Husky, commitlint.
 - **Validation:** Zod, React-hook-form.
 - **Accessibility:** eslint-plugin-jsx-a11y, react-focus-lock.
+- **Analytics:** GoogleAnalytics, react-cookie-consent.
 - **Docs:** Storybook.  
 
+
+## Docs:
+
+```bash
+# Run the docs
+npm run storybook
+
+```
+
+Open http://localhost:6006 in your browser
+![Logo](https://i.postimg.cc/qqk3KDP9/Screenshot-2024-02-03-at-15-41-02.png)
 
 ## Running Tests
 
