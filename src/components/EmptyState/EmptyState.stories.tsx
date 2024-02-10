@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import WarningSVG from "@/src/assets/WarningDrawSVG.svg";
+import WarningSVG from "@/src/assets/images/WarningDrawSVG.svg";
 import { EmptyState } from "./EmptyState";
 import { ButtonLink, ButtonLinkVariants } from "../ButtonLink";
 

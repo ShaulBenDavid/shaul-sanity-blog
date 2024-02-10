@@ -1,5 +1,5 @@
 import { create } from "@storybook/theming/create";
-import Logo from "../src/assets/dwlogo.svg";
+import Logo from "../src/assets/images/dwlogo.svg";
 
 export default create({
   base: "light",

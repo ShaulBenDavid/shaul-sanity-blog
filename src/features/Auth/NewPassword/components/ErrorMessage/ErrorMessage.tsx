@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import WarningSVG from "@/src/assets/WarningDrawSVG.svg";
+import WarningSVG from "@/src/assets/images/WarningDrawSVG.svg";
 import { EmptyState } from "@/src/components/EmptyState";
 import { Routes } from "@/src/routes";
 import { ButtonLink, ButtonLinkVariants } from "@/src/components/ButtonLink";
