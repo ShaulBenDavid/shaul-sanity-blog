@@ -1,6 +1,6 @@
 import React from "react";
 import { EmptyState } from "@/src/components/EmptyState";
-import NotFoundSVG from "@/src/assets/404SVG.svg";
+import NotFoundSVG from "@/src/assets/images/404SVG.svg";
 import { Routes } from "@/src/routes";
 import { ButtonLink, ButtonLinkVariants } from "@/src/components/ButtonLink";
 

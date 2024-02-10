@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { useGetActive } from "@/src/api/auth/hooks";
 import { EmptyState } from "@/src/components/EmptyState";
-import WarningSVG from "@/src/assets/WarningDrawSVG.svg";
+import WarningSVG from "@/src/assets/images/WarningDrawSVG.svg";
 import { Routes } from "@/src/routes";
 import { ActivateLoader } from "./ActivateLoader";
 import { ButtonLink, ButtonLinkVariants } from "@/src/components/ButtonLink";
