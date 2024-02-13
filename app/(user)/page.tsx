@@ -4,7 +4,7 @@ import { HomeContent } from "@/src/features/Home/HomeContent";
 
 export const revalidate = 86400;
 
-const Home = () => (
+const Home = async () => (
   <>
     <Intro />
     <HomeContent />
