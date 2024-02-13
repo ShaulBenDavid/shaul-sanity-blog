@@ -24,8 +24,9 @@ const Layout = (/* { children }: LayoutProps */): JSX.Element => (
       description="We apologize for the inconvenience. Our authentication services are currently undergoing maintenance and will be unavailable temporarily. "
       footer={
         <ButtonLink
-          href={Routes.RESET_PASSWORD}
+          href={Routes.ROOT}
           variant={ButtonLinkVariants.PRIMARY}
+          replace
         >
           Go to Home page
         </ButtonLink>
