@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 import { client } from "@/src/sanity/sanity.client";
 import { forUrl } from "@/src/sanity/sanity.utils";
 import { RichTextComponents } from "@/src/components/RichTextComponents/RichTextComponents";
-import { Post } from "@/src/sanity/types";
+import type { Post as PostType } from "@/src/sanity/types";
 
 type Props = {
   params: {
@@ -22,7 +22,7 @@ export async function generateStaticParams() {
         slug
     } 
     `;
-  const slugs: Post[] = await client.fetch(query);
+  const slugs: PostType[] = await client.fetch(query);
   const slugRoutes = slugs.map((post) => post.slug.current);
 
   return slugRoutes.map((slug) => ({
@@ -38,7 +38,7 @@ const Post = async ({ params: { slug } }: Props) => {
         topics[]->
     } 
     `;
-  const post: Post = await client.fetch(query, { slug });
+  const post: PostType = await client.fetch(query, { slug });
 
   if (!post) {
     notFound();
