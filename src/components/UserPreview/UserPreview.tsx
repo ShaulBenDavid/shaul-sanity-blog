@@ -7,7 +7,6 @@ interface UserPreviewProps {
   title?: string | null;
   imageUrl?: string | null;
   username: string;
-  avatarStyles?: string;
 }
 
 export const UserPreview = ({
@@ -15,14 +14,13 @@ export const UserPreview = ({
   title,
   imageUrl,
   username,
-  avatarStyles,
 }: UserPreviewProps): JSX.Element => (
   <Link
     href={`/@${username}`}
     className="flex flex-row items-center gap-1"
     data-testid="user-preview-component-test-id"
   >
-    <Avatar url={imageUrl ?? undefined} name={name} className={avatarStyles} />
+    <Avatar url={imageUrl ?? undefined} name={name} />
     <div className="flex flex-col capitalize">
       <span className="text-sm">{name}</span>
       {title && (

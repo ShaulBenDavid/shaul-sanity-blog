@@ -8,7 +8,7 @@ interface PostPageProps {
 }
 
 export const PostPage = ({ post }: PostPageProps): JSX.Element => (
-  <div id="page-content" className="flex flex-row justify-between gap-4">
+  <div id="page-content" className="flex flex-row justify-between gap-4 pt-6">
     <PostContent data={post} />
     <Aside postSlug={post.slug.current} />
   </div>

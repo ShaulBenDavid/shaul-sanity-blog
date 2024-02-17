@@ -52,7 +52,6 @@ export const PostPreview = ({
           title={author.title}
           username={author.username}
           imageUrl={forUrl(author.image).url()}
-          avatarStyles="max-sm:h-6 max-sm:w-6"
         />
         <button
           type="button"

@@ -31,7 +31,7 @@ export const BlogList = ({ posts }: Props): JSX.Element => (
               date={new Date(_createdAt)}
               isBookmarked={false}
             />
-            <hr className="border-grey-dw" />
+            <hr className="border-dw-grey" />
           </Fragment>
         ),
       )}
