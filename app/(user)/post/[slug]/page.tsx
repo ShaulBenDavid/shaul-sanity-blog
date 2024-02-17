@@ -1,12 +1,9 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { groq } from "next-sanity";
-import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 import { client } from "@/src/sanity/sanity.client";
-import { forUrl } from "@/src/sanity/sanity.utils";
-import { RichTextComponents } from "@/src/components/RichTextComponents/RichTextComponents";
 import type { Post as PostType } from "@/src/sanity/types";
+import { PostPage } from "@/src/features/Blog/PostPage";
 
 type Props = {
   params: {
@@ -44,45 +41,7 @@ const Post = async ({ params: { slug } }: Props) => {
     notFound();
   }
 
-  return (
-    <article>
-      <section>
-        <div>
-          <div style={{ width: "80px", height: "80px", position: "relative" }}>
-            <Image
-              src={forUrl(post.mainImage).url()}
-              alt={post.author.name}
-              fill
-            />
-            <div>
-              <h3>{post.author.name}</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div>
-          <h1>{post.title}</h1>
-          <p>
-            {new Date(post._createdAt).toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-          </p>
-        </div>
-        <div>
-          <h2>{post.description}</h2>
-          <div>
-            {post.topics.map((topic) => (
-              <span key={topic._id}>{topic.title}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-      <PortableText value={post.body} components={RichTextComponents} />
-    </article>
-  );
+  return <PostPage post={post} />;
 };
 
 export default Post;
