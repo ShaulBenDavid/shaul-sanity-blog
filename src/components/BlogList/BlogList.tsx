@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import type { Post } from "@/src/sanity/types";
 import { forUrl } from "@/src/sanity/sanity.utils";
 import { PostPreview } from "../Posts/PostPreview";
@@ -20,17 +20,19 @@ export const BlogList = ({ posts }: Props): JSX.Element => (
       .concat(posts)
       .map(
         ({ _id, title, author, mainImage, description, slug, _createdAt }) => (
-          <PostPreview
-            key={_id}
-            title={title}
-            content={description}
-            imgUrl={forUrl(mainImage).url()}
-            author={author}
-            href={`/post/${slug.current}`}
-            readTime={2}
-            date={new Date(_createdAt)}
-            isBookmarked={false}
-          />
+          <Fragment key={_id}>
+            <PostPreview
+              title={title}
+              content={description}
+              imgUrl={forUrl(mainImage).url()}
+              author={author}
+              href={`/post/${slug.current}`}
+              readTime={2}
+              date={new Date(_createdAt)}
+              isBookmarked={false}
+            />
+            <hr className="border-grey-dw" />
+          </Fragment>
         ),
       )}
   </>
