@@ -16,7 +16,7 @@ export const PostContent = ({ data }: PostContentProps): JSX.Element => (
       postImage={data.mainImage}
       authorData={data.author}
     />
-    <section className="w-[70ch]">
+    <section className="max-w-[70ch]">
       <div>
         <h2>{data.description}</h2>
         <div>
