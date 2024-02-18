@@ -21,9 +21,9 @@ export const PostHeader = ({
     <Image
       src={forUrl(postImage).url()}
       alt={title}
-      sizes="20vw"
-      width={0}
-      height={0}
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+      width={500}
+      height={200}
       className="aspect-[1000/420] w-auto object-cover"
     />
     <div className="flex flex-col gap-4 p-4">
