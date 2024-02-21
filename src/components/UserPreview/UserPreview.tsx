@@ -22,7 +22,7 @@ export const UserPreview = ({
   >
     <Avatar url={imageUrl ?? undefined} name={name} />
     <div className="flex flex-col capitalize">
-      <span className="text-sm">{name}</span>
+      <span className="text-base">{name}</span>
       {title && (
         <span className="text-xs font-medium text-primary-gray">{title}</span>
       )}
