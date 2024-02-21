@@ -17,17 +17,17 @@ export const PostHeader = ({
   postImage,
   authorData,
 }: PostHeaderProps): JSX.Element => (
-  <header className="flex w-full flex-col overflow-hidden">
+  <header className="flex w-full flex-col sm:overflow-hidden">
     <Image
       src={forUrl(postImage).url()}
       alt={title}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
       width={500}
       height={200}
-      className="aspect-[1000/420] w-auto object-cover"
+      className="ms-[-8px] aspect-[1000/420] min-w-[calc(100%+16px)] object-cover sm:m-0 sm:w-auto"
     />
-    <div className="flex flex-col gap-4 p-4">
-      <h1 className="text-5xl font-semibold">{title}</h1>
+    <div className="flex flex-col gap-4 pt-2 sm:p-2 tb:p-4">
+      <h1 className="text-4xl font-semibold sm:text-5xl">{title}</h1>
       <UserPreview
         name={authorData.name}
         title={authorData.title}
