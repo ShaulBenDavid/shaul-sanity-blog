@@ -18,7 +18,7 @@ export const PostContent = ({ data }: PostContentProps): JSX.Element => (
       authorData={data.author}
     />
     <div className="my-3 sm:px-2 tb:px-4 md:hidden">
-      <Share url={`post/${data.slug}`} />
+      <Share url={`post/${data.slug.current}`} />
     </div>
     <section className="max-w-[70ch]">
       <div>
