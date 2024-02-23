@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import type { PortableTextReactComponents } from "@portabletext/react";
 import { forUrl } from "@/src/sanity/sanity.utils";
+import { Blockquote } from "./Blockquote";
 
 export const RichTextComponents: Partial<PortableTextReactComponents> = {
   types: {
@@ -13,9 +14,10 @@ export const RichTextComponents: Partial<PortableTextReactComponents> = {
   },
   list: {
     bullet: ({ children }) => <ul>{children}</ul>,
+    number: ({ children }) => <ol>{children}</ol>,
   },
   block: {
     h3: ({ children }) => <h3>{children}</h3>,
-    blockquote: ({ children }) => <blockquote>{children}</blockquote>,
+    blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
   },
 };
