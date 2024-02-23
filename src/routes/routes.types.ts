@@ -12,7 +12,7 @@ export enum Routes {
   TERMS_CONDITIONS = "/terms-conditions",
   READING_LIST = "/reading-list",
   SETTINGS = "/settings",
-  TOPICS = "/topics",
   TOPIC = "/topic",
+  POST = "/post",
   STUDIO = "/studio",
 }

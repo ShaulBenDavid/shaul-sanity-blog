@@ -63,7 +63,7 @@ export const PostHeader = ({
         ))}
       </div>
       <div className="md:hidden">
-        <Share url={`post/${postSlug}`} />
+        <Share url={buildRoutePath(Routes.POST, postSlug)} />
       </div>
     </div>
   </header>

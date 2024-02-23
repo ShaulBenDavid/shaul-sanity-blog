@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import type { Post } from "@/src/sanity/types";
 import { forUrl } from "@/src/sanity/sanity.utils";
+import { buildRoutePath } from "@/src/utils";
+import { Routes } from "@/src/routes";
 import { PostPreview } from "../Posts/PostPreview";
 
 type Props = {
@@ -26,7 +28,7 @@ export const BlogList = ({ posts }: Props): JSX.Element => (
               content={description}
               imgUrl={forUrl(mainImage).url()}
               author={author}
-              href={`/post/${slug.current}`}
+              href={buildRoutePath(Routes.POST, slug.current)}
               readTime={2}
               date={new Date(_createdAt)}
               isBookmarked={false}
