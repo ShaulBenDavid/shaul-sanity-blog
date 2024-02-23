@@ -18,7 +18,7 @@ export const PostContent = ({ data }: PostContentProps): JSX.Element => (
       topics={data.topics}
       postSlug={data.slug.current}
     />
-    <section className="max-w-[70ch] sm:px-2 tb:px-4">
+    <section className="sm:px-2 tb:px-4">
       <PortableText value={data.body} components={RichTextComponents} />
     </section>
   </article>
