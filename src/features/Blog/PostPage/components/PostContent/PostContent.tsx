@@ -13,6 +13,7 @@ export const PostContent = ({ data }: PostContentProps): JSX.Element => (
     <PostHeader
       title={data.title}
       createdAt={data._createdAt}
+      readingTime={data.estimatedReadingTime}
       postImage={data.mainImage}
       authorData={data.author}
       topics={data.topics}

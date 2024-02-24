@@ -7,10 +7,12 @@ import { Routes } from "@/src/routes";
 import { Chip } from "@/src/components/Chip";
 import { Share } from "@/src/components/Share";
 import { buildRoutePath } from "@/src/utils";
+import { TimeSection } from "./TimeSection";
 
 interface PostHeaderProps {
   title: string;
   createdAt: string;
+  readingTime: number;
   postImage: ImageType;
   authorData: Author;
   postSlug: string;
@@ -20,6 +22,7 @@ interface PostHeaderProps {
 export const PostHeader = ({
   title,
   createdAt,
+  readingTime,
   postImage,
   authorData,
   postSlug,
@@ -43,15 +46,7 @@ export const PostHeader = ({
           username={authorData.username}
           imageUrl={forUrl(authorData.image).url()}
         />
-        <div className="tb:self-end">
-          <time className="text-s font-medium text-primary-gray">
-            {new Date(createdAt).toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-          </time>
-        </div>
+        <TimeSection createdAt={createdAt} readingTime={readingTime} />
       </div>
       <div className="flex flex-wrap gap-2">
         {topics.map((topic) => (
