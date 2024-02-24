@@ -1,11 +1,11 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
-import type { Post as PostType } from "@/src/sanity/types";
 import { RichTextComponents } from "@/src/components/RichTextComponents/RichTextComponents";
 import { PostHeader } from "./components/PostHeader";
+import type { PostPageResponse } from "@/src/sanity/queries/post";
 
 interface PostContentProps {
-  data: PostType;
+  data: PostPageResponse;
 }
 
 export const PostContent = ({ data }: PostContentProps): JSX.Element => (

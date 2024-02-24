@@ -1,10 +1,10 @@
 import React from "react";
-import type { Post as PostType } from "@/src/sanity/types";
 import { PostContent } from "./components/PostContent";
 import { Aside } from "./components/Aside";
+import type { PostPageResponse } from "@/src/sanity/queries/post";
 
 interface PostPageProps {
-  post: PostType;
+  post: PostPageResponse;
 }
 
 export const PostPage = ({ post }: PostPageProps): JSX.Element => (
