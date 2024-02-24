@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
-import type { Post } from "@/src/sanity/types";
 import { forUrl } from "@/src/sanity/sanity.utils";
+import type { PostPageResponse } from "@/src/sanity/queries/post";
 import { buildRoutePath } from "@/src/utils";
 import { Routes } from "@/src/routes";
 import { PostPreview } from "../Posts/PostPreview";
 
 type Props = {
-  posts: Post[];
+  posts: PostPageResponse[];
 };
 
 export const BlogList = ({ posts }: Props): JSX.Element => (
@@ -21,7 +21,16 @@ export const BlogList = ({ posts }: Props): JSX.Element => (
       .concat(posts)
       .concat(posts)
       .map(
-        ({ _id, title, author, mainImage, description, slug, _createdAt }) => (
+        ({
+          _id,
+          title,
+          author,
+          mainImage,
+          description,
+          slug,
+          _createdAt,
+          estimatedReadingTime,
+        }) => (
           <Fragment key={_id}>
             <PostPreview
               title={title}
@@ -29,7 +38,7 @@ export const BlogList = ({ posts }: Props): JSX.Element => (
               imgUrl={forUrl(mainImage).url()}
               author={author}
               href={buildRoutePath(Routes.POST, slug.current)}
-              readTime={2}
+              readTime={estimatedReadingTime}
               date={new Date(_createdAt)}
               isBookmarked={false}
             />

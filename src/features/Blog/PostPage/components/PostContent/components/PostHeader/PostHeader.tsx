@@ -35,7 +35,7 @@ export const PostHeader = ({
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
       width={500}
       height={200}
-      className="ms-[-8px] aspect-[1000/420] min-w-[calc(100%+16px)] object-cover sm:m-0 sm:w-auto"
+      className="ms-[-16px] aspect-[1000/420] min-w-[calc(100%+32px)] object-cover sm:m-0 sm:w-auto"
     />
     <div className="flex flex-col gap-4 pt-2 sm:p-2 tb:p-4">
       <h1 className="text-4xl font-semibold sm:text-5xl">{title}</h1>

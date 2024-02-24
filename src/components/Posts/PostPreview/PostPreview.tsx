@@ -7,6 +7,8 @@ import { forUrl } from "@/src/sanity/sanity.utils";
 import type { Author } from "@/src/sanity/types";
 import { UserPreview } from "../../UserPreview";
 
+const MIN_READ_TIME = 1;
+
 export interface PostPreviewProps {
   title: string;
   content: string;
@@ -79,7 +81,10 @@ export const PostPreview = ({
         <time dateTime={new Date(date).toISOString()}>
           {formatDateToCustomFormat(date)}
         </time>
-        -<small className="text-xs sm:text-sm">{readTime} min read</small>
+        -
+        <small className="text-xs sm:text-sm">
+          {readTime || MIN_READ_TIME} min read
+        </small>
       </div>
     </div>
   </article>
