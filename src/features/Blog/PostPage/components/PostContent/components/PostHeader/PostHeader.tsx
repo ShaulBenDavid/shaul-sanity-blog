@@ -7,10 +7,12 @@ import { Routes } from "@/src/routes";
 import { Chip } from "@/src/components/Chip";
 import { Share } from "@/src/components/Share";
 import { buildRoutePath } from "@/src/utils";
+import { TimeSection } from "./TimeSection";
 
 interface PostHeaderProps {
   title: string;
   createdAt: string;
+  readingTime: number;
   postImage: ImageType;
   authorData: Author;
   postSlug: string;
@@ -20,6 +22,7 @@ interface PostHeaderProps {
 export const PostHeader = ({
   title,
   createdAt,
+  readingTime,
   postImage,
   authorData,
   postSlug,
@@ -32,7 +35,7 @@ export const PostHeader = ({
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
       width={500}
       height={200}
-      className="ms-[-8px] aspect-[1000/420] min-w-[calc(100%+16px)] object-cover sm:m-0 sm:w-auto"
+      className="ms-[-16px] aspect-[1000/420] min-w-[calc(100%+32px)] object-cover sm:m-0 sm:w-auto"
     />
     <div className="flex flex-col gap-4 pt-2 sm:p-2 tb:p-4">
       <h1 className="text-4xl font-semibold sm:text-5xl">{title}</h1>
@@ -43,15 +46,7 @@ export const PostHeader = ({
           username={authorData.username}
           imageUrl={forUrl(authorData.image).url()}
         />
-        <div className="tb:self-end">
-          <time className="text-s font-medium text-primary-gray">
-            {new Date(createdAt).toLocaleDateString("en-US", {
-              day: "numeric",
-              month: "long",
-              year: "numeric",
-            })}
-          </time>
-        </div>
+        <TimeSection createdAt={createdAt} readingTime={readingTime} />
       </div>
       <div className="flex flex-wrap gap-2">
         {topics.map((topic) => (

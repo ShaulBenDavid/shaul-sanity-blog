@@ -4,6 +4,7 @@ import { groq } from "next-sanity";
 import { client } from "@/src/sanity/sanity.client";
 import type { Post as PostType } from "@/src/sanity/types";
 import { PostPage } from "@/src/features/Blog/PostPage";
+import { type PostPageResponse, getPost } from "@/src/sanity/queries/post";
 
 type Props = {
   params: {
@@ -28,14 +29,7 @@ export async function generateStaticParams() {
 }
 
 const Post = async ({ params: { slug } }: Props) => {
-  const query = groq`
-    *[_type=='post' && slug.current == $slug][0] {
-        ...,
-        author->,
-        topics[]->
-    } 
-    `;
-  const post: PostType = await client.fetch(query, { slug });
+  const post: PostPageResponse = await getPost(slug);
 
   if (!post) {
     notFound();
