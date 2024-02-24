@@ -27,7 +27,7 @@ export const EmptyState = ({
         className="w-[250px]"
       />
     )}
-    <h2 className="text-xl font-semibold">{header}</h2>
+    <h2 className="text-center text-xl font-semibold">{header}</h2>
     {description && <p className="text-center">{description}</p>}
     {footer && footer}
   </div>
