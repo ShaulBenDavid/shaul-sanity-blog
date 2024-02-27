@@ -1,4 +1,4 @@
-import { websiteUrl } from "@/src/constants";
+import { WEBSITE_URL } from "@/src/constants";
 
 type ShareContent = {
   url: string;
@@ -7,7 +7,7 @@ type ShareContent = {
 };
 
 export const shareContent: ShareContent = {
-  url: websiteUrl,
+  url: WEBSITE_URL,
   subject: "Dev Wizard - Tech Blog",
   title: "Welcome to dwizard, your go-to programming blog for developers.",
 };

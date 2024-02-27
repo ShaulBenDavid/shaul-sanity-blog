@@ -28,3 +28,9 @@ export const postsQuery = groq`
     "estimatedReadingTime": round(length(pt::text(body)) / 5 / 200 )
   } | order(_createdAt desc)
 `;
+
+export const allPostsQuery = groq`
+*[_type=='post']{
+    slug
+} 
+`;
