@@ -9,7 +9,7 @@ interface PostContentProps {
 }
 
 export const PostContent = ({ data }: PostContentProps): JSX.Element => (
-  <article className="flex flex-1 flex-col border-dw-grey sm:overflow-hidden sm:rounded-xl sm:border-2">
+  <article className="flex flex-1 flex-col gap-3 border-dw-grey sm:overflow-hidden sm:rounded-xl sm:border-2">
     <PostHeader
       title={data.title}
       createdAt={data._createdAt}
@@ -19,7 +19,7 @@ export const PostContent = ({ data }: PostContentProps): JSX.Element => (
       topics={data.topics}
       postSlug={data.slug.current}
     />
-    <section className="sm:px-2 tb:px-4">
+    <section className="flex flex-col gap-2 text-lg sm:px-2 tb:px-4 tb:text-xl">
       <PortableText value={data.body} components={RichTextComponents} />
     </section>
   </article>

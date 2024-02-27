@@ -14,7 +14,15 @@ export const RichTextComponents: Partial<PortableTextReactComponents> = {
   },
   list: {
     bullet: ({ children }) => <ul>{children}</ul>,
-    number: ({ children }) => <ol>{children}</ol>,
+    number: ({ children }) => (
+      <ol className="flex list-inside list-decimal flex-col gap-1 py-6">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => <li>{children}</li>,
+    number: ({ children }) => <li>{children}</li>,
   },
   block: {
     h3: ({ children }) => <h3>{children}</h3>,
