@@ -22,7 +22,7 @@ export function generateImageMetadata() {
   ];
 }
 
-const PostIcon = ({ params: { slug } }: PostProps) =>
+const PostImage = ({ params: { slug } }: PostProps) =>
   new ImageResponse(
     (
       <div
@@ -87,4 +87,4 @@ const PostIcon = ({ params: { slug } }: PostProps) =>
     ),
   );
 
-export default PostIcon;
+export default PostImage;

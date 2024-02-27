@@ -39,6 +39,10 @@ export async function generateMetadata({
       name: author.username,
       url: `${WEBSITE_URL}@${author.username}`,
     },
+    openGraph: {
+      title,
+      description,
+    },
   };
 }
 
