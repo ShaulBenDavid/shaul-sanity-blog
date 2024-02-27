@@ -19,7 +19,7 @@ export const PostContent = ({ data }: PostContentProps): JSX.Element => (
       topics={data.topics}
       postSlug={data.slug.current}
     />
-    <section className="flex flex-col gap-2 text-lg sm:px-2 tb:px-4 tb:text-xl">
+    <section className="flex flex-col gap-2 pb-8 text-lg sm:px-2 tb:px-4 tb:text-xl">
       <PortableText value={data.body} components={RichTextComponents} />
     </section>
   </article>

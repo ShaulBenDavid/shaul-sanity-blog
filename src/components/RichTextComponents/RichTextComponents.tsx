@@ -13,19 +13,46 @@ export const RichTextComponents: Partial<PortableTextReactComponents> = {
     ),
   },
   list: {
-    bullet: ({ children }) => <ul>{children}</ul>,
+    bullet: ({ children }) => (
+      <ul className="flex list-inside list-disc flex-col gap-1 py-2">
+        {children}
+      </ul>
+    ),
     number: ({ children }) => (
-      <ol className="flex list-inside list-decimal flex-col gap-1 py-6">
+      <ol className="flex list-inside list-decimal flex-col gap-1 py-2">
         {children}
       </ol>
     ),
   },
   listItem: {
-    bullet: ({ children }) => <li>{children}</li>,
-    number: ({ children }) => <li>{children}</li>,
+    bullet: ({ children }) => <li className="font-medium">{children}</li>,
+    number: ({ children }) => <li className="font-medium">{children}</li>,
   },
   block: {
-    h3: ({ children }) => <h3>{children}</h3>,
+    h3: ({ value }) => {
+      const text = value.children[0].text as string;
+      const modifiedString = text.replace(/\[(.*?)\]/, "");
+      const match = text.match(/\[(.*?)\]/);
+
+      return (
+        <h3
+          className="text-xl font-bold tb:text-2xl"
+          {...(match ? { id: match[1] } : {})}
+        >
+          {modifiedString}
+        </h3>
+      );
+    },
+    h2: ({ children }) => (
+      <h2 className="text-2xl font-bold tb:text-3xl">{children}</h2>
+    ),
     blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+  },
+  marks: {
+    link: ({ value, children }) => (
+      <a href={value.href} className="app-link">
+        {children}
+      </a>
+    ),
   },
 };
