@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { websiteUrl } from "../constants";
+import { WEBSITE_URL } from "../constants";
 
 const url = new URL("https://dwizard.io");
 
@@ -36,7 +36,7 @@ export const defaultMetadata: Metadata = {
     "login",
   ],
   alternates: {
-    canonical: new URL(websiteUrl),
+    canonical: new URL(WEBSITE_URL),
   },
   generator: "Next.js",
   publisher: "Dev Wizard Team",
@@ -67,7 +67,7 @@ export const defaultMetadata: Metadata = {
     title: "Dev Wizard - A Place For Developers",
     description:
       "Welcome to dwizard, your go-to programming blog for developers. Explore coding tutorials, tips, and discussions on various programming languages, frameworks, and technologies.",
-    url: websiteUrl,
+    url: WEBSITE_URL,
     siteName: "Dev Wizard",
     type: "website",
     images: [

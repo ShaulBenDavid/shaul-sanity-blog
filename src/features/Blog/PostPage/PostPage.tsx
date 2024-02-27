@@ -4,15 +4,15 @@ import { Aside } from "./components/Aside";
 import type { PostPageResponse } from "@/src/sanity/queries/post";
 
 interface PostPageProps {
-  post: PostPageResponse;
+  postsData: PostPageResponse;
 }
 
-export const PostPage = ({ post }: PostPageProps): JSX.Element => (
+export const PostPage = ({ postsData }: PostPageProps): JSX.Element => (
   <div
     id="page-content"
     className="flex flex-row justify-between gap-4 sm:pt-6"
   >
-    <PostContent data={post} />
-    <Aside postSlug={post.slug.current} />
+    <PostContent data={postsData} />
+    <Aside postSlug={postsData.slug.current} />
   </div>
 );
