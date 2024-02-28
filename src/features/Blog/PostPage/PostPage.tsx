@@ -1,7 +1,7 @@
 import React from "react";
+import type { PostPageResponse } from "@/src/sanity/queries/post";
 import { PostContent } from "./components/PostContent";
 import { Aside } from "./components/Aside";
-import type { PostPageResponse } from "@/src/sanity/queries/post";
 
 interface PostPageProps {
   postsData: PostPageResponse;

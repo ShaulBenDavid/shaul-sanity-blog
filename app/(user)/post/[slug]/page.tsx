@@ -50,7 +50,7 @@ export async function generateMetadata({
   };
 }
 
-const Post = async ({ params: { slug } }: PostProps) => {
+const Post = async ({ params: { slug } }: PostProps): Promise<JSX.Element> => {
   const post: PostPageResponse = await getPost(slug);
 
   if (!post) {
