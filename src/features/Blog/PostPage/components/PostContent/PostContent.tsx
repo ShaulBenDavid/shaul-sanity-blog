@@ -1,8 +1,8 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/src/components/RichTextComponents/RichTextComponents";
-import { PostHeader } from "./components/PostHeader";
 import type { PostPageResponse } from "@/src/sanity/queries/post";
+import { PostHeader } from "./components/PostHeader";
 
 interface PostContentProps {
   data: PostPageResponse;

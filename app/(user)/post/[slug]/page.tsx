@@ -43,10 +43,14 @@ export async function generateMetadata({
       title,
       description,
     },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 
-const Post = async ({ params: { slug } }: PostProps) => {
+const Post = async ({ params: { slug } }: PostProps): Promise<JSX.Element> => {
   const post: PostPageResponse = await getPost(slug);
 
   if (!post) {
