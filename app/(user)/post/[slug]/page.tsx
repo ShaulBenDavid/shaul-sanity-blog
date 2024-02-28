@@ -43,6 +43,10 @@ export async function generateMetadata({
       title,
       description,
     },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 
