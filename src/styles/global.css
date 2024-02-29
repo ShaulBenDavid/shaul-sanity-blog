@@ -41,6 +41,10 @@ html,
 body {
   height: 100%;
 }
+
+body {
+  overflow-x: hidden !important;
+}
 /*
     Typographic tweaks!
     4. Add accessible line-height

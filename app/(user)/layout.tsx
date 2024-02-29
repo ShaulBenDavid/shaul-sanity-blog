@@ -27,7 +27,7 @@ const RootLayout = ({
   <html lang="en">
     {process.env.NODE_ENV === "production" && <GoogleAnalytics />}
     <body
-      className={`min-h-[100dvh] w-full ${inter.variable} flex flex-col items-center justify-start overflow-x-hidden font-inter text-wizard-black`}
+      className={`min-h-[100dvh] w-full ${inter.variable} flex flex-col items-center justify-start font-inter text-wizard-black`}
     >
       <AppProviders>
         <Header />
