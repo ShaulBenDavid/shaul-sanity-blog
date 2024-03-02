@@ -50,7 +50,12 @@ export const RichTextComponents: Partial<PortableTextReactComponents> = {
   },
   marks: {
     link: ({ value, children }) => (
-      <a href={value.href} className="app-link">
+      <a
+        href={value.href}
+        className="app-link"
+        target={value.href.startsWith("#") ? "_self" : "_blank"}
+        rel="noreferrer"
+      >
         {children}
       </a>
     ),
