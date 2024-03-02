@@ -70,7 +70,7 @@ export const PostPreview = ({
         </button>
       </div>
       <Link href={href}>
-        <h4 className="line-clamp-2 text-base font-bold text-black sm:text-lg">
+        <h4 className="line-clamp-1 text-base font-bold text-black sm:text-lg">
           {title}
         </h4>
         <p className="line-clamp-1 text-sm text-primary-gray max-xs:hidden sm:line-clamp-2 sm:text-base">
