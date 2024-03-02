@@ -16,10 +16,6 @@ export const BlogList = ({ posts }: Props): JSX.Element => (
       .concat(posts)
       .concat(posts)
       .concat(posts)
-      .concat(posts)
-      .concat(posts)
-      .concat(posts)
-      .concat(posts)
       .map(
         ({
           _id,

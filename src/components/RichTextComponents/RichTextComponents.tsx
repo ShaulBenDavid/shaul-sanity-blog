@@ -7,9 +7,16 @@ import { Blockquote } from "./Blockquote";
 export const RichTextComponents: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }) => (
-      <div style={{ width: "90px", height: "90px", position: "relative" }}>
-        <Image src={forUrl(value.imageUrl).url()} alt="" />
-      </div>
+      <Image
+        src={forUrl(value.asset._ref).url()}
+        alt=""
+        role="presentation"
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
+        width={500}
+        height={200}
+        className="aspect-[1000/420] w-full object-contain"
+      />
     ),
   },
   list: {
@@ -50,7 +57,12 @@ export const RichTextComponents: Partial<PortableTextReactComponents> = {
   },
   marks: {
     link: ({ value, children }) => (
-      <a href={value.href} className="app-link">
+      <a
+        href={value.href}
+        className="app-link"
+        target={value.href.startsWith("#") ? "_self" : "_blank"}
+        rel="noreferrer"
+      >
         {children}
       </a>
     ),
