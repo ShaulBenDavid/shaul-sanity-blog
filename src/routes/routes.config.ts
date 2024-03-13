@@ -9,6 +9,7 @@ export const routesTitlesConfig = {
   [Routes.SIGN_UP]: "sign up",
   [Routes.PRIVACY_POLICY]: "privacy policy",
   [Routes.TERMS_CONDITIONS]: "terms & conditions",
+  [Routes.TOPICS]: "topics",
 };
 
 export const publicRoutes = [
@@ -19,6 +20,7 @@ export const publicRoutes = [
   Routes.ROOT,
   Routes.TERMS_CONDITIONS,
   Routes.TOPIC,
+  Routes.TOPICS,
   Routes.POST,
 ];
 

@@ -26,7 +26,7 @@ export const TopicsList = async (): Promise<JSX.Element> => {
         ))}
       </div>
       <p className="text-primary-900 hover:text-secondary-950">
-        <Link href={Routes.TOPIC}>Explore more topics</Link>
+        <Link href={Routes.TOPICS}>Explore more topics</Link>
       </p>
     </div>
   );
