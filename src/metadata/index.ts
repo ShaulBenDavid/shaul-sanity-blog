@@ -6,3 +6,4 @@ export { contactUsMetadata } from "./contactUs";
 export { resetPasswordMetadata } from "./resetPassword";
 export { newPasswordMetadata } from "./newPassword";
 export { ourStoryMetadata } from "./ourStory";
+export { topicsMetadata } from "./topics";

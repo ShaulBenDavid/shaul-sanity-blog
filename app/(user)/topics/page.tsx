@@ -1,5 +1,15 @@
 import React from "react";
+import { topicsMetadata } from "@/src/metadata";
+import { getAllTopics } from "@/src/sanity/queries/topics";
+import { Topics } from "@/src/features/Topics";
 
-const Topics = () => <div>topics</div>;
+export const metadata = topicsMetadata;
+export const revalidate = 86400;
 
-export default Topics;
+const TopicsPage = async () => {
+  const topicsData = await getAllTopics();
+
+  return <Topics data={topicsData} />;
+};
+
+export default TopicsPage;
