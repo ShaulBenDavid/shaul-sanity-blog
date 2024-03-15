@@ -5,12 +5,14 @@ import theme from "@/src/styles/tailwind.theme";
 
 interface SearchInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   width?: string;
+  onReset: () => void;
 }
 
 export const SearchInput = ({
   width,
   value,
   onChange,
+  onReset,
   placeholder,
 }: SearchInputProps): JSX.Element => (
   <div
@@ -28,12 +30,14 @@ export const SearchInput = ({
       aria-controls="searchResults"
     />
     {value ? (
-      <IoClose
-        stroke={theme.secondary["950"]}
-        size={24}
-        aria-hidden
-        data-testid="app-search-input-close-icon-test-id"
-      />
+      <button type="reset" onClick={onReset}>
+        <IoClose
+          stroke={theme.secondary["950"]}
+          size={24}
+          aria-hidden
+          data-testid="app-search-input-close-icon-test-id"
+        />
+      </button>
     ) : (
       <HiOutlineSearch
         stroke={theme.secondary["950"]}

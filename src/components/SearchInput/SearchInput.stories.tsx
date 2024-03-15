@@ -27,6 +27,11 @@ const meta: Meta<typeof SearchInput> = {
       description: "Input change callback.",
       defaultValue: () => ({}),
     },
+    onReset: {
+      control: "ControlType",
+      description: "Reset the input value callback.",
+      defaultValue: () => ({}),
+    },
   },
 };
 
@@ -37,5 +42,6 @@ type Story = StoryObj<typeof SearchInput>;
 export const Search: Story = {
   args: {
     placeholder: "Search something",
+    onReset: () => ({}),
   },
 };
