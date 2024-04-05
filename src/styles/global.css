@@ -18,6 +18,15 @@
   .shadow-inset-blur {
     box-shadow: 1px -48px 180px 46px rgba(255, 255, 255, 1) inset;
   }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 /*
