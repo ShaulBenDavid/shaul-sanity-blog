@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "test-utils";
+import { fireEvent, render } from "test-utils";
 import { SearchInput } from "./SearchInput";
 
 describe("SearchInput", () => {
@@ -21,5 +21,26 @@ describe("SearchInput", () => {
     const { getByTestId } = render(<SearchInput onReset={() => ({})} />);
     const inputElement = getByTestId("app-search-input-icon-test-id");
     expect(inputElement).toBeInTheDocument();
+  });
+
+  it("clears search value on reset", () => {
+    let searchValue = "test";
+    const setSearchValue = jest.fn().mockImplementation((value) => {
+      searchValue = value;
+    });
+
+    const { getByTestId } = render(
+      <SearchInput
+        placeholder="Search..."
+        value="test"
+        onReset={() => setSearchValue("")}
+      />,
+    );
+
+    const resetButton = getByTestId("app-search-input-close-icon-test-id");
+    fireEvent.click(resetButton);
+
+    expect(searchValue).toBe("");
+    expect(setSearchValue).toHaveBeenCalledWith("");
   });
 });
