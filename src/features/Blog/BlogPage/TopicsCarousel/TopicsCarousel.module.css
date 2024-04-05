@@ -1,0 +1,33 @@
+.rightBackground,
+.leftBackground {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  width: 66px;
+  display: flex;
+  align-items: center;
+  padding-inline: 4px;
+}
+
+.leftBackground {
+  left: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 15%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgb(255, 255, 255) 75%
+  );
+}
+
+.rightBackground {
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.75) 25%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgb(255, 255, 255) 75%
+  );
+  justify-content: flex-end;
+}

@@ -3,16 +3,19 @@
 import React, { useState } from "react";
 import { SearchHeader } from "@/src/components/SearchHeader";
 import type { PostPageResponse } from "@/src/sanity/queries/post";
+import type { GetTopics } from "@/src/sanity/queries/home";
 import { PostPreview } from "@/src/components/Posts/PostPreview";
 import { buildRoutePath } from "@/src/utils";
 import { Routes } from "@/src/routes";
 import { forUrl } from "@/src/sanity/sanity.utils";
+import { TopicsCarousel } from "./TopicsCarousel";
 
 interface BlogPageProps {
   posts: PostPageResponse[];
+  topics: GetTopics;
 }
 
-export const BlogPage = ({ posts }: BlogPageProps): JSX.Element => {
+export const BlogPage = ({ posts, topics }: BlogPageProps): JSX.Element => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   const filteredPosts: PostPageResponse[] = posts.filter(({ title }) =>
@@ -28,6 +31,7 @@ export const BlogPage = ({ posts }: BlogPageProps): JSX.Element => {
         setSearchValue={setSearchValue}
       />
       <section id="searchResults" className="flex flex-1 flex-col gap-3">
+        <TopicsCarousel data={topics} />
         {filteredPosts.map(
           ({
             _id,
