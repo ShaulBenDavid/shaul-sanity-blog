@@ -7,6 +7,8 @@ import type { GetTopics } from "@/src/sanity/queries/home";
 import { PostPreview } from "@/src/components/Posts/PostPreview";
 import { buildRoutePath } from "@/src/utils";
 import { Routes } from "@/src/routes";
+import NoDataSVG from "@/src/assets/images/NoDataSVG.svg";
+import { EmptyState } from "@/src/components/EmptyState";
 import { forUrl } from "@/src/sanity/sanity.utils";
 import { TopicsCarousel } from "./TopicsCarousel";
 
@@ -55,6 +57,15 @@ export const BlogPage = ({ posts, topics }: BlogPageProps): JSX.Element => {
               isBookmarked={false}
             />
           ),
+        )}
+        {!filteredPosts.length && (
+          <div className="flex items-center justify-center py-10">
+            <EmptyState
+              svgUrl={NoDataSVG}
+              header={`No Results Found For: ${searchValue}`}
+              description="It seems like the search didn't yield any results. Please consider refining your search criteria for better results. "
+            />
+          </div>
         )}
       </section>
     </div>

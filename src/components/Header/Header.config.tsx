@@ -7,6 +7,7 @@ import {
   FcRules,
   FcPrivacy,
   FcBarChart,
+  FcViewDetails,
 } from "react-icons/fc";
 import { Routes, routesTitlesConfig } from "@/src/routes";
 import { ButtonLinkVariants } from "../ButtonLink";
@@ -33,6 +34,18 @@ export const navigationLinksConfig: NavigationLinkConfigType[] = [
     isSideNavOnly: false,
   },
   {
+    href: Routes.BLOG,
+    title: routesTitlesConfig[Routes.BLOG],
+    icon: <FcViewDetails size={24} aria-hidden />,
+    isSideNavOnly: true,
+  },
+  {
+    href: Routes.TOPICS,
+    title: routesTitlesConfig[Routes.TOPICS],
+    icon: <FcBarChart size={24} aria-hidden />,
+    isSideNavOnly: true,
+  },
+  {
     href: Routes.OUR_STORY,
     title: routesTitlesConfig[Routes.OUR_STORY],
     icon: <FcAbout size={24} aria-hidden />,
@@ -54,12 +67,6 @@ export const navigationLinksConfig: NavigationLinkConfigType[] = [
     href: Routes.PRIVACY_POLICY,
     title: routesTitlesConfig[Routes.PRIVACY_POLICY],
     icon: <FcPrivacy size={24} aria-hidden />,
-    isSideNavOnly: true,
-  },
-  {
-    href: Routes.TOPICS,
-    title: routesTitlesConfig[Routes.TOPICS],
-    icon: <FcBarChart size={24} aria-hidden />,
     isSideNavOnly: true,
   },
   {

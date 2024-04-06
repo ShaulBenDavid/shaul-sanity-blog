@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import type { Topic } from "@/src/sanity/types";
 import { SearchHeader } from "@/src/components/SearchHeader";
+import NoDataSVG from "@/src/assets/images/NoDataSVG.svg";
 import { TopicLink } from "./TopicLink";
+import { EmptyState } from "@/src/components/EmptyState";
 
 interface TopicsProps {
   data: Topic[];
@@ -39,6 +41,15 @@ export const Topics = ({ data }: TopicsProps): JSX.Element => {
           />
         ))}
       </section>
+      {!filteredTopics.length && (
+        <div className="flex items-center justify-center py-10">
+          <EmptyState
+            svgUrl={NoDataSVG}
+            header={`No Results Found For: ${searchValue}`}
+            description="It seems like the search didn't yield any results. Please consider refining your search criteria for better results. "
+          />
+        </div>
+      )}
     </div>
   );
 };
