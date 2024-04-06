@@ -10,6 +10,7 @@ export const routesTitlesConfig = {
   [Routes.PRIVACY_POLICY]: "privacy policy",
   [Routes.TERMS_CONDITIONS]: "terms & conditions",
   [Routes.TOPICS]: "topics",
+  [Routes.BLOG]: "blog",
 };
 
 export const publicRoutes = [
@@ -22,6 +23,7 @@ export const publicRoutes = [
   Routes.TOPIC,
   Routes.TOPICS,
   Routes.POST,
+  Routes.BLOG,
 ];
 
 export const visitorRoutes = [
